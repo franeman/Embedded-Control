@@ -1,0 +1,91 @@
+/*  Name: Eric Segerstrom
+    Section: 2A
+    Date: 9.28.18
+    File name: Pseudocode2
+    Description: Pseudocode for Lab 2
+*/
+
+compiler directives
+	#include <c8051_SDCC.h>
+	#include <stdio.h>
+	#include <stdlib.h>
+declare global variables
+	sbit PB0, PB1, PB2, PB3, SS0, SS1, 
+			LED0, LED1, LED2, LED3, 
+		 	BILED, BUZZER, POT
+	counts
+function prototypes
+	void Port_Init(void)
+	void Timer_Init(void)
+	void Interrupt_Init(void)
+	void ADC1_Init(void)
+	void Timer0_ISR(void)
+	unsigned char random(void)
+main function
+	declare local variables
+		unsigned char result
+	initialization functions
+		Sys_Init();
+		Port_Init();
+		Interrupt_Init();
+		Timer0_Init();
+		ADC1_Init();
+		putchar(' ');
+	printf ("Start")
+ 	Begin loop while (TRUE)
+ 		Turn off LED0, LED1, LED2, LED3, BUZZ
+		Reset counters and array
+		Print "Start" statement and instructions
+		Wait for Start switch
+		Begin game (version based on slide switch position)
+			generate random numbers
+			read timing ADC pot input
+			calculate T and print value
+			Initialize everything
+			Start game timer
+			Begin rounds loop (with turns for each player)
+				option to reread pot for faster speed
+				Loop for n or more tries
+					Note if pushbuttons of LED sequence entered correctly
+					Track score
+					check a switch for pause
+				End loop
+			End Rounds
+		End game
+		Print message and running time
+		wait for Start switch toggle to replay
+ 	End infinite loop
+End main function
+
+Functions
+
+ 	void Port_Init(void)
+ 		Initialize ports 1, 2, and 3
+ 	End Port_Init
+
+ 	void Interrupt_Init(void)
+ 		Enable Timer0 interrupt request
+		Enable global interrupts
+	End Interrupt_Init
+
+	void Timer0_Init(void)
+		Set Timer0 to use SYSCLK as source
+		Clear 4 least significant bits
+		Set Timer0 in mode 1
+		Stop Timer0
+		Clear high and low byte of Timer 0
+	End Timer0_Init
+
+	void ADC1_Init(void
+		set up voltage reference
+		enable ADC1
+		set gain
+	End ADC1_Init
+
+	void Timer0_ISR(void)
+		Increment the global variable counts
+	End Timer0_ISR
+
+	unsigned char random(void)
+		Obtain a random integer between 0 and 1
+	End random

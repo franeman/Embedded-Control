@@ -1,0 +1,101 @@
+/*  Name: Ethan Grey
+    Section: 2A
+    Date: 9.28.18
+    File name: Pseudocode2
+    Description: Pseudocode for Lab 2 mode 2
+*/
+
+compiler directives
+	#include <c8051_SDCC.h>
+	#include <stdio.h>
+	#include <stdlib.h>
+declare global variables
+	sbit PB0, PB1, PB2, PB3, SS0, SS1, 
+			LED0, LED1, LED2, LED3, 
+		 	BILED, BUZZER, POT
+	counts
+function prototypes
+	void Port_Init(void)
+	void Timer_Init(void)
+	void Interrupt_Init(void)
+	void ADC1_Init(void)
+	void Timer0_ISR(void)
+	unsigned char random(void)
+	void Draw_Bar(unsigned char length)
+main function
+	declare local variables
+		unsigned char result
+	initialization functions
+		Sys_Init();
+		Port_Init();
+		Interrupt_Init();
+		Timer0_Init();
+		ADC1_Init();
+		putchar(' ');
+	printf ("Start")
+ 	Begin loop while (TRUE)
+ 		Turn off LED0, LED1, LED2, LED3, BUZZ
+		Reset counters and array
+		Print "Start" statement and instructions
+		Wait for Start switch
+		if game mode is 2
+			zero the score
+			turn off all LEDs
+			store 5 timer vals in an array for overflows
+			for 5 tries
+				wait 1 sec with BILED red
+				read pot and scale it from 0 to 4
+				turn off BILED
+				light corresponding leds
+				clear counts
+				while counts < overflows[try]
+					count debounced button presses
+				end while
+				Compare press count to ADC scaled value
+				Score 10 points for correct
+				Flash all the LEDs off, on, & off.
+				If it count is low or high light the BiLED red or green
+				Display the points for the try and total score on the terminal
+				Delay for ~1.0 second
+				Turn off the BILED
+				Delay for ~0.5 second
+				End of the 5 tries loop
+				Display the final score and flash the BiLED red and green for ~1 second
+		End game
+		Print message and running time
+		wait for Start switch toggle to replay
+ 	End infinite loop
+End main function
+
+Functions
+
+ 	void Port_Init(void)
+ 		Initialize ports 1, 2, and 3
+ 	End Port_Init
+
+ 	void Interrupt_Init(void)
+ 		Enable Timer0 interrupt request
+		Enable global interrupts
+	End Interrupt_Init
+
+	void Timer0_Init(void)
+		Set Timer0 to use SYSCLK as source
+		Clear 4 least significant bits
+		Set Timer0 in mode 1
+		Stop Timer0
+		Clear high and low byte of Timer 0
+	End Timer0_Init
+
+	void ADC1_Init(void
+		set up voltage reference
+		enable ADC1
+		set gain
+	End ADC1_Init
+
+	void Timer0_ISR(void)
+		Increment the global variable counts
+	End Timer0_ISR
+
+	unsigned char random(void)
+		Obtain a random integer between 0 and 1
+	End random

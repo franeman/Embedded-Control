@@ -1,0 +1,3 @@
+?ASlink-Error-<cannot open> : "C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 2\lab2.rel"
++ C:\PROGRA~1\SDCC\bin\sdld.exe -nf "C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_2\Lab2_2.lk"
++ C:\PROGRA~1\SDCC\bin\sdld.exe -nf "C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_2\Lab2_2.lk" returned errorcode 3
