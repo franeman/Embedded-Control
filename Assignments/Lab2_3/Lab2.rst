@@ -935,71 +935,71 @@
                                     935 ;--------------------------------------------------------
                                     936 	.area DSEG    (DATA)
                            000000   937 G$counts$0$0==.
-      000000                        938 _counts::
-      000000                        939 	.ds 2
+      000022                        938 _counts::
+      000022                        939 	.ds 2
                            000002   940 G$var$0$0==.
-      000002                        941 _var::
-      000002                        942 	.ds 2
+      000024                        941 _var::
+      000024                        942 	.ds 2
                            000004   943 G$round$0$0==.
-      000004                        944 _round::
-      000004                        945 	.ds 2
+      000026                        944 _round::
+      000026                        945 	.ds 2
                            000006   946 G$points$0$0==.
-      000006                        947 _points::
-      000006                        948 	.ds 2
+      000028                        947 _points::
+      000028                        948 	.ds 2
                            000008   949 G$totalPoints$0$0==.
-      000008                        950 _totalPoints::
-      000008                        951 	.ds 2
+      00002A                        950 _totalPoints::
+      00002A                        951 	.ds 2
                            00000A   952 G$randomNumber$0$0==.
-      00000A                        953 _randomNumber::
-      00000A                        954 	.ds 2
+      00002C                        953 _randomNumber::
+      00002C                        954 	.ds 2
                            00000C   955 G$length$0$0==.
-      00000C                        956 _length::
-      00000C                        957 	.ds 1
+      00002E                        956 _length::
+      00002E                        957 	.ds 1
                            00000D   958 G$ADC_value$0$0==.
-      00000D                        959 _ADC_value::
-      00000D                        960 	.ds 2
+      00002F                        959 _ADC_value::
+      00002F                        960 	.ds 2
                            00000F   961 G$error$0$0==.
-      00000F                        962 _error::
-      00000F                        963 	.ds 2
+      000031                        962 _error::
+      000031                        963 	.ds 2
                            000011   964 G$scaledValue$0$0==.
-      000011                        965 _scaledValue::
-      000011                        966 	.ds 2
+      000033                        965 _scaledValue::
+      000033                        966 	.ds 2
                            000013   967 G$score$0$0==.
-      000013                        968 _score::
-      000013                        969 	.ds 2
+      000035                        968 _score::
+      000035                        969 	.ds 2
                            000015   970 G$buttonPresses$0$0==.
-      000015                        971 _buttonPresses::
-      000015                        972 	.ds 2
+      000037                        971 _buttonPresses::
+      000037                        972 	.ds 2
                            000017   973 G$tmpCount$0$0==.
-      000017                        974 _tmpCount::
-      000017                        975 	.ds 2
+      000039                        974 _tmpCount::
+      000039                        975 	.ds 2
                            000019   976 G$overflows$0$0==.
-      000019                        977 _overflows::
-      000019                        978 	.ds 10
+      00003B                        977 _overflows::
+      00003B                        978 	.ds 10
                            000023   979 G$numLEDs$0$0==.
-      000023                        980 _numLEDs::
-      000023                        981 	.ds 2
+      000045                        980 _numLEDs::
+      000045                        981 	.ds 2
                            000025   982 G$tries$0$0==.
-      000025                        983 _tries::
-      000025                        984 	.ds 2
+      000047                        983 _tries::
+      000047                        984 	.ds 2
                            000027   985 LLab2.aligned_alloc$size$1$39==.
-      000027                        986 _aligned_alloc_PARM_2:
-      000027                        987 	.ds 2
+      000049                        986 _aligned_alloc_PARM_2:
+      000049                        987 	.ds 2
                            000029   988 LLab2.Compare_Answer$randomNumber$1$90==.
-      000029                        989 _Compare_Answer_PARM_2:
-      000029                        990 	.ds 1
+      00004B                        989 _Compare_Answer_PARM_2:
+      00004B                        990 	.ds 1
                            00002A   991 LLab2.SetAllLEDs$sloc0$1$0==.
-      00002A                        992 _SetAllLEDs_sloc0_1_0:
-      00002A                        993 	.ds 1
+      00004C                        992 _SetAllLEDs_sloc0_1_0:
+      00004C                        993 	.ds 1
                            00002B   994 LLab2.MapADC$low$1$167==.
-      00002B                        995 _MapADC_PARM_2:
-      00002B                        996 	.ds 1
+      00004D                        995 _MapADC_PARM_2:
+      00004D                        996 	.ds 1
                            00002C   997 LLab2.MapADC$high$1$167==.
-      00002C                        998 _MapADC_PARM_3:
-      00002C                        999 	.ds 1
+      00004E                        998 _MapADC_PARM_3:
+      00004E                        999 	.ds 1
                            00002D  1000 LLab2.CompareVals$expected$1$184==.
-      00002D                       1001 _CompareVals_PARM_2:
-      00002D                       1002 	.ds 1
+      00004F                       1001 _CompareVals_PARM_2:
+      00004F                       1002 	.ds 1
                                    1003 ;--------------------------------------------------------
                                    1004 ; overlayable items in internal ram 
                                    1005 ;--------------------------------------------------------
@@ -1007,8 +1007,8 @@
                                    1007 	.area	OSEG    (OVR,DATA)
                                    1008 	.area	OSEG    (OVR,DATA)
                            000000  1009 LLab2.Pot_Scaling$mode$1$86==.
-      000000                       1010 _Pot_Scaling_PARM_2:
-      000000                       1011 	.ds 1
+      00000E                       1010 _Pot_Scaling_PARM_2:
+      00000E                       1011 	.ds 1
                                    1012 	.area	OSEG    (OVR,DATA)
                                    1013 	.area	OSEG    (OVR,DATA)
                                    1014 	.area	OSEG    (OVR,DATA)
@@ -1016,8 +1016,8 @@
                                    1016 ; Stack segment in internal ram 
                                    1017 ;--------------------------------------------------------
                                    1018 	.area	SSEG
-      000000                       1019 __start__stack:
-      000000                       1020 	.ds	1
+      00006A                       1019 __start__stack:
+      00006A                       1020 	.ds	1
                                    1021 
                                    1022 ;--------------------------------------------------------
                                    1023 ; indirectly addressable internal ram data
@@ -1063,10 +1063,10 @@
                                    1063 ;--------------------------------------------------------
                                    1064 	.area HOME    (CODE)
       000000                       1065 __interrupt_vect:
-      000000 02r00r00         [24] 1066 	ljmp	__sdcc_gsinit_startup
+      000000 02 00 11         [24] 1066 	ljmp	__sdcc_gsinit_startup
       000003 32               [24] 1067 	reti
       000004                       1068 	.ds	7
-      00000B 02r0Br54         [24] 1069 	ljmp	_Timer0_ISR
+      00000B 02 0B EE         [24] 1069 	ljmp	_Timer0_ISR
                                    1070 ;--------------------------------------------------------
                                    1071 ; global & static initialisations
                                    1072 ;--------------------------------------------------------
@@ -1082,30 +1082,30 @@
                                    1082 	.globl __mcs51_genRAMCLEAR
                            000000  1083 	C$Lab2.c$50$1$185 ==.
                                    1084 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:50: unsigned int counts = 0;
-      000000 E4               [12] 1085 	clr	a
-      000001 F5*00            [12] 1086 	mov	_counts,a
-      000003 F5*01            [12] 1087 	mov	(_counts + 1),a
+      00006A E4               [12] 1085 	clr	a
+      00006B F5 22            [12] 1086 	mov	_counts,a
+      00006D F5 23            [12] 1087 	mov	(_counts + 1),a
                            000005  1088 	C$Lab2.c$63$1$185 ==.
                                    1089 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:63: int overflows[5] = {508,457,413,372,339}; // create an array that hold overflows values for 1.5, 1.35, 1.22, 1.1, and 1 second respectively;
-      000005 75*19 FC         [24] 1090 	mov	(_overflows + 0),#0xfc
-      000008 75*1A 01         [24] 1091 	mov	(_overflows + 1),#0x01
-      00000B 75*1B C9         [24] 1092 	mov	((_overflows + 0x0002) + 0),#0xc9
-      00000E 75*1C 01         [24] 1093 	mov	((_overflows + 0x0002) + 1),#0x01
-      000011 75*1D 9D         [24] 1094 	mov	((_overflows + 0x0004) + 0),#0x9d
-      000014 75*1E 01         [24] 1095 	mov	((_overflows + 0x0004) + 1),#0x01
-      000017 75*1F 74         [24] 1096 	mov	((_overflows + 0x0006) + 0),#0x74
-      00001A 75*20 01         [24] 1097 	mov	((_overflows + 0x0006) + 1),#0x01
-      00001D 75*21 53         [24] 1098 	mov	((_overflows + 0x0008) + 0),#0x53
-      000020 75*22 01         [24] 1099 	mov	((_overflows + 0x0008) + 1),#0x01
+      00006F 75 3B FC         [24] 1090 	mov	(_overflows + 0),#0xfc
+      000072 75 3C 01         [24] 1091 	mov	(_overflows + 1),#0x01
+      000075 75 3D C9         [24] 1092 	mov	((_overflows + 0x0002) + 0),#0xc9
+      000078 75 3E 01         [24] 1093 	mov	((_overflows + 0x0002) + 1),#0x01
+      00007B 75 3F 9D         [24] 1094 	mov	((_overflows + 0x0004) + 0),#0x9d
+      00007E 75 40 01         [24] 1095 	mov	((_overflows + 0x0004) + 1),#0x01
+      000081 75 41 74         [24] 1096 	mov	((_overflows + 0x0006) + 0),#0x74
+      000084 75 42 01         [24] 1097 	mov	((_overflows + 0x0006) + 1),#0x01
+      000087 75 43 53         [24] 1098 	mov	((_overflows + 0x0008) + 0),#0x53
+      00008A 75 44 01         [24] 1099 	mov	((_overflows + 0x0008) + 1),#0x01
                                    1100 	.area GSFINAL (CODE)
-      000000 02r00r0E         [24] 1101 	ljmp	__sdcc_program_startup
+      000097 02 00 0E         [24] 1101 	ljmp	__sdcc_program_startup
                                    1102 ;--------------------------------------------------------
                                    1103 ; Home
                                    1104 ;--------------------------------------------------------
                                    1105 	.area HOME    (CODE)
                                    1106 	.area HOME    (CODE)
       00000E                       1107 __sdcc_program_startup:
-      00000E 02r00r7B         [24] 1108 	ljmp	_main
+      00000E 02 01 15         [24] 1108 	ljmp	_main
                                    1109 ;	return from main will return to caller
                                    1110 ;--------------------------------------------------------
                                    1111 ; code
@@ -1122,7 +1122,7 @@
                                    1122 ;	-----------------------------------------
                                    1123 ;	 function SYSCLK_Init
                                    1124 ;	-----------------------------------------
-      000000                       1125 _SYSCLK_Init:
+      00009A                       1125 _SYSCLK_Init:
                            000007  1126 	ar7 = 0x07
                            000006  1127 	ar6 = 0x06
                            000005  1128 	ar5 = 0x05
@@ -1133,34 +1133,34 @@
                            000000  1133 	ar0 = 0x00
                            000000  1134 	C$c8051_SDCC.h$66$1$2 ==.
                                    1135 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:66: OSCXCN = 0x67;                      // start external oscillator with
-      000000 75 B1 67         [24] 1136 	mov	_OSCXCN,#0x67
+      00009A 75 B1 67         [24] 1136 	mov	_OSCXCN,#0x67
                            000003  1137 	C$c8051_SDCC.h$69$1$2 ==.
                                    1138 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:69: for (i=0; i < 256; i++);            // wait for oscillator to start
-      000003 7E 00            [12] 1139 	mov	r6,#0x00
-      000005 7F 01            [12] 1140 	mov	r7,#0x01
-      000007                       1141 00107$:
-      000007 EE               [12] 1142 	mov	a,r6
-      000008 24 FF            [12] 1143 	add	a,#0xff
-      00000A FC               [12] 1144 	mov	r4,a
-      00000B EF               [12] 1145 	mov	a,r7
-      00000C 34 FF            [12] 1146 	addc	a,#0xff
-      00000E FD               [12] 1147 	mov	r5,a
-      00000F 8C 06            [24] 1148 	mov	ar6,r4
-      000011 8D 07            [24] 1149 	mov	ar7,r5
-      000013 EC               [12] 1150 	mov	a,r4
-      000014 4D               [12] 1151 	orl	a,r5
-      000015 70 F0            [24] 1152 	jnz	00107$
+      00009D 7E 00            [12] 1139 	mov	r6,#0x00
+      00009F 7F 01            [12] 1140 	mov	r7,#0x01
+      0000A1                       1141 00107$:
+      0000A1 EE               [12] 1142 	mov	a,r6
+      0000A2 24 FF            [12] 1143 	add	a,#0xff
+      0000A4 FC               [12] 1144 	mov	r4,a
+      0000A5 EF               [12] 1145 	mov	a,r7
+      0000A6 34 FF            [12] 1146 	addc	a,#0xff
+      0000A8 FD               [12] 1147 	mov	r5,a
+      0000A9 8C 06            [24] 1148 	mov	ar6,r4
+      0000AB 8D 07            [24] 1149 	mov	ar7,r5
+      0000AD EC               [12] 1150 	mov	a,r4
+      0000AE 4D               [12] 1151 	orl	a,r5
+      0000AF 70 F0            [24] 1152 	jnz	00107$
                            000017  1153 	C$c8051_SDCC.h$71$1$2 ==.
                                    1154 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:71: while (!(OSCXCN & 0x80));           // Wait for crystal osc. to settle
-      000017                       1155 00102$:
-      000017 E5 B1            [12] 1156 	mov	a,_OSCXCN
-      000019 30 E7 FB         [24] 1157 	jnb	acc.7,00102$
+      0000B1                       1155 00102$:
+      0000B1 E5 B1            [12] 1156 	mov	a,_OSCXCN
+      0000B3 30 E7 FB         [24] 1157 	jnb	acc.7,00102$
                            00001C  1158 	C$c8051_SDCC.h$73$1$2 ==.
                                    1159 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:73: OSCICN = 0x88;                      // select external oscillator as SYSCLK
-      00001C 75 B2 88         [24] 1160 	mov	_OSCICN,#0x88
+      0000B6 75 B2 88         [24] 1160 	mov	_OSCICN,#0x88
                            00001F  1161 	C$c8051_SDCC.h$76$1$2 ==.
                            00001F  1162 	XG$SYSCLK_Init$0$0 ==.
-      00001F 22               [24] 1163 	ret
+      0000B9 22               [24] 1163 	ret
                                    1164 ;------------------------------------------------------------
                                    1165 ;Allocation info for local variables in function 'UART0_Init'
                                    1166 ;------------------------------------------------------------
@@ -1170,34 +1170,34 @@
                                    1170 ;	-----------------------------------------
                                    1171 ;	 function UART0_Init
                                    1172 ;	-----------------------------------------
-      000020                       1173 _UART0_Init:
+      0000BA                       1173 _UART0_Init:
                            000020  1174 	C$c8051_SDCC.h$86$1$4 ==.
                                    1175 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:86: SCON0  = 0x50;                      // SCON0: mode 1, 8-bit UART, enable RX
-      000020 75 98 50         [24] 1176 	mov	_SCON0,#0x50
+      0000BA 75 98 50         [24] 1176 	mov	_SCON0,#0x50
                            000023  1177 	C$c8051_SDCC.h$87$1$4 ==.
                                    1178 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:87: TMOD   = 0x20;                      // TMOD: timer 1, mode 2, 8-bit reload
-      000023 75 89 20         [24] 1179 	mov	_TMOD,#0x20
+      0000BD 75 89 20         [24] 1179 	mov	_TMOD,#0x20
                            000026  1180 	C$c8051_SDCC.h$88$1$4 ==.
                                    1181 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:88: TH1    = 0xFF&-(SYSCLK/BAUDRATE/16);     // set Timer1 reload value for baudrate
-      000026 75 8D DC         [24] 1182 	mov	_TH1,#0xdc
+      0000C0 75 8D DC         [24] 1182 	mov	_TH1,#0xdc
                            000029  1183 	C$c8051_SDCC.h$89$1$4 ==.
                                    1184 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:89: TR1    = 1;                         // start Timer1
-      000029 D2 8E            [12] 1185 	setb	_TR1
+      0000C3 D2 8E            [12] 1185 	setb	_TR1
                            00002B  1186 	C$c8051_SDCC.h$90$1$4 ==.
                                    1187 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:90: CKCON |= 0x10;                      // Timer1 uses SYSCLK as time base
-      00002B 43 8E 10         [24] 1188 	orl	_CKCON,#0x10
+      0000C5 43 8E 10         [24] 1188 	orl	_CKCON,#0x10
                            00002E  1189 	C$c8051_SDCC.h$91$1$4 ==.
                                    1190 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:91: PCON  |= 0x80;                      // SMOD00 = 1 (disable baud rate 
-      00002E 43 87 80         [24] 1191 	orl	_PCON,#0x80
+      0000C8 43 87 80         [24] 1191 	orl	_PCON,#0x80
                            000031  1192 	C$c8051_SDCC.h$93$1$4 ==.
                                    1193 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:93: TI0    = 1;                         // Indicate TX0 ready
-      000031 D2 99            [12] 1194 	setb	_TI0
+      0000CB D2 99            [12] 1194 	setb	_TI0
                            000033  1195 	C$c8051_SDCC.h$94$1$4 ==.
                                    1196 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:94: P0MDOUT |= 0x01;                    // Set TX0 to push/pull
-      000033 43 A4 01         [24] 1197 	orl	_P0MDOUT,#0x01
+      0000CD 43 A4 01         [24] 1197 	orl	_P0MDOUT,#0x01
                            000036  1198 	C$c8051_SDCC.h$95$1$4 ==.
                            000036  1199 	XG$UART0_Init$0$0 ==.
-      000036 22               [24] 1200 	ret
+      0000D0 22               [24] 1200 	ret
                                    1201 ;------------------------------------------------------------
                                    1202 ;Allocation info for local variables in function 'Sys_Init'
                                    1203 ;------------------------------------------------------------
@@ -1207,28 +1207,28 @@
                                    1207 ;	-----------------------------------------
                                    1208 ;	 function Sys_Init
                                    1209 ;	-----------------------------------------
-      000037                       1210 _Sys_Init:
+      0000D1                       1210 _Sys_Init:
                            000037  1211 	C$c8051_SDCC.h$105$1$6 ==.
                                    1212 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:105: WDTCN = 0xde;			// disable watchdog timer
-      000037 75 FF DE         [24] 1213 	mov	_WDTCN,#0xde
+      0000D1 75 FF DE         [24] 1213 	mov	_WDTCN,#0xde
                            00003A  1214 	C$c8051_SDCC.h$106$1$6 ==.
                                    1215 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:106: WDTCN = 0xad;
-      00003A 75 FF AD         [24] 1216 	mov	_WDTCN,#0xad
+      0000D4 75 FF AD         [24] 1216 	mov	_WDTCN,#0xad
                            00003D  1217 	C$c8051_SDCC.h$108$1$6 ==.
                                    1218 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:108: SYSCLK_Init();			// initialize oscillator
-      00003D 12r00r00         [24] 1219 	lcall	_SYSCLK_Init
+      0000D7 12 00 9A         [24] 1219 	lcall	_SYSCLK_Init
                            000040  1220 	C$c8051_SDCC.h$109$1$6 ==.
                                    1221 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:109: UART0_Init();			// initialize UART0
-      000040 12r00r20         [24] 1222 	lcall	_UART0_Init
+      0000DA 12 00 BA         [24] 1222 	lcall	_UART0_Init
                            000043  1223 	C$c8051_SDCC.h$111$1$6 ==.
                                    1224 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:111: XBR0 |= 0x04;
-      000043 43 E1 04         [24] 1225 	orl	_XBR0,#0x04
+      0000DD 43 E1 04         [24] 1225 	orl	_XBR0,#0x04
                            000046  1226 	C$c8051_SDCC.h$112$1$6 ==.
                                    1227 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:112: XBR2 |= 0x40;                    	// Enable crossbar and weak pull-ups
-      000046 43 E3 40         [24] 1228 	orl	_XBR2,#0x40
+      0000E0 43 E3 40         [24] 1228 	orl	_XBR2,#0x40
                            000049  1229 	C$c8051_SDCC.h$113$1$6 ==.
                            000049  1230 	XG$Sys_Init$0$0 ==.
-      000049 22               [24] 1231 	ret
+      0000E3 22               [24] 1231 	ret
                                    1232 ;------------------------------------------------------------
                                    1233 ;Allocation info for local variables in function 'putchar'
                                    1234 ;------------------------------------------------------------
@@ -1240,22 +1240,22 @@
                                    1240 ;	-----------------------------------------
                                    1241 ;	 function putchar
                                    1242 ;	-----------------------------------------
-      00004A                       1243 _putchar:
-      00004A AF 82            [24] 1244 	mov	r7,dpl
+      0000E4                       1243 _putchar:
+      0000E4 AF 82            [24] 1244 	mov	r7,dpl
                            00004C  1245 	C$c8051_SDCC.h$132$1$8 ==.
                                    1246 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:132: while (!TI0); 
-      00004C                       1247 00101$:
+      0000E6                       1247 00101$:
                            00004C  1248 	C$c8051_SDCC.h$133$1$8 ==.
                                    1249 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:133: TI0 = 0;
-      00004C 10 99 02         [24] 1250 	jbc	_TI0,00112$
-      00004F 80 FB            [24] 1251 	sjmp	00101$
-      000051                       1252 00112$:
+      0000E6 10 99 02         [24] 1250 	jbc	_TI0,00112$
+      0000E9 80 FB            [24] 1251 	sjmp	00101$
+      0000EB                       1252 00112$:
                            000051  1253 	C$c8051_SDCC.h$134$1$8 ==.
                                    1254 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:134: SBUF0 = c;
-      000051 8F 99            [24] 1255 	mov	_SBUF0,r7
+      0000EB 8F 99            [24] 1255 	mov	_SBUF0,r7
                            000053  1256 	C$c8051_SDCC.h$135$1$8 ==.
                            000053  1257 	XG$putchar$0$0 ==.
-      000053 22               [24] 1258 	ret
+      0000ED 22               [24] 1258 	ret
                                    1259 ;------------------------------------------------------------
                                    1260 ;Allocation info for local variables in function 'getchar'
                                    1261 ;------------------------------------------------------------
@@ -1267,30 +1267,30 @@
                                    1267 ;	-----------------------------------------
                                    1268 ;	 function getchar
                                    1269 ;	-----------------------------------------
-      000054                       1270 _getchar:
+      0000EE                       1270 _getchar:
                            000054  1271 	C$c8051_SDCC.h$157$1$10 ==.
                                    1272 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:157: while (!RI0);
-      000054                       1273 00101$:
+      0000EE                       1273 00101$:
                            000054  1274 	C$c8051_SDCC.h$158$1$10 ==.
                                    1275 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:158: RI0 = 0;
-      000054 10 98 02         [24] 1276 	jbc	_RI0,00112$
-      000057 80 FB            [24] 1277 	sjmp	00101$
-      000059                       1278 00112$:
+      0000EE 10 98 02         [24] 1276 	jbc	_RI0,00112$
+      0000F1 80 FB            [24] 1277 	sjmp	00101$
+      0000F3                       1278 00112$:
                            000059  1279 	C$c8051_SDCC.h$159$1$10 ==.
                                    1280 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:159: c = SBUF0;
-      000059 AF 99            [24] 1281 	mov	r7,_SBUF0
+      0000F3 AF 99            [24] 1281 	mov	r7,_SBUF0
                            00005B  1282 	C$c8051_SDCC.h$160$1$10 ==.
                                    1283 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:160: putchar(c);                          // echo to terminal
-      00005B 8F 82            [24] 1284 	mov	dpl,r7
-      00005D C0 07            [24] 1285 	push	ar7
-      00005F 12r00r4A         [24] 1286 	lcall	_putchar
-      000062 D0 07            [24] 1287 	pop	ar7
+      0000F5 8F 82            [24] 1284 	mov	dpl,r7
+      0000F7 C0 07            [24] 1285 	push	ar7
+      0000F9 12 00 E4         [24] 1286 	lcall	_putchar
+      0000FC D0 07            [24] 1287 	pop	ar7
                            000064  1288 	C$c8051_SDCC.h$161$1$10 ==.
                                    1289 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:161: return c;
-      000064 8F 82            [24] 1290 	mov	dpl,r7
+      0000FE 8F 82            [24] 1290 	mov	dpl,r7
                            000066  1291 	C$c8051_SDCC.h$162$1$10 ==.
                            000066  1292 	XG$getchar$0$0 ==.
-      000066 22               [24] 1293 	ret
+      000100 22               [24] 1293 	ret
                                    1294 ;------------------------------------------------------------
                                    1295 ;Allocation info for local variables in function 'getchar_nw'
                                    1296 ;------------------------------------------------------------
@@ -1302,29 +1302,29 @@
                                    1302 ;	-----------------------------------------
                                    1303 ;	 function getchar_nw
                                    1304 ;	-----------------------------------------
-      000067                       1305 _getchar_nw:
+      000101                       1305 _getchar_nw:
                            000067  1306 	C$c8051_SDCC.h$171$1$12 ==.
                                    1307 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:171: if (!RI0) return 0xFF;
-      000067 20 98 05         [24] 1308 	jb	_RI0,00102$
-      00006A 75 82 FF         [24] 1309 	mov	dpl,#0xff
-      00006D 80 0B            [24] 1310 	sjmp	00104$
-      00006F                       1311 00102$:
+      000101 20 98 05         [24] 1308 	jb	_RI0,00102$
+      000104 75 82 FF         [24] 1309 	mov	dpl,#0xff
+      000107 80 0B            [24] 1310 	sjmp	00104$
+      000109                       1311 00102$:
                            00006F  1312 	C$c8051_SDCC.h$174$2$13 ==.
                                    1313 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:174: RI0 = 0;
-      00006F C2 98            [12] 1314 	clr	_RI0
+      000109 C2 98            [12] 1314 	clr	_RI0
                            000071  1315 	C$c8051_SDCC.h$175$2$13 ==.
                                    1316 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:175: c = SBUF0;
-      000071 85 99 82         [24] 1317 	mov	dpl,_SBUF0
+      00010B 85 99 82         [24] 1317 	mov	dpl,_SBUF0
                            000074  1318 	C$c8051_SDCC.h$176$2$13 ==.
                                    1319 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:176: putchar(c);                          // echo to terminal
-      000074 12r00r4A         [24] 1320 	lcall	_putchar
+      00010E 12 00 E4         [24] 1320 	lcall	_putchar
                            000077  1321 	C$c8051_SDCC.h$177$2$13 ==.
                                    1322 ;	C:/Program Files/SDCC/bin/../include/mcs51/c8051_SDCC.h:177: return SBUF0;
-      000077 85 99 82         [24] 1323 	mov	dpl,_SBUF0
-      00007A                       1324 00104$:
+      000111 85 99 82         [24] 1323 	mov	dpl,_SBUF0
+      000114                       1324 00104$:
                            00007A  1325 	C$c8051_SDCC.h$179$1$12 ==.
                            00007A  1326 	XG$getchar_nw$0$0 ==.
-      00007A 22               [24] 1327 	ret
+      000114 22               [24] 1327 	ret
                                    1328 ;------------------------------------------------------------
                                    1329 ;Allocation info for local variables in function 'main'
                                    1330 ;------------------------------------------------------------
@@ -1334,154 +1334,154 @@
                                    1334 ;	-----------------------------------------
                                    1335 ;	 function main
                                    1336 ;	-----------------------------------------
-      00007B                       1337 _main:
+      000115                       1337 _main:
                            00007B  1338 	C$Lab2.c$70$1$69 ==.
                                    1339 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:70: Sys_Init();      // System Initialization
-      00007B 12r00r37         [24] 1340 	lcall	_Sys_Init
+      000115 12 00 D1         [24] 1340 	lcall	_Sys_Init
                            00007E  1341 	C$Lab2.c$71$1$69 ==.
                                    1342 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:71: Port_Init();     // Initialize ports 2 and 3 
-      00007E 12r01r46         [24] 1343 	lcall	_Port_Init
+      000118 12 01 E0         [24] 1343 	lcall	_Port_Init
                            000081  1344 	C$Lab2.c$72$1$69 ==.
                                    1345 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:72: Interrupt_Init(); // Initialize interrupts
-      000081 12r01r67         [24] 1346 	lcall	_Interrupt_Init
+      00011B 12 02 01         [24] 1346 	lcall	_Interrupt_Init
                            000084  1347 	C$Lab2.c$73$1$69 ==.
                                    1348 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:73: Timer_Init();    // Initialize Timer 0 
-      000084 12r01r56         [24] 1349 	lcall	_Timer_Init
+      00011E 12 01 F0         [24] 1349 	lcall	_Timer_Init
                            000087  1350 	C$Lab2.c$74$1$69 ==.
                                    1351 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:74: ADC1_Init();	// Initialize ADC1
-      000087 12r01r6D         [24] 1352 	lcall	_ADC1_Init
+      000121 12 02 07         [24] 1352 	lcall	_ADC1_Init
                            00008A  1353 	C$Lab2.c$76$1$69 ==.
                                    1354 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:76: while(1) {
-      00008A                       1355 00131$:
+      000124                       1355 00131$:
                            00008A  1356 	C$Lab2.c$77$2$70 ==.
                                    1357 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:77: printf("\r\n\nSelect a mode using the slide switches.\r\nPress the pushbutton to select a mode, push it again to confirm.");
-      00008A 74r00            [12] 1358 	mov	a,#___str_0
-      00008C C0 E0            [24] 1359 	push	acc
-      00008E 74s00            [12] 1360 	mov	a,#(___str_0 >> 8)
-      000090 C0 E0            [24] 1361 	push	acc
-      000092 74 80            [12] 1362 	mov	a,#0x80
-      000094 C0 E0            [24] 1363 	push	acc
-      000096 12r00r00         [24] 1364 	lcall	_printf
-      000099 15 81            [12] 1365 	dec	sp
-      00009B 15 81            [12] 1366 	dec	sp
-      00009D 15 81            [12] 1367 	dec	sp
+      000124 74 8A            [12] 1358 	mov	a,#___str_0
+      000126 C0 E0            [24] 1359 	push	acc
+      000128 74 18            [12] 1360 	mov	a,#(___str_0 >> 8)
+      00012A C0 E0            [24] 1361 	push	acc
+      00012C 74 80            [12] 1362 	mov	a,#0x80
+      00012E C0 E0            [24] 1363 	push	acc
+      000130 12 10 BA         [24] 1364 	lcall	_printf
+      000133 15 81            [12] 1365 	dec	sp
+      000135 15 81            [12] 1366 	dec	sp
+      000137 15 81            [12] 1367 	dec	sp
                            00009F  1368 	C$Lab2.c$79$2$70 ==.
                                    1369 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:79: TR0 = 1;
-      00009F D2 8C            [12] 1370 	setb	_TR0
+      000139 D2 8C            [12] 1370 	setb	_TR0
                            0000A1  1371 	C$Lab2.c$81$2$70 ==.
                                    1372 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:81: while(DebounceButton()==0);
-      0000A1                       1373 00101$:
-      0000A1 12r0CrA7         [24] 1374 	lcall	_DebounceButton
-      0000A4 E5 82            [12] 1375 	mov	a,dpl
-      0000A6 60 F9            [24] 1376 	jz	00101$
+      00013B                       1373 00101$:
+      00013B 12 0D 41         [24] 1374 	lcall	_DebounceButton
+      00013E E5 82            [12] 1375 	mov	a,dpl
+      000140 60 F9            [24] 1376 	jz	00101$
                            0000A8  1377 	C$Lab2.c$83$4$75 ==.
                                    1378 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:83: do{
-      0000A8                       1379 00116$:
+      000142                       1379 00116$:
                            0000A8  1380 	C$Lab2.c$84$3$71 ==.
                                    1381 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:84: if (!SS0 && SS1) {
-      0000A8 20 A0 1A         [24] 1382 	jb	_SS0,00113$
-      0000AB 30 A1 17         [24] 1383 	jnb	_SS1,00113$
+      000142 20 A0 1A         [24] 1382 	jb	_SS0,00113$
+      000145 30 A1 17         [24] 1383 	jnb	_SS1,00113$
                            0000AE  1384 	C$Lab2.c$85$4$72 ==.
                                    1385 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:85: printf("\r\nMode 1: Slide switch 1 is ON, slide switch 2 is OFF");
-      0000AE 74r6D            [12] 1386 	mov	a,#___str_1
-      0000B0 C0 E0            [24] 1387 	push	acc
-      0000B2 74s00            [12] 1388 	mov	a,#(___str_1 >> 8)
-      0000B4 C0 E0            [24] 1389 	push	acc
-      0000B6 74 80            [12] 1390 	mov	a,#0x80
-      0000B8 C0 E0            [24] 1391 	push	acc
-      0000BA 12r00r00         [24] 1392 	lcall	_printf
-      0000BD 15 81            [12] 1393 	dec	sp
-      0000BF 15 81            [12] 1394 	dec	sp
-      0000C1 15 81            [12] 1395 	dec	sp
-      0000C3 80 4F            [24] 1396 	sjmp	00117$
-      0000C5                       1397 00113$:
+      000148 74 F7            [12] 1386 	mov	a,#___str_1
+      00014A C0 E0            [24] 1387 	push	acc
+      00014C 74 18            [12] 1388 	mov	a,#(___str_1 >> 8)
+      00014E C0 E0            [24] 1389 	push	acc
+      000150 74 80            [12] 1390 	mov	a,#0x80
+      000152 C0 E0            [24] 1391 	push	acc
+      000154 12 10 BA         [24] 1392 	lcall	_printf
+      000157 15 81            [12] 1393 	dec	sp
+      000159 15 81            [12] 1394 	dec	sp
+      00015B 15 81            [12] 1395 	dec	sp
+      00015D 80 4F            [24] 1396 	sjmp	00117$
+      00015F                       1397 00113$:
                            0000C5  1398 	C$Lab2.c$88$3$71 ==.
                                    1399 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:88: else if (SS0 && !SS1) {
-      0000C5 30 A0 1A         [24] 1400 	jnb	_SS0,00109$
-      0000C8 20 A1 17         [24] 1401 	jb	_SS1,00109$
+      00015F 30 A0 1A         [24] 1400 	jnb	_SS0,00109$
+      000162 20 A1 17         [24] 1401 	jb	_SS1,00109$
                            0000CB  1402 	C$Lab2.c$89$4$73 ==.
                                    1403 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:89: printf("\r\nMode 2: Slide switch 1 is OFF, slide switch 2 is ON");
-      0000CB 74rA3            [12] 1404 	mov	a,#___str_2
-      0000CD C0 E0            [24] 1405 	push	acc
-      0000CF 74s00            [12] 1406 	mov	a,#(___str_2 >> 8)
-      0000D1 C0 E0            [24] 1407 	push	acc
-      0000D3 74 80            [12] 1408 	mov	a,#0x80
-      0000D5 C0 E0            [24] 1409 	push	acc
-      0000D7 12r00r00         [24] 1410 	lcall	_printf
-      0000DA 15 81            [12] 1411 	dec	sp
-      0000DC 15 81            [12] 1412 	dec	sp
-      0000DE 15 81            [12] 1413 	dec	sp
-      0000E0 80 32            [24] 1414 	sjmp	00117$
-      0000E2                       1415 00109$:
+      000165 74 2D            [12] 1404 	mov	a,#___str_2
+      000167 C0 E0            [24] 1405 	push	acc
+      000169 74 19            [12] 1406 	mov	a,#(___str_2 >> 8)
+      00016B C0 E0            [24] 1407 	push	acc
+      00016D 74 80            [12] 1408 	mov	a,#0x80
+      00016F C0 E0            [24] 1409 	push	acc
+      000171 12 10 BA         [24] 1410 	lcall	_printf
+      000174 15 81            [12] 1411 	dec	sp
+      000176 15 81            [12] 1412 	dec	sp
+      000178 15 81            [12] 1413 	dec	sp
+      00017A 80 32            [24] 1414 	sjmp	00117$
+      00017C                       1415 00109$:
                            0000E2  1416 	C$Lab2.c$92$3$71 ==.
                                    1417 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:92: else if (!SS0 && !SS1) {
-      0000E2 20 A0 1A         [24] 1418 	jb	_SS0,00105$
-      0000E5 20 A1 17         [24] 1419 	jb	_SS1,00105$
+      00017C 20 A0 1A         [24] 1418 	jb	_SS0,00105$
+      00017F 20 A1 17         [24] 1419 	jb	_SS1,00105$
                            0000E8  1420 	C$Lab2.c$93$4$74 ==.
                                    1421 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:93: printf("\r\nMode 3: Slide switch 1 is ON, slide switch 2 is ON");
-      0000E8 74rD9            [12] 1422 	mov	a,#___str_3
-      0000EA C0 E0            [24] 1423 	push	acc
-      0000EC 74s00            [12] 1424 	mov	a,#(___str_3 >> 8)
-      0000EE C0 E0            [24] 1425 	push	acc
-      0000F0 74 80            [12] 1426 	mov	a,#0x80
-      0000F2 C0 E0            [24] 1427 	push	acc
-      0000F4 12r00r00         [24] 1428 	lcall	_printf
-      0000F7 15 81            [12] 1429 	dec	sp
-      0000F9 15 81            [12] 1430 	dec	sp
-      0000FB 15 81            [12] 1431 	dec	sp
-      0000FD 80 15            [24] 1432 	sjmp	00117$
-      0000FF                       1433 00105$:
+      000182 74 63            [12] 1422 	mov	a,#___str_3
+      000184 C0 E0            [24] 1423 	push	acc
+      000186 74 19            [12] 1424 	mov	a,#(___str_3 >> 8)
+      000188 C0 E0            [24] 1425 	push	acc
+      00018A 74 80            [12] 1426 	mov	a,#0x80
+      00018C C0 E0            [24] 1427 	push	acc
+      00018E 12 10 BA         [24] 1428 	lcall	_printf
+      000191 15 81            [12] 1429 	dec	sp
+      000193 15 81            [12] 1430 	dec	sp
+      000195 15 81            [12] 1431 	dec	sp
+      000197 80 15            [24] 1432 	sjmp	00117$
+      000199                       1433 00105$:
                            0000FF  1434 	C$Lab2.c$97$4$75 ==.
                                    1435 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:97: printf("\r\nOFF: Slide switch 1 is OFF, slide switch 2 is OFF");
-      0000FF 74r0E            [12] 1436 	mov	a,#___str_4
-      000101 C0 E0            [24] 1437 	push	acc
-      000103 74s01            [12] 1438 	mov	a,#(___str_4 >> 8)
-      000105 C0 E0            [24] 1439 	push	acc
-      000107 74 80            [12] 1440 	mov	a,#0x80
-      000109 C0 E0            [24] 1441 	push	acc
-      00010B 12r00r00         [24] 1442 	lcall	_printf
-      00010E 15 81            [12] 1443 	dec	sp
-      000110 15 81            [12] 1444 	dec	sp
-      000112 15 81            [12] 1445 	dec	sp
-      000114                       1446 00117$:
+      000199 74 98            [12] 1436 	mov	a,#___str_4
+      00019B C0 E0            [24] 1437 	push	acc
+      00019D 74 19            [12] 1438 	mov	a,#(___str_4 >> 8)
+      00019F C0 E0            [24] 1439 	push	acc
+      0001A1 74 80            [12] 1440 	mov	a,#0x80
+      0001A3 C0 E0            [24] 1441 	push	acc
+      0001A5 12 10 BA         [24] 1442 	lcall	_printf
+      0001A8 15 81            [12] 1443 	dec	sp
+      0001AA 15 81            [12] 1444 	dec	sp
+      0001AC 15 81            [12] 1445 	dec	sp
+      0001AE                       1446 00117$:
                            000114  1447 	C$Lab2.c$99$2$70 ==.
                                    1448 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:99: } while(DebounceButton()==0);
-      000114 12r0CrA7         [24] 1449 	lcall	_DebounceButton
-      000117 E5 82            [12] 1450 	mov	a,dpl
-      000119 60 8D            [24] 1451 	jz	00116$
+      0001AE 12 0D 41         [24] 1449 	lcall	_DebounceButton
+      0001B1 E5 82            [12] 1450 	mov	a,dpl
+      0001B3 60 8D            [24] 1451 	jz	00116$
                            00011B  1452 	C$Lab2.c$103$2$70 ==.
                                    1453 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:103: if (!SS0 && SS1)
-      00011B 20 A0 09         [24] 1454 	jb	_SS0,00127$
-      00011E 30 A1 06         [24] 1455 	jnb	_SS1,00127$
+      0001B5 20 A0 09         [24] 1454 	jb	_SS0,00127$
+      0001B8 30 A1 06         [24] 1455 	jnb	_SS1,00127$
                            000121  1456 	C$Lab2.c$104$2$70 ==.
                                    1457 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:104: Mode_One();
-      000121 12r02r4E         [24] 1458 	lcall	_Mode_One
-      000124 02r00r8A         [24] 1459 	ljmp	00131$
-      000127                       1460 00127$:
+      0001BB 12 02 E8         [24] 1458 	lcall	_Mode_One
+      0001BE 02 01 24         [24] 1459 	ljmp	00131$
+      0001C1                       1460 00127$:
                            000127  1461 	C$Lab2.c$105$2$70 ==.
                                    1462 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:105: else if (SS0 && !SS1)
-      000127 30 A0 09         [24] 1463 	jnb	_SS0,00123$
-      00012A 20 A1 06         [24] 1464 	jb	_SS1,00123$
+      0001C1 30 A0 09         [24] 1463 	jnb	_SS0,00123$
+      0001C4 20 A1 06         [24] 1464 	jb	_SS1,00123$
                            00012D  1465 	C$Lab2.c$106$2$70 ==.
                                    1466 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:106: Mode_Two();
-      00012D 12r06rAA         [24] 1467 	lcall	_Mode_Two
-      000130 02r00r8A         [24] 1468 	ljmp	00131$
-      000133                       1469 00123$:
+      0001C7 12 07 44         [24] 1467 	lcall	_Mode_Two
+      0001CA 02 01 24         [24] 1468 	ljmp	00131$
+      0001CD                       1469 00123$:
                            000133  1470 	C$Lab2.c$107$2$70 ==.
                                    1471 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:107: else if (!SS0 && !SS1)
-      000133 30 A0 03         [24] 1472 	jnb	_SS0,00197$
-      000136 02r00r8A         [24] 1473 	ljmp	00131$
-      000139                       1474 00197$:
-      000139 30 A1 03         [24] 1475 	jnb	_SS1,00198$
-      00013C 02r00r8A         [24] 1476 	ljmp	00131$
-      00013F                       1477 00198$:
+      0001CD 30 A0 03         [24] 1472 	jnb	_SS0,00197$
+      0001D0 02 01 24         [24] 1473 	ljmp	00131$
+      0001D3                       1474 00197$:
+      0001D3 30 A1 03         [24] 1475 	jnb	_SS1,00198$
+      0001D6 02 01 24         [24] 1476 	ljmp	00131$
+      0001D9                       1477 00198$:
                            00013F  1478 	C$Lab2.c$108$2$70 ==.
                                    1479 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:108: Mode_Three();
-      00013F 12r09r43         [24] 1480 	lcall	_Mode_Three
-      000142 02r00r8A         [24] 1481 	ljmp	00131$
+      0001D9 12 09 DD         [24] 1480 	lcall	_Mode_Three
+      0001DC 02 01 24         [24] 1481 	ljmp	00131$
                            000145  1482 	C$Lab2.c$110$1$69 ==.
                            000145  1483 	XG$main$0$0 ==.
-      000145 22               [24] 1484 	ret
+      0001DF 22               [24] 1484 	ret
                                    1485 ;------------------------------------------------------------
                                    1486 ;Allocation info for local variables in function 'Port_Init'
                                    1487 ;------------------------------------------------------------
@@ -1491,25 +1491,25 @@
                                    1491 ;	-----------------------------------------
                                    1492 ;	 function Port_Init
                                    1493 ;	-----------------------------------------
-      000146                       1494 _Port_Init:
+      0001E0                       1494 _Port_Init:
                            000146  1495 	C$Lab2.c$118$1$77 ==.
                                    1496 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:118: P3MDOUT |= 0xFC; // set Port 3 output pins to push-pull mode 
-      000146 43 A7 FC         [24] 1497 	orl	_P3MDOUT,#0xfc
+      0001E0 43 A7 FC         [24] 1497 	orl	_P3MDOUT,#0xfc
                            000149  1498 	C$Lab2.c$119$1$77 ==.
                                    1499 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:119: P3MDOUT &= 0xFE; // set Port 3 input pins to open drain mode
-      000149 53 A7 FE         [24] 1500 	anl	_P3MDOUT,#0xfe
+      0001E3 53 A7 FE         [24] 1500 	anl	_P3MDOUT,#0xfe
                            00014C  1501 	C$Lab2.c$120$1$77 ==.
                                    1502 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:120: P3 |= 0x01; // set Port 3 input pins to high impedance state
-      00014C 43 B0 01         [24] 1503 	orl	_P3,#0x01
+      0001E6 43 B0 01         [24] 1503 	orl	_P3,#0x01
                            00014F  1504 	C$Lab2.c$123$1$77 ==.
                                    1505 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:123: P2MDOUT &= 0xFC; // set Port 2 input pins to open drain mode
-      00014F 53 A6 FC         [24] 1506 	anl	_P2MDOUT,#0xfc
+      0001E9 53 A6 FC         [24] 1506 	anl	_P2MDOUT,#0xfc
                            000152  1507 	C$Lab2.c$124$1$77 ==.
                                    1508 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:124: P2 |= 0x03; // set Port 2 input pins to high impedance state
-      000152 43 A0 03         [24] 1509 	orl	_P2,#0x03
+      0001EC 43 A0 03         [24] 1509 	orl	_P2,#0x03
                            000155  1510 	C$Lab2.c$126$1$77 ==.
                            000155  1511 	XG$Port_Init$0$0 ==.
-      000155 22               [24] 1512 	ret
+      0001EF 22               [24] 1512 	ret
                                    1513 ;------------------------------------------------------------
                                    1514 ;Allocation info for local variables in function 'Timer_Init'
                                    1515 ;------------------------------------------------------------
@@ -1519,27 +1519,27 @@
                                    1519 ;	-----------------------------------------
                                    1520 ;	 function Timer_Init
                                    1521 ;	-----------------------------------------
-      000156                       1522 _Timer_Init:
+      0001F0                       1522 _Timer_Init:
                            000156  1523 	C$Lab2.c$132$1$79 ==.
                                    1524 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:132: CKCON |= 0x08;  // Timer0 uses SYSCLK as source
-      000156 43 8E 08         [24] 1525 	orl	_CKCON,#0x08
+      0001F0 43 8E 08         [24] 1525 	orl	_CKCON,#0x08
                            000159  1526 	C$Lab2.c$133$1$79 ==.
                                    1527 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:133: TMOD &= 0xF0;   // clear the 4 least significant bits
-      000159 53 89 F0         [24] 1528 	anl	_TMOD,#0xf0
+      0001F3 53 89 F0         [24] 1528 	anl	_TMOD,#0xf0
                            00015C  1529 	C$Lab2.c$134$1$79 ==.
                                    1530 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:134: TMOD |= 0x01;   // Timer0 in mode 1 (16-bit)
-      00015C 43 89 01         [24] 1531 	orl	_TMOD,#0x01
+      0001F6 43 89 01         [24] 1531 	orl	_TMOD,#0x01
                            00015F  1532 	C$Lab2.c$135$1$79 ==.
                                    1533 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:135: TR0 = 0;        // Stop Timer0
-      00015F C2 8C            [12] 1534 	clr	_TR0
+      0001F9 C2 8C            [12] 1534 	clr	_TR0
                            000161  1535 	C$Lab2.c$136$1$79 ==.
                                    1536 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:136: TMR0 = 0;       // Clear high & low byte of T0
-      000161 E4               [12] 1537 	clr	a
-      000162 F5 8A            [12] 1538 	mov	((_TMR0 >> 0) & 0xFF),a
-      000164 F5 8C            [12] 1539 	mov	((_TMR0 >> 8) & 0xFF),a
+      0001FB E4               [12] 1537 	clr	a
+      0001FC F5 8A            [12] 1538 	mov	((_TMR0 >> 0) & 0xFF),a
+      0001FE F5 8C            [12] 1539 	mov	((_TMR0 >> 8) & 0xFF),a
                            000166  1540 	C$Lab2.c$138$1$79 ==.
                            000166  1541 	XG$Timer_Init$0$0 ==.
-      000166 22               [24] 1542 	ret
+      000200 22               [24] 1542 	ret
                                    1543 ;------------------------------------------------------------
                                    1544 ;Allocation info for local variables in function 'Interrupt_Init'
                                    1545 ;------------------------------------------------------------
@@ -1549,16 +1549,16 @@
                                    1549 ;	-----------------------------------------
                                    1550 ;	 function Interrupt_Init
                                    1551 ;	-----------------------------------------
-      000167                       1552 _Interrupt_Init:
+      000201                       1552 _Interrupt_Init:
                            000167  1553 	C$Lab2.c$144$1$81 ==.
                                    1554 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:144: IE |= 0x82;      // enable Timer0 Interrupt request (by masking)
-      000167 43 A8 82         [24] 1555 	orl	_IE,#0x82
+      000201 43 A8 82         [24] 1555 	orl	_IE,#0x82
                            00016A  1556 	C$Lab2.c$145$1$81 ==.
                                    1557 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:145: EA = 1;       // enable global interrupts (by sbit)
-      00016A D2 AF            [12] 1558 	setb	_EA
+      000204 D2 AF            [12] 1558 	setb	_EA
                            00016C  1559 	C$Lab2.c$146$1$81 ==.
                            00016C  1560 	XG$Interrupt_Init$0$0 ==.
-      00016C 22               [24] 1561 	ret
+      000206 22               [24] 1561 	ret
                                    1562 ;------------------------------------------------------------
                                    1563 ;Allocation info for local variables in function 'ADC1_Init'
                                    1564 ;------------------------------------------------------------
@@ -1568,37 +1568,37 @@
                                    1568 ;	-----------------------------------------
                                    1569 ;	 function ADC1_Init
                                    1570 ;	-----------------------------------------
-      00016D                       1571 _ADC1_Init:
+      000207                       1571 _ADC1_Init:
                            00016D  1572 	C$Lab2.c$151$1$83 ==.
                                    1573 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:151: P1MDIN &= ~0x01;
-      00016D 53 BD FE         [24] 1574 	anl	_P1MDIN,#0xfe
+      000207 53 BD FE         [24] 1574 	anl	_P1MDIN,#0xfe
                            000170  1575 	C$Lab2.c$152$1$83 ==.
                                    1576 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:152: P1MDOUT &= ~0x01;
-      000170 53 A5 FE         [24] 1577 	anl	_P1MDOUT,#0xfe
+      00020A 53 A5 FE         [24] 1577 	anl	_P1MDOUT,#0xfe
                            000173  1578 	C$Lab2.c$153$1$83 ==.
                                    1579 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:153: P1 |= 0x01;
-      000173 43 90 01         [24] 1580 	orl	_P1,#0x01
+      00020D 43 90 01         [24] 1580 	orl	_P1,#0x01
                            000176  1581 	C$Lab2.c$155$1$83 ==.
                                    1582 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:155: REF0CN = 0x03;
-      000176 75 D1 03         [24] 1583 	mov	_REF0CN,#0x03
+      000210 75 D1 03         [24] 1583 	mov	_REF0CN,#0x03
                            000179  1584 	C$Lab2.c$156$1$83 ==.
                                    1585 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:156: ADC1CF |= 0x01;
-      000179 43 AB 01         [24] 1586 	orl	_ADC1CF,#0x01
+      000213 43 AB 01         [24] 1586 	orl	_ADC1CF,#0x01
                            00017C  1587 	C$Lab2.c$157$1$83 ==.
                                    1588 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:157: ADC1CF &= 0xFD;
-      00017C 53 AB FD         [24] 1589 	anl	_ADC1CF,#0xfd
+      000216 53 AB FD         [24] 1589 	anl	_ADC1CF,#0xfd
                            00017F  1590 	C$Lab2.c$158$1$83 ==.
                                    1591 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:158: ADC1CN = 0x80;
-      00017F 75 AA 80         [24] 1592 	mov	_ADC1CN,#0x80
+      000219 75 AA 80         [24] 1592 	mov	_ADC1CN,#0x80
                            000182  1593 	C$Lab2.c$160$1$83 ==.
                                    1594 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:160: ADC_value = read_AD_input(); // reads initial garbage value
-      000182 12r01r8D         [24] 1595 	lcall	_read_AD_input
-      000185 AF 82            [24] 1596 	mov	r7,dpl
-      000187 8F*0D            [24] 1597 	mov	_ADC_value,r7
-      000189 75*0E 00         [24] 1598 	mov	(_ADC_value + 1),#0x00
+      00021C 12 02 27         [24] 1595 	lcall	_read_AD_input
+      00021F AF 82            [24] 1596 	mov	r7,dpl
+      000221 8F 2F            [24] 1597 	mov	_ADC_value,r7
+      000223 75 30 00         [24] 1598 	mov	(_ADC_value + 1),#0x00
                            00018C  1599 	C$Lab2.c$161$1$83 ==.
                            00018C  1600 	XG$ADC1_Init$0$0 ==.
-      00018C 22               [24] 1601 	ret
+      000226 22               [24] 1601 	ret
                                    1602 ;------------------------------------------------------------
                                    1603 ;Allocation info for local variables in function 'read_AD_input'
                                    1604 ;------------------------------------------------------------
@@ -1608,27 +1608,27 @@
                                    1608 ;	-----------------------------------------
                                    1609 ;	 function read_AD_input
                                    1610 ;	-----------------------------------------
-      00018D                       1611 _read_AD_input:
+      000227                       1611 _read_AD_input:
                            00018D  1612 	C$Lab2.c$166$1$85 ==.
                                    1613 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:166: AMX1SL = 0;
-      00018D 75 AC 00         [24] 1614 	mov	_AMX1SL,#0x00
+      000227 75 AC 00         [24] 1614 	mov	_AMX1SL,#0x00
                            000190  1615 	C$Lab2.c$167$1$85 ==.
                                    1616 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:167: ADC1CN = ADC1CN & ~0x20;
-      000190 53 AA DF         [24] 1617 	anl	_ADC1CN,#0xdf
+      00022A 53 AA DF         [24] 1617 	anl	_ADC1CN,#0xdf
                            000193  1618 	C$Lab2.c$168$1$85 ==.
                                    1619 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:168: ADC1CN = ADC1CN | 0x10;
-      000193 43 AA 10         [24] 1620 	orl	_ADC1CN,#0x10
+      00022D 43 AA 10         [24] 1620 	orl	_ADC1CN,#0x10
                            000196  1621 	C$Lab2.c$169$1$85 ==.
                                    1622 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:169: while ((ADC1CN & 0x20) == 0x00);
-      000196                       1623 00101$:
-      000196 E5 AA            [12] 1624 	mov	a,_ADC1CN
-      000198 30 E5 FB         [24] 1625 	jnb	acc.5,00101$
+      000230                       1623 00101$:
+      000230 E5 AA            [12] 1624 	mov	a,_ADC1CN
+      000232 30 E5 FB         [24] 1625 	jnb	acc.5,00101$
                            00019B  1626 	C$Lab2.c$170$1$85 ==.
                                    1627 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:170: return ADC1;
-      00019B 85 9C 82         [24] 1628 	mov	dpl,_ADC1
+      000235 85 9C 82         [24] 1628 	mov	dpl,_ADC1
                            00019E  1629 	C$Lab2.c$171$1$85 ==.
                            00019E  1630 	XG$read_AD_input$0$0 ==.
-      00019E 22               [24] 1631 	ret
+      000238 22               [24] 1631 	ret
                                    1632 ;------------------------------------------------------------
                                    1633 ;Allocation info for local variables in function 'Pot_Scaling'
                                    1634 ;------------------------------------------------------------
@@ -1641,59 +1641,59 @@
                                    1641 ;	-----------------------------------------
                                    1642 ;	 function Pot_Scaling
                                    1643 ;	-----------------------------------------
-      00019F                       1644 _Pot_Scaling:
-      00019F AE 82            [24] 1645 	mov	r6,dpl
-      0001A1 AF 83            [24] 1646 	mov	r7,dph
+      000239                       1644 _Pot_Scaling:
+      000239 AE 82            [24] 1645 	mov	r6,dpl
+      00023B AF 83            [24] 1646 	mov	r7,dph
                            0001A3  1647 	C$Lab2.c$176$1$87 ==.
                                    1648 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:176: if (mode == 1) {
-      0001A3 74 01            [12] 1649 	mov	a,#0x01
-      0001A5 B5*00 1B         [24] 1650 	cjne	a,_Pot_Scaling_PARM_2,00104$
+      00023D 74 01            [12] 1649 	mov	a,#0x01
+      00023F B5 0E 1B         [24] 1650 	cjne	a,_Pot_Scaling_PARM_2,00104$
                            0001A8  1651 	C$Lab2.c$177$2$88 ==.
                                    1652 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:177: scaledValue = Pot_Value/64;
-      0001A8 8E*11            [24] 1653 	mov	_scaledValue,r6
-      0001AA EF               [12] 1654 	mov	a,r7
-      0001AB A2 E7            [12] 1655 	mov	c,acc.7
-      0001AD C5*11            [12] 1656 	xch	a,_scaledValue
-      0001AF 33               [12] 1657 	rlc	a
-      0001B0 C5*11            [12] 1658 	xch	a,_scaledValue
-      0001B2 33               [12] 1659 	rlc	a
-      0001B3 A2 E7            [12] 1660 	mov	c,acc.7
-      0001B5 C5*11            [12] 1661 	xch	a,_scaledValue
-      0001B7 33               [12] 1662 	rlc	a
-      0001B8 C5*11            [12] 1663 	xch	a,_scaledValue
-      0001BA 33               [12] 1664 	rlc	a
-      0001BB C5*11            [12] 1665 	xch	a,_scaledValue
-      0001BD 54 03            [12] 1666 	anl	a,#0x03
-      0001BF F5*12            [12] 1667 	mov	(_scaledValue + 1),a
-      0001C1 80 18            [24] 1668 	sjmp	00105$
-      0001C3                       1669 00104$:
+      000242 8E 33            [24] 1653 	mov	_scaledValue,r6
+      000244 EF               [12] 1654 	mov	a,r7
+      000245 A2 E7            [12] 1655 	mov	c,acc.7
+      000247 C5 33            [12] 1656 	xch	a,_scaledValue
+      000249 33               [12] 1657 	rlc	a
+      00024A C5 33            [12] 1658 	xch	a,_scaledValue
+      00024C 33               [12] 1659 	rlc	a
+      00024D A2 E7            [12] 1660 	mov	c,acc.7
+      00024F C5 33            [12] 1661 	xch	a,_scaledValue
+      000251 33               [12] 1662 	rlc	a
+      000252 C5 33            [12] 1663 	xch	a,_scaledValue
+      000254 33               [12] 1664 	rlc	a
+      000255 C5 33            [12] 1665 	xch	a,_scaledValue
+      000257 54 03            [12] 1666 	anl	a,#0x03
+      000259 F5 34            [12] 1667 	mov	(_scaledValue + 1),a
+      00025B 80 18            [24] 1668 	sjmp	00105$
+      00025D                       1669 00104$:
                            0001C3  1670 	C$Lab2.c$180$1$87 ==.
                                    1671 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:180: else if (mode == 3) {
-      0001C3 74 03            [12] 1672 	mov	a,#0x03
-      0001C5 B5*00 13         [24] 1673 	cjne	a,_Pot_Scaling_PARM_2,00105$
+      00025D 74 03            [12] 1672 	mov	a,#0x03
+      00025F B5 0E 13         [24] 1673 	cjne	a,_Pot_Scaling_PARM_2,00105$
                            0001C8  1674 	C$Lab2.c$181$2$89 ==.
                                    1675 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:181: scaledValue = Pot_Value/4;
-      0001C8 8E*11            [24] 1676 	mov	_scaledValue,r6
-      0001CA EF               [12] 1677 	mov	a,r7
-      0001CB C3               [12] 1678 	clr	c
-      0001CC 13               [12] 1679 	rrc	a
-      0001CD C5*11            [12] 1680 	xch	a,_scaledValue
-      0001CF 13               [12] 1681 	rrc	a
-      0001D0 C5*11            [12] 1682 	xch	a,_scaledValue
-      0001D2 C3               [12] 1683 	clr	c
-      0001D3 13               [12] 1684 	rrc	a
-      0001D4 C5*11            [12] 1685 	xch	a,_scaledValue
-      0001D6 13               [12] 1686 	rrc	a
-      0001D7 C5*11            [12] 1687 	xch	a,_scaledValue
-      0001D9 F5*12            [12] 1688 	mov	(_scaledValue + 1),a
-      0001DB                       1689 00105$:
+      000262 8E 33            [24] 1676 	mov	_scaledValue,r6
+      000264 EF               [12] 1677 	mov	a,r7
+      000265 C3               [12] 1678 	clr	c
+      000266 13               [12] 1679 	rrc	a
+      000267 C5 33            [12] 1680 	xch	a,_scaledValue
+      000269 13               [12] 1681 	rrc	a
+      00026A C5 33            [12] 1682 	xch	a,_scaledValue
+      00026C C3               [12] 1683 	clr	c
+      00026D 13               [12] 1684 	rrc	a
+      00026E C5 33            [12] 1685 	xch	a,_scaledValue
+      000270 13               [12] 1686 	rrc	a
+      000271 C5 33            [12] 1687 	xch	a,_scaledValue
+      000273 F5 34            [12] 1688 	mov	(_scaledValue + 1),a
+      000275                       1689 00105$:
                            0001DB  1690 	C$Lab2.c$184$1$87 ==.
                                    1691 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:184: return scaledValue;
-      0001DB 85*11 82         [24] 1692 	mov	dpl,_scaledValue
-      0001DE 85*12 83         [24] 1693 	mov	dph,(_scaledValue + 1)
+      000275 85 33 82         [24] 1692 	mov	dpl,_scaledValue
+      000278 85 34 83         [24] 1693 	mov	dph,(_scaledValue + 1)
                            0001E1  1694 	C$Lab2.c$185$1$87 ==.
                            0001E1  1695 	XG$Pot_Scaling$0$0 ==.
-      0001E1 22               [24] 1696 	ret
+      00027B 22               [24] 1696 	ret
                                    1697 ;------------------------------------------------------------
                                    1698 ;Allocation info for local variables in function 'Compare_Answer'
                                    1699 ;------------------------------------------------------------
@@ -1706,67 +1706,67 @@
                                    1706 ;	-----------------------------------------
                                    1707 ;	 function Compare_Answer
                                    1708 ;	-----------------------------------------
-      0001E2                       1709 _Compare_Answer:
-      0001E2 AE 82            [24] 1710 	mov	r6,dpl
-      0001E4 AF 83            [24] 1711 	mov	r7,dph
+      00027C                       1709 _Compare_Answer:
+      00027C AE 82            [24] 1710 	mov	r6,dpl
+      00027E AF 83            [24] 1711 	mov	r7,dph
                            0001E6  1712 	C$Lab2.c$190$1$91 ==.
                                    1713 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:190: counts = 0;			// resets counts
-      0001E6 E4               [12] 1714 	clr	a
-      0001E7 F5*00            [12] 1715 	mov	_counts,a
-      0001E9 F5*01            [12] 1716 	mov	(_counts + 1),a
+      000280 E4               [12] 1714 	clr	a
+      000281 F5 22            [12] 1715 	mov	_counts,a
+      000283 F5 23            [12] 1716 	mov	(_counts + 1),a
                            0001EB  1717 	C$Lab2.c$192$1$91 ==.
                                    1718 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:192: if (yourAnswer<randomNumber) {		// turns BILED red if answer is low
-      0001EB AC*29            [24] 1719 	mov	r4,_Compare_Answer_PARM_2
-      0001ED 7D 00            [12] 1720 	mov	r5,#0x00
-      0001EF C3               [12] 1721 	clr	c
-      0001F0 EE               [12] 1722 	mov	a,r6
-      0001F1 9C               [12] 1723 	subb	a,r4
-      0001F2 EF               [12] 1724 	mov	a,r7
-      0001F3 9D               [12] 1725 	subb	a,r5
-      0001F4 50 13            [24] 1726 	jnc	00110$
+      000285 AC 4B            [24] 1719 	mov	r4,_Compare_Answer_PARM_2
+      000287 7D 00            [12] 1720 	mov	r5,#0x00
+      000289 C3               [12] 1721 	clr	c
+      00028A EE               [12] 1722 	mov	a,r6
+      00028B 9C               [12] 1723 	subb	a,r4
+      00028C EF               [12] 1724 	mov	a,r7
+      00028D 9D               [12] 1725 	subb	a,r5
+      00028E 50 13            [24] 1726 	jnc	00110$
                            0001F6  1727 	C$Lab2.c$193$2$92 ==.
                                    1728 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:193: while (counts<337) {
-      0001F6                       1729 00101$:
-      0001F6 C3               [12] 1730 	clr	c
-      0001F7 E5*00            [12] 1731 	mov	a,_counts
-      0001F9 94 51            [12] 1732 	subb	a,#0x51
-      0001FB E5*01            [12] 1733 	mov	a,(_counts + 1)
-      0001FD 94 01            [12] 1734 	subb	a,#0x01
-      0001FF 50 26            [24] 1735 	jnc	00112$
+      000290                       1729 00101$:
+      000290 C3               [12] 1730 	clr	c
+      000291 E5 22            [12] 1731 	mov	a,_counts
+      000293 94 51            [12] 1732 	subb	a,#0x51
+      000295 E5 23            [12] 1733 	mov	a,(_counts + 1)
+      000297 94 01            [12] 1734 	subb	a,#0x01
+      000299 50 26            [24] 1735 	jnc	00112$
                            000201  1736 	C$Lab2.c$194$3$93 ==.
                                    1737 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:194: SetBILED('r');
-      000201 75 82 72         [24] 1738 	mov	dpl,#0x72
-      000204 12r0Cr82         [24] 1739 	lcall	_SetBILED
-      000207 80 ED            [24] 1740 	sjmp	00101$
-      000209                       1741 00110$:
+      00029B 75 82 72         [24] 1738 	mov	dpl,#0x72
+      00029E 12 0D 1C         [24] 1739 	lcall	_SetBILED
+      0002A1 80 ED            [24] 1740 	sjmp	00101$
+      0002A3                       1741 00110$:
                            000209  1742 	C$Lab2.c$198$1$91 ==.
                                    1743 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:198: else if (yourAnswer>randomNumber) {	// turns BILED green if answer is high
-      000209 AC*29            [24] 1744 	mov	r4,_Compare_Answer_PARM_2
-      00020B 7D 00            [12] 1745 	mov	r5,#0x00
-      00020D C3               [12] 1746 	clr	c
-      00020E EC               [12] 1747 	mov	a,r4
-      00020F 9E               [12] 1748 	subb	a,r6
-      000210 ED               [12] 1749 	mov	a,r5
-      000211 9F               [12] 1750 	subb	a,r7
-      000212 50 13            [24] 1751 	jnc	00112$
+      0002A3 AC 4B            [24] 1744 	mov	r4,_Compare_Answer_PARM_2
+      0002A5 7D 00            [12] 1745 	mov	r5,#0x00
+      0002A7 C3               [12] 1746 	clr	c
+      0002A8 EC               [12] 1747 	mov	a,r4
+      0002A9 9E               [12] 1748 	subb	a,r6
+      0002AA ED               [12] 1749 	mov	a,r5
+      0002AB 9F               [12] 1750 	subb	a,r7
+      0002AC 50 13            [24] 1751 	jnc	00112$
                            000214  1752 	C$Lab2.c$199$2$94 ==.
                                    1753 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:199: while (counts<337) {
-      000214                       1754 00104$:
-      000214 C3               [12] 1755 	clr	c
-      000215 E5*00            [12] 1756 	mov	a,_counts
-      000217 94 51            [12] 1757 	subb	a,#0x51
-      000219 E5*01            [12] 1758 	mov	a,(_counts + 1)
-      00021B 94 01            [12] 1759 	subb	a,#0x01
-      00021D 50 08            [24] 1760 	jnc	00112$
+      0002AE                       1754 00104$:
+      0002AE C3               [12] 1755 	clr	c
+      0002AF E5 22            [12] 1756 	mov	a,_counts
+      0002B1 94 51            [12] 1757 	subb	a,#0x51
+      0002B3 E5 23            [12] 1758 	mov	a,(_counts + 1)
+      0002B5 94 01            [12] 1759 	subb	a,#0x01
+      0002B7 50 08            [24] 1760 	jnc	00112$
                            00021F  1761 	C$Lab2.c$200$3$95 ==.
                                    1762 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:200: SetBILED('g');
-      00021F 75 82 67         [24] 1763 	mov	dpl,#0x67
-      000222 12r0Cr82         [24] 1764 	lcall	_SetBILED
-      000225 80 ED            [24] 1765 	sjmp	00104$
-      000227                       1766 00112$:
+      0002B9 75 82 67         [24] 1763 	mov	dpl,#0x67
+      0002BC 12 0D 1C         [24] 1764 	lcall	_SetBILED
+      0002BF 80 ED            [24] 1765 	sjmp	00104$
+      0002C1                       1766 00112$:
                            000227  1767 	C$Lab2.c$203$1$91 ==.
                            000227  1768 	XG$Compare_Answer$0$0 ==.
-      000227 22               [24] 1769 	ret
+      0002C1 22               [24] 1769 	ret
                                    1770 ;------------------------------------------------------------
                                    1771 ;Allocation info for local variables in function 'Flash_Biled'
                                    1772 ;------------------------------------------------------------
@@ -1776,40 +1776,40 @@
                                    1776 ;	-----------------------------------------
                                    1777 ;	 function Flash_Biled
                                    1778 ;	-----------------------------------------
-      000228                       1779 _Flash_Biled:
+      0002C2                       1779 _Flash_Biled:
                            000228  1780 	C$Lab2.c$208$1$97 ==.
                                    1781 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:208: counts = 0;
-      000228 E4               [12] 1782 	clr	a
-      000229 F5*00            [12] 1783 	mov	_counts,a
-      00022B F5*01            [12] 1784 	mov	(_counts + 1),a
+      0002C2 E4               [12] 1782 	clr	a
+      0002C3 F5 22            [12] 1783 	mov	_counts,a
+      0002C5 F5 23            [12] 1784 	mov	(_counts + 1),a
                            00022D  1785 	C$Lab2.c$210$1$97 ==.
                                    1786 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:210: while (counts <= 337) {
-      00022D                       1787 00104$:
-      00022D C3               [12] 1788 	clr	c
-      00022E 74 51            [12] 1789 	mov	a,#0x51
-      000230 95*00            [12] 1790 	subb	a,_counts
-      000232 74 01            [12] 1791 	mov	a,#0x01
-      000234 95*01            [12] 1792 	subb	a,(_counts + 1)
-      000236 40 15            [24] 1793 	jc	00107$
+      0002C7                       1787 00104$:
+      0002C7 C3               [12] 1788 	clr	c
+      0002C8 74 51            [12] 1789 	mov	a,#0x51
+      0002CA 95 22            [12] 1790 	subb	a,_counts
+      0002CC 74 01            [12] 1791 	mov	a,#0x01
+      0002CE 95 23            [12] 1792 	subb	a,(_counts + 1)
+      0002D0 40 15            [24] 1793 	jc	00107$
                            000238  1794 	C$Lab2.c$211$2$98 ==.
                                    1795 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:211: if (counts%2 == 0) {
-      000238 E5*00            [12] 1796 	mov	a,_counts
-      00023A 20 E0 08         [24] 1797 	jb	acc.0,00102$
+      0002D2 E5 22            [12] 1796 	mov	a,_counts
+      0002D4 20 E0 08         [24] 1797 	jb	acc.0,00102$
                            00023D  1798 	C$Lab2.c$212$3$99 ==.
                                    1799 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:212: SetBILED('r');
-      00023D 75 82 72         [24] 1800 	mov	dpl,#0x72
-      000240 12r0Cr82         [24] 1801 	lcall	_SetBILED
-      000243 80 E8            [24] 1802 	sjmp	00104$
-      000245                       1803 00102$:
+      0002D7 75 82 72         [24] 1800 	mov	dpl,#0x72
+      0002DA 12 0D 1C         [24] 1801 	lcall	_SetBILED
+      0002DD 80 E8            [24] 1802 	sjmp	00104$
+      0002DF                       1803 00102$:
                            000245  1804 	C$Lab2.c$216$3$100 ==.
                                    1805 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:216: SetBILED('g');
-      000245 75 82 67         [24] 1806 	mov	dpl,#0x67
-      000248 12r0Cr82         [24] 1807 	lcall	_SetBILED
-      00024B 80 E0            [24] 1808 	sjmp	00104$
-      00024D                       1809 00107$:
+      0002DF 75 82 67         [24] 1806 	mov	dpl,#0x67
+      0002E2 12 0D 1C         [24] 1807 	lcall	_SetBILED
+      0002E5 80 E0            [24] 1808 	sjmp	00104$
+      0002E7                       1809 00107$:
                            00024D  1810 	C$Lab2.c$219$1$97 ==.
                            00024D  1811 	XG$Flash_Biled$0$0 ==.
-      00024D 22               [24] 1812 	ret
+      0002E7 22               [24] 1812 	ret
                                    1813 ;------------------------------------------------------------
                                    1814 ;Allocation info for local variables in function 'Mode_One'
                                    1815 ;------------------------------------------------------------
@@ -1825,850 +1825,850 @@
                                    1825 ;	-----------------------------------------
                                    1826 ;	 function Mode_One
                                    1827 ;	-----------------------------------------
-      00024E                       1828 _Mode_One:
+      0002E8                       1828 _Mode_One:
                            00024E  1829 	C$Lab2.c$230$1$102 ==.
                                    1830 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:230: printf("\n\rThe first mode generates a random number from 0 to 4.\n\rThe generated number lights up none to all 4 LEDs in a line. The LEDs stay on 0.5 s, then turn off\n\rand a timer is started. The player then turns a potentiometer whose voltage value is used to turn on the\n\rLEDs in sequence until the same pattern appears. The pushbutton is then pressed to stop the timer and\n\rrecord the LED pattern, which is then compared to that generated by the random number. Scoring is\n\rbased on correctness and speed of entry. The whole process is repeated 5 times and the final score is\n\rdisplayed on the terminal. The lower the score the better you did.");
-      00024E 74r42            [12] 1831 	mov	a,#___str_5
-      000250 C0 E0            [24] 1832 	push	acc
-      000252 74s01            [12] 1833 	mov	a,#(___str_5 >> 8)
-      000254 C0 E0            [24] 1834 	push	acc
-      000256 74 80            [12] 1835 	mov	a,#0x80
-      000258 C0 E0            [24] 1836 	push	acc
-      00025A 12r00r00         [24] 1837 	lcall	_printf
-      00025D 15 81            [12] 1838 	dec	sp
-      00025F 15 81            [12] 1839 	dec	sp
-      000261 15 81            [12] 1840 	dec	sp
+      0002E8 74 CC            [12] 1831 	mov	a,#___str_5
+      0002EA C0 E0            [24] 1832 	push	acc
+      0002EC 74 19            [12] 1833 	mov	a,#(___str_5 >> 8)
+      0002EE C0 E0            [24] 1834 	push	acc
+      0002F0 74 80            [12] 1835 	mov	a,#0x80
+      0002F2 C0 E0            [24] 1836 	push	acc
+      0002F4 12 10 BA         [24] 1837 	lcall	_printf
+      0002F7 15 81            [12] 1838 	dec	sp
+      0002F9 15 81            [12] 1839 	dec	sp
+      0002FB 15 81            [12] 1840 	dec	sp
                            000263  1841 	C$Lab2.c$232$1$102 ==.
                                    1842 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:232: total_Score = 0; //reset score
-      000263 7E 00            [12] 1843 	mov	r6,#0x00
-      000265 7F 00            [12] 1844 	mov	r7,#0x00
+      0002FD 7E 00            [12] 1843 	mov	r6,#0x00
+      0002FF 7F 00            [12] 1844 	mov	r7,#0x00
                            000267  1845 	C$Lab2.c$233$1$102 ==.
                                    1846 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:233: SetAllLEDs(1);	//turn off all LEDs
-      000267 75 82 01         [24] 1847 	mov	dpl,#0x01
-      00026A C0 07            [24] 1848 	push	ar7
-      00026C C0 06            [24] 1849 	push	ar6
-      00026E 12r0Br74         [24] 1850 	lcall	_SetAllLEDs
+      000301 75 82 01         [24] 1847 	mov	dpl,#0x01
+      000304 C0 07            [24] 1848 	push	ar7
+      000306 C0 06            [24] 1849 	push	ar6
+      000308 12 0C 0E         [24] 1850 	lcall	_SetAllLEDs
                            000271  1851 	C$Lab2.c$234$1$102 ==.
                                    1852 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:234: SetBILED('r'); // turn BILED red
-      000271 75 82 72         [24] 1853 	mov	dpl,#0x72
-      000274 12r0Cr82         [24] 1854 	lcall	_SetBILED
-      000277 D0 06            [24] 1855 	pop	ar6
-      000279 D0 07            [24] 1856 	pop	ar7
+      00030B 75 82 72         [24] 1853 	mov	dpl,#0x72
+      00030E 12 0D 1C         [24] 1854 	lcall	_SetBILED
+      000311 D0 06            [24] 1855 	pop	ar6
+      000313 D0 07            [24] 1856 	pop	ar7
                            00027B  1857 	C$Lab2.c$235$1$102 ==.
                                    1858 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:235: while (PB0 == 1); //wait for pushbutton to be pressed
-      00027B                       1859 00101$:
-      00027B 20 B0 FD         [24] 1860 	jb	_PB0,00101$
+      000315                       1859 00101$:
+      000315 20 B0 FD         [24] 1860 	jb	_PB0,00101$
                            00027E  1861 	C$Lab2.c$236$1$102 ==.
                                    1862 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:236: for (rounds=0; rounds++; rounds<5)
-      00027E 7D 00            [12] 1863 	mov	r5,#0x00
-      000280                       1864 00181$:
-      000280 8D 04            [24] 1865 	mov	ar4,r5
-      000282 0D               [12] 1866 	inc	r5
-      000283 EC               [12] 1867 	mov	a,r4
-      000284 70 03            [24] 1868 	jnz	00304$
-      000286 02r06r8D         [24] 1869 	ljmp	00179$
-      000289                       1870 00304$:
+      000318 7D 00            [12] 1863 	mov	r5,#0x00
+      00031A                       1864 00181$:
+      00031A 8D 04            [24] 1865 	mov	ar4,r5
+      00031C 0D               [12] 1866 	inc	r5
+      00031D EC               [12] 1867 	mov	a,r4
+      00031E 70 03            [24] 1868 	jnz	00304$
+      000320 02 07 27         [24] 1869 	ljmp	00179$
+      000323                       1870 00304$:
                            000289  1871 	C$Lab2.c$238$2$103 ==.
                                    1872 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:238: printf("Start");
-      000289 C0 07            [24] 1873 	push	ar7
-      00028B C0 06            [24] 1874 	push	ar6
-      00028D C0 05            [24] 1875 	push	ar5
-      00028F 74rBD            [12] 1876 	mov	a,#___str_6
-      000291 C0 E0            [24] 1877 	push	acc
-      000293 74s03            [12] 1878 	mov	a,#(___str_6 >> 8)
-      000295 C0 E0            [24] 1879 	push	acc
-      000297 74 80            [12] 1880 	mov	a,#0x80
-      000299 C0 E0            [24] 1881 	push	acc
-      00029B 12r00r00         [24] 1882 	lcall	_printf
-      00029E 15 81            [12] 1883 	dec	sp
-      0002A0 15 81            [12] 1884 	dec	sp
-      0002A2 15 81            [12] 1885 	dec	sp
+      000323 C0 07            [24] 1873 	push	ar7
+      000325 C0 06            [24] 1874 	push	ar6
+      000327 C0 05            [24] 1875 	push	ar5
+      000329 74 47            [12] 1876 	mov	a,#___str_6
+      00032B C0 E0            [24] 1877 	push	acc
+      00032D 74 1C            [12] 1878 	mov	a,#(___str_6 >> 8)
+      00032F C0 E0            [24] 1879 	push	acc
+      000331 74 80            [12] 1880 	mov	a,#0x80
+      000333 C0 E0            [24] 1881 	push	acc
+      000335 12 10 BA         [24] 1882 	lcall	_printf
+      000338 15 81            [12] 1883 	dec	sp
+      00033A 15 81            [12] 1884 	dec	sp
+      00033C 15 81            [12] 1885 	dec	sp
                            0002A4  1886 	C$Lab2.c$239$2$103 ==.
                                    1887 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:239: SetBILED('o'); //turn off BILED
-      0002A4 75 82 6F         [24] 1888 	mov	dpl,#0x6f
-      0002A7 12r0Cr82         [24] 1889 	lcall	_SetBILED
+      00033E 75 82 6F         [24] 1888 	mov	dpl,#0x6f
+      000341 12 0D 1C         [24] 1889 	lcall	_SetBILED
                            0002AA  1890 	C$Lab2.c$240$2$103 ==.
                                    1891 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:240: random_Result = random();
-      0002AA 12r0Br67         [24] 1892 	lcall	_random
-      0002AD AC 82            [24] 1893 	mov	r4,dpl
-      0002AF D0 05            [24] 1894 	pop	ar5
-      0002B1 D0 06            [24] 1895 	pop	ar6
-      0002B3 D0 07            [24] 1896 	pop	ar7
+      000344 12 0C 01         [24] 1892 	lcall	_random
+      000347 AC 82            [24] 1893 	mov	r4,dpl
+      000349 D0 05            [24] 1894 	pop	ar5
+      00034B D0 06            [24] 1895 	pop	ar6
+      00034D D0 07            [24] 1896 	pop	ar7
                            0002B5  1897 	C$Lab2.c$241$2$103 ==.
                                    1898 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:241: TR0 = 1; //start timer
-      0002B5 D2 8C            [12] 1899 	setb	_TR0
+      00034F D2 8C            [12] 1899 	setb	_TR0
                            0002B7  1900 	C$Lab2.c$242$3$104 ==.
                                    1901 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:242: while (counts <= 169)
-      0002B7 BC 01 03         [24] 1902 	cjne	r4,#0x01,00305$
-      0002BA EC               [12] 1903 	mov	a,r4
-      0002BB 80 01            [24] 1904 	sjmp	00306$
-      0002BD                       1905 00305$:
-      0002BD E4               [12] 1906 	clr	a
-      0002BE                       1907 00306$:
-      0002BE FB               [12] 1908 	mov	r3,a
-      0002BF E4               [12] 1909 	clr	a
-      0002C0 BC 02 01         [24] 1910 	cjne	r4,#0x02,00307$
-      0002C3 04               [12] 1911 	inc	a
-      0002C4                       1912 00307$:
-      0002C4 FA               [12] 1913 	mov	r2,a
-      0002C5 E4               [12] 1914 	clr	a
-      0002C6 BC 03 01         [24] 1915 	cjne	r4,#0x03,00309$
-      0002C9 04               [12] 1916 	inc	a
-      0002CA                       1917 00309$:
-      0002CA F9               [12] 1918 	mov	r1,a
-      0002CB E4               [12] 1919 	clr	a
-      0002CC BC 04 01         [24] 1920 	cjne	r4,#0x04,00311$
-      0002CF 04               [12] 1921 	inc	a
-      0002D0                       1922 00311$:
-      0002D0 F8               [12] 1923 	mov	r0,a
-      0002D1                       1924 00118$:
-      0002D1 C3               [12] 1925 	clr	c
-      0002D2 74 A9            [12] 1926 	mov	a,#0xa9
-      0002D4 95*00            [12] 1927 	subb	a,_counts
-      0002D6 E4               [12] 1928 	clr	a
-      0002D7 95*01            [12] 1929 	subb	a,(_counts + 1)
-      0002D9 40 5F            [24] 1930 	jc	00120$
+      000351 BC 01 03         [24] 1902 	cjne	r4,#0x01,00305$
+      000354 EC               [12] 1903 	mov	a,r4
+      000355 80 01            [24] 1904 	sjmp	00306$
+      000357                       1905 00305$:
+      000357 E4               [12] 1906 	clr	a
+      000358                       1907 00306$:
+      000358 FB               [12] 1908 	mov	r3,a
+      000359 E4               [12] 1909 	clr	a
+      00035A BC 02 01         [24] 1910 	cjne	r4,#0x02,00307$
+      00035D 04               [12] 1911 	inc	a
+      00035E                       1912 00307$:
+      00035E FA               [12] 1913 	mov	r2,a
+      00035F E4               [12] 1914 	clr	a
+      000360 BC 03 01         [24] 1915 	cjne	r4,#0x03,00309$
+      000363 04               [12] 1916 	inc	a
+      000364                       1917 00309$:
+      000364 F9               [12] 1918 	mov	r1,a
+      000365 E4               [12] 1919 	clr	a
+      000366 BC 04 01         [24] 1920 	cjne	r4,#0x04,00311$
+      000369 04               [12] 1921 	inc	a
+      00036A                       1922 00311$:
+      00036A F8               [12] 1923 	mov	r0,a
+      00036B                       1924 00118$:
+      00036B C3               [12] 1925 	clr	c
+      00036C 74 A9            [12] 1926 	mov	a,#0xa9
+      00036E 95 22            [12] 1927 	subb	a,_counts
+      000370 E4               [12] 1928 	clr	a
+      000371 95 23            [12] 1929 	subb	a,(_counts + 1)
+      000373 40 5F            [24] 1930 	jc	00120$
                            0002DB  1931 	C$Lab2.c$244$3$104 ==.
                                    1932 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:244: if (random_Result == 0) 
-      0002DB EC               [12] 1933 	mov	a,r4
-      0002DC 70 28            [24] 1934 	jnz	00116$
+      000375 EC               [12] 1933 	mov	a,r4
+      000376 70 28            [24] 1934 	jnz	00116$
                            0002DE  1935 	C$Lab2.c$246$4$105 ==.
                                    1936 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:246: SetAllLEDs(1); //turn off all LEDs
-      0002DE 75 82 01         [24] 1937 	mov	dpl,#0x01
-      0002E1 C0 07            [24] 1938 	push	ar7
-      0002E3 C0 06            [24] 1939 	push	ar6
-      0002E5 C0 05            [24] 1940 	push	ar5
-      0002E7 C0 04            [24] 1941 	push	ar4
-      0002E9 C0 03            [24] 1942 	push	ar3
-      0002EB C0 02            [24] 1943 	push	ar2
-      0002ED C0 01            [24] 1944 	push	ar1
-      0002EF C0 00            [24] 1945 	push	ar0
-      0002F1 12r0Br74         [24] 1946 	lcall	_SetAllLEDs
-      0002F4 D0 00            [24] 1947 	pop	ar0
-      0002F6 D0 01            [24] 1948 	pop	ar1
-      0002F8 D0 02            [24] 1949 	pop	ar2
-      0002FA D0 03            [24] 1950 	pop	ar3
-      0002FC D0 04            [24] 1951 	pop	ar4
-      0002FE D0 05            [24] 1952 	pop	ar5
-      000300 D0 06            [24] 1953 	pop	ar6
-      000302 D0 07            [24] 1954 	pop	ar7
-      000304 80 CB            [24] 1955 	sjmp	00118$
-      000306                       1956 00116$:
+      000378 75 82 01         [24] 1937 	mov	dpl,#0x01
+      00037B C0 07            [24] 1938 	push	ar7
+      00037D C0 06            [24] 1939 	push	ar6
+      00037F C0 05            [24] 1940 	push	ar5
+      000381 C0 04            [24] 1941 	push	ar4
+      000383 C0 03            [24] 1942 	push	ar3
+      000385 C0 02            [24] 1943 	push	ar2
+      000387 C0 01            [24] 1944 	push	ar1
+      000389 C0 00            [24] 1945 	push	ar0
+      00038B 12 0C 0E         [24] 1946 	lcall	_SetAllLEDs
+      00038E D0 00            [24] 1947 	pop	ar0
+      000390 D0 01            [24] 1948 	pop	ar1
+      000392 D0 02            [24] 1949 	pop	ar2
+      000394 D0 03            [24] 1950 	pop	ar3
+      000396 D0 04            [24] 1951 	pop	ar4
+      000398 D0 05            [24] 1952 	pop	ar5
+      00039A D0 06            [24] 1953 	pop	ar6
+      00039C D0 07            [24] 1954 	pop	ar7
+      00039E 80 CB            [24] 1955 	sjmp	00118$
+      0003A0                       1956 00116$:
                            000306  1957 	C$Lab2.c$248$3$104 ==.
                                    1958 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:248: else if (random_Result == 1) 
-      000306 EB               [12] 1959 	mov	a,r3
-      000307 60 0A            [24] 1960 	jz	00113$
+      0003A0 EB               [12] 1959 	mov	a,r3
+      0003A1 60 0A            [24] 1960 	jz	00113$
                            000309  1961 	C$Lab2.c$250$4$106 ==.
                                    1962 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:250: LED0 = 0; //turn on LED0
-      000309 C2 B6            [12] 1963 	clr	_LED0
+      0003A3 C2 B6            [12] 1963 	clr	_LED0
                            00030B  1964 	C$Lab2.c$251$4$106 ==.
                                    1965 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:251: LED1 = 1;
-      00030B D2 B5            [12] 1966 	setb	_LED1
+      0003A5 D2 B5            [12] 1966 	setb	_LED1
                            00030D  1967 	C$Lab2.c$252$4$106 ==.
                                    1968 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:252: LED2 = 1;
-      00030D D2 B7            [12] 1969 	setb	_LED2
+      0003A7 D2 B7            [12] 1969 	setb	_LED2
                            00030F  1970 	C$Lab2.c$253$4$106 ==.
                                    1971 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:253: LED3 = 1;
-      00030F D2 B2            [12] 1972 	setb	_LED3
-      000311 80 BE            [24] 1973 	sjmp	00118$
-      000313                       1974 00113$:
+      0003A9 D2 B2            [12] 1972 	setb	_LED3
+      0003AB 80 BE            [24] 1973 	sjmp	00118$
+      0003AD                       1974 00113$:
                            000313  1975 	C$Lab2.c$255$3$104 ==.
                                    1976 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:255: else if (random_Result == 2) 
-      000313 EA               [12] 1977 	mov	a,r2
-      000314 60 0A            [24] 1978 	jz	00110$
+      0003AD EA               [12] 1977 	mov	a,r2
+      0003AE 60 0A            [24] 1978 	jz	00110$
                            000316  1979 	C$Lab2.c$257$4$107 ==.
                                    1980 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:257: LED0 = 0; //turn on LED0 and LED1
-      000316 C2 B6            [12] 1981 	clr	_LED0
+      0003B0 C2 B6            [12] 1981 	clr	_LED0
                            000318  1982 	C$Lab2.c$258$4$107 ==.
                                    1983 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:258: LED1 = 0;
-      000318 C2 B5            [12] 1984 	clr	_LED1
+      0003B2 C2 B5            [12] 1984 	clr	_LED1
                            00031A  1985 	C$Lab2.c$259$4$107 ==.
                                    1986 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:259: LED2 = 1;
-      00031A D2 B7            [12] 1987 	setb	_LED2
+      0003B4 D2 B7            [12] 1987 	setb	_LED2
                            00031C  1988 	C$Lab2.c$260$4$107 ==.
                                    1989 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:260: LED3 = 1;
-      00031C D2 B2            [12] 1990 	setb	_LED3
-      00031E 80 B1            [24] 1991 	sjmp	00118$
-      000320                       1992 00110$:
+      0003B6 D2 B2            [12] 1990 	setb	_LED3
+      0003B8 80 B1            [24] 1991 	sjmp	00118$
+      0003BA                       1992 00110$:
                            000320  1993 	C$Lab2.c$262$3$104 ==.
                                    1994 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:262: else if (random_Result == 3) 
-      000320 E9               [12] 1995 	mov	a,r1
-      000321 60 0A            [24] 1996 	jz	00107$
+      0003BA E9               [12] 1995 	mov	a,r1
+      0003BB 60 0A            [24] 1996 	jz	00107$
                            000323  1997 	C$Lab2.c$264$4$108 ==.
                                    1998 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:264: LED0 = 0; //turn on LED0,LED1, and LED2
-      000323 C2 B6            [12] 1999 	clr	_LED0
+      0003BD C2 B6            [12] 1999 	clr	_LED0
                            000325  2000 	C$Lab2.c$265$4$108 ==.
                                    2001 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:265: LED1 = 0;
-      000325 C2 B5            [12] 2002 	clr	_LED1
+      0003BF C2 B5            [12] 2002 	clr	_LED1
                            000327  2003 	C$Lab2.c$266$4$108 ==.
                                    2004 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:266: LED2 = 0;
-      000327 C2 B7            [12] 2005 	clr	_LED2
+      0003C1 C2 B7            [12] 2005 	clr	_LED2
                            000329  2006 	C$Lab2.c$267$4$108 ==.
                                    2007 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:267: LED3 = 1;
-      000329 D2 B2            [12] 2008 	setb	_LED3
-      00032B 80 A4            [24] 2009 	sjmp	00118$
-      00032D                       2010 00107$:
+      0003C3 D2 B2            [12] 2008 	setb	_LED3
+      0003C5 80 A4            [24] 2009 	sjmp	00118$
+      0003C7                       2010 00107$:
                            00032D  2011 	C$Lab2.c$269$3$104 ==.
                                    2012 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:269: else if (random_Result == 4) 
-      00032D E8               [12] 2013 	mov	a,r0
-      00032E 60 A1            [24] 2014 	jz	00118$
+      0003C7 E8               [12] 2013 	mov	a,r0
+      0003C8 60 A1            [24] 2014 	jz	00118$
                            000330  2015 	C$Lab2.c$271$4$109 ==.
                                    2016 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:271: LED0 = 0; //turn on all LEDS
-      000330 C2 B6            [12] 2017 	clr	_LED0
+      0003CA C2 B6            [12] 2017 	clr	_LED0
                            000332  2018 	C$Lab2.c$272$4$109 ==.
                                    2019 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:272: LED1 = 0;
-      000332 C2 B5            [12] 2020 	clr	_LED1
+      0003CC C2 B5            [12] 2020 	clr	_LED1
                            000334  2021 	C$Lab2.c$273$4$109 ==.
                                    2022 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:273: LED2 = 0;
-      000334 C2 B7            [12] 2023 	clr	_LED2
+      0003CE C2 B7            [12] 2023 	clr	_LED2
                            000336  2024 	C$Lab2.c$274$4$109 ==.
                                    2025 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:274: LED3 = 0;
-      000336 C2 B2            [12] 2026 	clr	_LED3
-      000338 80 97            [24] 2027 	sjmp	00118$
-      00033A                       2028 00120$:
+      0003D0 C2 B2            [12] 2026 	clr	_LED3
+      0003D2 80 97            [24] 2027 	sjmp	00118$
+      0003D4                       2028 00120$:
                            00033A  2029 	C$Lab2.c$277$2$103 ==.
                                    2030 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:277: ClearTimer0();
-      00033A C0 07            [24] 2031 	push	ar7
-      00033C C0 06            [24] 2032 	push	ar6
-      00033E C0 05            [24] 2033 	push	ar5
-      000340 C0 04            [24] 2034 	push	ar4
-      000342 12r0Cr76         [24] 2035 	lcall	_ClearTimer0
-      000345 D0 04            [24] 2036 	pop	ar4
-      000347 D0 05            [24] 2037 	pop	ar5
-      000349 D0 06            [24] 2038 	pop	ar6
-      00034B D0 07            [24] 2039 	pop	ar7
+      0003D4 C0 07            [24] 2031 	push	ar7
+      0003D6 C0 06            [24] 2032 	push	ar6
+      0003D8 C0 05            [24] 2033 	push	ar5
+      0003DA C0 04            [24] 2034 	push	ar4
+      0003DC 12 0D 10         [24] 2035 	lcall	_ClearTimer0
+      0003DF D0 04            [24] 2036 	pop	ar4
+      0003E1 D0 05            [24] 2037 	pop	ar5
+      0003E3 D0 06            [24] 2038 	pop	ar6
+      0003E5 D0 07            [24] 2039 	pop	ar7
                            00034D  2040 	C$Lab2.c$278$2$103 ==.
                                    2041 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:278: TR0=1;
-      00034D D2 8C            [12] 2042 	setb	_TR0
+      0003E7 D2 8C            [12] 2042 	setb	_TR0
                            00034F  2043 	C$Lab2.c$279$2$103 ==.
                                    2044 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:279: while (PB0 == 1)
-      00034F                       2045 00133$:
-      00034F 30 B0 74         [24] 2046 	jnb	_PB0,00135$
+      0003E9                       2045 00133$:
+      0003E9 30 B0 74         [24] 2046 	jnb	_PB0,00135$
                            000352  2047 	C$Lab2.c$281$3$110 ==.
                                    2048 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:281: ADC_value = read_AD_input();
-      000352 C0 07            [24] 2049 	push	ar7
-      000354 C0 06            [24] 2050 	push	ar6
-      000356 C0 05            [24] 2051 	push	ar5
-      000358 C0 04            [24] 2052 	push	ar4
-      00035A 12r01r8D         [24] 2053 	lcall	_read_AD_input
-      00035D AB 82            [24] 2054 	mov	r3,dpl
-      00035F D0 04            [24] 2055 	pop	ar4
-      000361 D0 05            [24] 2056 	pop	ar5
-      000363 D0 06            [24] 2057 	pop	ar6
-      000365 D0 07            [24] 2058 	pop	ar7
-      000367 8B*0D            [24] 2059 	mov	_ADC_value,r3
-      000369 75*0E 00         [24] 2060 	mov	(_ADC_value + 1),#0x00
+      0003EC C0 07            [24] 2049 	push	ar7
+      0003EE C0 06            [24] 2050 	push	ar6
+      0003F0 C0 05            [24] 2051 	push	ar5
+      0003F2 C0 04            [24] 2052 	push	ar4
+      0003F4 12 02 27         [24] 2053 	lcall	_read_AD_input
+      0003F7 AB 82            [24] 2054 	mov	r3,dpl
+      0003F9 D0 04            [24] 2055 	pop	ar4
+      0003FB D0 05            [24] 2056 	pop	ar5
+      0003FD D0 06            [24] 2057 	pop	ar6
+      0003FF D0 07            [24] 2058 	pop	ar7
+      000401 8B 2F            [24] 2059 	mov	_ADC_value,r3
+      000403 75 30 00         [24] 2060 	mov	(_ADC_value + 1),#0x00
                            00036C  2061 	C$Lab2.c$282$3$110 ==.
                                    2062 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:282: if (ADC_value <= 51)
-      00036C C3               [12] 2063 	clr	c
-      00036D 74 33            [12] 2064 	mov	a,#0x33
-      00036F 95*0D            [12] 2065 	subb	a,_ADC_value
-      000371 E4               [12] 2066 	clr	a
-      000372 95*0E            [12] 2067 	subb	a,(_ADC_value + 1)
-      000374 40 0A            [24] 2068 	jc	00131$
+      000406 C3               [12] 2063 	clr	c
+      000407 74 33            [12] 2064 	mov	a,#0x33
+      000409 95 2F            [12] 2065 	subb	a,_ADC_value
+      00040B E4               [12] 2066 	clr	a
+      00040C 95 30            [12] 2067 	subb	a,(_ADC_value + 1)
+      00040E 40 0A            [24] 2068 	jc	00131$
                            000376  2069 	C$Lab2.c$284$4$111 ==.
                                    2070 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:284: LED0 = 1; //turn off all LEDs
-      000376 D2 B6            [12] 2071 	setb	_LED0
+      000410 D2 B6            [12] 2071 	setb	_LED0
                            000378  2072 	C$Lab2.c$285$4$111 ==.
                                    2073 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:285: LED1 = 1;
-      000378 D2 B5            [12] 2074 	setb	_LED1
+      000412 D2 B5            [12] 2074 	setb	_LED1
                            00037A  2075 	C$Lab2.c$286$4$111 ==.
                                    2076 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:286: LED2 = 1;
-      00037A D2 B7            [12] 2077 	setb	_LED2
+      000414 D2 B7            [12] 2077 	setb	_LED2
                            00037C  2078 	C$Lab2.c$287$4$111 ==.
                                    2079 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:287: LED3 = 1;
-      00037C D2 B2            [12] 2080 	setb	_LED3
-      00037E 80 CF            [24] 2081 	sjmp	00133$
-      000380                       2082 00131$:
+      000416 D2 B2            [12] 2080 	setb	_LED3
+      000418 80 CF            [24] 2081 	sjmp	00133$
+      00041A                       2082 00131$:
                            000380  2083 	C$Lab2.c$289$3$110 ==.
                                    2084 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:289: else if (ADC_value <= 102) 
-      000380 C3               [12] 2085 	clr	c
-      000381 74 66            [12] 2086 	mov	a,#0x66
-      000383 95*0D            [12] 2087 	subb	a,_ADC_value
-      000385 E4               [12] 2088 	clr	a
-      000386 95*0E            [12] 2089 	subb	a,(_ADC_value + 1)
-      000388 40 0A            [24] 2090 	jc	00128$
+      00041A C3               [12] 2085 	clr	c
+      00041B 74 66            [12] 2086 	mov	a,#0x66
+      00041D 95 2F            [12] 2087 	subb	a,_ADC_value
+      00041F E4               [12] 2088 	clr	a
+      000420 95 30            [12] 2089 	subb	a,(_ADC_value + 1)
+      000422 40 0A            [24] 2090 	jc	00128$
                            00038A  2091 	C$Lab2.c$291$4$112 ==.
                                    2092 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:291: LED0 = 0; //turn on LED0
-      00038A C2 B6            [12] 2093 	clr	_LED0
+      000424 C2 B6            [12] 2093 	clr	_LED0
                            00038C  2094 	C$Lab2.c$292$4$112 ==.
                                    2095 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:292: LED1 = 1;
-      00038C D2 B5            [12] 2096 	setb	_LED1
+      000426 D2 B5            [12] 2096 	setb	_LED1
                            00038E  2097 	C$Lab2.c$293$4$112 ==.
                                    2098 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:293: LED2 = 1;
-      00038E D2 B7            [12] 2099 	setb	_LED2
+      000428 D2 B7            [12] 2099 	setb	_LED2
                            000390  2100 	C$Lab2.c$294$4$112 ==.
                                    2101 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:294: LED3 = 1;
-      000390 D2 B2            [12] 2102 	setb	_LED3
-      000392 80 BB            [24] 2103 	sjmp	00133$
-      000394                       2104 00128$:
+      00042A D2 B2            [12] 2102 	setb	_LED3
+      00042C 80 BB            [24] 2103 	sjmp	00133$
+      00042E                       2104 00128$:
                            000394  2105 	C$Lab2.c$296$3$110 ==.
                                    2106 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:296: else if (ADC_value <= 153) 
-      000394 C3               [12] 2107 	clr	c
-      000395 74 99            [12] 2108 	mov	a,#0x99
-      000397 95*0D            [12] 2109 	subb	a,_ADC_value
-      000399 E4               [12] 2110 	clr	a
-      00039A 95*0E            [12] 2111 	subb	a,(_ADC_value + 1)
-      00039C 40 0A            [24] 2112 	jc	00125$
+      00042E C3               [12] 2107 	clr	c
+      00042F 74 99            [12] 2108 	mov	a,#0x99
+      000431 95 2F            [12] 2109 	subb	a,_ADC_value
+      000433 E4               [12] 2110 	clr	a
+      000434 95 30            [12] 2111 	subb	a,(_ADC_value + 1)
+      000436 40 0A            [24] 2112 	jc	00125$
                            00039E  2113 	C$Lab2.c$298$4$113 ==.
                                    2114 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:298: LED0 = 0; //turn on LED0 and LED1
-      00039E C2 B6            [12] 2115 	clr	_LED0
+      000438 C2 B6            [12] 2115 	clr	_LED0
                            0003A0  2116 	C$Lab2.c$299$4$113 ==.
                                    2117 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:299: LED1 = 0;
-      0003A0 C2 B5            [12] 2118 	clr	_LED1
+      00043A C2 B5            [12] 2118 	clr	_LED1
                            0003A2  2119 	C$Lab2.c$300$4$113 ==.
                                    2120 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:300: LED2 = 1;
-      0003A2 D2 B7            [12] 2121 	setb	_LED2
+      00043C D2 B7            [12] 2121 	setb	_LED2
                            0003A4  2122 	C$Lab2.c$301$4$113 ==.
                                    2123 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:301: LED3 = 1;
-      0003A4 D2 B2            [12] 2124 	setb	_LED3
-      0003A6 80 A7            [24] 2125 	sjmp	00133$
-      0003A8                       2126 00125$:
+      00043E D2 B2            [12] 2124 	setb	_LED3
+      000440 80 A7            [24] 2125 	sjmp	00133$
+      000442                       2126 00125$:
                            0003A8  2127 	C$Lab2.c$303$3$110 ==.
                                    2128 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:303: else if (ADC_value <= 204) 
-      0003A8 C3               [12] 2129 	clr	c
-      0003A9 74 CC            [12] 2130 	mov	a,#0xcc
-      0003AB 95*0D            [12] 2131 	subb	a,_ADC_value
-      0003AD E4               [12] 2132 	clr	a
-      0003AE 95*0E            [12] 2133 	subb	a,(_ADC_value + 1)
-      0003B0 40 0A            [24] 2134 	jc	00122$
+      000442 C3               [12] 2129 	clr	c
+      000443 74 CC            [12] 2130 	mov	a,#0xcc
+      000445 95 2F            [12] 2131 	subb	a,_ADC_value
+      000447 E4               [12] 2132 	clr	a
+      000448 95 30            [12] 2133 	subb	a,(_ADC_value + 1)
+      00044A 40 0A            [24] 2134 	jc	00122$
                            0003B2  2135 	C$Lab2.c$305$4$114 ==.
                                    2136 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:305: LED0 = 0; //turn on LED0,LED1, and LED2
-      0003B2 C2 B6            [12] 2137 	clr	_LED0
+      00044C C2 B6            [12] 2137 	clr	_LED0
                            0003B4  2138 	C$Lab2.c$306$4$114 ==.
                                    2139 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:306: LED1 = 0;
-      0003B4 C2 B5            [12] 2140 	clr	_LED1
+      00044E C2 B5            [12] 2140 	clr	_LED1
                            0003B6  2141 	C$Lab2.c$307$4$114 ==.
                                    2142 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:307: LED2 = 0;
-      0003B6 C2 B7            [12] 2143 	clr	_LED2
+      000450 C2 B7            [12] 2143 	clr	_LED2
                            0003B8  2144 	C$Lab2.c$308$4$114 ==.
                                    2145 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:308: LED3 = 1;
-      0003B8 D2 B2            [12] 2146 	setb	_LED3
-      0003BA 80 93            [24] 2147 	sjmp	00133$
-      0003BC                       2148 00122$:
+      000452 D2 B2            [12] 2146 	setb	_LED3
+      000454 80 93            [24] 2147 	sjmp	00133$
+      000456                       2148 00122$:
                            0003BC  2149 	C$Lab2.c$312$4$115 ==.
                                    2150 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:312: LED0 = 0; //turn on all LEDS
-      0003BC C2 B6            [12] 2151 	clr	_LED0
+      000456 C2 B6            [12] 2151 	clr	_LED0
                            0003BE  2152 	C$Lab2.c$313$4$115 ==.
                                    2153 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:313: LED1 = 0;
-      0003BE C2 B5            [12] 2154 	clr	_LED1
+      000458 C2 B5            [12] 2154 	clr	_LED1
                            0003C0  2155 	C$Lab2.c$314$4$115 ==.
                                    2156 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:314: LED2 = 0;
-      0003C0 C2 B7            [12] 2157 	clr	_LED2
+      00045A C2 B7            [12] 2157 	clr	_LED2
                            0003C2  2158 	C$Lab2.c$315$4$115 ==.
                                    2159 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:315: LED3 = 0;
-      0003C2 C2 B2            [12] 2160 	clr	_LED3
-      0003C4 80 89            [24] 2161 	sjmp	00133$
-      0003C6                       2162 00135$:
+      00045C C2 B2            [12] 2160 	clr	_LED3
+      00045E 80 89            [24] 2161 	sjmp	00133$
+      000460                       2162 00135$:
                            0003C6  2163 	C$Lab2.c$318$2$103 ==.
                                    2164 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:318: game_Time = counts;
-      0003C6 AA*00            [24] 2165 	mov	r2,_counts
-      0003C8 AB*01            [24] 2166 	mov	r3,(_counts + 1)
+      000460 AA 22            [24] 2165 	mov	r2,_counts
+      000462 AB 23            [24] 2166 	mov	r3,(_counts + 1)
                            0003CA  2167 	C$Lab2.c$319$2$103 ==.
                                    2168 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:319: ClearTimer0();
-      0003CA C0 07            [24] 2169 	push	ar7
-      0003CC C0 06            [24] 2170 	push	ar6
-      0003CE C0 05            [24] 2171 	push	ar5
-      0003D0 C0 04            [24] 2172 	push	ar4
-      0003D2 C0 03            [24] 2173 	push	ar3
-      0003D4 C0 02            [24] 2174 	push	ar2
-      0003D6 12r0Cr76         [24] 2175 	lcall	_ClearTimer0
-      0003D9 D0 02            [24] 2176 	pop	ar2
-      0003DB D0 03            [24] 2177 	pop	ar3
-      0003DD D0 04            [24] 2178 	pop	ar4
-      0003DF D0 05            [24] 2179 	pop	ar5
-      0003E1 D0 06            [24] 2180 	pop	ar6
-      0003E3 D0 07            [24] 2181 	pop	ar7
+      000464 C0 07            [24] 2169 	push	ar7
+      000466 C0 06            [24] 2170 	push	ar6
+      000468 C0 05            [24] 2171 	push	ar5
+      00046A C0 04            [24] 2172 	push	ar4
+      00046C C0 03            [24] 2173 	push	ar3
+      00046E C0 02            [24] 2174 	push	ar2
+      000470 12 0D 10         [24] 2175 	lcall	_ClearTimer0
+      000473 D0 02            [24] 2176 	pop	ar2
+      000475 D0 03            [24] 2177 	pop	ar3
+      000477 D0 04            [24] 2178 	pop	ar4
+      000479 D0 05            [24] 2179 	pop	ar5
+      00047B D0 06            [24] 2180 	pop	ar6
+      00047D D0 07            [24] 2181 	pop	ar7
                            0003E5  2182 	C$Lab2.c$320$2$103 ==.
                                    2183 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:320: TR0 = 1; //start timer
-      0003E5 D2 8C            [12] 2184 	setb	_TR0
+      00047F D2 8C            [12] 2184 	setb	_TR0
                            0003E7  2185 	C$Lab2.c$321$2$103 ==.
                                    2186 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:321: while (counts <=7)
-      0003E7                       2187 00136$:
-      0003E7 C3               [12] 2188 	clr	c
-      0003E8 74 07            [12] 2189 	mov	a,#0x07
-      0003EA 95*00            [12] 2190 	subb	a,_counts
-      0003EC E4               [12] 2191 	clr	a
-      0003ED 95*01            [12] 2192 	subb	a,(_counts + 1)
-      0003EF 40 0A            [24] 2193 	jc	00138$
+      000481                       2187 00136$:
+      000481 C3               [12] 2188 	clr	c
+      000482 74 07            [12] 2189 	mov	a,#0x07
+      000484 95 22            [12] 2190 	subb	a,_counts
+      000486 E4               [12] 2191 	clr	a
+      000487 95 23            [12] 2192 	subb	a,(_counts + 1)
+      000489 40 0A            [24] 2193 	jc	00138$
                            0003F1  2194 	C$Lab2.c$323$3$116 ==.
                                    2195 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:323: LED0 = 1; //turn off all LEDs
-      0003F1 D2 B6            [12] 2196 	setb	_LED0
+      00048B D2 B6            [12] 2196 	setb	_LED0
                            0003F3  2197 	C$Lab2.c$324$3$116 ==.
                                    2198 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:324: LED1 = 1;
-      0003F3 D2 B5            [12] 2199 	setb	_LED1
+      00048D D2 B5            [12] 2199 	setb	_LED1
                            0003F5  2200 	C$Lab2.c$325$3$116 ==.
                                    2201 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:325: LED2 = 1;
-      0003F5 D2 B7            [12] 2202 	setb	_LED2
+      00048F D2 B7            [12] 2202 	setb	_LED2
                            0003F7  2203 	C$Lab2.c$326$3$116 ==.
                                    2204 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:326: LED3 = 1;
-      0003F7 D2 B2            [12] 2205 	setb	_LED3
-      0003F9 80 EC            [24] 2206 	sjmp	00136$
-      0003FB                       2207 00138$:
+      000491 D2 B2            [12] 2205 	setb	_LED3
+      000493 80 EC            [24] 2206 	sjmp	00136$
+      000495                       2207 00138$:
                            0003FB  2208 	C$Lab2.c$328$2$103 ==.
                                    2209 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:328: ClearTimer0();
-      0003FB C0 07            [24] 2210 	push	ar7
-      0003FD C0 06            [24] 2211 	push	ar6
-      0003FF C0 05            [24] 2212 	push	ar5
-      000401 C0 04            [24] 2213 	push	ar4
-      000403 C0 03            [24] 2214 	push	ar3
-      000405 C0 02            [24] 2215 	push	ar2
-      000407 12r0Cr76         [24] 2216 	lcall	_ClearTimer0
-      00040A D0 02            [24] 2217 	pop	ar2
-      00040C D0 03            [24] 2218 	pop	ar3
-      00040E D0 04            [24] 2219 	pop	ar4
-      000410 D0 05            [24] 2220 	pop	ar5
-      000412 D0 06            [24] 2221 	pop	ar6
-      000414 D0 07            [24] 2222 	pop	ar7
+      000495 C0 07            [24] 2210 	push	ar7
+      000497 C0 06            [24] 2211 	push	ar6
+      000499 C0 05            [24] 2212 	push	ar5
+      00049B C0 04            [24] 2213 	push	ar4
+      00049D C0 03            [24] 2214 	push	ar3
+      00049F C0 02            [24] 2215 	push	ar2
+      0004A1 12 0D 10         [24] 2216 	lcall	_ClearTimer0
+      0004A4 D0 02            [24] 2217 	pop	ar2
+      0004A6 D0 03            [24] 2218 	pop	ar3
+      0004A8 D0 04            [24] 2219 	pop	ar4
+      0004AA D0 05            [24] 2220 	pop	ar5
+      0004AC D0 06            [24] 2221 	pop	ar6
+      0004AE D0 07            [24] 2222 	pop	ar7
                            000416  2223 	C$Lab2.c$329$2$103 ==.
                                    2224 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:329: TR0 = 1; //start timer
-      000416 D2 8C            [12] 2225 	setb	_TR0
+      0004B0 D2 8C            [12] 2225 	setb	_TR0
                            000418  2226 	C$Lab2.c$330$2$103 ==.
                                    2227 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:330: while (counts <=7)
-      000418                       2228 00139$:
-      000418 C3               [12] 2229 	clr	c
-      000419 74 07            [12] 2230 	mov	a,#0x07
-      00041B 95*00            [12] 2231 	subb	a,_counts
-      00041D E4               [12] 2232 	clr	a
-      00041E 95*01            [12] 2233 	subb	a,(_counts + 1)
-      000420 40 0A            [24] 2234 	jc	00141$
+      0004B2                       2228 00139$:
+      0004B2 C3               [12] 2229 	clr	c
+      0004B3 74 07            [12] 2230 	mov	a,#0x07
+      0004B5 95 22            [12] 2231 	subb	a,_counts
+      0004B7 E4               [12] 2232 	clr	a
+      0004B8 95 23            [12] 2233 	subb	a,(_counts + 1)
+      0004BA 40 0A            [24] 2234 	jc	00141$
                            000422  2235 	C$Lab2.c$332$3$117 ==.
                                    2236 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:332: LED0 = 0; //turn on all LEDs
-      000422 C2 B6            [12] 2237 	clr	_LED0
+      0004BC C2 B6            [12] 2237 	clr	_LED0
                            000424  2238 	C$Lab2.c$333$3$117 ==.
                                    2239 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:333: LED1 = 0;
-      000424 C2 B5            [12] 2240 	clr	_LED1
+      0004BE C2 B5            [12] 2240 	clr	_LED1
                            000426  2241 	C$Lab2.c$334$3$117 ==.
                                    2242 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:334: LED2 = 0;
-      000426 C2 B7            [12] 2243 	clr	_LED2
+      0004C0 C2 B7            [12] 2243 	clr	_LED2
                            000428  2244 	C$Lab2.c$335$3$117 ==.
                                    2245 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:335: LED3 = 0;
-      000428 C2 B2            [12] 2246 	clr	_LED3
-      00042A 80 EC            [24] 2247 	sjmp	00139$
-      00042C                       2248 00141$:
+      0004C2 C2 B2            [12] 2246 	clr	_LED3
+      0004C4 80 EC            [24] 2247 	sjmp	00139$
+      0004C6                       2248 00141$:
                            00042C  2249 	C$Lab2.c$337$2$103 ==.
                                    2250 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:337: ClearTimer0();
-      00042C C0 07            [24] 2251 	push	ar7
-      00042E C0 06            [24] 2252 	push	ar6
-      000430 C0 05            [24] 2253 	push	ar5
-      000432 C0 04            [24] 2254 	push	ar4
-      000434 C0 03            [24] 2255 	push	ar3
-      000436 C0 02            [24] 2256 	push	ar2
-      000438 12r0Cr76         [24] 2257 	lcall	_ClearTimer0
-      00043B D0 02            [24] 2258 	pop	ar2
-      00043D D0 03            [24] 2259 	pop	ar3
-      00043F D0 04            [24] 2260 	pop	ar4
-      000441 D0 05            [24] 2261 	pop	ar5
-      000443 D0 06            [24] 2262 	pop	ar6
-      000445 D0 07            [24] 2263 	pop	ar7
+      0004C6 C0 07            [24] 2251 	push	ar7
+      0004C8 C0 06            [24] 2252 	push	ar6
+      0004CA C0 05            [24] 2253 	push	ar5
+      0004CC C0 04            [24] 2254 	push	ar4
+      0004CE C0 03            [24] 2255 	push	ar3
+      0004D0 C0 02            [24] 2256 	push	ar2
+      0004D2 12 0D 10         [24] 2257 	lcall	_ClearTimer0
+      0004D5 D0 02            [24] 2258 	pop	ar2
+      0004D7 D0 03            [24] 2259 	pop	ar3
+      0004D9 D0 04            [24] 2260 	pop	ar4
+      0004DB D0 05            [24] 2261 	pop	ar5
+      0004DD D0 06            [24] 2262 	pop	ar6
+      0004DF D0 07            [24] 2263 	pop	ar7
                            000447  2264 	C$Lab2.c$338$2$103 ==.
                                    2265 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:338: TR0 = 1; //start timer
-      000447 D2 8C            [12] 2266 	setb	_TR0
+      0004E1 D2 8C            [12] 2266 	setb	_TR0
                            000449  2267 	C$Lab2.c$339$2$103 ==.
                                    2268 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:339: while (counts <=7)
-      000449                       2269 00142$:
-      000449 C3               [12] 2270 	clr	c
-      00044A 74 07            [12] 2271 	mov	a,#0x07
-      00044C 95*00            [12] 2272 	subb	a,_counts
-      00044E E4               [12] 2273 	clr	a
-      00044F 95*01            [12] 2274 	subb	a,(_counts + 1)
-      000451 40 0A            [24] 2275 	jc	00144$
+      0004E3                       2269 00142$:
+      0004E3 C3               [12] 2270 	clr	c
+      0004E4 74 07            [12] 2271 	mov	a,#0x07
+      0004E6 95 22            [12] 2272 	subb	a,_counts
+      0004E8 E4               [12] 2273 	clr	a
+      0004E9 95 23            [12] 2274 	subb	a,(_counts + 1)
+      0004EB 40 0A            [24] 2275 	jc	00144$
                            000453  2276 	C$Lab2.c$341$3$118 ==.
                                    2277 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:341: LED0 = 1; //turn off all LEDs
-      000453 D2 B6            [12] 2278 	setb	_LED0
+      0004ED D2 B6            [12] 2278 	setb	_LED0
                            000455  2279 	C$Lab2.c$342$3$118 ==.
                                    2280 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:342: LED1 = 1;
-      000455 D2 B5            [12] 2281 	setb	_LED1
+      0004EF D2 B5            [12] 2281 	setb	_LED1
                            000457  2282 	C$Lab2.c$343$3$118 ==.
                                    2283 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:343: LED2 = 1;
-      000457 D2 B7            [12] 2284 	setb	_LED2
+      0004F1 D2 B7            [12] 2284 	setb	_LED2
                            000459  2285 	C$Lab2.c$344$3$118 ==.
                                    2286 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:344: LED3 = 1;
-      000459 D2 B2            [12] 2287 	setb	_LED3
-      00045B 80 EC            [24] 2288 	sjmp	00142$
-      00045D                       2289 00144$:
+      0004F3 D2 B2            [12] 2287 	setb	_LED3
+      0004F5 80 EC            [24] 2288 	sjmp	00142$
+      0004F7                       2289 00144$:
                            00045D  2290 	C$Lab2.c$346$2$103 ==.
                                    2291 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:346: ClearTimer0();
-      00045D C0 07            [24] 2292 	push	ar7
-      00045F C0 06            [24] 2293 	push	ar6
-      000461 C0 05            [24] 2294 	push	ar5
-      000463 C0 04            [24] 2295 	push	ar4
-      000465 C0 03            [24] 2296 	push	ar3
-      000467 C0 02            [24] 2297 	push	ar2
-      000469 12r0Cr76         [24] 2298 	lcall	_ClearTimer0
-      00046C D0 02            [24] 2299 	pop	ar2
-      00046E D0 03            [24] 2300 	pop	ar3
-      000470 D0 04            [24] 2301 	pop	ar4
-      000472 D0 05            [24] 2302 	pop	ar5
-      000474 D0 06            [24] 2303 	pop	ar6
-      000476 D0 07            [24] 2304 	pop	ar7
+      0004F7 C0 07            [24] 2292 	push	ar7
+      0004F9 C0 06            [24] 2293 	push	ar6
+      0004FB C0 05            [24] 2294 	push	ar5
+      0004FD C0 04            [24] 2295 	push	ar4
+      0004FF C0 03            [24] 2296 	push	ar3
+      000501 C0 02            [24] 2297 	push	ar2
+      000503 12 0D 10         [24] 2298 	lcall	_ClearTimer0
+      000506 D0 02            [24] 2299 	pop	ar2
+      000508 D0 03            [24] 2300 	pop	ar3
+      00050A D0 04            [24] 2301 	pop	ar4
+      00050C D0 05            [24] 2302 	pop	ar5
+      00050E D0 06            [24] 2303 	pop	ar6
+      000510 D0 07            [24] 2304 	pop	ar7
                            000478  2305 	C$Lab2.c$347$2$103 ==.
                                    2306 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:347: if (random_Result == 0)
-      000478 EC               [12] 2307 	mov	a,r4
-      000479 70 2F            [24] 2308 	jnz	00148$
+      000512 EC               [12] 2307 	mov	a,r4
+      000513 70 2F            [24] 2308 	jnz	00148$
                            00047B  2309 	C$Lab2.c$349$3$119 ==.
                                    2310 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:349: if (ADC_value >= 51) //greater than
-      00047B C3               [12] 2311 	clr	c
-      00047C E5*0D            [12] 2312 	mov	a,_ADC_value
-      00047E 94 33            [12] 2313 	subb	a,#0x33
-      000480 E5*0E            [12] 2314 	mov	a,(_ADC_value + 1)
-      000482 94 00            [12] 2315 	subb	a,#0x00
-      000484 40 24            [24] 2316 	jc	00148$
+      000515 C3               [12] 2311 	clr	c
+      000516 E5 2F            [12] 2312 	mov	a,_ADC_value
+      000518 94 33            [12] 2313 	subb	a,#0x33
+      00051A E5 30            [12] 2314 	mov	a,(_ADC_value + 1)
+      00051C 94 00            [12] 2315 	subb	a,#0x00
+      00051E 40 24            [24] 2316 	jc	00148$
                            000486  2317 	C$Lab2.c$351$4$120 ==.
                                    2318 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:351: SetBILED('g'); //turn BILED green
-      000486 75 82 67         [24] 2319 	mov	dpl,#0x67
-      000489 C0 07            [24] 2320 	push	ar7
-      00048B C0 06            [24] 2321 	push	ar6
-      00048D C0 05            [24] 2322 	push	ar5
-      00048F C0 04            [24] 2323 	push	ar4
-      000491 C0 03            [24] 2324 	push	ar3
-      000493 C0 02            [24] 2325 	push	ar2
-      000495 12r0Cr82         [24] 2326 	lcall	_SetBILED
-      000498 D0 02            [24] 2327 	pop	ar2
-      00049A D0 03            [24] 2328 	pop	ar3
-      00049C D0 04            [24] 2329 	pop	ar4
-      00049E D0 05            [24] 2330 	pop	ar5
-      0004A0 D0 06            [24] 2331 	pop	ar6
-      0004A2 D0 07            [24] 2332 	pop	ar7
+      000520 75 82 67         [24] 2319 	mov	dpl,#0x67
+      000523 C0 07            [24] 2320 	push	ar7
+      000525 C0 06            [24] 2321 	push	ar6
+      000527 C0 05            [24] 2322 	push	ar5
+      000529 C0 04            [24] 2323 	push	ar4
+      00052B C0 03            [24] 2324 	push	ar3
+      00052D C0 02            [24] 2325 	push	ar2
+      00052F 12 0D 1C         [24] 2326 	lcall	_SetBILED
+      000532 D0 02            [24] 2327 	pop	ar2
+      000534 D0 03            [24] 2328 	pop	ar3
+      000536 D0 04            [24] 2329 	pop	ar4
+      000538 D0 05            [24] 2330 	pop	ar5
+      00053A D0 06            [24] 2331 	pop	ar6
+      00053C D0 07            [24] 2332 	pop	ar7
                            0004A4  2333 	C$Lab2.c$352$4$120 ==.
                                    2334 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:352: error = 1;
-      0004A4 75*0F 01         [24] 2335 	mov	_error,#0x01
-      0004A7 75*10 00         [24] 2336 	mov	(_error + 1),#0x00
-      0004AA                       2337 00148$:
+      00053E 75 31 01         [24] 2335 	mov	_error,#0x01
+      000541 75 32 00         [24] 2336 	mov	(_error + 1),#0x00
+      000544                       2337 00148$:
                            0004AA  2338 	C$Lab2.c$355$2$103 ==.
                                    2339 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:355: if (random_Result == 1)
-      0004AA BC 01 5F         [24] 2340 	cjne	r4,#0x01,00155$
+      000544 BC 01 5F         [24] 2340 	cjne	r4,#0x01,00155$
                            0004AD  2341 	C$Lab2.c$357$3$121 ==.
                                    2342 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:357: if (ADC_value <= 51) //less than
-      0004AD C3               [12] 2343 	clr	c
-      0004AE 74 33            [12] 2344 	mov	a,#0x33
-      0004B0 95*0D            [12] 2345 	subb	a,_ADC_value
-      0004B2 E4               [12] 2346 	clr	a
-      0004B3 95*0E            [12] 2347 	subb	a,(_ADC_value + 1)
-      0004B5 40 26            [24] 2348 	jc	00152$
+      000547 C3               [12] 2343 	clr	c
+      000548 74 33            [12] 2344 	mov	a,#0x33
+      00054A 95 2F            [12] 2345 	subb	a,_ADC_value
+      00054C E4               [12] 2346 	clr	a
+      00054D 95 30            [12] 2347 	subb	a,(_ADC_value + 1)
+      00054F 40 26            [24] 2348 	jc	00152$
                            0004B7  2349 	C$Lab2.c$359$4$122 ==.
                                    2350 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:359: SetBILED('r'); // turn BILED red
-      0004B7 75 82 72         [24] 2351 	mov	dpl,#0x72
-      0004BA C0 07            [24] 2352 	push	ar7
-      0004BC C0 06            [24] 2353 	push	ar6
-      0004BE C0 05            [24] 2354 	push	ar5
-      0004C0 C0 04            [24] 2355 	push	ar4
-      0004C2 C0 03            [24] 2356 	push	ar3
-      0004C4 C0 02            [24] 2357 	push	ar2
-      0004C6 12r0Cr82         [24] 2358 	lcall	_SetBILED
-      0004C9 D0 02            [24] 2359 	pop	ar2
-      0004CB D0 03            [24] 2360 	pop	ar3
-      0004CD D0 04            [24] 2361 	pop	ar4
-      0004CF D0 05            [24] 2362 	pop	ar5
-      0004D1 D0 06            [24] 2363 	pop	ar6
-      0004D3 D0 07            [24] 2364 	pop	ar7
+      000551 75 82 72         [24] 2351 	mov	dpl,#0x72
+      000554 C0 07            [24] 2352 	push	ar7
+      000556 C0 06            [24] 2353 	push	ar6
+      000558 C0 05            [24] 2354 	push	ar5
+      00055A C0 04            [24] 2355 	push	ar4
+      00055C C0 03            [24] 2356 	push	ar3
+      00055E C0 02            [24] 2357 	push	ar2
+      000560 12 0D 1C         [24] 2358 	lcall	_SetBILED
+      000563 D0 02            [24] 2359 	pop	ar2
+      000565 D0 03            [24] 2360 	pop	ar3
+      000567 D0 04            [24] 2361 	pop	ar4
+      000569 D0 05            [24] 2362 	pop	ar5
+      00056B D0 06            [24] 2363 	pop	ar6
+      00056D D0 07            [24] 2364 	pop	ar7
                            0004D5  2365 	C$Lab2.c$360$4$122 ==.
                                    2366 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:360: error = 1;
-      0004D5 75*0F 01         [24] 2367 	mov	_error,#0x01
-      0004D8 75*10 00         [24] 2368 	mov	(_error + 1),#0x00
-      0004DB 80 2F            [24] 2369 	sjmp	00155$
-      0004DD                       2370 00152$:
+      00056F 75 31 01         [24] 2367 	mov	_error,#0x01
+      000572 75 32 00         [24] 2368 	mov	(_error + 1),#0x00
+      000575 80 2F            [24] 2369 	sjmp	00155$
+      000577                       2370 00152$:
                            0004DD  2371 	C$Lab2.c$362$3$121 ==.
                                    2372 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:362: else if (ADC_value >= 102) //greater than
-      0004DD C3               [12] 2373 	clr	c
-      0004DE E5*0D            [12] 2374 	mov	a,_ADC_value
-      0004E0 94 66            [12] 2375 	subb	a,#0x66
-      0004E2 E5*0E            [12] 2376 	mov	a,(_ADC_value + 1)
-      0004E4 94 00            [12] 2377 	subb	a,#0x00
-      0004E6 40 24            [24] 2378 	jc	00155$
+      000577 C3               [12] 2373 	clr	c
+      000578 E5 2F            [12] 2374 	mov	a,_ADC_value
+      00057A 94 66            [12] 2375 	subb	a,#0x66
+      00057C E5 30            [12] 2376 	mov	a,(_ADC_value + 1)
+      00057E 94 00            [12] 2377 	subb	a,#0x00
+      000580 40 24            [24] 2378 	jc	00155$
                            0004E8  2379 	C$Lab2.c$364$4$123 ==.
                                    2380 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:364: SetBILED('g'); //turn BILED green
-      0004E8 75 82 67         [24] 2381 	mov	dpl,#0x67
-      0004EB C0 07            [24] 2382 	push	ar7
-      0004ED C0 06            [24] 2383 	push	ar6
-      0004EF C0 05            [24] 2384 	push	ar5
-      0004F1 C0 04            [24] 2385 	push	ar4
-      0004F3 C0 03            [24] 2386 	push	ar3
-      0004F5 C0 02            [24] 2387 	push	ar2
-      0004F7 12r0Cr82         [24] 2388 	lcall	_SetBILED
-      0004FA D0 02            [24] 2389 	pop	ar2
-      0004FC D0 03            [24] 2390 	pop	ar3
-      0004FE D0 04            [24] 2391 	pop	ar4
-      000500 D0 05            [24] 2392 	pop	ar5
-      000502 D0 06            [24] 2393 	pop	ar6
-      000504 D0 07            [24] 2394 	pop	ar7
+      000582 75 82 67         [24] 2381 	mov	dpl,#0x67
+      000585 C0 07            [24] 2382 	push	ar7
+      000587 C0 06            [24] 2383 	push	ar6
+      000589 C0 05            [24] 2384 	push	ar5
+      00058B C0 04            [24] 2385 	push	ar4
+      00058D C0 03            [24] 2386 	push	ar3
+      00058F C0 02            [24] 2387 	push	ar2
+      000591 12 0D 1C         [24] 2388 	lcall	_SetBILED
+      000594 D0 02            [24] 2389 	pop	ar2
+      000596 D0 03            [24] 2390 	pop	ar3
+      000598 D0 04            [24] 2391 	pop	ar4
+      00059A D0 05            [24] 2392 	pop	ar5
+      00059C D0 06            [24] 2393 	pop	ar6
+      00059E D0 07            [24] 2394 	pop	ar7
                            000506  2395 	C$Lab2.c$365$4$123 ==.
                                    2396 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:365: error = 1;
-      000506 75*0F 01         [24] 2397 	mov	_error,#0x01
-      000509 75*10 00         [24] 2398 	mov	(_error + 1),#0x00
-      00050C                       2399 00155$:
+      0005A0 75 31 01         [24] 2397 	mov	_error,#0x01
+      0005A3 75 32 00         [24] 2398 	mov	(_error + 1),#0x00
+      0005A6                       2399 00155$:
                            00050C  2400 	C$Lab2.c$368$2$103 ==.
                                    2401 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:368: if (random_Result == 2)
-      00050C BC 02 5F         [24] 2402 	cjne	r4,#0x02,00162$
+      0005A6 BC 02 5F         [24] 2402 	cjne	r4,#0x02,00162$
                            00050F  2403 	C$Lab2.c$370$3$124 ==.
                                    2404 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:370: if (ADC_value <= 102) //less than
-      00050F C3               [12] 2405 	clr	c
-      000510 74 66            [12] 2406 	mov	a,#0x66
-      000512 95*0D            [12] 2407 	subb	a,_ADC_value
-      000514 E4               [12] 2408 	clr	a
-      000515 95*0E            [12] 2409 	subb	a,(_ADC_value + 1)
-      000517 40 26            [24] 2410 	jc	00159$
+      0005A9 C3               [12] 2405 	clr	c
+      0005AA 74 66            [12] 2406 	mov	a,#0x66
+      0005AC 95 2F            [12] 2407 	subb	a,_ADC_value
+      0005AE E4               [12] 2408 	clr	a
+      0005AF 95 30            [12] 2409 	subb	a,(_ADC_value + 1)
+      0005B1 40 26            [24] 2410 	jc	00159$
                            000519  2411 	C$Lab2.c$372$4$125 ==.
                                    2412 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:372: SetBILED('r'); // turn BILED red
-      000519 75 82 72         [24] 2413 	mov	dpl,#0x72
-      00051C C0 07            [24] 2414 	push	ar7
-      00051E C0 06            [24] 2415 	push	ar6
-      000520 C0 05            [24] 2416 	push	ar5
-      000522 C0 04            [24] 2417 	push	ar4
-      000524 C0 03            [24] 2418 	push	ar3
-      000526 C0 02            [24] 2419 	push	ar2
-      000528 12r0Cr82         [24] 2420 	lcall	_SetBILED
-      00052B D0 02            [24] 2421 	pop	ar2
-      00052D D0 03            [24] 2422 	pop	ar3
-      00052F D0 04            [24] 2423 	pop	ar4
-      000531 D0 05            [24] 2424 	pop	ar5
-      000533 D0 06            [24] 2425 	pop	ar6
-      000535 D0 07            [24] 2426 	pop	ar7
+      0005B3 75 82 72         [24] 2413 	mov	dpl,#0x72
+      0005B6 C0 07            [24] 2414 	push	ar7
+      0005B8 C0 06            [24] 2415 	push	ar6
+      0005BA C0 05            [24] 2416 	push	ar5
+      0005BC C0 04            [24] 2417 	push	ar4
+      0005BE C0 03            [24] 2418 	push	ar3
+      0005C0 C0 02            [24] 2419 	push	ar2
+      0005C2 12 0D 1C         [24] 2420 	lcall	_SetBILED
+      0005C5 D0 02            [24] 2421 	pop	ar2
+      0005C7 D0 03            [24] 2422 	pop	ar3
+      0005C9 D0 04            [24] 2423 	pop	ar4
+      0005CB D0 05            [24] 2424 	pop	ar5
+      0005CD D0 06            [24] 2425 	pop	ar6
+      0005CF D0 07            [24] 2426 	pop	ar7
                            000537  2427 	C$Lab2.c$373$4$125 ==.
                                    2428 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:373: error = 1;
-      000537 75*0F 01         [24] 2429 	mov	_error,#0x01
-      00053A 75*10 00         [24] 2430 	mov	(_error + 1),#0x00
-      00053D 80 2F            [24] 2431 	sjmp	00162$
-      00053F                       2432 00159$:
+      0005D1 75 31 01         [24] 2429 	mov	_error,#0x01
+      0005D4 75 32 00         [24] 2430 	mov	(_error + 1),#0x00
+      0005D7 80 2F            [24] 2431 	sjmp	00162$
+      0005D9                       2432 00159$:
                            00053F  2433 	C$Lab2.c$375$3$124 ==.
                                    2434 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:375: else if (ADC_value >= 153) //greater than
-      00053F C3               [12] 2435 	clr	c
-      000540 E5*0D            [12] 2436 	mov	a,_ADC_value
-      000542 94 99            [12] 2437 	subb	a,#0x99
-      000544 E5*0E            [12] 2438 	mov	a,(_ADC_value + 1)
-      000546 94 00            [12] 2439 	subb	a,#0x00
-      000548 40 24            [24] 2440 	jc	00162$
+      0005D9 C3               [12] 2435 	clr	c
+      0005DA E5 2F            [12] 2436 	mov	a,_ADC_value
+      0005DC 94 99            [12] 2437 	subb	a,#0x99
+      0005DE E5 30            [12] 2438 	mov	a,(_ADC_value + 1)
+      0005E0 94 00            [12] 2439 	subb	a,#0x00
+      0005E2 40 24            [24] 2440 	jc	00162$
                            00054A  2441 	C$Lab2.c$377$4$126 ==.
                                    2442 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:377: SetBILED('g'); //turn BILED green
-      00054A 75 82 67         [24] 2443 	mov	dpl,#0x67
-      00054D C0 07            [24] 2444 	push	ar7
-      00054F C0 06            [24] 2445 	push	ar6
-      000551 C0 05            [24] 2446 	push	ar5
-      000553 C0 04            [24] 2447 	push	ar4
-      000555 C0 03            [24] 2448 	push	ar3
-      000557 C0 02            [24] 2449 	push	ar2
-      000559 12r0Cr82         [24] 2450 	lcall	_SetBILED
-      00055C D0 02            [24] 2451 	pop	ar2
-      00055E D0 03            [24] 2452 	pop	ar3
-      000560 D0 04            [24] 2453 	pop	ar4
-      000562 D0 05            [24] 2454 	pop	ar5
-      000564 D0 06            [24] 2455 	pop	ar6
-      000566 D0 07            [24] 2456 	pop	ar7
+      0005E4 75 82 67         [24] 2443 	mov	dpl,#0x67
+      0005E7 C0 07            [24] 2444 	push	ar7
+      0005E9 C0 06            [24] 2445 	push	ar6
+      0005EB C0 05            [24] 2446 	push	ar5
+      0005ED C0 04            [24] 2447 	push	ar4
+      0005EF C0 03            [24] 2448 	push	ar3
+      0005F1 C0 02            [24] 2449 	push	ar2
+      0005F3 12 0D 1C         [24] 2450 	lcall	_SetBILED
+      0005F6 D0 02            [24] 2451 	pop	ar2
+      0005F8 D0 03            [24] 2452 	pop	ar3
+      0005FA D0 04            [24] 2453 	pop	ar4
+      0005FC D0 05            [24] 2454 	pop	ar5
+      0005FE D0 06            [24] 2455 	pop	ar6
+      000600 D0 07            [24] 2456 	pop	ar7
                            000568  2457 	C$Lab2.c$378$4$126 ==.
                                    2458 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:378: error = 1;
-      000568 75*0F 01         [24] 2459 	mov	_error,#0x01
-      00056B 75*10 00         [24] 2460 	mov	(_error + 1),#0x00
-      00056E                       2461 00162$:
+      000602 75 31 01         [24] 2459 	mov	_error,#0x01
+      000605 75 32 00         [24] 2460 	mov	(_error + 1),#0x00
+      000608                       2461 00162$:
                            00056E  2462 	C$Lab2.c$381$2$103 ==.
                                    2463 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:381: if (random_Result == 3)
-      00056E BC 03 5F         [24] 2464 	cjne	r4,#0x03,00169$
+      000608 BC 03 5F         [24] 2464 	cjne	r4,#0x03,00169$
                            000571  2465 	C$Lab2.c$383$3$127 ==.
                                    2466 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:383: if (ADC_value <= 153) //less than
-      000571 C3               [12] 2467 	clr	c
-      000572 74 99            [12] 2468 	mov	a,#0x99
-      000574 95*0D            [12] 2469 	subb	a,_ADC_value
-      000576 E4               [12] 2470 	clr	a
-      000577 95*0E            [12] 2471 	subb	a,(_ADC_value + 1)
-      000579 40 26            [24] 2472 	jc	00166$
+      00060B C3               [12] 2467 	clr	c
+      00060C 74 99            [12] 2468 	mov	a,#0x99
+      00060E 95 2F            [12] 2469 	subb	a,_ADC_value
+      000610 E4               [12] 2470 	clr	a
+      000611 95 30            [12] 2471 	subb	a,(_ADC_value + 1)
+      000613 40 26            [24] 2472 	jc	00166$
                            00057B  2473 	C$Lab2.c$385$4$128 ==.
                                    2474 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:385: SetBILED('r'); // turn BILED red
-      00057B 75 82 72         [24] 2475 	mov	dpl,#0x72
-      00057E C0 07            [24] 2476 	push	ar7
-      000580 C0 06            [24] 2477 	push	ar6
-      000582 C0 05            [24] 2478 	push	ar5
-      000584 C0 04            [24] 2479 	push	ar4
-      000586 C0 03            [24] 2480 	push	ar3
-      000588 C0 02            [24] 2481 	push	ar2
-      00058A 12r0Cr82         [24] 2482 	lcall	_SetBILED
-      00058D D0 02            [24] 2483 	pop	ar2
-      00058F D0 03            [24] 2484 	pop	ar3
-      000591 D0 04            [24] 2485 	pop	ar4
-      000593 D0 05            [24] 2486 	pop	ar5
-      000595 D0 06            [24] 2487 	pop	ar6
-      000597 D0 07            [24] 2488 	pop	ar7
+      000615 75 82 72         [24] 2475 	mov	dpl,#0x72
+      000618 C0 07            [24] 2476 	push	ar7
+      00061A C0 06            [24] 2477 	push	ar6
+      00061C C0 05            [24] 2478 	push	ar5
+      00061E C0 04            [24] 2479 	push	ar4
+      000620 C0 03            [24] 2480 	push	ar3
+      000622 C0 02            [24] 2481 	push	ar2
+      000624 12 0D 1C         [24] 2482 	lcall	_SetBILED
+      000627 D0 02            [24] 2483 	pop	ar2
+      000629 D0 03            [24] 2484 	pop	ar3
+      00062B D0 04            [24] 2485 	pop	ar4
+      00062D D0 05            [24] 2486 	pop	ar5
+      00062F D0 06            [24] 2487 	pop	ar6
+      000631 D0 07            [24] 2488 	pop	ar7
                            000599  2489 	C$Lab2.c$386$4$128 ==.
                                    2490 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:386: error = 1;
-      000599 75*0F 01         [24] 2491 	mov	_error,#0x01
-      00059C 75*10 00         [24] 2492 	mov	(_error + 1),#0x00
-      00059F 80 2F            [24] 2493 	sjmp	00169$
-      0005A1                       2494 00166$:
+      000633 75 31 01         [24] 2491 	mov	_error,#0x01
+      000636 75 32 00         [24] 2492 	mov	(_error + 1),#0x00
+      000639 80 2F            [24] 2493 	sjmp	00169$
+      00063B                       2494 00166$:
                            0005A1  2495 	C$Lab2.c$388$3$127 ==.
                                    2496 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:388: else if (ADC_value >= 204) //greater than
-      0005A1 C3               [12] 2497 	clr	c
-      0005A2 E5*0D            [12] 2498 	mov	a,_ADC_value
-      0005A4 94 CC            [12] 2499 	subb	a,#0xcc
-      0005A6 E5*0E            [12] 2500 	mov	a,(_ADC_value + 1)
-      0005A8 94 00            [12] 2501 	subb	a,#0x00
-      0005AA 40 24            [24] 2502 	jc	00169$
+      00063B C3               [12] 2497 	clr	c
+      00063C E5 2F            [12] 2498 	mov	a,_ADC_value
+      00063E 94 CC            [12] 2499 	subb	a,#0xcc
+      000640 E5 30            [12] 2500 	mov	a,(_ADC_value + 1)
+      000642 94 00            [12] 2501 	subb	a,#0x00
+      000644 40 24            [24] 2502 	jc	00169$
                            0005AC  2503 	C$Lab2.c$390$4$129 ==.
                                    2504 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:390: SetBILED('g'); //turn BILED green
-      0005AC 75 82 67         [24] 2505 	mov	dpl,#0x67
-      0005AF C0 07            [24] 2506 	push	ar7
-      0005B1 C0 06            [24] 2507 	push	ar6
-      0005B3 C0 05            [24] 2508 	push	ar5
-      0005B5 C0 04            [24] 2509 	push	ar4
-      0005B7 C0 03            [24] 2510 	push	ar3
-      0005B9 C0 02            [24] 2511 	push	ar2
-      0005BB 12r0Cr82         [24] 2512 	lcall	_SetBILED
-      0005BE D0 02            [24] 2513 	pop	ar2
-      0005C0 D0 03            [24] 2514 	pop	ar3
-      0005C2 D0 04            [24] 2515 	pop	ar4
-      0005C4 D0 05            [24] 2516 	pop	ar5
-      0005C6 D0 06            [24] 2517 	pop	ar6
-      0005C8 D0 07            [24] 2518 	pop	ar7
+      000646 75 82 67         [24] 2505 	mov	dpl,#0x67
+      000649 C0 07            [24] 2506 	push	ar7
+      00064B C0 06            [24] 2507 	push	ar6
+      00064D C0 05            [24] 2508 	push	ar5
+      00064F C0 04            [24] 2509 	push	ar4
+      000651 C0 03            [24] 2510 	push	ar3
+      000653 C0 02            [24] 2511 	push	ar2
+      000655 12 0D 1C         [24] 2512 	lcall	_SetBILED
+      000658 D0 02            [24] 2513 	pop	ar2
+      00065A D0 03            [24] 2514 	pop	ar3
+      00065C D0 04            [24] 2515 	pop	ar4
+      00065E D0 05            [24] 2516 	pop	ar5
+      000660 D0 06            [24] 2517 	pop	ar6
+      000662 D0 07            [24] 2518 	pop	ar7
                            0005CA  2519 	C$Lab2.c$391$4$129 ==.
                                    2520 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:391: error = 1;
-      0005CA 75*0F 01         [24] 2521 	mov	_error,#0x01
-      0005CD 75*10 00         [24] 2522 	mov	(_error + 1),#0x00
-      0005D0                       2523 00169$:
+      000664 75 31 01         [24] 2521 	mov	_error,#0x01
+      000667 75 32 00         [24] 2522 	mov	(_error + 1),#0x00
+      00066A                       2523 00169$:
                            0005D0  2524 	C$Lab2.c$394$2$103 ==.
                                    2525 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:394: if (random_Result == 4)
-      0005D0 BC 04 2A         [24] 2526 	cjne	r4,#0x04,00173$
+      00066A BC 04 2A         [24] 2526 	cjne	r4,#0x04,00173$
                            0005D3  2527 	C$Lab2.c$396$3$130 ==.
                                    2528 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:396: if (ADC_value <= 204) //less than
-      0005D3 C3               [12] 2529 	clr	c
-      0005D4 74 CC            [12] 2530 	mov	a,#0xcc
-      0005D6 95*0D            [12] 2531 	subb	a,_ADC_value
-      0005D8 E4               [12] 2532 	clr	a
-      0005D9 95*0E            [12] 2533 	subb	a,(_ADC_value + 1)
-      0005DB 40 20            [24] 2534 	jc	00173$
+      00066D C3               [12] 2529 	clr	c
+      00066E 74 CC            [12] 2530 	mov	a,#0xcc
+      000670 95 2F            [12] 2531 	subb	a,_ADC_value
+      000672 E4               [12] 2532 	clr	a
+      000673 95 30            [12] 2533 	subb	a,(_ADC_value + 1)
+      000675 40 20            [24] 2534 	jc	00173$
                            0005DD  2535 	C$Lab2.c$398$4$131 ==.
                                    2536 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:398: SetBILED('r'); // turn BILED red
-      0005DD 75 82 72         [24] 2537 	mov	dpl,#0x72
-      0005E0 C0 07            [24] 2538 	push	ar7
-      0005E2 C0 06            [24] 2539 	push	ar6
-      0005E4 C0 05            [24] 2540 	push	ar5
-      0005E6 C0 03            [24] 2541 	push	ar3
-      0005E8 C0 02            [24] 2542 	push	ar2
-      0005EA 12r0Cr82         [24] 2543 	lcall	_SetBILED
-      0005ED D0 02            [24] 2544 	pop	ar2
-      0005EF D0 03            [24] 2545 	pop	ar3
-      0005F1 D0 05            [24] 2546 	pop	ar5
-      0005F3 D0 06            [24] 2547 	pop	ar6
-      0005F5 D0 07            [24] 2548 	pop	ar7
+      000677 75 82 72         [24] 2537 	mov	dpl,#0x72
+      00067A C0 07            [24] 2538 	push	ar7
+      00067C C0 06            [24] 2539 	push	ar6
+      00067E C0 05            [24] 2540 	push	ar5
+      000680 C0 03            [24] 2541 	push	ar3
+      000682 C0 02            [24] 2542 	push	ar2
+      000684 12 0D 1C         [24] 2543 	lcall	_SetBILED
+      000687 D0 02            [24] 2544 	pop	ar2
+      000689 D0 03            [24] 2545 	pop	ar3
+      00068B D0 05            [24] 2546 	pop	ar5
+      00068D D0 06            [24] 2547 	pop	ar6
+      00068F D0 07            [24] 2548 	pop	ar7
                            0005F7  2549 	C$Lab2.c$399$4$131 ==.
                                    2550 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:399: error = 1;
-      0005F7 75*0F 01         [24] 2551 	mov	_error,#0x01
-      0005FA 75*10 00         [24] 2552 	mov	(_error + 1),#0x00
-      0005FD                       2553 00173$:
+      000691 75 31 01         [24] 2551 	mov	_error,#0x01
+      000694 75 32 00         [24] 2552 	mov	(_error + 1),#0x00
+      000697                       2553 00173$:
                            0005FD  2554 	C$Lab2.c$402$1$102 ==.
                                    2555 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:402: round_Score = game_Time /169;
-      0005FD 75*00 A9         [24] 2556 	mov	__divuint_PARM_2,#0xa9
-      000600 75*01 00         [24] 2557 	mov	(__divuint_PARM_2 + 1),#0x00
-      000603 8A 82            [24] 2558 	mov	dpl,r2
-      000605 8B 83            [24] 2559 	mov	dph,r3
-      000607 C0 07            [24] 2560 	push	ar7
-      000609 C0 06            [24] 2561 	push	ar6
-      00060B C0 05            [24] 2562 	push	ar5
-      00060D 12r00r00         [24] 2563 	lcall	__divuint
-      000610 AB 82            [24] 2564 	mov	r3,dpl
-      000612 AC 83            [24] 2565 	mov	r4,dph
-      000614 D0 05            [24] 2566 	pop	ar5
-      000616 D0 06            [24] 2567 	pop	ar6
-      000618 D0 07            [24] 2568 	pop	ar7
+      000697 75 0E A9         [24] 2556 	mov	__divuint_PARM_2,#0xa9
+      00069A 75 0F 00         [24] 2557 	mov	(__divuint_PARM_2 + 1),#0x00
+      00069D 8A 82            [24] 2558 	mov	dpl,r2
+      00069F 8B 83            [24] 2559 	mov	dph,r3
+      0006A1 C0 07            [24] 2560 	push	ar7
+      0006A3 C0 06            [24] 2561 	push	ar6
+      0006A5 C0 05            [24] 2562 	push	ar5
+      0006A7 12 0D AE         [24] 2563 	lcall	__divuint
+      0006AA AB 82            [24] 2564 	mov	r3,dpl
+      0006AC AC 83            [24] 2565 	mov	r4,dph
+      0006AE D0 05            [24] 2566 	pop	ar5
+      0006B0 D0 06            [24] 2567 	pop	ar6
+      0006B2 D0 07            [24] 2568 	pop	ar7
                            00061A  2569 	C$Lab2.c$403$2$103 ==.
                                    2570 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:403: if (error == 1)
-      00061A 74 01            [12] 2571 	mov	a,#0x01
-      00061C B5*0F 06         [24] 2572 	cjne	a,_error,00344$
-      00061F 14               [12] 2573 	dec	a
-      000620 B5*10 02         [24] 2574 	cjne	a,(_error + 1),00344$
-      000623 80 02            [24] 2575 	sjmp	00345$
-      000625                       2576 00344$:
-      000625 80 07            [24] 2577 	sjmp	00175$
-      000627                       2578 00345$:
+      0006B4 74 01            [12] 2571 	mov	a,#0x01
+      0006B6 B5 31 06         [24] 2572 	cjne	a,_error,00344$
+      0006B9 14               [12] 2573 	dec	a
+      0006BA B5 32 02         [24] 2574 	cjne	a,(_error + 1),00344$
+      0006BD 80 02            [24] 2575 	sjmp	00345$
+      0006BF                       2576 00344$:
+      0006BF 80 07            [24] 2577 	sjmp	00175$
+      0006C1                       2578 00345$:
                            000627  2579 	C$Lab2.c$405$3$132 ==.
                                    2580 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:405: round_Score = round_Score + 10;
-      000627 74 0A            [12] 2581 	mov	a,#0x0a
-      000629 2B               [12] 2582 	add	a,r3
-      00062A FB               [12] 2583 	mov	r3,a
-      00062B E4               [12] 2584 	clr	a
-      00062C 3C               [12] 2585 	addc	a,r4
-      00062D FC               [12] 2586 	mov	r4,a
-      00062E                       2587 00175$:
+      0006C1 74 0A            [12] 2581 	mov	a,#0x0a
+      0006C3 2B               [12] 2582 	add	a,r3
+      0006C4 FB               [12] 2583 	mov	r3,a
+      0006C5 E4               [12] 2584 	clr	a
+      0006C6 3C               [12] 2585 	addc	a,r4
+      0006C7 FC               [12] 2586 	mov	r4,a
+      0006C8                       2587 00175$:
                            00062E  2588 	C$Lab2.c$407$2$103 ==.
                                    2589 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:407: total_Score = total_Score + round_Score;
-      00062E EB               [12] 2590 	mov	a,r3
-      00062F 2E               [12] 2591 	add	a,r6
-      000630 FE               [12] 2592 	mov	r6,a
-      000631 EC               [12] 2593 	mov	a,r4
-      000632 3F               [12] 2594 	addc	a,r7
-      000633 FF               [12] 2595 	mov	r7,a
+      0006C8 EB               [12] 2590 	mov	a,r3
+      0006C9 2E               [12] 2591 	add	a,r6
+      0006CA FE               [12] 2592 	mov	r6,a
+      0006CB EC               [12] 2593 	mov	a,r4
+      0006CC 3F               [12] 2594 	addc	a,r7
+      0006CD FF               [12] 2595 	mov	r7,a
                            000634  2596 	C$Lab2.c$408$2$103 ==.
                                    2597 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:408: printf("Round Score: %d",round_Score);
-      000634 C0 07            [24] 2598 	push	ar7
-      000636 C0 06            [24] 2599 	push	ar6
-      000638 C0 05            [24] 2600 	push	ar5
-      00063A C0 03            [24] 2601 	push	ar3
-      00063C C0 04            [24] 2602 	push	ar4
-      00063E 74rC3            [12] 2603 	mov	a,#___str_7
-      000640 C0 E0            [24] 2604 	push	acc
-      000642 74s03            [12] 2605 	mov	a,#(___str_7 >> 8)
-      000644 C0 E0            [24] 2606 	push	acc
-      000646 74 80            [12] 2607 	mov	a,#0x80
-      000648 C0 E0            [24] 2608 	push	acc
-      00064A 12r00r00         [24] 2609 	lcall	_printf
-      00064D E5 81            [12] 2610 	mov	a,sp
-      00064F 24 FB            [12] 2611 	add	a,#0xfb
-      000651 F5 81            [12] 2612 	mov	sp,a
-      000653 D0 05            [24] 2613 	pop	ar5
-      000655 D0 06            [24] 2614 	pop	ar6
-      000657 D0 07            [24] 2615 	pop	ar7
+      0006CE C0 07            [24] 2598 	push	ar7
+      0006D0 C0 06            [24] 2599 	push	ar6
+      0006D2 C0 05            [24] 2600 	push	ar5
+      0006D4 C0 03            [24] 2601 	push	ar3
+      0006D6 C0 04            [24] 2602 	push	ar4
+      0006D8 74 4D            [12] 2603 	mov	a,#___str_7
+      0006DA C0 E0            [24] 2604 	push	acc
+      0006DC 74 1C            [12] 2605 	mov	a,#(___str_7 >> 8)
+      0006DE C0 E0            [24] 2606 	push	acc
+      0006E0 74 80            [12] 2607 	mov	a,#0x80
+      0006E2 C0 E0            [24] 2608 	push	acc
+      0006E4 12 10 BA         [24] 2609 	lcall	_printf
+      0006E7 E5 81            [12] 2610 	mov	a,sp
+      0006E9 24 FB            [12] 2611 	add	a,#0xfb
+      0006EB F5 81            [12] 2612 	mov	sp,a
+      0006ED D0 05            [24] 2613 	pop	ar5
+      0006EF D0 06            [24] 2614 	pop	ar6
+      0006F1 D0 07            [24] 2615 	pop	ar7
                            000659  2616 	C$Lab2.c$409$2$103 ==.
                                    2617 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:409: printf("Total Score: %d",total_Score);
-      000659 C0 07            [24] 2618 	push	ar7
-      00065B C0 06            [24] 2619 	push	ar6
-      00065D C0 05            [24] 2620 	push	ar5
-      00065F C0 06            [24] 2621 	push	ar6
-      000661 C0 07            [24] 2622 	push	ar7
-      000663 74rD3            [12] 2623 	mov	a,#___str_8
-      000665 C0 E0            [24] 2624 	push	acc
-      000667 74s03            [12] 2625 	mov	a,#(___str_8 >> 8)
-      000669 C0 E0            [24] 2626 	push	acc
-      00066B 74 80            [12] 2627 	mov	a,#0x80
-      00066D C0 E0            [24] 2628 	push	acc
-      00066F 12r00r00         [24] 2629 	lcall	_printf
-      000672 E5 81            [12] 2630 	mov	a,sp
-      000674 24 FB            [12] 2631 	add	a,#0xfb
-      000676 F5 81            [12] 2632 	mov	sp,a
-      000678 D0 05            [24] 2633 	pop	ar5
-      00067A D0 06            [24] 2634 	pop	ar6
-      00067C D0 07            [24] 2635 	pop	ar7
+      0006F3 C0 07            [24] 2618 	push	ar7
+      0006F5 C0 06            [24] 2619 	push	ar6
+      0006F7 C0 05            [24] 2620 	push	ar5
+      0006F9 C0 06            [24] 2621 	push	ar6
+      0006FB C0 07            [24] 2622 	push	ar7
+      0006FD 74 5D            [12] 2623 	mov	a,#___str_8
+      0006FF C0 E0            [24] 2624 	push	acc
+      000701 74 1C            [12] 2625 	mov	a,#(___str_8 >> 8)
+      000703 C0 E0            [24] 2626 	push	acc
+      000705 74 80            [12] 2627 	mov	a,#0x80
+      000707 C0 E0            [24] 2628 	push	acc
+      000709 12 10 BA         [24] 2629 	lcall	_printf
+      00070C E5 81            [12] 2630 	mov	a,sp
+      00070E 24 FB            [12] 2631 	add	a,#0xfb
+      000710 F5 81            [12] 2632 	mov	sp,a
+      000712 D0 05            [24] 2633 	pop	ar5
+      000714 D0 06            [24] 2634 	pop	ar6
+      000716 D0 07            [24] 2635 	pop	ar7
                            00067E  2636 	C$Lab2.c$412$2$103 ==.
                                    2637 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:412: TR0 = 1; //start timer
-      00067E D2 8C            [12] 2638 	setb	_TR0
+      000718 D2 8C            [12] 2638 	setb	_TR0
                            000680  2639 	C$Lab2.c$413$2$103 ==.
                                    2640 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:413: while (counts <= 169);
-      000680                       2641 00176$:
-      000680 C3               [12] 2642 	clr	c
-      000681 74 A9            [12] 2643 	mov	a,#0xa9
-      000683 95*00            [12] 2644 	subb	a,_counts
-      000685 E4               [12] 2645 	clr	a
-      000686 95*01            [12] 2646 	subb	a,(_counts + 1)
-      000688 50 F6            [24] 2647 	jnc	00176$
+      00071A                       2641 00176$:
+      00071A C3               [12] 2642 	clr	c
+      00071B 74 A9            [12] 2643 	mov	a,#0xa9
+      00071D 95 22            [12] 2644 	subb	a,_counts
+      00071F E4               [12] 2645 	clr	a
+      000720 95 23            [12] 2646 	subb	a,(_counts + 1)
+      000722 50 F6            [24] 2647 	jnc	00176$
                            00068A  2648 	C$Lab2.c$236$1$102 ==.
                                    2649 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:236: for (rounds=0; rounds++; rounds<5)
-      00068A 02r02r80         [24] 2650 	ljmp	00181$
-      00068D                       2651 00179$:
+      000724 02 03 1A         [24] 2650 	ljmp	00181$
+      000727                       2651 00179$:
                            00068D  2652 	C$Lab2.c$415$1$102 ==.
                                    2653 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:415: printf("Final Score: %d",total_Score);
-      00068D C0 06            [24] 2654 	push	ar6
-      00068F C0 07            [24] 2655 	push	ar7
-      000691 74rE3            [12] 2656 	mov	a,#___str_9
-      000693 C0 E0            [24] 2657 	push	acc
-      000695 74s03            [12] 2658 	mov	a,#(___str_9 >> 8)
-      000697 C0 E0            [24] 2659 	push	acc
-      000699 74 80            [12] 2660 	mov	a,#0x80
-      00069B C0 E0            [24] 2661 	push	acc
-      00069D 12r00r00         [24] 2662 	lcall	_printf
-      0006A0 E5 81            [12] 2663 	mov	a,sp
-      0006A2 24 FB            [12] 2664 	add	a,#0xfb
-      0006A4 F5 81            [12] 2665 	mov	sp,a
+      000727 C0 06            [24] 2654 	push	ar6
+      000729 C0 07            [24] 2655 	push	ar7
+      00072B 74 6D            [12] 2656 	mov	a,#___str_9
+      00072D C0 E0            [24] 2657 	push	acc
+      00072F 74 1C            [12] 2658 	mov	a,#(___str_9 >> 8)
+      000731 C0 E0            [24] 2659 	push	acc
+      000733 74 80            [12] 2660 	mov	a,#0x80
+      000735 C0 E0            [24] 2661 	push	acc
+      000737 12 10 BA         [24] 2662 	lcall	_printf
+      00073A E5 81            [12] 2663 	mov	a,sp
+      00073C 24 FB            [12] 2664 	add	a,#0xfb
+      00073E F5 81            [12] 2665 	mov	sp,a
                            0006A6  2666 	C$Lab2.c$416$1$102 ==.
                                    2667 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:416: Flash_Biled();
-      0006A6 12r02r28         [24] 2668 	lcall	_Flash_Biled
+      000740 12 02 C2         [24] 2668 	lcall	_Flash_Biled
                            0006A9  2669 	C$Lab2.c$417$1$102 ==.
                            0006A9  2670 	XG$Mode_One$0$0 ==.
-      0006A9 22               [24] 2671 	ret
+      000743 22               [24] 2671 	ret
                                    2672 ;------------------------------------------------------------
                                    2673 ;Allocation info for local variables in function 'Mode_Two'
                                    2674 ;------------------------------------------------------------
@@ -2678,479 +2678,479 @@
                                    2678 ;	-----------------------------------------
                                    2679 ;	 function Mode_Two
                                    2680 ;	-----------------------------------------
-      0006AA                       2681 _Mode_Two:
+      000744                       2681 _Mode_Two:
                            0006AA  2682 	C$Lab2.c$422$1$134 ==.
                                    2683 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:422: printf("\r\n\nPlayer 1 will have 1 second to adjust the potentionmeter to light up LEDs.\r\nPlayer 2 must then push the button for each LED that was lit within 1.5s\r\n"); // Instructions 
-      0006AA 74rF3            [12] 2684 	mov	a,#___str_10
-      0006AC C0 E0            [24] 2685 	push	acc
-      0006AE 74s03            [12] 2686 	mov	a,#(___str_10 >> 8)
-      0006B0 C0 E0            [24] 2687 	push	acc
-      0006B2 74 80            [12] 2688 	mov	a,#0x80
-      0006B4 C0 E0            [24] 2689 	push	acc
-      0006B6 12r00r00         [24] 2690 	lcall	_printf
-      0006B9 15 81            [12] 2691 	dec	sp
-      0006BB 15 81            [12] 2692 	dec	sp
-      0006BD 15 81            [12] 2693 	dec	sp
+      000744 74 7D            [12] 2684 	mov	a,#___str_10
+      000746 C0 E0            [24] 2685 	push	acc
+      000748 74 1C            [12] 2686 	mov	a,#(___str_10 >> 8)
+      00074A C0 E0            [24] 2687 	push	acc
+      00074C 74 80            [12] 2688 	mov	a,#0x80
+      00074E C0 E0            [24] 2689 	push	acc
+      000750 12 10 BA         [24] 2690 	lcall	_printf
+      000753 15 81            [12] 2691 	dec	sp
+      000755 15 81            [12] 2692 	dec	sp
+      000757 15 81            [12] 2693 	dec	sp
                            0006BF  2694 	C$Lab2.c$424$1$134 ==.
                                    2695 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:424: score = 0; // keeps track of the score
-      0006BF E4               [12] 2696 	clr	a
-      0006C0 F5*13            [12] 2697 	mov	_score,a
-      0006C2 F5*14            [12] 2698 	mov	(_score + 1),a
+      000759 E4               [12] 2696 	clr	a
+      00075A F5 35            [12] 2697 	mov	_score,a
+      00075C F5 36            [12] 2698 	mov	(_score + 1),a
                            0006C4  2699 	C$Lab2.c$425$1$134 ==.
                                    2700 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:425: SetAllLEDs(1); // Turn off all LEDs 
-      0006C4 75 82 01         [24] 2701 	mov	dpl,#0x01
-      0006C7 12r0Br74         [24] 2702 	lcall	_SetAllLEDs
+      00075E 75 82 01         [24] 2701 	mov	dpl,#0x01
+      000761 12 0C 0E         [24] 2702 	lcall	_SetAllLEDs
                            0006CA  2703 	C$Lab2.c$426$1$134 ==.
                                    2704 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:426: buttonPresses = 0; // Keeps track of button presses
-      0006CA E4               [12] 2705 	clr	a
-      0006CB F5*15            [12] 2706 	mov	_buttonPresses,a
-      0006CD F5*16            [12] 2707 	mov	(_buttonPresses + 1),a
+      000764 E4               [12] 2705 	clr	a
+      000765 F5 37            [12] 2706 	mov	_buttonPresses,a
+      000767 F5 38            [12] 2707 	mov	(_buttonPresses + 1),a
                            0006CF  2708 	C$Lab2.c$427$1$134 ==.
                                    2709 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:427: numLEDs = 0; // Counts the number of LEDs lit
-      0006CF F5*23            [12] 2710 	mov	_numLEDs,a
-      0006D1 F5*24            [12] 2711 	mov	(_numLEDs + 1),a
+      000769 F5 45            [12] 2710 	mov	_numLEDs,a
+      00076B F5 46            [12] 2711 	mov	(_numLEDs + 1),a
                            0006D3  2712 	C$Lab2.c$429$1$134 ==.
                                    2713 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:429: for (tries = 0; tries < 5; tries++)
-      0006D3 F5*25            [12] 2714 	mov	_tries,a
-      0006D5 F5*26            [12] 2715 	mov	(_tries + 1),a
-      0006D7                       2716 00160$:
+      00076D F5 47            [12] 2714 	mov	_tries,a
+      00076F F5 48            [12] 2715 	mov	(_tries + 1),a
+      000771                       2716 00160$:
                            0006D7  2717 	C$Lab2.c$431$2$135 ==.
                                    2718 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:431: buttonPresses = 0; // Clear number of button presses
-      0006D7 E4               [12] 2719 	clr	a
-      0006D8 F5*15            [12] 2720 	mov	_buttonPresses,a
-      0006DA F5*16            [12] 2721 	mov	(_buttonPresses + 1),a
+      000771 E4               [12] 2719 	clr	a
+      000772 F5 37            [12] 2720 	mov	_buttonPresses,a
+      000774 F5 38            [12] 2721 	mov	(_buttonPresses + 1),a
                            0006DC  2722 	C$Lab2.c$432$2$135 ==.
                                    2723 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:432: ClearTimer0(); // Stop and clear Timer0 and overflows
-      0006DC 12r0Cr76         [24] 2724 	lcall	_ClearTimer0
+      000776 12 0D 10         [24] 2724 	lcall	_ClearTimer0
                            0006DF  2725 	C$Lab2.c$433$2$135 ==.
                                    2726 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:433: SetBILED('r'); // Turn BILED red
-      0006DF 75 82 72         [24] 2727 	mov	dpl,#0x72
-      0006E2 12r0Cr82         [24] 2728 	lcall	_SetBILED
+      000779 75 82 72         [24] 2727 	mov	dpl,#0x72
+      00077C 12 0D 1C         [24] 2728 	lcall	_SetBILED
                            0006E5  2729 	C$Lab2.c$434$2$135 ==.
                                    2730 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:434: TR0 = 1; // Start Timer0
-      0006E5 D2 8C            [12] 2731 	setb	_TR0
+      00077F D2 8C            [12] 2731 	setb	_TR0
                            0006E7  2732 	C$Lab2.c$436$2$135 ==.
                                    2733 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:436: while ( counts < 338) // Wait 1 second for player 1 to set pot
-      0006E7                       2734 00102$:
-      0006E7 C3               [12] 2735 	clr	c
-      0006E8 E5*00            [12] 2736 	mov	a,_counts
-      0006EA 94 52            [12] 2737 	subb	a,#0x52
-      0006EC E5*01            [12] 2738 	mov	a,(_counts + 1)
-      0006EE 94 01            [12] 2739 	subb	a,#0x01
-      0006F0 50 1C            [24] 2740 	jnc	00104$
+      000781                       2734 00102$:
+      000781 C3               [12] 2735 	clr	c
+      000782 E5 22            [12] 2736 	mov	a,_counts
+      000784 94 52            [12] 2737 	subb	a,#0x52
+      000786 E5 23            [12] 2738 	mov	a,(_counts + 1)
+      000788 94 01            [12] 2739 	subb	a,#0x01
+      00078A 50 1C            [24] 2740 	jnc	00104$
                            0006F2  2741 	C$Lab2.c$438$3$136 ==.
                                    2742 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:438: for (var = 0;var<100;var++); // Do something in loop to wait more accurately
-      0006F2 75*02 64         [24] 2743 	mov	_var,#0x64
-      0006F5 75*03 00         [24] 2744 	mov	(_var + 1),#0x00
-      0006F8                       2745 00144$:
-      0006F8 15*02            [12] 2746 	dec	_var
-      0006FA 74 FF            [12] 2747 	mov	a,#0xff
-      0006FC B5*02 02         [24] 2748 	cjne	a,_var,00270$
-      0006FF 15*03            [12] 2749 	dec	(_var + 1)
-      000701                       2750 00270$:
-      000701 E5*02            [12] 2751 	mov	a,_var
-      000703 45*03            [12] 2752 	orl	a,(_var + 1)
-      000705 70 F1            [24] 2753 	jnz	00144$
-      000707 75*02 64         [24] 2754 	mov	_var,#0x64
-      00070A F5*03            [12] 2755 	mov	(_var + 1),a
-      00070C 80 D9            [24] 2756 	sjmp	00102$
-      00070E                       2757 00104$:
+      00078C 75 24 64         [24] 2743 	mov	_var,#0x64
+      00078F 75 25 00         [24] 2744 	mov	(_var + 1),#0x00
+      000792                       2745 00144$:
+      000792 15 24            [12] 2746 	dec	_var
+      000794 74 FF            [12] 2747 	mov	a,#0xff
+      000796 B5 24 02         [24] 2748 	cjne	a,_var,00270$
+      000799 15 25            [12] 2749 	dec	(_var + 1)
+      00079B                       2750 00270$:
+      00079B E5 24            [12] 2751 	mov	a,_var
+      00079D 45 25            [12] 2752 	orl	a,(_var + 1)
+      00079F 70 F1            [24] 2753 	jnz	00144$
+      0007A1 75 24 64         [24] 2754 	mov	_var,#0x64
+      0007A4 F5 25            [12] 2755 	mov	(_var + 1),a
+      0007A6 80 D9            [24] 2756 	sjmp	00102$
+      0007A8                       2757 00104$:
                            00070E  2758 	C$Lab2.c$441$2$135 ==.
                                    2759 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:441: SetBILED('o'); // Turn off BILED
-      00070E 75 82 6F         [24] 2760 	mov	dpl,#0x6f
-      000711 12r0Cr82         [24] 2761 	lcall	_SetBILED
+      0007A8 75 82 6F         [24] 2760 	mov	dpl,#0x6f
+      0007AB 12 0D 1C         [24] 2761 	lcall	_SetBILED
                            000714  2762 	C$Lab2.c$442$2$135 ==.
                                    2763 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:442: ADC_value = read_AD_input();
-      000714 12r01r8D         [24] 2764 	lcall	_read_AD_input
-      000717 AF 82            [24] 2765 	mov	r7,dpl
-      000719 8F*0D            [24] 2766 	mov	_ADC_value,r7
-      00071B 75*0E 00         [24] 2767 	mov	(_ADC_value + 1),#0x00
+      0007AE 12 02 27         [24] 2764 	lcall	_read_AD_input
+      0007B1 AF 82            [24] 2765 	mov	r7,dpl
+      0007B3 8F 2F            [24] 2766 	mov	_ADC_value,r7
+      0007B5 75 30 00         [24] 2767 	mov	(_ADC_value + 1),#0x00
                            00071E  2768 	C$Lab2.c$443$2$135 ==.
                                    2769 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:443: numLEDs = MapADC(ADC_value,0,4); // Read the corresponding number of LEDs relative to the value of the potentionmeter
-      00071E 85*0D 82         [24] 2770 	mov	dpl,_ADC_value
-      000721 75*2B 00         [24] 2771 	mov	_MapADC_PARM_2,#0x00
-      000724 75*2C 04         [24] 2772 	mov	_MapADC_PARM_3,#0x04
-      000727 12r0Br93         [24] 2773 	lcall	_MapADC
-      00072A AF 82            [24] 2774 	mov	r7,dpl
-      00072C 8F*23            [24] 2775 	mov	_numLEDs,r7
-      00072E 75*24 00         [24] 2776 	mov	(_numLEDs + 1),#0x00
+      0007B8 85 2F 82         [24] 2770 	mov	dpl,_ADC_value
+      0007BB 75 4D 00         [24] 2771 	mov	_MapADC_PARM_2,#0x00
+      0007BE 75 4E 04         [24] 2772 	mov	_MapADC_PARM_3,#0x04
+      0007C1 12 0C 2D         [24] 2773 	lcall	_MapADC
+      0007C4 AF 82            [24] 2774 	mov	r7,dpl
+      0007C6 8F 45            [24] 2775 	mov	_numLEDs,r7
+      0007C8 75 46 00         [24] 2776 	mov	(_numLEDs + 1),#0x00
                            000731  2777 	C$Lab2.c$444$2$135 ==.
                                    2778 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:444: LightNumLEDs(numLEDs); // Light the corresponding number of LEDs
-      000731 85*23 82         [24] 2779 	mov	dpl,_numLEDs
-      000734 12r0Cr4D         [24] 2780 	lcall	_LightNumLEDs
+      0007CB 85 45 82         [24] 2779 	mov	dpl,_numLEDs
+      0007CE 12 0C E7         [24] 2780 	lcall	_LightNumLEDs
                            000737  2781 	C$Lab2.c$445$2$135 ==.
                                    2782 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:445: ClearTimer0(); // Clear timer and overflows
-      000737 12r0Cr76         [24] 2783 	lcall	_ClearTimer0
+      0007D1 12 0D 10         [24] 2783 	lcall	_ClearTimer0
                            00073A  2784 	C$Lab2.c$446$2$135 ==.
                                    2785 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:446: TR0 = 1; // Start timer0
-      00073A D2 8C            [12] 2786 	setb	_TR0
+      0007D4 D2 8C            [12] 2786 	setb	_TR0
                            00073C  2787 	C$Lab2.c$447$2$135 ==.
                                    2788 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:447: while (counts < overflows[tries]) // Wait for round timer to end
-      00073C                       2789 00108$:
-      00073C E5*25            [12] 2790 	mov	a,_tries
-      00073E 25*25            [12] 2791 	add	a,_tries
-      000740 FE               [12] 2792 	mov	r6,a
-      000741 E5*26            [12] 2793 	mov	a,(_tries + 1)
-      000743 33               [12] 2794 	rlc	a
-      000744 EE               [12] 2795 	mov	a,r6
-      000745 24r19            [12] 2796 	add	a,#_overflows
-      000747 F9               [12] 2797 	mov	r1,a
-      000748 87 06            [24] 2798 	mov	ar6,@r1
-      00074A 09               [12] 2799 	inc	r1
-      00074B 87 07            [24] 2800 	mov	ar7,@r1
-      00074D 19               [12] 2801 	dec	r1
-      00074E C3               [12] 2802 	clr	c
-      00074F E5*00            [12] 2803 	mov	a,_counts
-      000751 9E               [12] 2804 	subb	a,r6
-      000752 E5*01            [12] 2805 	mov	a,(_counts + 1)
-      000754 9F               [12] 2806 	subb	a,r7
-      000755 50 2C            [24] 2807 	jnc	00110$
+      0007D6                       2789 00108$:
+      0007D6 E5 47            [12] 2790 	mov	a,_tries
+      0007D8 25 47            [12] 2791 	add	a,_tries
+      0007DA FE               [12] 2792 	mov	r6,a
+      0007DB E5 48            [12] 2793 	mov	a,(_tries + 1)
+      0007DD 33               [12] 2794 	rlc	a
+      0007DE EE               [12] 2795 	mov	a,r6
+      0007DF 24 3B            [12] 2796 	add	a,#_overflows
+      0007E1 F9               [12] 2797 	mov	r1,a
+      0007E2 87 06            [24] 2798 	mov	ar6,@r1
+      0007E4 09               [12] 2799 	inc	r1
+      0007E5 87 07            [24] 2800 	mov	ar7,@r1
+      0007E7 19               [12] 2801 	dec	r1
+      0007E8 C3               [12] 2802 	clr	c
+      0007E9 E5 22            [12] 2803 	mov	a,_counts
+      0007EB 9E               [12] 2804 	subb	a,r6
+      0007EC E5 23            [12] 2805 	mov	a,(_counts + 1)
+      0007EE 9F               [12] 2806 	subb	a,r7
+      0007EF 50 2C            [24] 2807 	jnc	00110$
                            000757  2808 	C$Lab2.c$449$3$137 ==.
                                    2809 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:449: if(DebounceButton()==1) // If the button was pressed
-      000757 12r0CrA7         [24] 2810 	lcall	_DebounceButton
-      00075A AF 82            [24] 2811 	mov	r7,dpl
-      00075C BF 01 08         [24] 2812 	cjne	r7,#0x01,00106$
+      0007F1 12 0D 41         [24] 2810 	lcall	_DebounceButton
+      0007F4 AF 82            [24] 2811 	mov	r7,dpl
+      0007F6 BF 01 08         [24] 2812 	cjne	r7,#0x01,00106$
                            00075F  2813 	C$Lab2.c$451$4$138 ==.
                                    2814 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:451: buttonPresses++; // Increment number of presses
-      00075F 05*15            [12] 2815 	inc	_buttonPresses
-      000761 E4               [12] 2816 	clr	a
-      000762 B5*15 02         [24] 2817 	cjne	a,_buttonPresses,00275$
-      000765 05*16            [12] 2818 	inc	(_buttonPresses + 1)
-      000767                       2819 00275$:
-      000767                       2820 00106$:
+      0007F9 05 37            [12] 2815 	inc	_buttonPresses
+      0007FB E4               [12] 2816 	clr	a
+      0007FC B5 37 02         [24] 2817 	cjne	a,_buttonPresses,00275$
+      0007FF 05 38            [12] 2818 	inc	(_buttonPresses + 1)
+      000801                       2819 00275$:
+      000801                       2820 00106$:
                            000767  2821 	C$Lab2.c$453$3$137 ==.
                                    2822 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:453: for (var = 0;var<100;var++);
-      000767 75*02 64         [24] 2823 	mov	_var,#0x64
-      00076A 75*03 00         [24] 2824 	mov	(_var + 1),#0x00
-      00076D                       2825 00147$:
-      00076D 15*02            [12] 2826 	dec	_var
-      00076F 74 FF            [12] 2827 	mov	a,#0xff
-      000771 B5*02 02         [24] 2828 	cjne	a,_var,00276$
-      000774 15*03            [12] 2829 	dec	(_var + 1)
-      000776                       2830 00276$:
-      000776 E5*02            [12] 2831 	mov	a,_var
-      000778 45*03            [12] 2832 	orl	a,(_var + 1)
-      00077A 70 F1            [24] 2833 	jnz	00147$
-      00077C 75*02 64         [24] 2834 	mov	_var,#0x64
-      00077F F5*03            [12] 2835 	mov	(_var + 1),a
-      000781 80 B9            [24] 2836 	sjmp	00108$
-      000783                       2837 00110$:
+      000801 75 24 64         [24] 2823 	mov	_var,#0x64
+      000804 75 25 00         [24] 2824 	mov	(_var + 1),#0x00
+      000807                       2825 00147$:
+      000807 15 24            [12] 2826 	dec	_var
+      000809 74 FF            [12] 2827 	mov	a,#0xff
+      00080B B5 24 02         [24] 2828 	cjne	a,_var,00276$
+      00080E 15 25            [12] 2829 	dec	(_var + 1)
+      000810                       2830 00276$:
+      000810 E5 24            [12] 2831 	mov	a,_var
+      000812 45 25            [12] 2832 	orl	a,(_var + 1)
+      000814 70 F1            [24] 2833 	jnz	00147$
+      000816 75 24 64         [24] 2834 	mov	_var,#0x64
+      000819 F5 25            [12] 2835 	mov	(_var + 1),a
+      00081B 80 B9            [24] 2836 	sjmp	00108$
+      00081D                       2837 00110$:
                            000783  2838 	C$Lab2.c$456$2$135 ==.
                                    2839 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:456: if (buttonPresses == numLEDs) // If they got the correct number of presses
-      000783 E5*23            [12] 2840 	mov	a,_numLEDs
-      000785 B5*15 10         [24] 2841 	cjne	a,_buttonPresses,00112$
-      000788 E5*24            [12] 2842 	mov	a,(_numLEDs + 1)
-      00078A B5*16 0B         [24] 2843 	cjne	a,(_buttonPresses + 1),00112$
+      00081D E5 45            [12] 2840 	mov	a,_numLEDs
+      00081F B5 37 10         [24] 2841 	cjne	a,_buttonPresses,00112$
+      000822 E5 46            [12] 2842 	mov	a,(_numLEDs + 1)
+      000824 B5 38 0B         [24] 2843 	cjne	a,(_buttonPresses + 1),00112$
                            00078D  2844 	C$Lab2.c$458$3$139 ==.
                                    2845 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:458: score += 10; // gain 10 points
-      00078D 74 0A            [12] 2846 	mov	a,#0x0a
-      00078F 25*13            [12] 2847 	add	a,_score
-      000791 F5*13            [12] 2848 	mov	_score,a
-      000793 E4               [12] 2849 	clr	a
-      000794 35*14            [12] 2850 	addc	a,(_score + 1)
-      000796 F5*14            [12] 2851 	mov	(_score + 1),a
-      000798                       2852 00112$:
+      000827 74 0A            [12] 2846 	mov	a,#0x0a
+      000829 25 35            [12] 2847 	add	a,_score
+      00082B F5 35            [12] 2848 	mov	_score,a
+      00082D E4               [12] 2849 	clr	a
+      00082E 35 36            [12] 2850 	addc	a,(_score + 1)
+      000830 F5 36            [12] 2851 	mov	(_score + 1),a
+      000832                       2852 00112$:
                            000798  2853 	C$Lab2.c$461$2$135 ==.
                                    2854 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:461: ClearTimer0(); // Clear Timer0 and overflows
-      000798 12r0Cr76         [24] 2855 	lcall	_ClearTimer0
+      000832 12 0D 10         [24] 2855 	lcall	_ClearTimer0
                            00079B  2856 	C$Lab2.c$462$2$135 ==.
                                    2857 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:462: TR0 = 1; // Start the timer
-      00079B D2 8C            [12] 2858 	setb	_TR0
+      000835 D2 8C            [12] 2858 	setb	_TR0
                            00079D  2859 	C$Lab2.c$464$2$135 ==.
                                    2860 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:464: SetAllLEDs(1); // Turn off all LEDs
-      00079D 75 82 01         [24] 2861 	mov	dpl,#0x01
-      0007A0 12r0Br74         [24] 2862 	lcall	_SetAllLEDs
+      000837 75 82 01         [24] 2861 	mov	dpl,#0x01
+      00083A 12 0C 0E         [24] 2862 	lcall	_SetAllLEDs
                            0007A3  2863 	C$Lab2.c$465$2$135 ==.
                                    2864 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:465: while (counts < 7) // wait 20ms
-      0007A3                       2865 00114$:
-      0007A3 C3               [12] 2866 	clr	c
-      0007A4 E5*00            [12] 2867 	mov	a,_counts
-      0007A6 94 07            [12] 2868 	subb	a,#0x07
-      0007A8 E5*01            [12] 2869 	mov	a,(_counts + 1)
-      0007AA 94 00            [12] 2870 	subb	a,#0x00
-      0007AC 50 1C            [24] 2871 	jnc	00116$
+      00083D                       2865 00114$:
+      00083D C3               [12] 2866 	clr	c
+      00083E E5 22            [12] 2867 	mov	a,_counts
+      000840 94 07            [12] 2868 	subb	a,#0x07
+      000842 E5 23            [12] 2869 	mov	a,(_counts + 1)
+      000844 94 00            [12] 2870 	subb	a,#0x00
+      000846 50 1C            [24] 2871 	jnc	00116$
                            0007AE  2872 	C$Lab2.c$467$3$140 ==.
                                    2873 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:467: for (var = 0;var<100;var++);
-      0007AE 75*02 64         [24] 2874 	mov	_var,#0x64
-      0007B1 75*03 00         [24] 2875 	mov	(_var + 1),#0x00
-      0007B4                       2876 00150$:
-      0007B4 15*02            [12] 2877 	dec	_var
-      0007B6 74 FF            [12] 2878 	mov	a,#0xff
-      0007B8 B5*02 02         [24] 2879 	cjne	a,_var,00281$
-      0007BB 15*03            [12] 2880 	dec	(_var + 1)
-      0007BD                       2881 00281$:
-      0007BD E5*02            [12] 2882 	mov	a,_var
-      0007BF 45*03            [12] 2883 	orl	a,(_var + 1)
-      0007C1 70 F1            [24] 2884 	jnz	00150$
-      0007C3 75*02 64         [24] 2885 	mov	_var,#0x64
-      0007C6 F5*03            [12] 2886 	mov	(_var + 1),a
-      0007C8 80 D9            [24] 2887 	sjmp	00114$
-      0007CA                       2888 00116$:
+      000848 75 24 64         [24] 2874 	mov	_var,#0x64
+      00084B 75 25 00         [24] 2875 	mov	(_var + 1),#0x00
+      00084E                       2876 00150$:
+      00084E 15 24            [12] 2877 	dec	_var
+      000850 74 FF            [12] 2878 	mov	a,#0xff
+      000852 B5 24 02         [24] 2879 	cjne	a,_var,00281$
+      000855 15 25            [12] 2880 	dec	(_var + 1)
+      000857                       2881 00281$:
+      000857 E5 24            [12] 2882 	mov	a,_var
+      000859 45 25            [12] 2883 	orl	a,(_var + 1)
+      00085B 70 F1            [24] 2884 	jnz	00150$
+      00085D 75 24 64         [24] 2885 	mov	_var,#0x64
+      000860 F5 25            [12] 2886 	mov	(_var + 1),a
+      000862 80 D9            [24] 2887 	sjmp	00114$
+      000864                       2888 00116$:
                            0007CA  2889 	C$Lab2.c$469$2$135 ==.
                                    2890 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:469: SetAllLEDs(0); // Turn on all LEDs
-      0007CA 75 82 00         [24] 2891 	mov	dpl,#0x00
-      0007CD 12r0Br74         [24] 2892 	lcall	_SetAllLEDs
+      000864 75 82 00         [24] 2891 	mov	dpl,#0x00
+      000867 12 0C 0E         [24] 2892 	lcall	_SetAllLEDs
                            0007D0  2893 	C$Lab2.c$470$2$135 ==.
                                    2894 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:470: ClearTimer0(); // Clear Timer0 and overflows
-      0007D0 12r0Cr76         [24] 2895 	lcall	_ClearTimer0
+      00086A 12 0D 10         [24] 2895 	lcall	_ClearTimer0
                            0007D3  2896 	C$Lab2.c$471$2$135 ==.
                                    2897 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:471: TR0 = 1; // Start the timer
-      0007D3 D2 8C            [12] 2898 	setb	_TR0
+      00086D D2 8C            [12] 2898 	setb	_TR0
                            0007D5  2899 	C$Lab2.c$472$2$135 ==.
                                    2900 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:472: while (counts < 7) // wait 20ms
-      0007D5                       2901 00118$:
-      0007D5 C3               [12] 2902 	clr	c
-      0007D6 E5*00            [12] 2903 	mov	a,_counts
-      0007D8 94 07            [12] 2904 	subb	a,#0x07
-      0007DA E5*01            [12] 2905 	mov	a,(_counts + 1)
-      0007DC 94 00            [12] 2906 	subb	a,#0x00
-      0007DE 50 1C            [24] 2907 	jnc	00120$
+      00086F                       2901 00118$:
+      00086F C3               [12] 2902 	clr	c
+      000870 E5 22            [12] 2903 	mov	a,_counts
+      000872 94 07            [12] 2904 	subb	a,#0x07
+      000874 E5 23            [12] 2905 	mov	a,(_counts + 1)
+      000876 94 00            [12] 2906 	subb	a,#0x00
+      000878 50 1C            [24] 2907 	jnc	00120$
                            0007E0  2908 	C$Lab2.c$474$3$141 ==.
                                    2909 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:474: for (var = 0;var<100;var++);
-      0007E0 75*02 64         [24] 2910 	mov	_var,#0x64
-      0007E3 75*03 00         [24] 2911 	mov	(_var + 1),#0x00
-      0007E6                       2912 00153$:
-      0007E6 15*02            [12] 2913 	dec	_var
-      0007E8 74 FF            [12] 2914 	mov	a,#0xff
-      0007EA B5*02 02         [24] 2915 	cjne	a,_var,00284$
-      0007ED 15*03            [12] 2916 	dec	(_var + 1)
-      0007EF                       2917 00284$:
-      0007EF E5*02            [12] 2918 	mov	a,_var
-      0007F1 45*03            [12] 2919 	orl	a,(_var + 1)
-      0007F3 70 F1            [24] 2920 	jnz	00153$
-      0007F5 75*02 64         [24] 2921 	mov	_var,#0x64
-      0007F8 F5*03            [12] 2922 	mov	(_var + 1),a
-      0007FA 80 D9            [24] 2923 	sjmp	00118$
-      0007FC                       2924 00120$:
+      00087A 75 24 64         [24] 2910 	mov	_var,#0x64
+      00087D 75 25 00         [24] 2911 	mov	(_var + 1),#0x00
+      000880                       2912 00153$:
+      000880 15 24            [12] 2913 	dec	_var
+      000882 74 FF            [12] 2914 	mov	a,#0xff
+      000884 B5 24 02         [24] 2915 	cjne	a,_var,00284$
+      000887 15 25            [12] 2916 	dec	(_var + 1)
+      000889                       2917 00284$:
+      000889 E5 24            [12] 2918 	mov	a,_var
+      00088B 45 25            [12] 2919 	orl	a,(_var + 1)
+      00088D 70 F1            [24] 2920 	jnz	00153$
+      00088F 75 24 64         [24] 2921 	mov	_var,#0x64
+      000892 F5 25            [12] 2922 	mov	(_var + 1),a
+      000894 80 D9            [24] 2923 	sjmp	00118$
+      000896                       2924 00120$:
                            0007FC  2925 	C$Lab2.c$476$2$135 ==.
                                    2926 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:476: SetAllLEDs(1); // Turn off all LEDs
-      0007FC 75 82 01         [24] 2927 	mov	dpl,#0x01
-      0007FF 12r0Br74         [24] 2928 	lcall	_SetAllLEDs
+      000896 75 82 01         [24] 2927 	mov	dpl,#0x01
+      000899 12 0C 0E         [24] 2928 	lcall	_SetAllLEDs
                            000802  2929 	C$Lab2.c$478$2$135 ==.
                                    2930 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:478: CompareVals(buttonPresses, numLEDs); // Turn BILED red or green if it was low or high
-      000802 85*15 82         [24] 2931 	mov	dpl,_buttonPresses
-      000805 85*23*2D         [24] 2932 	mov	_CompareVals_PARM_2,_numLEDs
-      000808 12r0CrEF         [24] 2933 	lcall	_CompareVals
+      00089C 85 37 82         [24] 2931 	mov	dpl,_buttonPresses
+      00089F 85 45 4F         [24] 2932 	mov	_CompareVals_PARM_2,_numLEDs
+      0008A2 12 0D 89         [24] 2933 	lcall	_CompareVals
                            00080B  2934 	C$Lab2.c$480$2$135 ==.
                                    2935 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:480: if (buttonPresses == numLEDs) // If they got it correct
-      00080B E5*23            [12] 2936 	mov	a,_numLEDs
-      00080D B5*15 1C         [24] 2937 	cjne	a,_buttonPresses,00122$
-      000810 E5*24            [12] 2938 	mov	a,(_numLEDs + 1)
-      000812 B5*16 17         [24] 2939 	cjne	a,(_buttonPresses + 1),00122$
+      0008A5 E5 45            [12] 2936 	mov	a,_numLEDs
+      0008A7 B5 37 1C         [24] 2937 	cjne	a,_buttonPresses,00122$
+      0008AA E5 46            [12] 2938 	mov	a,(_numLEDs + 1)
+      0008AC B5 38 17         [24] 2939 	cjne	a,(_buttonPresses + 1),00122$
                            000815  2940 	C$Lab2.c$482$3$142 ==.
                                    2941 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:482: printf("\r\n10 points gained!"); // Show that they gained 10 points
-      000815 74r8D            [12] 2942 	mov	a,#___str_11
-      000817 C0 E0            [24] 2943 	push	acc
-      000819 74s04            [12] 2944 	mov	a,#(___str_11 >> 8)
-      00081B C0 E0            [24] 2945 	push	acc
-      00081D 74 80            [12] 2946 	mov	a,#0x80
-      00081F C0 E0            [24] 2947 	push	acc
-      000821 12r00r00         [24] 2948 	lcall	_printf
-      000824 15 81            [12] 2949 	dec	sp
-      000826 15 81            [12] 2950 	dec	sp
-      000828 15 81            [12] 2951 	dec	sp
-      00082A 80 15            [24] 2952 	sjmp	00123$
-      00082C                       2953 00122$:
+      0008AF 74 17            [12] 2942 	mov	a,#___str_11
+      0008B1 C0 E0            [24] 2943 	push	acc
+      0008B3 74 1D            [12] 2944 	mov	a,#(___str_11 >> 8)
+      0008B5 C0 E0            [24] 2945 	push	acc
+      0008B7 74 80            [12] 2946 	mov	a,#0x80
+      0008B9 C0 E0            [24] 2947 	push	acc
+      0008BB 12 10 BA         [24] 2948 	lcall	_printf
+      0008BE 15 81            [12] 2949 	dec	sp
+      0008C0 15 81            [12] 2950 	dec	sp
+      0008C2 15 81            [12] 2951 	dec	sp
+      0008C4 80 15            [24] 2952 	sjmp	00123$
+      0008C6                       2953 00122$:
                            00082C  2954 	C$Lab2.c$486$3$143 ==.
                                    2955 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:486: printf("\r\n0 points gained!"); // Show they gained 0 points
-      00082C 74rA1            [12] 2956 	mov	a,#___str_12
-      00082E C0 E0            [24] 2957 	push	acc
-      000830 74s04            [12] 2958 	mov	a,#(___str_12 >> 8)
-      000832 C0 E0            [24] 2959 	push	acc
-      000834 74 80            [12] 2960 	mov	a,#0x80
-      000836 C0 E0            [24] 2961 	push	acc
-      000838 12r00r00         [24] 2962 	lcall	_printf
-      00083B 15 81            [12] 2963 	dec	sp
-      00083D 15 81            [12] 2964 	dec	sp
-      00083F 15 81            [12] 2965 	dec	sp
-      000841                       2966 00123$:
+      0008C6 74 2B            [12] 2956 	mov	a,#___str_12
+      0008C8 C0 E0            [24] 2957 	push	acc
+      0008CA 74 1D            [12] 2958 	mov	a,#(___str_12 >> 8)
+      0008CC C0 E0            [24] 2959 	push	acc
+      0008CE 74 80            [12] 2960 	mov	a,#0x80
+      0008D0 C0 E0            [24] 2961 	push	acc
+      0008D2 12 10 BA         [24] 2962 	lcall	_printf
+      0008D5 15 81            [12] 2963 	dec	sp
+      0008D7 15 81            [12] 2964 	dec	sp
+      0008D9 15 81            [12] 2965 	dec	sp
+      0008DB                       2966 00123$:
                            000841  2967 	C$Lab2.c$489$2$135 ==.
                                    2968 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:489: printf("\r\nTotal score: %d",score); // print the total score
-      000841 C0*13            [24] 2969 	push	_score
-      000843 C0*14            [24] 2970 	push	(_score + 1)
-      000845 74rB4            [12] 2971 	mov	a,#___str_13
-      000847 C0 E0            [24] 2972 	push	acc
-      000849 74s04            [12] 2973 	mov	a,#(___str_13 >> 8)
-      00084B C0 E0            [24] 2974 	push	acc
-      00084D 74 80            [12] 2975 	mov	a,#0x80
-      00084F C0 E0            [24] 2976 	push	acc
-      000851 12r00r00         [24] 2977 	lcall	_printf
-      000854 E5 81            [12] 2978 	mov	a,sp
-      000856 24 FB            [12] 2979 	add	a,#0xfb
-      000858 F5 81            [12] 2980 	mov	sp,a
+      0008DB C0 35            [24] 2969 	push	_score
+      0008DD C0 36            [24] 2970 	push	(_score + 1)
+      0008DF 74 3E            [12] 2971 	mov	a,#___str_13
+      0008E1 C0 E0            [24] 2972 	push	acc
+      0008E3 74 1D            [12] 2973 	mov	a,#(___str_13 >> 8)
+      0008E5 C0 E0            [24] 2974 	push	acc
+      0008E7 74 80            [12] 2975 	mov	a,#0x80
+      0008E9 C0 E0            [24] 2976 	push	acc
+      0008EB 12 10 BA         [24] 2977 	lcall	_printf
+      0008EE E5 81            [12] 2978 	mov	a,sp
+      0008F0 24 FB            [12] 2979 	add	a,#0xfb
+      0008F2 F5 81            [12] 2980 	mov	sp,a
                            00085A  2981 	C$Lab2.c$491$2$135 ==.
                                    2982 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:491: ClearTimer0(); // Clear Timer0 and overflows
-      00085A 12r0Cr76         [24] 2983 	lcall	_ClearTimer0
+      0008F4 12 0D 10         [24] 2983 	lcall	_ClearTimer0
                            00085D  2984 	C$Lab2.c$492$2$135 ==.
                                    2985 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:492: TR0 = 1; // Start the timer
-      00085D D2 8C            [12] 2986 	setb	_TR0
+      0008F7 D2 8C            [12] 2986 	setb	_TR0
                            00085F  2987 	C$Lab2.c$494$2$135 ==.
                                    2988 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:494: while (counts < 338) // Wait 1 second
-      00085F                       2989 00125$:
-      00085F C3               [12] 2990 	clr	c
-      000860 E5*00            [12] 2991 	mov	a,_counts
-      000862 94 52            [12] 2992 	subb	a,#0x52
-      000864 E5*01            [12] 2993 	mov	a,(_counts + 1)
-      000866 94 01            [12] 2994 	subb	a,#0x01
-      000868 50 1C            [24] 2995 	jnc	00127$
+      0008F9                       2989 00125$:
+      0008F9 C3               [12] 2990 	clr	c
+      0008FA E5 22            [12] 2991 	mov	a,_counts
+      0008FC 94 52            [12] 2992 	subb	a,#0x52
+      0008FE E5 23            [12] 2993 	mov	a,(_counts + 1)
+      000900 94 01            [12] 2994 	subb	a,#0x01
+      000902 50 1C            [24] 2995 	jnc	00127$
                            00086A  2996 	C$Lab2.c$496$3$144 ==.
                                    2997 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:496: for (var = 0;var<100;var++); // Do something to get more accurate time
-      00086A 75*02 64         [24] 2998 	mov	_var,#0x64
-      00086D 75*03 00         [24] 2999 	mov	(_var + 1),#0x00
-      000870                       3000 00156$:
-      000870 15*02            [12] 3001 	dec	_var
-      000872 74 FF            [12] 3002 	mov	a,#0xff
-      000874 B5*02 02         [24] 3003 	cjne	a,_var,00289$
-      000877 15*03            [12] 3004 	dec	(_var + 1)
-      000879                       3005 00289$:
-      000879 E5*02            [12] 3006 	mov	a,_var
-      00087B 45*03            [12] 3007 	orl	a,(_var + 1)
-      00087D 70 F1            [24] 3008 	jnz	00156$
-      00087F 75*02 64         [24] 3009 	mov	_var,#0x64
-      000882 F5*03            [12] 3010 	mov	(_var + 1),a
-      000884 80 D9            [24] 3011 	sjmp	00125$
-      000886                       3012 00127$:
+      000904 75 24 64         [24] 2998 	mov	_var,#0x64
+      000907 75 25 00         [24] 2999 	mov	(_var + 1),#0x00
+      00090A                       3000 00156$:
+      00090A 15 24            [12] 3001 	dec	_var
+      00090C 74 FF            [12] 3002 	mov	a,#0xff
+      00090E B5 24 02         [24] 3003 	cjne	a,_var,00289$
+      000911 15 25            [12] 3004 	dec	(_var + 1)
+      000913                       3005 00289$:
+      000913 E5 24            [12] 3006 	mov	a,_var
+      000915 45 25            [12] 3007 	orl	a,(_var + 1)
+      000917 70 F1            [24] 3008 	jnz	00156$
+      000919 75 24 64         [24] 3009 	mov	_var,#0x64
+      00091C F5 25            [12] 3010 	mov	(_var + 1),a
+      00091E 80 D9            [24] 3011 	sjmp	00125$
+      000920                       3012 00127$:
                            000886  3013 	C$Lab2.c$498$2$135 ==.
                                    3014 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:498: SetBILED('o'); // Turn off BILED
-      000886 75 82 6F         [24] 3015 	mov	dpl,#0x6f
-      000889 12r0Cr82         [24] 3016 	lcall	_SetBILED
+      000920 75 82 6F         [24] 3015 	mov	dpl,#0x6f
+      000923 12 0D 1C         [24] 3016 	lcall	_SetBILED
                            00088C  3017 	C$Lab2.c$499$2$135 ==.
                                    3018 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:499: ClearTimer0(); // Clear Timer0 and overflows
-      00088C 12r0Cr76         [24] 3019 	lcall	_ClearTimer0
+      000926 12 0D 10         [24] 3019 	lcall	_ClearTimer0
                            00088F  3020 	C$Lab2.c$500$2$135 ==.
                                    3021 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:500: TR0 = 1; // Start the timer
-      00088F D2 8C            [12] 3022 	setb	_TR0
+      000929 D2 8C            [12] 3022 	setb	_TR0
                            000891  3023 	C$Lab2.c$501$2$135 ==.
                                    3024 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:501: while (counts < 169) // Wait 0.5s
-      000891                       3025 00129$:
-      000891 C3               [12] 3026 	clr	c
-      000892 E5*00            [12] 3027 	mov	a,_counts
-      000894 94 A9            [12] 3028 	subb	a,#0xa9
-      000896 E5*01            [12] 3029 	mov	a,(_counts + 1)
-      000898 94 00            [12] 3030 	subb	a,#0x00
-      00089A 50 1C            [24] 3031 	jnc	00161$
+      00092B                       3025 00129$:
+      00092B C3               [12] 3026 	clr	c
+      00092C E5 22            [12] 3027 	mov	a,_counts
+      00092E 94 A9            [12] 3028 	subb	a,#0xa9
+      000930 E5 23            [12] 3029 	mov	a,(_counts + 1)
+      000932 94 00            [12] 3030 	subb	a,#0x00
+      000934 50 1C            [24] 3031 	jnc	00161$
                            00089C  3032 	C$Lab2.c$503$3$145 ==.
                                    3033 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:503: for (var = 0;var<100;var++);
-      00089C 75*02 64         [24] 3034 	mov	_var,#0x64
-      00089F 75*03 00         [24] 3035 	mov	(_var + 1),#0x00
-      0008A2                       3036 00159$:
-      0008A2 15*02            [12] 3037 	dec	_var
-      0008A4 74 FF            [12] 3038 	mov	a,#0xff
-      0008A6 B5*02 02         [24] 3039 	cjne	a,_var,00292$
-      0008A9 15*03            [12] 3040 	dec	(_var + 1)
-      0008AB                       3041 00292$:
-      0008AB E5*02            [12] 3042 	mov	a,_var
-      0008AD 45*03            [12] 3043 	orl	a,(_var + 1)
-      0008AF 70 F1            [24] 3044 	jnz	00159$
-      0008B1 75*02 64         [24] 3045 	mov	_var,#0x64
-      0008B4 F5*03            [12] 3046 	mov	(_var + 1),a
-      0008B6 80 D9            [24] 3047 	sjmp	00129$
-      0008B8                       3048 00161$:
+      000936 75 24 64         [24] 3034 	mov	_var,#0x64
+      000939 75 25 00         [24] 3035 	mov	(_var + 1),#0x00
+      00093C                       3036 00159$:
+      00093C 15 24            [12] 3037 	dec	_var
+      00093E 74 FF            [12] 3038 	mov	a,#0xff
+      000940 B5 24 02         [24] 3039 	cjne	a,_var,00292$
+      000943 15 25            [12] 3040 	dec	(_var + 1)
+      000945                       3041 00292$:
+      000945 E5 24            [12] 3042 	mov	a,_var
+      000947 45 25            [12] 3043 	orl	a,(_var + 1)
+      000949 70 F1            [24] 3044 	jnz	00159$
+      00094B 75 24 64         [24] 3045 	mov	_var,#0x64
+      00094E F5 25            [12] 3046 	mov	(_var + 1),a
+      000950 80 D9            [24] 3047 	sjmp	00129$
+      000952                       3048 00161$:
                            0008B8  3049 	C$Lab2.c$429$1$134 ==.
                                    3050 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:429: for (tries = 0; tries < 5; tries++)
-      0008B8 05*25            [12] 3051 	inc	_tries
-      0008BA E4               [12] 3052 	clr	a
-      0008BB B5*25 02         [24] 3053 	cjne	a,_tries,00294$
-      0008BE 05*26            [12] 3054 	inc	(_tries + 1)
-      0008C0                       3055 00294$:
-      0008C0 C3               [12] 3056 	clr	c
-      0008C1 E5*25            [12] 3057 	mov	a,_tries
-      0008C3 94 05            [12] 3058 	subb	a,#0x05
-      0008C5 E5*26            [12] 3059 	mov	a,(_tries + 1)
-      0008C7 64 80            [12] 3060 	xrl	a,#0x80
-      0008C9 94 80            [12] 3061 	subb	a,#0x80
-      0008CB 50 03            [24] 3062 	jnc	00295$
-      0008CD 02r06rD7         [24] 3063 	ljmp	00160$
-      0008D0                       3064 00295$:
+      000952 05 47            [12] 3051 	inc	_tries
+      000954 E4               [12] 3052 	clr	a
+      000955 B5 47 02         [24] 3053 	cjne	a,_tries,00294$
+      000958 05 48            [12] 3054 	inc	(_tries + 1)
+      00095A                       3055 00294$:
+      00095A C3               [12] 3056 	clr	c
+      00095B E5 47            [12] 3057 	mov	a,_tries
+      00095D 94 05            [12] 3058 	subb	a,#0x05
+      00095F E5 48            [12] 3059 	mov	a,(_tries + 1)
+      000961 64 80            [12] 3060 	xrl	a,#0x80
+      000963 94 80            [12] 3061 	subb	a,#0x80
+      000965 50 03            [24] 3062 	jnc	00295$
+      000967 02 07 71         [24] 3063 	ljmp	00160$
+      00096A                       3064 00295$:
                            0008D0  3065 	C$Lab2.c$507$1$134 ==.
                                    3066 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:507: printf("\r\nFinal score: %d", score); // Print the final score
-      0008D0 C0*13            [24] 3067 	push	_score
-      0008D2 C0*14            [24] 3068 	push	(_score + 1)
-      0008D4 74rC6            [12] 3069 	mov	a,#___str_14
-      0008D6 C0 E0            [24] 3070 	push	acc
-      0008D8 74s04            [12] 3071 	mov	a,#(___str_14 >> 8)
-      0008DA C0 E0            [24] 3072 	push	acc
-      0008DC 74 80            [12] 3073 	mov	a,#0x80
-      0008DE C0 E0            [24] 3074 	push	acc
-      0008E0 12r00r00         [24] 3075 	lcall	_printf
-      0008E3 E5 81            [12] 3076 	mov	a,sp
-      0008E5 24 FB            [12] 3077 	add	a,#0xfb
-      0008E7 F5 81            [12] 3078 	mov	sp,a
+      00096A C0 35            [24] 3067 	push	_score
+      00096C C0 36            [24] 3068 	push	(_score + 1)
+      00096E 74 50            [12] 3069 	mov	a,#___str_14
+      000970 C0 E0            [24] 3070 	push	acc
+      000972 74 1D            [12] 3071 	mov	a,#(___str_14 >> 8)
+      000974 C0 E0            [24] 3072 	push	acc
+      000976 74 80            [12] 3073 	mov	a,#0x80
+      000978 C0 E0            [24] 3074 	push	acc
+      00097A 12 10 BA         [24] 3075 	lcall	_printf
+      00097D E5 81            [12] 3076 	mov	a,sp
+      00097F 24 FB            [12] 3077 	add	a,#0xfb
+      000981 F5 81            [12] 3078 	mov	sp,a
                            0008E9  3079 	C$Lab2.c$509$1$134 ==.
                                    3080 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:509: ClearTimer0(); // Clear Timer0 and overflows
-      0008E9 12r0Cr76         [24] 3081 	lcall	_ClearTimer0
+      000983 12 0D 10         [24] 3081 	lcall	_ClearTimer0
                            0008EC  3082 	C$Lab2.c$510$1$134 ==.
                                    3083 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:510: TR0 = 1; // Start the timer	
-      0008EC D2 8C            [12] 3084 	setb	_TR0
+      000986 D2 8C            [12] 3084 	setb	_TR0
                            0008EE  3085 	C$Lab2.c$511$1$134 ==.
                                    3086 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:511: tmpCount = 0; // Create temp value
-      0008EE E4               [12] 3087 	clr	a
-      0008EF F5*17            [12] 3088 	mov	_tmpCount,a
-      0008F1 F5*18            [12] 3089 	mov	(_tmpCount + 1),a
+      000988 E4               [12] 3087 	clr	a
+      000989 F5 39            [12] 3088 	mov	_tmpCount,a
+      00098B F5 3A            [12] 3089 	mov	(_tmpCount + 1),a
                            0008F3  3090 	C$Lab2.c$513$1$134 ==.
                                    3091 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:513: while (counts < 338) // For 1 second
-      0008F3                       3092 00139$:
-      0008F3 C3               [12] 3093 	clr	c
-      0008F4 E5*00            [12] 3094 	mov	a,_counts
-      0008F6 94 52            [12] 3095 	subb	a,#0x52
-      0008F8 E5*01            [12] 3096 	mov	a,(_counts + 1)
-      0008FA 94 01            [12] 3097 	subb	a,#0x01
-      0008FC 50 3E            [24] 3098 	jnc	00141$
+      00098D                       3092 00139$:
+      00098D C3               [12] 3093 	clr	c
+      00098E E5 22            [12] 3094 	mov	a,_counts
+      000990 94 52            [12] 3095 	subb	a,#0x52
+      000992 E5 23            [12] 3096 	mov	a,(_counts + 1)
+      000994 94 01            [12] 3097 	subb	a,#0x01
+      000996 50 3E            [24] 3098 	jnc	00141$
                            0008FE  3099 	C$Lab2.c$515$2$146 ==.
                                    3100 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:515: SetBILED('r'); // Turn BILED red
-      0008FE 75 82 72         [24] 3101 	mov	dpl,#0x72
-      000901 12r0Cr82         [24] 3102 	lcall	_SetBILED
+      000998 75 82 72         [24] 3101 	mov	dpl,#0x72
+      00099B 12 0D 1C         [24] 3102 	lcall	_SetBILED
                            000904  3103 	C$Lab2.c$516$2$146 ==.
                                    3104 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:516: tmpCount = counts; // Save current counts
-      000904 85*00*17         [24] 3105 	mov	_tmpCount,_counts
-      000907 85*01*18         [24] 3106 	mov	(_tmpCount + 1),(_counts + 1)
+      00099E 85 22 39         [24] 3105 	mov	_tmpCount,_counts
+      0009A1 85 23 3A         [24] 3106 	mov	(_tmpCount + 1),(_counts + 1)
                            00090A  3107 	C$Lab2.c$517$2$146 ==.
                                    3108 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:517: while(counts < (tmpCount + 7)); // wait 20ms
-      00090A                       3109 00133$:
-      00090A 74 07            [12] 3110 	mov	a,#0x07
-      00090C 25*17            [12] 3111 	add	a,_tmpCount
-      00090E FE               [12] 3112 	mov	r6,a
-      00090F E4               [12] 3113 	clr	a
-      000910 35*18            [12] 3114 	addc	a,(_tmpCount + 1)
-      000912 FF               [12] 3115 	mov	r7,a
-      000913 C3               [12] 3116 	clr	c
-      000914 E5*00            [12] 3117 	mov	a,_counts
-      000916 9E               [12] 3118 	subb	a,r6
-      000917 E5*01            [12] 3119 	mov	a,(_counts + 1)
-      000919 9F               [12] 3120 	subb	a,r7
-      00091A 40 EE            [24] 3121 	jc	00133$
+      0009A4                       3109 00133$:
+      0009A4 74 07            [12] 3110 	mov	a,#0x07
+      0009A6 25 39            [12] 3111 	add	a,_tmpCount
+      0009A8 FE               [12] 3112 	mov	r6,a
+      0009A9 E4               [12] 3113 	clr	a
+      0009AA 35 3A            [12] 3114 	addc	a,(_tmpCount + 1)
+      0009AC FF               [12] 3115 	mov	r7,a
+      0009AD C3               [12] 3116 	clr	c
+      0009AE E5 22            [12] 3117 	mov	a,_counts
+      0009B0 9E               [12] 3118 	subb	a,r6
+      0009B1 E5 23            [12] 3119 	mov	a,(_counts + 1)
+      0009B3 9F               [12] 3120 	subb	a,r7
+      0009B4 40 EE            [24] 3121 	jc	00133$
                            00091C  3122 	C$Lab2.c$518$2$146 ==.
                                    3123 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:518: SetBILED('g'); // Turn BILED green
-      00091C 75 82 67         [24] 3124 	mov	dpl,#0x67
-      00091F 12r0Cr82         [24] 3125 	lcall	_SetBILED
+      0009B6 75 82 67         [24] 3124 	mov	dpl,#0x67
+      0009B9 12 0D 1C         [24] 3125 	lcall	_SetBILED
                            000922  3126 	C$Lab2.c$519$2$146 ==.
                                    3127 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:519: tmpCount = counts; // Save current counts
-      000922 85*00*17         [24] 3128 	mov	_tmpCount,_counts
-      000925 85*01*18         [24] 3129 	mov	(_tmpCount + 1),(_counts + 1)
+      0009BC 85 22 39         [24] 3128 	mov	_tmpCount,_counts
+      0009BF 85 23 3A         [24] 3129 	mov	(_tmpCount + 1),(_counts + 1)
                            000928  3130 	C$Lab2.c$520$2$146 ==.
                                    3131 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:520: while(counts < (tmpCount + 7)); // wait 20ms
-      000928                       3132 00136$:
-      000928 74 07            [12] 3133 	mov	a,#0x07
-      00092A 25*17            [12] 3134 	add	a,_tmpCount
-      00092C FE               [12] 3135 	mov	r6,a
-      00092D E4               [12] 3136 	clr	a
-      00092E 35*18            [12] 3137 	addc	a,(_tmpCount + 1)
-      000930 FF               [12] 3138 	mov	r7,a
-      000931 C3               [12] 3139 	clr	c
-      000932 E5*00            [12] 3140 	mov	a,_counts
-      000934 9E               [12] 3141 	subb	a,r6
-      000935 E5*01            [12] 3142 	mov	a,(_counts + 1)
-      000937 9F               [12] 3143 	subb	a,r7
-      000938 50 B9            [24] 3144 	jnc	00139$
-      00093A 80 EC            [24] 3145 	sjmp	00136$
-      00093C                       3146 00141$:
+      0009C2                       3132 00136$:
+      0009C2 74 07            [12] 3133 	mov	a,#0x07
+      0009C4 25 39            [12] 3134 	add	a,_tmpCount
+      0009C6 FE               [12] 3135 	mov	r6,a
+      0009C7 E4               [12] 3136 	clr	a
+      0009C8 35 3A            [12] 3137 	addc	a,(_tmpCount + 1)
+      0009CA FF               [12] 3138 	mov	r7,a
+      0009CB C3               [12] 3139 	clr	c
+      0009CC E5 22            [12] 3140 	mov	a,_counts
+      0009CE 9E               [12] 3141 	subb	a,r6
+      0009CF E5 23            [12] 3142 	mov	a,(_counts + 1)
+      0009D1 9F               [12] 3143 	subb	a,r7
+      0009D2 50 B9            [24] 3144 	jnc	00139$
+      0009D4 80 EC            [24] 3145 	sjmp	00136$
+      0009D6                       3146 00141$:
                            00093C  3147 	C$Lab2.c$523$1$134 ==.
                                    3148 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:523: SetBILED('o'); // Turn off BILED
-      00093C 75 82 6F         [24] 3149 	mov	dpl,#0x6f
-      00093F 12r0Cr82         [24] 3150 	lcall	_SetBILED
+      0009D6 75 82 6F         [24] 3149 	mov	dpl,#0x6f
+      0009D9 12 0D 1C         [24] 3150 	lcall	_SetBILED
                            000942  3151 	C$Lab2.c$524$1$134 ==.
                            000942  3152 	XG$Mode_Two$0$0 ==.
-      000942 22               [24] 3153 	ret
+      0009DC 22               [24] 3153 	ret
                                    3154 ;------------------------------------------------------------
                                    3155 ;Allocation info for local variables in function 'Mode_Three'
                                    3156 ;------------------------------------------------------------
@@ -3160,352 +3160,352 @@
                                    3160 ;	-----------------------------------------
                                    3161 ;	 function Mode_Three
                                    3162 ;	-----------------------------------------
-      000943                       3163 _Mode_Three:
+      0009DD                       3163 _Mode_Three:
                            000943  3164 	C$Lab2.c$530$1$148 ==.
                                    3165 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:530: printf("\n\rUse the potentiometer to draw a bar graph on the terminal.\n\rIts length should be a percentage of the maximum length as specified by the number of LEDs lit.\n\n\rNo lit LEDs indicate that the bar should be 0% of the maximum length, 1 lit LED indicates a bar 25% of the maximum length,\n\r2 lit LEDs indicate 50%, 3 lit LEDs indicate 75%, and 4 lit LEDs indicate 100%.\n\n\rYou have one second to draw the appropriate graph. If the graph is longer than the desired value, the BILED will turn red.\n\rIf the graph is shorter than the desired value, the BILED will turn green.\n\n\rA maximum of 10 points are awarded for each correct answer.\n\rTwo points are deducted for each character position off. There are 5 rounds.\n\n\n\rPress the pushbutton to start.");
-      000943 74rD8            [12] 3166 	mov	a,#___str_15
-      000945 C0 E0            [24] 3167 	push	acc
-      000947 74s04            [12] 3168 	mov	a,#(___str_15 >> 8)
-      000949 C0 E0            [24] 3169 	push	acc
-      00094B 74 80            [12] 3170 	mov	a,#0x80
-      00094D C0 E0            [24] 3171 	push	acc
-      00094F 12r00r00         [24] 3172 	lcall	_printf
-      000952 15 81            [12] 3173 	dec	sp
-      000954 15 81            [12] 3174 	dec	sp
-      000956 15 81            [12] 3175 	dec	sp
+      0009DD 74 62            [12] 3166 	mov	a,#___str_15
+      0009DF C0 E0            [24] 3167 	push	acc
+      0009E1 74 1D            [12] 3168 	mov	a,#(___str_15 >> 8)
+      0009E3 C0 E0            [24] 3169 	push	acc
+      0009E5 74 80            [12] 3170 	mov	a,#0x80
+      0009E7 C0 E0            [24] 3171 	push	acc
+      0009E9 12 10 BA         [24] 3172 	lcall	_printf
+      0009EC 15 81            [12] 3173 	dec	sp
+      0009EE 15 81            [12] 3174 	dec	sp
+      0009F0 15 81            [12] 3175 	dec	sp
                            000958  3176 	C$Lab2.c$532$1$148 ==.
                                    3177 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:532: while(DebounceButton()==0);
-      000958                       3178 00101$:
-      000958 12r0CrA7         [24] 3179 	lcall	_DebounceButton
-      00095B E5 82            [12] 3180 	mov	a,dpl
-      00095D 60 F9            [24] 3181 	jz	00101$
+      0009F2                       3178 00101$:
+      0009F2 12 0D 41         [24] 3179 	lcall	_DebounceButton
+      0009F5 E5 82            [12] 3180 	mov	a,dpl
+      0009F7 60 F9            [24] 3181 	jz	00101$
                            00095F  3182 	C$Lab2.c$534$1$148 ==.
                                    3183 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:534: printf("\n\n\n\rSTART");
-      00095F 74rBB            [12] 3184 	mov	a,#___str_16
-      000961 C0 E0            [24] 3185 	push	acc
-      000963 74s07            [12] 3186 	mov	a,#(___str_16 >> 8)
-      000965 C0 E0            [24] 3187 	push	acc
-      000967 74 80            [12] 3188 	mov	a,#0x80
-      000969 C0 E0            [24] 3189 	push	acc
-      00096B 12r00r00         [24] 3190 	lcall	_printf
-      00096E 15 81            [12] 3191 	dec	sp
-      000970 15 81            [12] 3192 	dec	sp
-      000972 15 81            [12] 3193 	dec	sp
+      0009F9 74 45            [12] 3184 	mov	a,#___str_16
+      0009FB C0 E0            [24] 3185 	push	acc
+      0009FD 74 20            [12] 3186 	mov	a,#(___str_16 >> 8)
+      0009FF C0 E0            [24] 3187 	push	acc
+      000A01 74 80            [12] 3188 	mov	a,#0x80
+      000A03 C0 E0            [24] 3189 	push	acc
+      000A05 12 10 BA         [24] 3190 	lcall	_printf
+      000A08 15 81            [12] 3191 	dec	sp
+      000A0A 15 81            [12] 3192 	dec	sp
+      000A0C 15 81            [12] 3193 	dec	sp
                            000974  3194 	C$Lab2.c$536$1$148 ==.
                                    3195 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:536: score = 0;	// sets score to 0
-      000974 E4               [12] 3196 	clr	a
-      000975 F5*13            [12] 3197 	mov	_score,a
-      000977 F5*14            [12] 3198 	mov	(_score + 1),a
+      000A0E E4               [12] 3196 	clr	a
+      000A0F F5 35            [12] 3197 	mov	_score,a
+      000A11 F5 36            [12] 3198 	mov	(_score + 1),a
                            000979  3199 	C$Lab2.c$537$1$148 ==.
                                    3200 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:537: LED0 = 1;	// turns off LED0
-      000979 D2 B6            [12] 3201 	setb	_LED0
+      000A13 D2 B6            [12] 3201 	setb	_LED0
                            00097B  3202 	C$Lab2.c$538$1$148 ==.
                                    3203 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:538: LED1 = 1;	// turns off LED1
-      00097B D2 B5            [12] 3204 	setb	_LED1
+      000A15 D2 B5            [12] 3204 	setb	_LED1
                            00097D  3205 	C$Lab2.c$539$1$148 ==.
                                    3206 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:539: LED2 = 1;	// turns off LED2
-      00097D D2 B7            [12] 3207 	setb	_LED2
+      000A17 D2 B7            [12] 3207 	setb	_LED2
                            00097F  3208 	C$Lab2.c$540$1$148 ==.
                                    3209 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:540: LED3 = 1;	// turns off LED3
-      00097F D2 B2            [12] 3210 	setb	_LED3
+      000A19 D2 B2            [12] 3210 	setb	_LED3
                            000981  3211 	C$Lab2.c$541$1$148 ==.
                                    3212 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:541: SetBILED('r');	//	turns BILED red
-      000981 75 82 72         [24] 3213 	mov	dpl,#0x72
-      000984 12r0Cr82         [24] 3214 	lcall	_SetBILED
+      000A1B 75 82 72         [24] 3213 	mov	dpl,#0x72
+      000A1E 12 0D 1C         [24] 3214 	lcall	_SetBILED
                            000987  3215 	C$Lab2.c$543$1$148 ==.
                                    3216 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:543: for (round = 0; round<=5; round++) {
-      000987 E4               [12] 3217 	clr	a
-      000988 F5*04            [12] 3218 	mov	_round,a
-      00098A F5*05            [12] 3219 	mov	(_round + 1),a
-      00098C                       3220 00127$:
+      000A21 E4               [12] 3217 	clr	a
+      000A22 F5 26            [12] 3218 	mov	_round,a
+      000A24 F5 27            [12] 3219 	mov	(_round + 1),a
+      000A26                       3220 00127$:
                            00098C  3221 	C$Lab2.c$544$2$149 ==.
                                    3222 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:544: randomNumber = random();
-      00098C 12r0Br67         [24] 3223 	lcall	_random
-      00098F AF 82            [24] 3224 	mov	r7,dpl
-      000991 8F*0A            [24] 3225 	mov	_randomNumber,r7
-      000993 75*0B 00         [24] 3226 	mov	(_randomNumber + 1),#0x00
+      000A26 12 0C 01         [24] 3223 	lcall	_random
+      000A29 AF 82            [24] 3224 	mov	r7,dpl
+      000A2B 8F 2C            [24] 3225 	mov	_randomNumber,r7
+      000A2D 75 2D 00         [24] 3226 	mov	(_randomNumber + 1),#0x00
                            000996  3227 	C$Lab2.c$545$2$149 ==.
                                    3228 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:545: LightNumLEDs(randomNumber);
-      000996 85*0A 82         [24] 3229 	mov	dpl,_randomNumber
-      000999 12r0Cr4D         [24] 3230 	lcall	_LightNumLEDs
+      000A30 85 2C 82         [24] 3229 	mov	dpl,_randomNumber
+      000A33 12 0C E7         [24] 3230 	lcall	_LightNumLEDs
                            00099C  3231 	C$Lab2.c$547$2$149 ==.
                                    3232 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:547: SetBILED('o'); // turns off BILED
-      00099C 75 82 6F         [24] 3233 	mov	dpl,#0x6f
-      00099F 12r0Cr82         [24] 3234 	lcall	_SetBILED
+      000A36 75 82 6F         [24] 3233 	mov	dpl,#0x6f
+      000A39 12 0D 1C         [24] 3234 	lcall	_SetBILED
                            0009A2  3235 	C$Lab2.c$549$2$149 ==.
                                    3236 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:549: counts = 0; // sets timer to 0
-      0009A2 E4               [12] 3237 	clr	a
-      0009A3 F5*00            [12] 3238 	mov	_counts,a
-      0009A5 F5*01            [12] 3239 	mov	(_counts + 1),a
+      000A3C E4               [12] 3237 	clr	a
+      000A3D F5 22            [12] 3238 	mov	_counts,a
+      000A3F F5 23            [12] 3239 	mov	(_counts + 1),a
                            0009A7  3240 	C$Lab2.c$550$2$149 ==.
                                    3241 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:550: TR0 = 1; // starts timer
-      0009A7 D2 8C            [12] 3242 	setb	_TR0
+      000A41 D2 8C            [12] 3242 	setb	_TR0
                            0009A9  3243 	C$Lab2.c$552$2$149 ==.
                                    3244 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:552: while (counts<337) {
-      0009A9                       3245 00104$:
-      0009A9 C3               [12] 3246 	clr	c
-      0009AA E5*00            [12] 3247 	mov	a,_counts
-      0009AC 94 51            [12] 3248 	subb	a,#0x51
-      0009AE E5*01            [12] 3249 	mov	a,(_counts + 1)
-      0009B0 94 01            [12] 3250 	subb	a,#0x01
-      0009B2 50 08            [24] 3251 	jnc	00106$
+      000A43                       3245 00104$:
+      000A43 C3               [12] 3246 	clr	c
+      000A44 E5 22            [12] 3247 	mov	a,_counts
+      000A46 94 51            [12] 3248 	subb	a,#0x51
+      000A48 E5 23            [12] 3249 	mov	a,(_counts + 1)
+      000A4A 94 01            [12] 3250 	subb	a,#0x01
+      000A4C 50 08            [24] 3251 	jnc	00106$
                            0009B4  3252 	C$Lab2.c$553$3$150 ==.
                                    3253 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:553: Draw_Bar(read_AD_input());	// continuously reads pot AD value and passes value to Draw_Bar()
-      0009B4 12r01r8D         [24] 3254 	lcall	_read_AD_input
-      0009B7 12r0Br0B         [24] 3255 	lcall	_Draw_Bar
-      0009BA 80 ED            [24] 3256 	sjmp	00104$
-      0009BC                       3257 00106$:
+      000A4E 12 02 27         [24] 3254 	lcall	_read_AD_input
+      000A51 12 0B A5         [24] 3255 	lcall	_Draw_Bar
+      000A54 80 ED            [24] 3256 	sjmp	00104$
+      000A56                       3257 00106$:
                            0009BC  3258 	C$Lab2.c$556$2$149 ==.
                                    3259 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:556: ADC_value = (read_AD_input()/4);	// saves current (ADC value)/4
-      0009BC 12r01r8D         [24] 3260 	lcall	_read_AD_input
-      0009BF E5 82            [12] 3261 	mov	a,dpl
-      0009C1 03               [12] 3262 	rr	a
-      0009C2 03               [12] 3263 	rr	a
-      0009C3 54 3F            [12] 3264 	anl	a,#0x3f
-      0009C5 FF               [12] 3265 	mov	r7,a
-      0009C6 8F*0D            [24] 3266 	mov	_ADC_value,r7
-      0009C8 75*0E 00         [24] 3267 	mov	(_ADC_value + 1),#0x00
+      000A56 12 02 27         [24] 3260 	lcall	_read_AD_input
+      000A59 E5 82            [12] 3261 	mov	a,dpl
+      000A5B 03               [12] 3262 	rr	a
+      000A5C 03               [12] 3263 	rr	a
+      000A5D 54 3F            [12] 3264 	anl	a,#0x3f
+      000A5F FF               [12] 3265 	mov	r7,a
+      000A60 8F 2F            [24] 3266 	mov	_ADC_value,r7
+      000A62 75 30 00         [24] 3267 	mov	(_ADC_value + 1),#0x00
                            0009CB  3268 	C$Lab2.c$558$2$149 ==.
                                    3269 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:558: while (counts<437) {	//flashes all LEDS off
-      0009CB                       3270 00107$:
-      0009CB C3               [12] 3271 	clr	c
-      0009CC E5*00            [12] 3272 	mov	a,_counts
-      0009CE 94 B5            [12] 3273 	subb	a,#0xb5
-      0009D0 E5*01            [12] 3274 	mov	a,(_counts + 1)
-      0009D2 94 01            [12] 3275 	subb	a,#0x01
-      0009D4 50 0A            [24] 3276 	jnc	00110$
+      000A65                       3270 00107$:
+      000A65 C3               [12] 3271 	clr	c
+      000A66 E5 22            [12] 3272 	mov	a,_counts
+      000A68 94 B5            [12] 3273 	subb	a,#0xb5
+      000A6A E5 23            [12] 3274 	mov	a,(_counts + 1)
+      000A6C 94 01            [12] 3275 	subb	a,#0x01
+      000A6E 50 0A            [24] 3276 	jnc	00110$
                            0009D6  3277 	C$Lab2.c$559$3$151 ==.
                                    3278 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:559: LED0 = 1;
-      0009D6 D2 B6            [12] 3279 	setb	_LED0
+      000A70 D2 B6            [12] 3279 	setb	_LED0
                            0009D8  3280 	C$Lab2.c$560$3$151 ==.
                                    3281 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:560: LED1 = 1;
-      0009D8 D2 B5            [12] 3282 	setb	_LED1
+      000A72 D2 B5            [12] 3282 	setb	_LED1
                            0009DA  3283 	C$Lab2.c$561$3$151 ==.
                                    3284 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:561: LED2 = 1;
-      0009DA D2 B7            [12] 3285 	setb	_LED2
+      000A74 D2 B7            [12] 3285 	setb	_LED2
                            0009DC  3286 	C$Lab2.c$562$3$151 ==.
                                    3287 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:562: LED3 = 1;
-      0009DC D2 B2            [12] 3288 	setb	_LED3
+      000A76 D2 B2            [12] 3288 	setb	_LED3
                            0009DE  3289 	C$Lab2.c$564$2$149 ==.
                                    3290 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:564: while (counts<537) {	//flashes all LEDS on
-      0009DE 80 EB            [24] 3291 	sjmp	00107$
-      0009E0                       3292 00110$:
-      0009E0 C3               [12] 3293 	clr	c
-      0009E1 E5*00            [12] 3294 	mov	a,_counts
-      0009E3 94 19            [12] 3295 	subb	a,#0x19
-      0009E5 E5*01            [12] 3296 	mov	a,(_counts + 1)
-      0009E7 94 02            [12] 3297 	subb	a,#0x02
-      0009E9 50 0A            [24] 3298 	jnc	00113$
+      000A78 80 EB            [24] 3291 	sjmp	00107$
+      000A7A                       3292 00110$:
+      000A7A C3               [12] 3293 	clr	c
+      000A7B E5 22            [12] 3294 	mov	a,_counts
+      000A7D 94 19            [12] 3295 	subb	a,#0x19
+      000A7F E5 23            [12] 3296 	mov	a,(_counts + 1)
+      000A81 94 02            [12] 3297 	subb	a,#0x02
+      000A83 50 0A            [24] 3298 	jnc	00113$
                            0009EB  3299 	C$Lab2.c$565$3$152 ==.
                                    3300 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:565: LED0 = 0;
-      0009EB C2 B6            [12] 3301 	clr	_LED0
+      000A85 C2 B6            [12] 3301 	clr	_LED0
                            0009ED  3302 	C$Lab2.c$566$3$152 ==.
                                    3303 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:566: LED1 = 0;
-      0009ED C2 B5            [12] 3304 	clr	_LED1
+      000A87 C2 B5            [12] 3304 	clr	_LED1
                            0009EF  3305 	C$Lab2.c$567$3$152 ==.
                                    3306 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:567: LED2 = 0;
-      0009EF C2 B7            [12] 3307 	clr	_LED2
+      000A89 C2 B7            [12] 3307 	clr	_LED2
                            0009F1  3308 	C$Lab2.c$568$3$152 ==.
                                    3309 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:568: LED3 = 0;
-      0009F1 C2 B2            [12] 3310 	clr	_LED3
+      000A8B C2 B2            [12] 3310 	clr	_LED3
                            0009F3  3311 	C$Lab2.c$570$2$149 ==.
                                    3312 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:570: while (counts<637) {	//flashes all LEDS off
-      0009F3 80 EB            [24] 3313 	sjmp	00110$
-      0009F5                       3314 00113$:
-      0009F5 C3               [12] 3315 	clr	c
-      0009F6 E5*00            [12] 3316 	mov	a,_counts
-      0009F8 94 7D            [12] 3317 	subb	a,#0x7d
-      0009FA E5*01            [12] 3318 	mov	a,(_counts + 1)
-      0009FC 94 02            [12] 3319 	subb	a,#0x02
-      0009FE 50 5D            [24] 3320 	jnc	00115$
+      000A8D 80 EB            [24] 3313 	sjmp	00110$
+      000A8F                       3314 00113$:
+      000A8F C3               [12] 3315 	clr	c
+      000A90 E5 22            [12] 3316 	mov	a,_counts
+      000A92 94 7D            [12] 3317 	subb	a,#0x7d
+      000A94 E5 23            [12] 3318 	mov	a,(_counts + 1)
+      000A96 94 02            [12] 3319 	subb	a,#0x02
+      000A98 50 5D            [24] 3320 	jnc	00115$
                            000A00  3321 	C$Lab2.c$571$3$153 ==.
                                    3322 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:571: LED0 = 1;
-      000A00 D2 B6            [12] 3323 	setb	_LED0
+      000A9A D2 B6            [12] 3323 	setb	_LED0
                            000A02  3324 	C$Lab2.c$572$3$153 ==.
                                    3325 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:572: LED1 = 1;
-      000A02 D2 B5            [12] 3326 	setb	_LED1
+      000A9C D2 B5            [12] 3326 	setb	_LED1
                            000A04  3327 	C$Lab2.c$573$3$153 ==.
                                    3328 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:573: LED2 = 1;
-      000A04 D2 B7            [12] 3329 	setb	_LED2
+      000A9E D2 B7            [12] 3329 	setb	_LED2
                            000A06  3330 	C$Lab2.c$574$3$153 ==.
                                    3331 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:574: LED3 = 1;
-      000A06 D2 B2            [12] 3332 	setb	_LED3
+      000AA0 D2 B2            [12] 3332 	setb	_LED3
                            000A08  3333 	C$Lab2.c$576$3$153 ==.
                                    3334 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:576: counts = 0;			// resets counts
-      000A08 E4               [12] 3335 	clr	a
-      000A09 F5*00            [12] 3336 	mov	_counts,a
-      000A0B F5*01            [12] 3337 	mov	(_counts + 1),a
+      000AA2 E4               [12] 3335 	clr	a
+      000AA3 F5 22            [12] 3336 	mov	_counts,a
+      000AA5 F5 23            [12] 3337 	mov	(_counts + 1),a
                            000A0D  3338 	C$Lab2.c$578$3$153 ==.
                                    3339 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:578: Compare_Answer((ADC_value/16), randomNumber);
-      000A0D 85*0D 82         [24] 3340 	mov	dpl,_ADC_value
-      000A10 E5*0E            [12] 3341 	mov	a,(_ADC_value + 1)
-      000A12 C4               [12] 3342 	swap	a
-      000A13 C5 82            [12] 3343 	xch	a,dpl
-      000A15 C4               [12] 3344 	swap	a
-      000A16 54 0F            [12] 3345 	anl	a,#0x0f
-      000A18 65 82            [12] 3346 	xrl	a,dpl
-      000A1A C5 82            [12] 3347 	xch	a,dpl
-      000A1C 54 0F            [12] 3348 	anl	a,#0x0f
-      000A1E C5 82            [12] 3349 	xch	a,dpl
-      000A20 65 82            [12] 3350 	xrl	a,dpl
-      000A22 C5 82            [12] 3351 	xch	a,dpl
-      000A24 F5 83            [12] 3352 	mov	dph,a
-      000A26 85*0A*29         [24] 3353 	mov	_Compare_Answer_PARM_2,_randomNumber
-      000A29 12r01rE2         [24] 3354 	lcall	_Compare_Answer
+      000AA7 85 2F 82         [24] 3340 	mov	dpl,_ADC_value
+      000AAA E5 30            [12] 3341 	mov	a,(_ADC_value + 1)
+      000AAC C4               [12] 3342 	swap	a
+      000AAD C5 82            [12] 3343 	xch	a,dpl
+      000AAF C4               [12] 3344 	swap	a
+      000AB0 54 0F            [12] 3345 	anl	a,#0x0f
+      000AB2 65 82            [12] 3346 	xrl	a,dpl
+      000AB4 C5 82            [12] 3347 	xch	a,dpl
+      000AB6 54 0F            [12] 3348 	anl	a,#0x0f
+      000AB8 C5 82            [12] 3349 	xch	a,dpl
+      000ABA 65 82            [12] 3350 	xrl	a,dpl
+      000ABC C5 82            [12] 3351 	xch	a,dpl
+      000ABE F5 83            [12] 3352 	mov	dph,a
+      000AC0 85 2C 4B         [24] 3353 	mov	_Compare_Answer_PARM_2,_randomNumber
+      000AC3 12 02 7C         [24] 3354 	lcall	_Compare_Answer
                            000A2C  3355 	C$Lab2.c$580$3$153 ==.
                                    3356 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:580: error = (abs((randomNumber*16) - ADC_value)*2);	// calculates error
-      000A2C AE*0A            [24] 3357 	mov	r6,_randomNumber
-      000A2E E5*0B            [12] 3358 	mov	a,(_randomNumber + 1)
-      000A30 C4               [12] 3359 	swap	a
-      000A31 54 F0            [12] 3360 	anl	a,#0xf0
-      000A33 CE               [12] 3361 	xch	a,r6
-      000A34 C4               [12] 3362 	swap	a
-      000A35 CE               [12] 3363 	xch	a,r6
-      000A36 6E               [12] 3364 	xrl	a,r6
-      000A37 CE               [12] 3365 	xch	a,r6
-      000A38 54 F0            [12] 3366 	anl	a,#0xf0
-      000A3A CE               [12] 3367 	xch	a,r6
-      000A3B 6E               [12] 3368 	xrl	a,r6
-      000A3C FF               [12] 3369 	mov	r7,a
-      000A3D EE               [12] 3370 	mov	a,r6
-      000A3E C3               [12] 3371 	clr	c
-      000A3F 95*0D            [12] 3372 	subb	a,_ADC_value
-      000A41 F5 82            [12] 3373 	mov	dpl,a
-      000A43 EF               [12] 3374 	mov	a,r7
-      000A44 95*0E            [12] 3375 	subb	a,(_ADC_value + 1)
-      000A46 F5 83            [12] 3376 	mov	dph,a
-      000A48 12r00r00         [24] 3377 	lcall	_abs
-      000A4B AE 82            [24] 3378 	mov	r6,dpl
-      000A4D AF 83            [24] 3379 	mov	r7,dph
-      000A4F 8E*0F            [24] 3380 	mov	_error,r6
-      000A51 EF               [12] 3381 	mov	a,r7
-      000A52 C5*0F            [12] 3382 	xch	a,_error
-      000A54 25 E0            [12] 3383 	add	a,acc
-      000A56 C5*0F            [12] 3384 	xch	a,_error
-      000A58 33               [12] 3385 	rlc	a
-      000A59 F5*10            [12] 3386 	mov	(_error + 1),a
-      000A5B 80 98            [24] 3387 	sjmp	00113$
-      000A5D                       3388 00115$:
+      000AC6 AE 2C            [24] 3357 	mov	r6,_randomNumber
+      000AC8 E5 2D            [12] 3358 	mov	a,(_randomNumber + 1)
+      000ACA C4               [12] 3359 	swap	a
+      000ACB 54 F0            [12] 3360 	anl	a,#0xf0
+      000ACD CE               [12] 3361 	xch	a,r6
+      000ACE C4               [12] 3362 	swap	a
+      000ACF CE               [12] 3363 	xch	a,r6
+      000AD0 6E               [12] 3364 	xrl	a,r6
+      000AD1 CE               [12] 3365 	xch	a,r6
+      000AD2 54 F0            [12] 3366 	anl	a,#0xf0
+      000AD4 CE               [12] 3367 	xch	a,r6
+      000AD5 6E               [12] 3368 	xrl	a,r6
+      000AD6 FF               [12] 3369 	mov	r7,a
+      000AD7 EE               [12] 3370 	mov	a,r6
+      000AD8 C3               [12] 3371 	clr	c
+      000AD9 95 2F            [12] 3372 	subb	a,_ADC_value
+      000ADB F5 82            [12] 3373 	mov	dpl,a
+      000ADD EF               [12] 3374 	mov	a,r7
+      000ADE 95 30            [12] 3375 	subb	a,(_ADC_value + 1)
+      000AE0 F5 83            [12] 3376 	mov	dph,a
+      000AE2 12 0F 26         [24] 3377 	lcall	_abs
+      000AE5 AE 82            [24] 3378 	mov	r6,dpl
+      000AE7 AF 83            [24] 3379 	mov	r7,dph
+      000AE9 8E 31            [24] 3380 	mov	_error,r6
+      000AEB EF               [12] 3381 	mov	a,r7
+      000AEC C5 31            [12] 3382 	xch	a,_error
+      000AEE 25 E0            [12] 3383 	add	a,acc
+      000AF0 C5 31            [12] 3384 	xch	a,_error
+      000AF2 33               [12] 3385 	rlc	a
+      000AF3 F5 32            [12] 3386 	mov	(_error + 1),a
+      000AF5 80 98            [24] 3387 	sjmp	00113$
+      000AF7                       3388 00115$:
                            000A5D  3389 	C$Lab2.c$583$2$149 ==.
                                    3390 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:583: if ((10 - error)>0) {					// calculates score for round
-      000A5D 74 0A            [12] 3391 	mov	a,#0x0a
-      000A5F C3               [12] 3392 	clr	c
-      000A60 95*0F            [12] 3393 	subb	a,_error
-      000A62 FE               [12] 3394 	mov	r6,a
-      000A63 E4               [12] 3395 	clr	a
-      000A64 95*10            [12] 3396 	subb	a,(_error + 1)
-      000A66 FF               [12] 3397 	mov	r7,a
-      000A67 4E               [12] 3398 	orl	a,r6
-      000A68 60 0E            [24] 3399 	jz	00117$
+      000AF7 74 0A            [12] 3391 	mov	a,#0x0a
+      000AF9 C3               [12] 3392 	clr	c
+      000AFA 95 31            [12] 3393 	subb	a,_error
+      000AFC FE               [12] 3394 	mov	r6,a
+      000AFD E4               [12] 3395 	clr	a
+      000AFE 95 32            [12] 3396 	subb	a,(_error + 1)
+      000B00 FF               [12] 3397 	mov	r7,a
+      000B01 4E               [12] 3398 	orl	a,r6
+      000B02 60 0E            [24] 3399 	jz	00117$
                            000A6A  3400 	C$Lab2.c$584$3$154 ==.
                                    3401 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:584: points = (10 - error);
-      000A6A 74 0A            [12] 3402 	mov	a,#0x0a
-      000A6C C3               [12] 3403 	clr	c
-      000A6D 95*0F            [12] 3404 	subb	a,_error
-      000A6F F5*06            [12] 3405 	mov	_points,a
-      000A71 E4               [12] 3406 	clr	a
-      000A72 95*10            [12] 3407 	subb	a,(_error + 1)
-      000A74 F5*07            [12] 3408 	mov	(_points + 1),a
-      000A76 80 05            [24] 3409 	sjmp	00118$
-      000A78                       3410 00117$:
+      000B04 74 0A            [12] 3402 	mov	a,#0x0a
+      000B06 C3               [12] 3403 	clr	c
+      000B07 95 31            [12] 3404 	subb	a,_error
+      000B09 F5 28            [12] 3405 	mov	_points,a
+      000B0B E4               [12] 3406 	clr	a
+      000B0C 95 32            [12] 3407 	subb	a,(_error + 1)
+      000B0E F5 29            [12] 3408 	mov	(_points + 1),a
+      000B10 80 05            [24] 3409 	sjmp	00118$
+      000B12                       3410 00117$:
                            000A78  3411 	C$Lab2.c$587$3$155 ==.
                                    3412 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:587: points = 0;
-      000A78 E4               [12] 3413 	clr	a
-      000A79 F5*06            [12] 3414 	mov	_points,a
-      000A7B F5*07            [12] 3415 	mov	(_points + 1),a
-      000A7D                       3416 00118$:
+      000B12 E4               [12] 3413 	clr	a
+      000B13 F5 28            [12] 3414 	mov	_points,a
+      000B15 F5 29            [12] 3415 	mov	(_points + 1),a
+      000B17                       3416 00118$:
                            000A7D  3417 	C$Lab2.c$590$2$149 ==.
                                    3418 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:590: totalPoints = totalPoints + points;		// calculates total score
-      000A7D E5*06            [12] 3419 	mov	a,_points
-      000A7F 25*08            [12] 3420 	add	a,_totalPoints
-      000A81 F5*08            [12] 3421 	mov	_totalPoints,a
-      000A83 E5*07            [12] 3422 	mov	a,(_points + 1)
-      000A85 35*09            [12] 3423 	addc	a,(_totalPoints + 1)
-      000A87 F5*09            [12] 3424 	mov	(_totalPoints + 1),a
+      000B17 E5 28            [12] 3419 	mov	a,_points
+      000B19 25 2A            [12] 3420 	add	a,_totalPoints
+      000B1B F5 2A            [12] 3421 	mov	_totalPoints,a
+      000B1D E5 29            [12] 3422 	mov	a,(_points + 1)
+      000B1F 35 2B            [12] 3423 	addc	a,(_totalPoints + 1)
+      000B21 F5 2B            [12] 3424 	mov	(_totalPoints + 1),a
                            000A89  3425 	C$Lab2.c$592$2$149 ==.
                                    3426 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:592: printf("\n\n\rScore for this round: %d\n\rTotal score: %d", points, totalPoints);	// display score for round and cumulative score
-      000A89 C0*08            [24] 3427 	push	_totalPoints
-      000A8B C0*09            [24] 3428 	push	(_totalPoints + 1)
-      000A8D C0*06            [24] 3429 	push	_points
-      000A8F C0*07            [24] 3430 	push	(_points + 1)
-      000A91 74rC5            [12] 3431 	mov	a,#___str_17
-      000A93 C0 E0            [24] 3432 	push	acc
-      000A95 74s07            [12] 3433 	mov	a,#(___str_17 >> 8)
-      000A97 C0 E0            [24] 3434 	push	acc
-      000A99 74 80            [12] 3435 	mov	a,#0x80
-      000A9B C0 E0            [24] 3436 	push	acc
-      000A9D 12r00r00         [24] 3437 	lcall	_printf
-      000AA0 E5 81            [12] 3438 	mov	a,sp
-      000AA2 24 F9            [12] 3439 	add	a,#0xf9
-      000AA4 F5 81            [12] 3440 	mov	sp,a
+      000B23 C0 2A            [24] 3427 	push	_totalPoints
+      000B25 C0 2B            [24] 3428 	push	(_totalPoints + 1)
+      000B27 C0 28            [24] 3429 	push	_points
+      000B29 C0 29            [24] 3430 	push	(_points + 1)
+      000B2B 74 4F            [12] 3431 	mov	a,#___str_17
+      000B2D C0 E0            [24] 3432 	push	acc
+      000B2F 74 20            [12] 3433 	mov	a,#(___str_17 >> 8)
+      000B31 C0 E0            [24] 3434 	push	acc
+      000B33 74 80            [12] 3435 	mov	a,#0x80
+      000B35 C0 E0            [24] 3436 	push	acc
+      000B37 12 10 BA         [24] 3437 	lcall	_printf
+      000B3A E5 81            [12] 3438 	mov	a,sp
+      000B3C 24 F9            [12] 3439 	add	a,#0xf9
+      000B3E F5 81            [12] 3440 	mov	sp,a
                            000AA6  3441 	C$Lab2.c$594$2$149 ==.
                                    3442 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:594: counts = 0;		// resets counts
-      000AA6 E4               [12] 3443 	clr	a
-      000AA7 F5*00            [12] 3444 	mov	_counts,a
-      000AA9 F5*01            [12] 3445 	mov	(_counts + 1),a
+      000B40 E4               [12] 3443 	clr	a
+      000B41 F5 22            [12] 3444 	mov	_counts,a
+      000B43 F5 23            [12] 3445 	mov	(_counts + 1),a
                            000AAB  3446 	C$Lab2.c$596$2$149 ==.
                                    3447 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:596: while (counts<169) {		// delay for .5s
-      000AAB                       3448 00120$:
-      000AAB C3               [12] 3449 	clr	c
-      000AAC E5*00            [12] 3450 	mov	a,_counts
-      000AAE 94 A9            [12] 3451 	subb	a,#0xa9
-      000AB0 E5*01            [12] 3452 	mov	a,(_counts + 1)
-      000AB2 94 00            [12] 3453 	subb	a,#0x00
-      000AB4 50 1C            [24] 3454 	jnc	00128$
+      000B45                       3448 00120$:
+      000B45 C3               [12] 3449 	clr	c
+      000B46 E5 22            [12] 3450 	mov	a,_counts
+      000B48 94 A9            [12] 3451 	subb	a,#0xa9
+      000B4A E5 23            [12] 3452 	mov	a,(_counts + 1)
+      000B4C 94 00            [12] 3453 	subb	a,#0x00
+      000B4E 50 1C            [24] 3454 	jnc	00128$
                            000AB6  3455 	C$Lab2.c$597$3$156 ==.
                                    3456 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:597: for(var=0; var<100; var++);
-      000AB6 75*02 64         [24] 3457 	mov	_var,#0x64
-      000AB9 75*03 00         [24] 3458 	mov	(_var + 1),#0x00
-      000ABC                       3459 00126$:
-      000ABC 15*02            [12] 3460 	dec	_var
-      000ABE 74 FF            [12] 3461 	mov	a,#0xff
-      000AC0 B5*02 02         [24] 3462 	cjne	a,_var,00189$
-      000AC3 15*03            [12] 3463 	dec	(_var + 1)
-      000AC5                       3464 00189$:
-      000AC5 E5*02            [12] 3465 	mov	a,_var
-      000AC7 45*03            [12] 3466 	orl	a,(_var + 1)
-      000AC9 70 F1            [24] 3467 	jnz	00126$
-      000ACB 75*02 64         [24] 3468 	mov	_var,#0x64
-      000ACE F5*03            [12] 3469 	mov	(_var + 1),a
-      000AD0 80 D9            [24] 3470 	sjmp	00120$
-      000AD2                       3471 00128$:
+      000B50 75 24 64         [24] 3457 	mov	_var,#0x64
+      000B53 75 25 00         [24] 3458 	mov	(_var + 1),#0x00
+      000B56                       3459 00126$:
+      000B56 15 24            [12] 3460 	dec	_var
+      000B58 74 FF            [12] 3461 	mov	a,#0xff
+      000B5A B5 24 02         [24] 3462 	cjne	a,_var,00189$
+      000B5D 15 25            [12] 3463 	dec	(_var + 1)
+      000B5F                       3464 00189$:
+      000B5F E5 24            [12] 3465 	mov	a,_var
+      000B61 45 25            [12] 3466 	orl	a,(_var + 1)
+      000B63 70 F1            [24] 3467 	jnz	00126$
+      000B65 75 24 64         [24] 3468 	mov	_var,#0x64
+      000B68 F5 25            [12] 3469 	mov	(_var + 1),a
+      000B6A 80 D9            [24] 3470 	sjmp	00120$
+      000B6C                       3471 00128$:
                            000AD2  3472 	C$Lab2.c$543$1$148 ==.
                                    3473 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:543: for (round = 0; round<=5; round++) {
-      000AD2 05*04            [12] 3474 	inc	_round
-      000AD4 E4               [12] 3475 	clr	a
-      000AD5 B5*04 02         [24] 3476 	cjne	a,_round,00191$
-      000AD8 05*05            [12] 3477 	inc	(_round + 1)
-      000ADA                       3478 00191$:
-      000ADA C3               [12] 3479 	clr	c
-      000ADB 74 05            [12] 3480 	mov	a,#0x05
-      000ADD 95*04            [12] 3481 	subb	a,_round
-      000ADF 74 80            [12] 3482 	mov	a,#(0x00 ^ 0x80)
-      000AE1 85*05 F0         [24] 3483 	mov	b,(_round + 1)
-      000AE4 63 F0 80         [24] 3484 	xrl	b,#0x80
-      000AE7 95 F0            [12] 3485 	subb	a,b
-      000AE9 40 03            [24] 3486 	jc	00192$
-      000AEB 02r09r8C         [24] 3487 	ljmp	00127$
-      000AEE                       3488 00192$:
+      000B6C 05 26            [12] 3474 	inc	_round
+      000B6E E4               [12] 3475 	clr	a
+      000B6F B5 26 02         [24] 3476 	cjne	a,_round,00191$
+      000B72 05 27            [12] 3477 	inc	(_round + 1)
+      000B74                       3478 00191$:
+      000B74 C3               [12] 3479 	clr	c
+      000B75 74 05            [12] 3480 	mov	a,#0x05
+      000B77 95 26            [12] 3481 	subb	a,_round
+      000B79 74 80            [12] 3482 	mov	a,#(0x00 ^ 0x80)
+      000B7B 85 27 F0         [24] 3483 	mov	b,(_round + 1)
+      000B7E 63 F0 80         [24] 3484 	xrl	b,#0x80
+      000B81 95 F0            [12] 3485 	subb	a,b
+      000B83 40 03            [24] 3486 	jc	00192$
+      000B85 02 0A 26         [24] 3487 	ljmp	00127$
+      000B88                       3488 00192$:
                            000AEE  3489 	C$Lab2.c$601$1$148 ==.
                                    3490 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:601: printf("\n\n\rFinal score: %d", totalPoints);	// print final score
-      000AEE C0*08            [24] 3491 	push	_totalPoints
-      000AF0 C0*09            [24] 3492 	push	(_totalPoints + 1)
-      000AF2 74rF2            [12] 3493 	mov	a,#___str_18
-      000AF4 C0 E0            [24] 3494 	push	acc
-      000AF6 74s07            [12] 3495 	mov	a,#(___str_18 >> 8)
-      000AF8 C0 E0            [24] 3496 	push	acc
-      000AFA 74 80            [12] 3497 	mov	a,#0x80
-      000AFC C0 E0            [24] 3498 	push	acc
-      000AFE 12r00r00         [24] 3499 	lcall	_printf
-      000B01 E5 81            [12] 3500 	mov	a,sp
-      000B03 24 FB            [12] 3501 	add	a,#0xfb
-      000B05 F5 81            [12] 3502 	mov	sp,a
+      000B88 C0 2A            [24] 3491 	push	_totalPoints
+      000B8A C0 2B            [24] 3492 	push	(_totalPoints + 1)
+      000B8C 74 7C            [12] 3493 	mov	a,#___str_18
+      000B8E C0 E0            [24] 3494 	push	acc
+      000B90 74 20            [12] 3495 	mov	a,#(___str_18 >> 8)
+      000B92 C0 E0            [24] 3496 	push	acc
+      000B94 74 80            [12] 3497 	mov	a,#0x80
+      000B96 C0 E0            [24] 3498 	push	acc
+      000B98 12 10 BA         [24] 3499 	lcall	_printf
+      000B9B E5 81            [12] 3500 	mov	a,sp
+      000B9D 24 FB            [12] 3501 	add	a,#0xfb
+      000B9F F5 81            [12] 3502 	mov	sp,a
                            000B07  3503 	C$Lab2.c$603$1$148 ==.
                                    3504 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:603: Flash_Biled();		// flash BILED red and green for 1s
-      000B07 12r02r28         [24] 3505 	lcall	_Flash_Biled
+      000BA1 12 02 C2         [24] 3505 	lcall	_Flash_Biled
                            000B0A  3506 	C$Lab2.c$604$1$148 ==.
                            000B0A  3507 	XG$Mode_Three$0$0 ==.
-      000B0A 22               [24] 3508 	ret
+      000BA4 22               [24] 3508 	ret
                                    3509 ;------------------------------------------------------------
                                    3510 ;Allocation info for local variables in function 'Draw_Bar'
                                    3511 ;------------------------------------------------------------
@@ -3518,73 +3518,73 @@
                                    3518 ;	-----------------------------------------
                                    3519 ;	 function Draw_Bar
                                    3520 ;	-----------------------------------------
-      000B0B                       3521 _Draw_Bar:
+      000BA5                       3521 _Draw_Bar:
                            000B0B  3522 	C$Lab2.c$615$1$158 ==.
                                    3523 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:615: length = length/4;
-      000B0B E5 82            [12] 3524 	mov	a,dpl
-      000B0D 03               [12] 3525 	rr	a
-      000B0E 03               [12] 3526 	rr	a
-      000B0F 54 3F            [12] 3527 	anl	a,#0x3f
-      000B11 FF               [12] 3528 	mov	r7,a
+      000BA5 E5 82            [12] 3524 	mov	a,dpl
+      000BA7 03               [12] 3525 	rr	a
+      000BA8 03               [12] 3526 	rr	a
+      000BA9 54 3F            [12] 3527 	anl	a,#0x3f
+      000BAB FF               [12] 3528 	mov	r7,a
                            000B12  3529 	C$Lab2.c$617$1$158 ==.
                                    3530 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:617: for (i=0; i<length; i++) {
-      000B12 7E 00            [12] 3531 	mov	r6,#0x00
-      000B14                       3532 00104$:
-      000B14 C3               [12] 3533 	clr	c
-      000B15 EE               [12] 3534 	mov	a,r6
-      000B16 9F               [12] 3535 	subb	a,r7
-      000B17 50 11            [24] 3536 	jnc	00101$
+      000BAC 7E 00            [12] 3531 	mov	r6,#0x00
+      000BAE                       3532 00104$:
+      000BAE C3               [12] 3533 	clr	c
+      000BAF EE               [12] 3534 	mov	a,r6
+      000BB0 9F               [12] 3535 	subb	a,r7
+      000BB1 50 11            [24] 3536 	jnc	00101$
                            000B19  3537 	C$Lab2.c$618$2$159 ==.
                                    3538 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:618: putchar('#');				// prints '#'
-      000B19 75 82 23         [24] 3539 	mov	dpl,#0x23
-      000B1C C0 07            [24] 3540 	push	ar7
-      000B1E C0 06            [24] 3541 	push	ar6
-      000B20 12r00r4A         [24] 3542 	lcall	_putchar
-      000B23 D0 06            [24] 3543 	pop	ar6
-      000B25 D0 07            [24] 3544 	pop	ar7
+      000BB3 75 82 23         [24] 3539 	mov	dpl,#0x23
+      000BB6 C0 07            [24] 3540 	push	ar7
+      000BB8 C0 06            [24] 3541 	push	ar6
+      000BBA 12 00 E4         [24] 3542 	lcall	_putchar
+      000BBD D0 06            [24] 3543 	pop	ar6
+      000BBF D0 07            [24] 3544 	pop	ar7
                            000B27  3545 	C$Lab2.c$617$1$158 ==.
                                    3546 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:617: for (i=0; i<length; i++) {
-      000B27 0E               [12] 3547 	inc	r6
-      000B28 80 EA            [24] 3548 	sjmp	00104$
-      000B2A                       3549 00101$:
+      000BC1 0E               [12] 3547 	inc	r6
+      000BC2 80 EA            [24] 3548 	sjmp	00104$
+      000BC4                       3549 00101$:
                            000B2A  3550 	C$Lab2.c$620$1$158 ==.
                                    3551 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:620: length = 63 - length;			// clears the rest of the line
-      000B2A 74 3F            [12] 3552 	mov	a,#0x3f
-      000B2C C3               [12] 3553 	clr	c
-      000B2D 9F               [12] 3554 	subb	a,r7
-      000B2E FF               [12] 3555 	mov	r7,a
+      000BC4 74 3F            [12] 3552 	mov	a,#0x3f
+      000BC6 C3               [12] 3553 	clr	c
+      000BC7 9F               [12] 3554 	subb	a,r7
+      000BC8 FF               [12] 3555 	mov	r7,a
                            000B2F  3556 	C$Lab2.c$621$1$158 ==.
                                    3557 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:621: for (i=0; i<length; i++) {
-      000B2F 7E 00            [12] 3558 	mov	r6,#0x00
-      000B31                       3559 00107$:
-      000B31 C3               [12] 3560 	clr	c
-      000B32 EE               [12] 3561 	mov	a,r6
-      000B33 9F               [12] 3562 	subb	a,r7
-      000B34 50 11            [24] 3563 	jnc	00102$
+      000BC9 7E 00            [12] 3558 	mov	r6,#0x00
+      000BCB                       3559 00107$:
+      000BCB C3               [12] 3560 	clr	c
+      000BCC EE               [12] 3561 	mov	a,r6
+      000BCD 9F               [12] 3562 	subb	a,r7
+      000BCE 50 11            [24] 3563 	jnc	00102$
                            000B36  3564 	C$Lab2.c$622$2$160 ==.
                                    3565 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:622: putchar(' ');				// prints (63-length) spaces
-      000B36 75 82 20         [24] 3566 	mov	dpl,#0x20
-      000B39 C0 07            [24] 3567 	push	ar7
-      000B3B C0 06            [24] 3568 	push	ar6
-      000B3D 12r00r4A         [24] 3569 	lcall	_putchar
-      000B40 D0 06            [24] 3570 	pop	ar6
-      000B42 D0 07            [24] 3571 	pop	ar7
+      000BD0 75 82 20         [24] 3566 	mov	dpl,#0x20
+      000BD3 C0 07            [24] 3567 	push	ar7
+      000BD5 C0 06            [24] 3568 	push	ar6
+      000BD7 12 00 E4         [24] 3569 	lcall	_putchar
+      000BDA D0 06            [24] 3570 	pop	ar6
+      000BDC D0 07            [24] 3571 	pop	ar7
                            000B44  3572 	C$Lab2.c$621$1$158 ==.
                                    3573 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:621: for (i=0; i<length; i++) {
-      000B44 0E               [12] 3574 	inc	r6
-      000B45 80 EA            [24] 3575 	sjmp	00107$
-      000B47                       3576 00102$:
+      000BDE 0E               [12] 3574 	inc	r6
+      000BDF 80 EA            [24] 3575 	sjmp	00107$
+      000BE1                       3576 00102$:
                            000B47  3577 	C$Lab2.c$624$1$158 ==.
                                    3578 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:624: putchar('|');					// prints end of bar '|'
-      000B47 75 82 7C         [24] 3579 	mov	dpl,#0x7c
-      000B4A 12r00r4A         [24] 3580 	lcall	_putchar
+      000BE1 75 82 7C         [24] 3579 	mov	dpl,#0x7c
+      000BE4 12 00 E4         [24] 3580 	lcall	_putchar
                            000B4D  3581 	C$Lab2.c$626$1$158 ==.
                                    3582 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:626: putchar('\r');					// return to beginning of line
-      000B4D 75 82 0D         [24] 3583 	mov	dpl,#0x0d
-      000B50 12r00r4A         [24] 3584 	lcall	_putchar
+      000BE7 75 82 0D         [24] 3583 	mov	dpl,#0x0d
+      000BEA 12 00 E4         [24] 3584 	lcall	_putchar
                            000B53  3585 	C$Lab2.c$627$1$158 ==.
                            000B53  3586 	XG$Draw_Bar$0$0 ==.
-      000B53 22               [24] 3587 	ret
+      000BED 22               [24] 3587 	ret
                                    3588 ;------------------------------------------------------------
                                    3589 ;Allocation info for local variables in function 'Timer0_ISR'
                                    3590 ;------------------------------------------------------------
@@ -3594,24 +3594,24 @@
                                    3594 ;	-----------------------------------------
                                    3595 ;	 function Timer0_ISR
                                    3596 ;	-----------------------------------------
-      000B54                       3597 _Timer0_ISR:
-      000B54 C0 E0            [24] 3598 	push	acc
-      000B56 C0 D0            [24] 3599 	push	psw
+      000BEE                       3597 _Timer0_ISR:
+      000BEE C0 E0            [24] 3598 	push	acc
+      000BF0 C0 D0            [24] 3599 	push	psw
                            000B58  3600 	C$Lab2.c$632$1$162 ==.
                                    3601 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:632: TF0 = 0;
-      000B58 C2 8D            [12] 3602 	clr	_TF0
+      000BF2 C2 8D            [12] 3602 	clr	_TF0
                            000B5A  3603 	C$Lab2.c$633$1$162 ==.
                                    3604 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:633: counts++;	// increments the global variable 'counts'
-      000B5A 05*00            [12] 3605 	inc	_counts
-      000B5C E4               [12] 3606 	clr	a
-      000B5D B5*00 02         [24] 3607 	cjne	a,_counts,00103$
-      000B60 05*01            [12] 3608 	inc	(_counts + 1)
-      000B62                       3609 00103$:
-      000B62 D0 D0            [24] 3610 	pop	psw
-      000B64 D0 E0            [24] 3611 	pop	acc
+      000BF4 05 22            [12] 3605 	inc	_counts
+      000BF6 E4               [12] 3606 	clr	a
+      000BF7 B5 22 02         [24] 3607 	cjne	a,_counts,00103$
+      000BFA 05 23            [12] 3608 	inc	(_counts + 1)
+      000BFC                       3609 00103$:
+      000BFC D0 D0            [24] 3610 	pop	psw
+      000BFE D0 E0            [24] 3611 	pop	acc
                            000B66  3612 	C$Lab2.c$634$1$162 ==.
                            000B66  3613 	XG$Timer0_ISR$0$0 ==.
-      000B66 32               [24] 3614 	reti
+      000C00 32               [24] 3614 	reti
                                    3615 ;	eliminated unneeded mov psw,# (no regs used in bank)
                                    3616 ;	eliminated unneeded push/pop dpl
                                    3617 ;	eliminated unneeded push/pop dph
@@ -3625,16 +3625,16 @@
                                    3625 ;	-----------------------------------------
                                    3626 ;	 function random
                                    3627 ;	-----------------------------------------
-      000B67                       3628 _random:
+      000C01                       3628 _random:
                            000B67  3629 	C$Lab2.c$640$1$164 ==.
                                    3630 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:640: return (rand()%5);  // rand returns a random number between 0 and 32767.
-      000B67 12r00r00         [24] 3631 	lcall	_rand
-      000B6A 75*00 05         [24] 3632 	mov	__modsint_PARM_2,#0x05
-      000B6D 75*01 00         [24] 3633 	mov	(__modsint_PARM_2 + 1),#0x00
-      000B70 12r00r00         [24] 3634 	lcall	__modsint
+      000C01 12 0D D7         [24] 3631 	lcall	_rand
+      000C04 75 0E 05         [24] 3632 	mov	__modsint_PARM_2,#0x05
+      000C07 75 0F 00         [24] 3633 	mov	(__modsint_PARM_2 + 1),#0x00
+      000C0A 12 17 C1         [24] 3634 	lcall	__modsint
                            000B73  3635 	C$Lab2.c$644$1$164 ==.
                            000B73  3636 	XG$random$0$0 ==.
-      000B73 22               [24] 3637 	ret
+      000C0D 22               [24] 3637 	ret
                                    3638 ;------------------------------------------------------------
                                    3639 ;Allocation info for local variables in function 'SetAllLEDs'
                                    3640 ;------------------------------------------------------------
@@ -3647,34 +3647,34 @@
                                    3647 ;	-----------------------------------------
                                    3648 ;	 function SetAllLEDs
                                    3649 ;	-----------------------------------------
-      000B74                       3650 _SetAllLEDs:
+      000C0E                       3650 _SetAllLEDs:
                            000B74  3651 	C$Lab2.c$649$1$166 ==.
                                    3652 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:649: LED0 = num;
-      000B74 E5 82            [12] 3653 	mov	a,dpl
-      000B76 24 FF            [12] 3654 	add	a,#0xff
-      000B78 E4               [12] 3655 	clr	a
-      000B79 33               [12] 3656 	rlc	a
-      000B7A F5*2A            [12] 3657 	mov	_SetAllLEDs_sloc0_1_0,a
-      000B7C 24 FF            [12] 3658 	add	a,#0xff
-      000B7E 92 B6            [24] 3659 	mov	_LED0,c
+      000C0E E5 82            [12] 3653 	mov	a,dpl
+      000C10 24 FF            [12] 3654 	add	a,#0xff
+      000C12 E4               [12] 3655 	clr	a
+      000C13 33               [12] 3656 	rlc	a
+      000C14 F5 4C            [12] 3657 	mov	_SetAllLEDs_sloc0_1_0,a
+      000C16 24 FF            [12] 3658 	add	a,#0xff
+      000C18 92 B6            [24] 3659 	mov	_LED0,c
                            000B80  3660 	C$Lab2.c$650$1$166 ==.
                                    3661 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:650: LED1 = num;
-      000B80 E5*2A            [12] 3662 	mov	a,_SetAllLEDs_sloc0_1_0
-      000B82 24 FF            [12] 3663 	add	a,#0xff
-      000B84 92 B5            [24] 3664 	mov	_LED1,c
+      000C1A E5 4C            [12] 3662 	mov	a,_SetAllLEDs_sloc0_1_0
+      000C1C 24 FF            [12] 3663 	add	a,#0xff
+      000C1E 92 B5            [24] 3664 	mov	_LED1,c
                            000B86  3665 	C$Lab2.c$651$1$166 ==.
                                    3666 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:651: LED2 = num;
-      000B86 E5*2A            [12] 3667 	mov	a,_SetAllLEDs_sloc0_1_0
-      000B88 24 FF            [12] 3668 	add	a,#0xff
-      000B8A 92 B7            [24] 3669 	mov	_LED2,c
+      000C20 E5 4C            [12] 3667 	mov	a,_SetAllLEDs_sloc0_1_0
+      000C22 24 FF            [12] 3668 	add	a,#0xff
+      000C24 92 B7            [24] 3669 	mov	_LED2,c
                            000B8C  3670 	C$Lab2.c$652$1$166 ==.
                                    3671 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:652: LED3 = num;	
-      000B8C E5*2A            [12] 3672 	mov	a,_SetAllLEDs_sloc0_1_0
-      000B8E 24 FF            [12] 3673 	add	a,#0xff
-      000B90 92 B2            [24] 3674 	mov	_LED3,c
+      000C26 E5 4C            [12] 3672 	mov	a,_SetAllLEDs_sloc0_1_0
+      000C28 24 FF            [12] 3673 	add	a,#0xff
+      000C2A 92 B2            [24] 3674 	mov	_LED3,c
                            000B92  3675 	C$Lab2.c$653$1$166 ==.
                            000B92  3676 	XG$SetAllLEDs$0$0 ==.
-      000B92 22               [24] 3677 	ret
+      000C2C 22               [24] 3677 	ret
                                    3678 ;------------------------------------------------------------
                                    3679 ;Allocation info for local variables in function 'MapADC'
                                    3680 ;------------------------------------------------------------
@@ -3688,107 +3688,107 @@
                                    3688 ;	-----------------------------------------
                                    3689 ;	 function MapADC
                                    3690 ;	-----------------------------------------
-      000B93                       3691 _MapADC:
+      000C2D                       3691 _MapADC:
                            000B93  3692 	C$Lab2.c$670$1$168 ==.
                                    3693 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:670: return ((high - low)*(((float)val/255.0f)) + low); // return mapped value
-      000B93 E5*2C            [12] 3694 	mov	a,_MapADC_PARM_3
-      000B95 C3               [12] 3695 	clr	c
-      000B96 95*2B            [12] 3696 	subb	a,_MapADC_PARM_2
-      000B98 FF               [12] 3697 	mov	r7,a
-      000B99 C0 07            [24] 3698 	push	ar7
-      000B9B 12r00r00         [24] 3699 	lcall	___uchar2fs
-      000B9E AB 82            [24] 3700 	mov	r3,dpl
-      000BA0 AC 83            [24] 3701 	mov	r4,dph
-      000BA2 AD F0            [24] 3702 	mov	r5,b
-      000BA4 FE               [12] 3703 	mov	r6,a
-      000BA5 E4               [12] 3704 	clr	a
-      000BA6 C0 E0            [24] 3705 	push	acc
-      000BA8 C0 E0            [24] 3706 	push	acc
-      000BAA 74 7F            [12] 3707 	mov	a,#0x7f
-      000BAC C0 E0            [24] 3708 	push	acc
-      000BAE 74 43            [12] 3709 	mov	a,#0x43
-      000BB0 C0 E0            [24] 3710 	push	acc
-      000BB2 8B 82            [24] 3711 	mov	dpl,r3
-      000BB4 8C 83            [24] 3712 	mov	dph,r4
-      000BB6 8D F0            [24] 3713 	mov	b,r5
-      000BB8 EE               [12] 3714 	mov	a,r6
-      000BB9 12r00r00         [24] 3715 	lcall	___fsdiv
-      000BBC AB 82            [24] 3716 	mov	r3,dpl
-      000BBE AC 83            [24] 3717 	mov	r4,dph
-      000BC0 AD F0            [24] 3718 	mov	r5,b
-      000BC2 FE               [12] 3719 	mov	r6,a
-      000BC3 E5 81            [12] 3720 	mov	a,sp
-      000BC5 24 FC            [12] 3721 	add	a,#0xfc
-      000BC7 F5 81            [12] 3722 	mov	sp,a
-      000BC9 D0 07            [24] 3723 	pop	ar7
-      000BCB 8F 82            [24] 3724 	mov	dpl,r7
-      000BCD C0 06            [24] 3725 	push	ar6
-      000BCF C0 05            [24] 3726 	push	ar5
-      000BD1 C0 04            [24] 3727 	push	ar4
-      000BD3 C0 03            [24] 3728 	push	ar3
-      000BD5 12r00r00         [24] 3729 	lcall	___uchar2fs
-      000BD8 A8 82            [24] 3730 	mov	r0,dpl
-      000BDA A9 83            [24] 3731 	mov	r1,dph
-      000BDC AA F0            [24] 3732 	mov	r2,b
-      000BDE FF               [12] 3733 	mov	r7,a
-      000BDF D0 03            [24] 3734 	pop	ar3
-      000BE1 D0 04            [24] 3735 	pop	ar4
-      000BE3 D0 05            [24] 3736 	pop	ar5
-      000BE5 D0 06            [24] 3737 	pop	ar6
-      000BE7 C0 03            [24] 3738 	push	ar3
-      000BE9 C0 04            [24] 3739 	push	ar4
-      000BEB C0 05            [24] 3740 	push	ar5
-      000BED C0 06            [24] 3741 	push	ar6
-      000BEF 88 82            [24] 3742 	mov	dpl,r0
-      000BF1 89 83            [24] 3743 	mov	dph,r1
-      000BF3 8A F0            [24] 3744 	mov	b,r2
-      000BF5 EF               [12] 3745 	mov	a,r7
-      000BF6 12r00r00         [24] 3746 	lcall	___fsmul
-      000BF9 AC 82            [24] 3747 	mov	r4,dpl
-      000BFB AD 83            [24] 3748 	mov	r5,dph
-      000BFD AE F0            [24] 3749 	mov	r6,b
-      000BFF FF               [12] 3750 	mov	r7,a
-      000C00 E5 81            [12] 3751 	mov	a,sp
-      000C02 24 FC            [12] 3752 	add	a,#0xfc
-      000C04 F5 81            [12] 3753 	mov	sp,a
-      000C06 85*2B 82         [24] 3754 	mov	dpl,_MapADC_PARM_2
-      000C09 C0 07            [24] 3755 	push	ar7
-      000C0B C0 06            [24] 3756 	push	ar6
-      000C0D C0 05            [24] 3757 	push	ar5
-      000C0F C0 04            [24] 3758 	push	ar4
-      000C11 12r00r00         [24] 3759 	lcall	___uchar2fs
-      000C14 A8 82            [24] 3760 	mov	r0,dpl
-      000C16 A9 83            [24] 3761 	mov	r1,dph
-      000C18 AA F0            [24] 3762 	mov	r2,b
-      000C1A FB               [12] 3763 	mov	r3,a
-      000C1B D0 04            [24] 3764 	pop	ar4
-      000C1D D0 05            [24] 3765 	pop	ar5
-      000C1F D0 06            [24] 3766 	pop	ar6
-      000C21 D0 07            [24] 3767 	pop	ar7
-      000C23 C0 00            [24] 3768 	push	ar0
-      000C25 C0 01            [24] 3769 	push	ar1
-      000C27 C0 02            [24] 3770 	push	ar2
-      000C29 C0 03            [24] 3771 	push	ar3
-      000C2B 8C 82            [24] 3772 	mov	dpl,r4
-      000C2D 8D 83            [24] 3773 	mov	dph,r5
-      000C2F 8E F0            [24] 3774 	mov	b,r6
-      000C31 EF               [12] 3775 	mov	a,r7
-      000C32 12r00r00         [24] 3776 	lcall	___fsadd
-      000C35 AC 82            [24] 3777 	mov	r4,dpl
-      000C37 AD 83            [24] 3778 	mov	r5,dph
-      000C39 AE F0            [24] 3779 	mov	r6,b
-      000C3B FF               [12] 3780 	mov	r7,a
-      000C3C E5 81            [12] 3781 	mov	a,sp
-      000C3E 24 FC            [12] 3782 	add	a,#0xfc
-      000C40 F5 81            [12] 3783 	mov	sp,a
-      000C42 8C 82            [24] 3784 	mov	dpl,r4
-      000C44 8D 83            [24] 3785 	mov	dph,r5
-      000C46 8E F0            [24] 3786 	mov	b,r6
-      000C48 EF               [12] 3787 	mov	a,r7
-      000C49 12r00r00         [24] 3788 	lcall	___fs2uchar
+      000C2D E5 4E            [12] 3694 	mov	a,_MapADC_PARM_3
+      000C2F C3               [12] 3695 	clr	c
+      000C30 95 4D            [12] 3696 	subb	a,_MapADC_PARM_2
+      000C32 FF               [12] 3697 	mov	r7,a
+      000C33 C0 07            [24] 3698 	push	ar7
+      000C35 12 17 AE         [24] 3699 	lcall	___uchar2fs
+      000C38 AB 82            [24] 3700 	mov	r3,dpl
+      000C3A AC 83            [24] 3701 	mov	r4,dph
+      000C3C AD F0            [24] 3702 	mov	r5,b
+      000C3E FE               [12] 3703 	mov	r6,a
+      000C3F E4               [12] 3704 	clr	a
+      000C40 C0 E0            [24] 3705 	push	acc
+      000C42 C0 E0            [24] 3706 	push	acc
+      000C44 74 7F            [12] 3707 	mov	a,#0x7f
+      000C46 C0 E0            [24] 3708 	push	acc
+      000C48 74 43            [12] 3709 	mov	a,#0x43
+      000C4A C0 E0            [24] 3710 	push	acc
+      000C4C 8B 82            [24] 3711 	mov	dpl,r3
+      000C4E 8C 83            [24] 3712 	mov	dph,r4
+      000C50 8D F0            [24] 3713 	mov	b,r5
+      000C52 EE               [12] 3714 	mov	a,r6
+      000C53 12 16 CF         [24] 3715 	lcall	___fsdiv
+      000C56 AB 82            [24] 3716 	mov	r3,dpl
+      000C58 AC 83            [24] 3717 	mov	r4,dph
+      000C5A AD F0            [24] 3718 	mov	r5,b
+      000C5C FE               [12] 3719 	mov	r6,a
+      000C5D E5 81            [12] 3720 	mov	a,sp
+      000C5F 24 FC            [12] 3721 	add	a,#0xfc
+      000C61 F5 81            [12] 3722 	mov	sp,a
+      000C63 D0 07            [24] 3723 	pop	ar7
+      000C65 8F 82            [24] 3724 	mov	dpl,r7
+      000C67 C0 06            [24] 3725 	push	ar6
+      000C69 C0 05            [24] 3726 	push	ar5
+      000C6B C0 04            [24] 3727 	push	ar4
+      000C6D C0 03            [24] 3728 	push	ar3
+      000C6F 12 17 AE         [24] 3729 	lcall	___uchar2fs
+      000C72 A8 82            [24] 3730 	mov	r0,dpl
+      000C74 A9 83            [24] 3731 	mov	r1,dph
+      000C76 AA F0            [24] 3732 	mov	r2,b
+      000C78 FF               [12] 3733 	mov	r7,a
+      000C79 D0 03            [24] 3734 	pop	ar3
+      000C7B D0 04            [24] 3735 	pop	ar4
+      000C7D D0 05            [24] 3736 	pop	ar5
+      000C7F D0 06            [24] 3737 	pop	ar6
+      000C81 C0 03            [24] 3738 	push	ar3
+      000C83 C0 04            [24] 3739 	push	ar4
+      000C85 C0 05            [24] 3740 	push	ar5
+      000C87 C0 06            [24] 3741 	push	ar6
+      000C89 88 82            [24] 3742 	mov	dpl,r0
+      000C8B 89 83            [24] 3743 	mov	dph,r1
+      000C8D 8A F0            [24] 3744 	mov	b,r2
+      000C8F EF               [12] 3745 	mov	a,r7
+      000C90 12 0E 22         [24] 3746 	lcall	___fsmul
+      000C93 AC 82            [24] 3747 	mov	r4,dpl
+      000C95 AD 83            [24] 3748 	mov	r5,dph
+      000C97 AE F0            [24] 3749 	mov	r6,b
+      000C99 FF               [12] 3750 	mov	r7,a
+      000C9A E5 81            [12] 3751 	mov	a,sp
+      000C9C 24 FC            [12] 3752 	add	a,#0xfc
+      000C9E F5 81            [12] 3753 	mov	sp,a
+      000CA0 85 4D 82         [24] 3754 	mov	dpl,_MapADC_PARM_2
+      000CA3 C0 07            [24] 3755 	push	ar7
+      000CA5 C0 06            [24] 3756 	push	ar6
+      000CA7 C0 05            [24] 3757 	push	ar5
+      000CA9 C0 04            [24] 3758 	push	ar4
+      000CAB 12 17 AE         [24] 3759 	lcall	___uchar2fs
+      000CAE A8 82            [24] 3760 	mov	r0,dpl
+      000CB0 A9 83            [24] 3761 	mov	r1,dph
+      000CB2 AA F0            [24] 3762 	mov	r2,b
+      000CB4 FB               [12] 3763 	mov	r3,a
+      000CB5 D0 04            [24] 3764 	pop	ar4
+      000CB7 D0 05            [24] 3765 	pop	ar5
+      000CB9 D0 06            [24] 3766 	pop	ar6
+      000CBB D0 07            [24] 3767 	pop	ar7
+      000CBD C0 00            [24] 3768 	push	ar0
+      000CBF C0 01            [24] 3769 	push	ar1
+      000CC1 C0 02            [24] 3770 	push	ar2
+      000CC3 C0 03            [24] 3771 	push	ar3
+      000CC5 8C 82            [24] 3772 	mov	dpl,r4
+      000CC7 8D 83            [24] 3773 	mov	dph,r5
+      000CC9 8E F0            [24] 3774 	mov	b,r6
+      000CCB EF               [12] 3775 	mov	a,r7
+      000CCC 12 0F EE         [24] 3776 	lcall	___fsadd
+      000CCF AC 82            [24] 3777 	mov	r4,dpl
+      000CD1 AD 83            [24] 3778 	mov	r5,dph
+      000CD3 AE F0            [24] 3779 	mov	r6,b
+      000CD5 FF               [12] 3780 	mov	r7,a
+      000CD6 E5 81            [12] 3781 	mov	a,sp
+      000CD8 24 FC            [12] 3782 	add	a,#0xfc
+      000CDA F5 81            [12] 3783 	mov	sp,a
+      000CDC 8C 82            [24] 3784 	mov	dpl,r4
+      000CDE 8D 83            [24] 3785 	mov	dph,r5
+      000CE0 8E F0            [24] 3786 	mov	b,r6
+      000CE2 EF               [12] 3787 	mov	a,r7
+      000CE3 12 17 B9         [24] 3788 	lcall	___fs2uchar
                            000C4C  3789 	C$Lab2.c$671$1$168 ==.
                            000C4C  3790 	XG$MapADC$0$0 ==.
-      000C4C 22               [24] 3791 	ret
+      000CE6 22               [24] 3791 	ret
                                    3792 ;------------------------------------------------------------
                                    3793 ;Allocation info for local variables in function 'LightNumLEDs'
                                    3794 ;------------------------------------------------------------
@@ -3800,53 +3800,53 @@
                                    3800 ;	-----------------------------------------
                                    3801 ;	 function LightNumLEDs
                                    3802 ;	-----------------------------------------
-      000C4D                       3803 _LightNumLEDs:
-      000C4D AF 82            [24] 3804 	mov	r7,dpl
+      000CE7                       3803 _LightNumLEDs:
+      000CE7 AF 82            [24] 3804 	mov	r7,dpl
                            000C4F  3805 	C$Lab2.c$676$1$170 ==.
                                    3806 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:676: SetAllLEDs(1); // turn off all LEDs
-      000C4F 75 82 01         [24] 3807 	mov	dpl,#0x01
-      000C52 C0 07            [24] 3808 	push	ar7
-      000C54 12r0Br74         [24] 3809 	lcall	_SetAllLEDs
-      000C57 D0 07            [24] 3810 	pop	ar7
+      000CE9 75 82 01         [24] 3807 	mov	dpl,#0x01
+      000CEC C0 07            [24] 3808 	push	ar7
+      000CEE 12 0C 0E         [24] 3809 	lcall	_SetAllLEDs
+      000CF1 D0 07            [24] 3810 	pop	ar7
                            000C59  3811 	C$Lab2.c$678$1$170 ==.
                                    3812 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:678: if (num >= 1) // Turn on LED0 if the number is >= 1
-      000C59 BF 01 00         [24] 3813 	cjne	r7,#0x01,00123$
-      000C5C                       3814 00123$:
-      000C5C 40 02            [24] 3815 	jc	00102$
+      000CF3 BF 01 00         [24] 3813 	cjne	r7,#0x01,00123$
+      000CF6                       3814 00123$:
+      000CF6 40 02            [24] 3815 	jc	00102$
                            000C5E  3816 	C$Lab2.c$680$2$171 ==.
                                    3817 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:680: LED0 = 0;
-      000C5E C2 B6            [12] 3818 	clr	_LED0
-      000C60                       3819 00102$:
+      000CF8 C2 B6            [12] 3818 	clr	_LED0
+      000CFA                       3819 00102$:
                            000C60  3820 	C$Lab2.c$682$1$170 ==.
                                    3821 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:682: if (num >= 2) // Turn on LED1 if the number is >= 2
-      000C60 BF 02 00         [24] 3822 	cjne	r7,#0x02,00125$
-      000C63                       3823 00125$:
-      000C63 40 02            [24] 3824 	jc	00104$
+      000CFA BF 02 00         [24] 3822 	cjne	r7,#0x02,00125$
+      000CFD                       3823 00125$:
+      000CFD 40 02            [24] 3824 	jc	00104$
                            000C65  3825 	C$Lab2.c$684$2$172 ==.
                                    3826 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:684: LED1 = 0;
-      000C65 C2 B5            [12] 3827 	clr	_LED1
-      000C67                       3828 00104$:
+      000CFF C2 B5            [12] 3827 	clr	_LED1
+      000D01                       3828 00104$:
                            000C67  3829 	C$Lab2.c$686$1$170 ==.
                                    3830 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:686: if (num >= 3) // Turn on LED2 if the number is >= 3
-      000C67 BF 03 00         [24] 3831 	cjne	r7,#0x03,00127$
-      000C6A                       3832 00127$:
-      000C6A 40 02            [24] 3833 	jc	00106$
+      000D01 BF 03 00         [24] 3831 	cjne	r7,#0x03,00127$
+      000D04                       3832 00127$:
+      000D04 40 02            [24] 3833 	jc	00106$
                            000C6C  3834 	C$Lab2.c$688$2$173 ==.
                                    3835 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:688: LED2 = 0;
-      000C6C C2 B7            [12] 3836 	clr	_LED2
-      000C6E                       3837 00106$:
+      000D06 C2 B7            [12] 3836 	clr	_LED2
+      000D08                       3837 00106$:
                            000C6E  3838 	C$Lab2.c$690$1$170 ==.
                                    3839 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:690: if (num >= 4) // Turn on LED03 if the number is >= 4
-      000C6E BF 04 00         [24] 3840 	cjne	r7,#0x04,00129$
-      000C71                       3841 00129$:
-      000C71 40 02            [24] 3842 	jc	00109$
+      000D08 BF 04 00         [24] 3840 	cjne	r7,#0x04,00129$
+      000D0B                       3841 00129$:
+      000D0B 40 02            [24] 3842 	jc	00109$
                            000C73  3843 	C$Lab2.c$692$2$174 ==.
                                    3844 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:692: LED3 = 0;
-      000C73 C2 B2            [12] 3845 	clr	_LED3
-      000C75                       3846 00109$:
+      000D0D C2 B2            [12] 3845 	clr	_LED3
+      000D0F                       3846 00109$:
                            000C75  3847 	C$Lab2.c$694$1$170 ==.
                            000C75  3848 	XG$LightNumLEDs$0$0 ==.
-      000C75 22               [24] 3849 	ret
+      000D0F 22               [24] 3849 	ret
                                    3850 ;------------------------------------------------------------
                                    3851 ;Allocation info for local variables in function 'ClearTimer0'
                                    3852 ;------------------------------------------------------------
@@ -3856,22 +3856,22 @@
                                    3856 ;	-----------------------------------------
                                    3857 ;	 function ClearTimer0
                                    3858 ;	-----------------------------------------
-      000C76                       3859 _ClearTimer0:
+      000D10                       3859 _ClearTimer0:
                            000C76  3860 	C$Lab2.c$699$1$176 ==.
                                    3861 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:699: TR0 = 0; // Stop Timer0
-      000C76 C2 8C            [12] 3862 	clr	_TR0
+      000D10 C2 8C            [12] 3862 	clr	_TR0
                            000C78  3863 	C$Lab2.c$700$1$176 ==.
                                    3864 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:700: TMR0 = 0; // Clear Timer0
-      000C78 E4               [12] 3865 	clr	a
-      000C79 F5 8A            [12] 3866 	mov	((_TMR0 >> 0) & 0xFF),a
-      000C7B F5 8C            [12] 3867 	mov	((_TMR0 >> 8) & 0xFF),a
+      000D12 E4               [12] 3865 	clr	a
+      000D13 F5 8A            [12] 3866 	mov	((_TMR0 >> 0) & 0xFF),a
+      000D15 F5 8C            [12] 3867 	mov	((_TMR0 >> 8) & 0xFF),a
                            000C7D  3868 	C$Lab2.c$701$1$176 ==.
                                    3869 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:701: counts = 0; // Clear overflows
-      000C7D F5*00            [12] 3870 	mov	_counts,a
-      000C7F F5*01            [12] 3871 	mov	(_counts + 1),a
+      000D17 F5 22            [12] 3870 	mov	_counts,a
+      000D19 F5 23            [12] 3871 	mov	(_counts + 1),a
                            000C81  3872 	C$Lab2.c$702$1$176 ==.
                            000C81  3873 	XG$ClearTimer0$0$0 ==.
-      000C81 22               [24] 3874 	ret
+      000D1B 22               [24] 3874 	ret
                                    3875 ;------------------------------------------------------------
                                    3876 ;Allocation info for local variables in function 'SetBILED'
                                    3877 ;------------------------------------------------------------
@@ -3883,59 +3883,59 @@
                                    3883 ;	-----------------------------------------
                                    3884 ;	 function SetBILED
                                    3885 ;	-----------------------------------------
-      000C82                       3886 _SetBILED:
-      000C82 AF 82            [24] 3887 	mov	r7,dpl
+      000D1C                       3886 _SetBILED:
+      000D1C AF 82            [24] 3887 	mov	r7,dpl
                            000C84  3888 	C$Lab2.c$707$1$178 ==.
                                    3889 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:707: switch (state)
-      000C84 BF 47 02         [24] 3890 	cjne	r7,#0x47,00118$
-      000C87 80 13            [24] 3891 	sjmp	00104$
-      000C89                       3892 00118$:
-      000C89 BF 52 02         [24] 3893 	cjne	r7,#0x52,00119$
-      000C8C 80 08            [24] 3894 	sjmp	00102$
-      000C8E                       3895 00119$:
-      000C8E BF 67 02         [24] 3896 	cjne	r7,#0x67,00120$
-      000C91 80 09            [24] 3897 	sjmp	00104$
-      000C93                       3898 00120$:
-      000C93 BF 72 0C         [24] 3899 	cjne	r7,#0x72,00105$
+      000D1E BF 47 02         [24] 3890 	cjne	r7,#0x47,00118$
+      000D21 80 13            [24] 3891 	sjmp	00104$
+      000D23                       3892 00118$:
+      000D23 BF 52 02         [24] 3893 	cjne	r7,#0x52,00119$
+      000D26 80 08            [24] 3894 	sjmp	00102$
+      000D28                       3895 00119$:
+      000D28 BF 67 02         [24] 3896 	cjne	r7,#0x67,00120$
+      000D2B 80 09            [24] 3897 	sjmp	00104$
+      000D2D                       3898 00120$:
+      000D2D BF 72 0C         [24] 3899 	cjne	r7,#0x72,00105$
                            000C96  3900 	C$Lab2.c$710$2$179 ==.
                                    3901 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:710: case 'R':
-      000C96                       3902 00102$:
+      000D30                       3902 00102$:
                            000C96  3903 	C$Lab2.c$711$2$179 ==.
                                    3904 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:711: BILED0 = 0;
-      000C96 C2 B3            [12] 3905 	clr	_BILED0
+      000D30 C2 B3            [12] 3905 	clr	_BILED0
                            000C98  3906 	C$Lab2.c$712$2$179 ==.
                                    3907 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:712: BILED1 = 1;
-      000C98 D2 B4            [12] 3908 	setb	_BILED1
+      000D32 D2 B4            [12] 3908 	setb	_BILED1
                            000C9A  3909 	C$Lab2.c$713$2$179 ==.
                                    3910 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:713: break;
                            000C9A  3911 	C$Lab2.c$715$2$179 ==.
                                    3912 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:715: case 'G':
-      000C9A 80 0A            [24] 3913 	sjmp	00107$
-      000C9C                       3914 00104$:
+      000D34 80 0A            [24] 3913 	sjmp	00107$
+      000D36                       3914 00104$:
                            000C9C  3915 	C$Lab2.c$716$2$179 ==.
                                    3916 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:716: BILED0 = 1;
-      000C9C D2 B3            [12] 3917 	setb	_BILED0
+      000D36 D2 B3            [12] 3917 	setb	_BILED0
                            000C9E  3918 	C$Lab2.c$717$2$179 ==.
                                    3919 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:717: BILED1 = 0;
-      000C9E C2 B4            [12] 3920 	clr	_BILED1
+      000D38 C2 B4            [12] 3920 	clr	_BILED1
                            000CA0  3921 	C$Lab2.c$718$2$179 ==.
                                    3922 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:718: break;
                            000CA0  3923 	C$Lab2.c$719$2$179 ==.
                                    3924 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:719: default:  // Turn BILED OFF
-      000CA0 80 04            [24] 3925 	sjmp	00107$
-      000CA2                       3926 00105$:
+      000D3A 80 04            [24] 3925 	sjmp	00107$
+      000D3C                       3926 00105$:
                            000CA2  3927 	C$Lab2.c$720$2$179 ==.
                                    3928 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:720: BILED0 = 0;
-      000CA2 C2 B3            [12] 3929 	clr	_BILED0
+      000D3C C2 B3            [12] 3929 	clr	_BILED0
                            000CA4  3930 	C$Lab2.c$721$2$179 ==.
                                    3931 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:721: BILED1 = 0;
-      000CA4 C2 B4            [12] 3932 	clr	_BILED1
+      000D3E C2 B4            [12] 3932 	clr	_BILED1
                            000CA6  3933 	C$Lab2.c$723$1$178 ==.
                                    3934 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:723: }
-      000CA6                       3935 00107$:
+      000D40                       3935 00107$:
                            000CA6  3936 	C$Lab2.c$724$1$178 ==.
                            000CA6  3937 	XG$SetBILED$0$0 ==.
-      000CA6 22               [24] 3938 	ret
+      000D40 22               [24] 3938 	ret
                                    3939 ;------------------------------------------------------------
                                    3940 ;Allocation info for local variables in function 'DebounceButton'
                                    3941 ;------------------------------------------------------------
@@ -3947,70 +3947,70 @@
                                    3947 ;	-----------------------------------------
                                    3948 ;	 function DebounceButton
                                    3949 ;	-----------------------------------------
-      000CA7                       3950 _DebounceButton:
+      000D41                       3950 _DebounceButton:
                            000CA7  3951 	C$Lab2.c$729$1$178 ==.
                                    3952 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:729: char pressed = 0;
-      000CA7 7F 00            [12] 3953 	mov	r7,#0x00
+      000D41 7F 00            [12] 3953 	mov	r7,#0x00
                            000CA9  3954 	C$Lab2.c$731$1$181 ==.
                                    3955 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:731: TR0 = 1;
-      000CA9 D2 8C            [12] 3956 	setb	_TR0
+      000D43 D2 8C            [12] 3956 	setb	_TR0
                            000CAB  3957 	C$Lab2.c$733$1$181 ==.
                                    3958 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:733: tmpCount = 0; // Create temp value
-      000CAB E4               [12] 3959 	clr	a
-      000CAC F5*17            [12] 3960 	mov	_tmpCount,a
-      000CAE F5*18            [12] 3961 	mov	(_tmpCount + 1),a
+      000D45 E4               [12] 3959 	clr	a
+      000D46 F5 39            [12] 3960 	mov	_tmpCount,a
+      000D48 F5 3A            [12] 3961 	mov	(_tmpCount + 1),a
                            000CB0  3962 	C$Lab2.c$734$1$181 ==.
                                    3963 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:734: if (!PB0) // If the button was pressed
-      000CB0 20 B0 39         [24] 3964 	jb	_PB0,00109$
+      000D4A 20 B0 39         [24] 3964 	jb	_PB0,00109$
                            000CB3  3965 	C$Lab2.c$736$2$182 ==.
                                    3966 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:736: tmpCount = counts; // record current count
-      000CB3 85*00*17         [24] 3967 	mov	_tmpCount,_counts
-      000CB6 85*01*18         [24] 3968 	mov	(_tmpCount + 1),(_counts + 1)
+      000D4D 85 22 39         [24] 3967 	mov	_tmpCount,_counts
+      000D50 85 23 3A         [24] 3968 	mov	(_tmpCount + 1),(_counts + 1)
                            000CB9  3969 	C$Lab2.c$737$2$182 ==.
                                    3970 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:737: while (counts < (tmpCount + 7)) // Wait ~20ms
-      000CB9                       3971 00102$:
-      000CB9 74 07            [12] 3972 	mov	a,#0x07
-      000CBB 25*17            [12] 3973 	add	a,_tmpCount
-      000CBD FD               [12] 3974 	mov	r5,a
-      000CBE E4               [12] 3975 	clr	a
-      000CBF 35*18            [12] 3976 	addc	a,(_tmpCount + 1)
-      000CC1 FE               [12] 3977 	mov	r6,a
-      000CC2 C3               [12] 3978 	clr	c
-      000CC3 E5*00            [12] 3979 	mov	a,_counts
-      000CC5 9D               [12] 3980 	subb	a,r5
-      000CC6 E5*01            [12] 3981 	mov	a,(_counts + 1)
-      000CC8 9E               [12] 3982 	subb	a,r6
-      000CC9 50 1C            [24] 3983 	jnc	00105$
+      000D53                       3971 00102$:
+      000D53 74 07            [12] 3972 	mov	a,#0x07
+      000D55 25 39            [12] 3973 	add	a,_tmpCount
+      000D57 FD               [12] 3974 	mov	r5,a
+      000D58 E4               [12] 3975 	clr	a
+      000D59 35 3A            [12] 3976 	addc	a,(_tmpCount + 1)
+      000D5B FE               [12] 3977 	mov	r6,a
+      000D5C C3               [12] 3978 	clr	c
+      000D5D E5 22            [12] 3979 	mov	a,_counts
+      000D5F 9D               [12] 3980 	subb	a,r5
+      000D60 E5 23            [12] 3981 	mov	a,(_counts + 1)
+      000D62 9E               [12] 3982 	subb	a,r6
+      000D63 50 1C            [24] 3983 	jnc	00105$
                            000CCB  3984 	C$Lab2.c$739$3$183 ==.
                                    3985 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:739: for (var = 0;var<100;var++); // Do something to wait more accurately
-      000CCB 75*02 64         [24] 3986 	mov	_var,#0x64
-      000CCE 75*03 00         [24] 3987 	mov	(_var + 1),#0x00
-      000CD1                       3988 00112$:
-      000CD1 15*02            [12] 3989 	dec	_var
-      000CD3 74 FF            [12] 3990 	mov	a,#0xff
-      000CD5 B5*02 02         [24] 3991 	cjne	a,_var,00138$
-      000CD8 15*03            [12] 3992 	dec	(_var + 1)
-      000CDA                       3993 00138$:
-      000CDA E5*02            [12] 3994 	mov	a,_var
-      000CDC 45*03            [12] 3995 	orl	a,(_var + 1)
-      000CDE 70 F1            [24] 3996 	jnz	00112$
-      000CE0 75*02 64         [24] 3997 	mov	_var,#0x64
-      000CE3 F5*03            [12] 3998 	mov	(_var + 1),a
+      000D65 75 24 64         [24] 3986 	mov	_var,#0x64
+      000D68 75 25 00         [24] 3987 	mov	(_var + 1),#0x00
+      000D6B                       3988 00112$:
+      000D6B 15 24            [12] 3989 	dec	_var
+      000D6D 74 FF            [12] 3990 	mov	a,#0xff
+      000D6F B5 24 02         [24] 3991 	cjne	a,_var,00138$
+      000D72 15 25            [12] 3992 	dec	(_var + 1)
+      000D74                       3993 00138$:
+      000D74 E5 24            [12] 3994 	mov	a,_var
+      000D76 45 25            [12] 3995 	orl	a,(_var + 1)
+      000D78 70 F1            [24] 3996 	jnz	00112$
+      000D7A 75 24 64         [24] 3997 	mov	_var,#0x64
+      000D7D F5 25            [12] 3998 	mov	(_var + 1),a
                            000CE5  3999 	C$Lab2.c$741$2$182 ==.
                                    4000 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:741: while (!PB0); // wait for button release
-      000CE5 80 D2            [24] 4001 	sjmp	00102$
-      000CE7                       4002 00105$:
-      000CE7 30 B0 FD         [24] 4003 	jnb	_PB0,00105$
+      000D7F 80 D2            [24] 4001 	sjmp	00102$
+      000D81                       4002 00105$:
+      000D81 30 B0 FD         [24] 4003 	jnb	_PB0,00105$
                            000CEA  4004 	C$Lab2.c$742$2$182 ==.
                                    4005 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:742: pressed = 1;
-      000CEA 7F 01            [12] 4006 	mov	r7,#0x01
-      000CEC                       4007 00109$:
+      000D84 7F 01            [12] 4006 	mov	r7,#0x01
+      000D86                       4007 00109$:
                            000CEC  4008 	C$Lab2.c$745$1$181 ==.
                                    4009 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:745: return pressed;
-      000CEC 8F 82            [24] 4010 	mov	dpl,r7
+      000D86 8F 82            [24] 4010 	mov	dpl,r7
                            000CEE  4011 	C$Lab2.c$746$1$181 ==.
                            000CEE  4012 	XG$DebounceButton$0$0 ==.
-      000CEE 22               [24] 4013 	ret
+      000D88 22               [24] 4013 	ret
                                    4014 ;------------------------------------------------------------
                                    4015 ;Allocation info for local variables in function 'CompareVals'
                                    4016 ;------------------------------------------------------------
@@ -4023,71 +4023,71 @@
                                    4023 ;	-----------------------------------------
                                    4024 ;	 function CompareVals
                                    4025 ;	-----------------------------------------
-      000CEF                       4026 _CompareVals:
-      000CEF AF 82            [24] 4027 	mov	r7,dpl
+      000D89                       4026 _CompareVals:
+      000D89 AF 82            [24] 4027 	mov	r7,dpl
                            000CF1  4028 	C$Lab2.c$751$1$185 ==.
                                    4029 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:751: if(input < expected) // If the value was lower
-      000CF1 C3               [12] 4030 	clr	c
-      000CF2 EF               [12] 4031 	mov	a,r7
-      000CF3 95*2D            [12] 4032 	subb	a,_CompareVals_PARM_2
-      000CF5 50 08            [24] 4033 	jnc	00105$
+      000D8B C3               [12] 4030 	clr	c
+      000D8C EF               [12] 4031 	mov	a,r7
+      000D8D 95 4F            [12] 4032 	subb	a,_CompareVals_PARM_2
+      000D8F 50 08            [24] 4033 	jnc	00105$
                            000CF7  4034 	C$Lab2.c$753$2$186 ==.
                                    4035 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:753: SetBILED('r'); // Turn the BILED red
-      000CF7 75 82 72         [24] 4036 	mov	dpl,#0x72
-      000CFA 12r0Cr82         [24] 4037 	lcall	_SetBILED
-      000CFD 80 14            [24] 4038 	sjmp	00107$
-      000CFF                       4039 00105$:
+      000D91 75 82 72         [24] 4036 	mov	dpl,#0x72
+      000D94 12 0D 1C         [24] 4037 	lcall	_SetBILED
+      000D97 80 14            [24] 4038 	sjmp	00107$
+      000D99                       4039 00105$:
                            000CFF  4040 	C$Lab2.c$755$1$185 ==.
                                    4041 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:755: else if(input > expected) // If the value was higher
-      000CFF C3               [12] 4042 	clr	c
-      000D00 E5*2D            [12] 4043 	mov	a,_CompareVals_PARM_2
-      000D02 9F               [12] 4044 	subb	a,r7
-      000D03 50 08            [24] 4045 	jnc	00102$
+      000D99 C3               [12] 4042 	clr	c
+      000D9A E5 4F            [12] 4043 	mov	a,_CompareVals_PARM_2
+      000D9C 9F               [12] 4044 	subb	a,r7
+      000D9D 50 08            [24] 4045 	jnc	00102$
                            000D05  4046 	C$Lab2.c$757$2$187 ==.
                                    4047 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:757: SetBILED('g'); // Turn the BILED green
-      000D05 75 82 67         [24] 4048 	mov	dpl,#0x67
-      000D08 12r0Cr82         [24] 4049 	lcall	_SetBILED
-      000D0B 80 06            [24] 4050 	sjmp	00107$
-      000D0D                       4051 00102$:
+      000D9F 75 82 67         [24] 4048 	mov	dpl,#0x67
+      000DA2 12 0D 1C         [24] 4049 	lcall	_SetBILED
+      000DA5 80 06            [24] 4050 	sjmp	00107$
+      000DA7                       4051 00102$:
                            000D0D  4052 	C$Lab2.c$761$2$188 ==.
                                    4053 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:761: SetBILED('o'); // Turn the BILED off
-      000D0D 75 82 6F         [24] 4054 	mov	dpl,#0x6f
-      000D10 12r0Cr82         [24] 4055 	lcall	_SetBILED
-      000D13                       4056 00107$:
+      000DA7 75 82 6F         [24] 4054 	mov	dpl,#0x6f
+      000DAA 12 0D 1C         [24] 4055 	lcall	_SetBILED
+      000DAD                       4056 00107$:
                            000D13  4057 	C$Lab2.c$763$1$185 ==.
                            000D13  4058 	XG$CompareVals$0$0 ==.
-      000D13 22               [24] 4059 	ret
+      000DAD 22               [24] 4059 	ret
                                    4060 	.area CSEG    (CODE)
                                    4061 	.area CONST   (CODE)
                            000000  4062 FLab2$__str_0$0$0 == .
-      000000                       4063 ___str_0:
-      000000 0D                    4064 	.db 0x0d
-      000001 0A                    4065 	.db 0x0a
-      000002 0A                    4066 	.db 0x0a
-      000003 53 65 6C 65 63 74 20  4067 	.ascii "Select a mode using the slide switches."
+      00188A                       4063 ___str_0:
+      00188A 0D                    4064 	.db 0x0d
+      00188B 0A                    4065 	.db 0x0a
+      00188C 0A                    4066 	.db 0x0a
+      00188D 53 65 6C 65 63 74 20  4067 	.ascii "Select a mode using the slide switches."
              61 20 6D 6F 64 65 20
              75 73 69 6E 67 20 74
              68 65 20 73 6C 69 64
              65 20 73 77 69 74 63
              68 65 73 2E
-      00002A 0D                    4068 	.db 0x0d
-      00002B 0A                    4069 	.db 0x0a
-      00002C 50 72 65 73 73 20 74  4070 	.ascii "Press the pushbu"
+      0018B4 0D                    4068 	.db 0x0d
+      0018B5 0A                    4069 	.db 0x0a
+      0018B6 50 72 65 73 73 20 74  4070 	.ascii "Press the pushbu"
              68 65 20 70 75 73 68
              62 75
-      00003C 74 74 6F 6E 20 74 6F  4071 	.ascii "tton to select a mode, push it again to confirm."
+      0018C6 74 74 6F 6E 20 74 6F  4071 	.ascii "tton to select a mode, push it again to confirm."
              20 73 65 6C 65 63 74
              20 61 20 6D 6F 64 65
              2C 20 70 75 73 68 20
              69 74 20 61 67 61 69
              6E 20 74 6F 20 63 6F
              6E 66 69 72 6D 2E
-      00006C 00                    4072 	.db 0x00
+      0018F6 00                    4072 	.db 0x00
                            00006D  4073 FLab2$__str_1$0$0 == .
-      00006D                       4074 ___str_1:
-      00006D 0D                    4075 	.db 0x0d
-      00006E 0A                    4076 	.db 0x0a
-      00006F 4D 6F 64 65 20 31 3A  4077 	.ascii "Mode 1: Slide switch 1 is ON, slide switch 2 is OFF"
+      0018F7                       4074 ___str_1:
+      0018F7 0D                    4075 	.db 0x0d
+      0018F8 0A                    4076 	.db 0x0a
+      0018F9 4D 6F 64 65 20 31 3A  4077 	.ascii "Mode 1: Slide switch 1 is ON, slide switch 2 is OFF"
              20 53 6C 69 64 65 20
              73 77 69 74 63 68 20
              31 20 69 73 20 4F 4E
@@ -4095,12 +4095,12 @@
              20 73 77 69 74 63 68
              20 32 20 69 73 20 4F
              46 46
-      0000A2 00                    4078 	.db 0x00
+      00192C 00                    4078 	.db 0x00
                            0000A3  4079 FLab2$__str_2$0$0 == .
-      0000A3                       4080 ___str_2:
-      0000A3 0D                    4081 	.db 0x0d
-      0000A4 0A                    4082 	.db 0x0a
-      0000A5 4D 6F 64 65 20 32 3A  4083 	.ascii "Mode 2: Slide switch 1 is OFF, slide switch 2 is ON"
+      00192D                       4080 ___str_2:
+      00192D 0D                    4081 	.db 0x0d
+      00192E 0A                    4082 	.db 0x0a
+      00192F 4D 6F 64 65 20 32 3A  4083 	.ascii "Mode 2: Slide switch 1 is OFF, slide switch 2 is ON"
              20 53 6C 69 64 65 20
              73 77 69 74 63 68 20
              31 20 69 73 20 4F 46
@@ -4108,12 +4108,12 @@
              65 20 73 77 69 74 63
              68 20 32 20 69 73 20
              4F 4E
-      0000D8 00                    4084 	.db 0x00
+      001962 00                    4084 	.db 0x00
                            0000D9  4085 FLab2$__str_3$0$0 == .
-      0000D9                       4086 ___str_3:
-      0000D9 0D                    4087 	.db 0x0d
-      0000DA 0A                    4088 	.db 0x0a
-      0000DB 4D 6F 64 65 20 33 3A  4089 	.ascii "Mode 3: Slide switch 1 is ON, slide switch 2 is ON"
+      001963                       4086 ___str_3:
+      001963 0D                    4087 	.db 0x0d
+      001964 0A                    4088 	.db 0x0a
+      001965 4D 6F 64 65 20 33 3A  4089 	.ascii "Mode 3: Slide switch 1 is ON, slide switch 2 is ON"
              20 53 6C 69 64 65 20
              73 77 69 74 63 68 20
              31 20 69 73 20 4F 4E
@@ -4121,24 +4121,24 @@
              20 73 77 69 74 63 68
              20 32 20 69 73 20 4F
              4E
-      00010D 00                    4090 	.db 0x00
+      001997 00                    4090 	.db 0x00
                            00010E  4091 FLab2$__str_4$0$0 == .
-      00010E                       4092 ___str_4:
-      00010E 0D                    4093 	.db 0x0d
-      00010F 0A                    4094 	.db 0x0a
-      000110 4F 46 46 3A 20 53 6C  4095 	.ascii "OFF: Slide switch 1 is OFF, slide switch 2 is OFF"
+      001998                       4092 ___str_4:
+      001998 0D                    4093 	.db 0x0d
+      001999 0A                    4094 	.db 0x0a
+      00199A 4F 46 46 3A 20 53 6C  4095 	.ascii "OFF: Slide switch 1 is OFF, slide switch 2 is OFF"
              69 64 65 20 73 77 69
              74 63 68 20 31 20 69
              73 20 4F 46 46 2C 20
              73 6C 69 64 65 20 73
              77 69 74 63 68 20 32
              20 69 73 20 4F 46 46
-      000141 00                    4096 	.db 0x00
+      0019CB 00                    4096 	.db 0x00
                            000142  4097 FLab2$__str_5$0$0 == .
-      000142                       4098 ___str_5:
-      000142 0A                    4099 	.db 0x0a
-      000143 0D                    4100 	.db 0x0d
-      000144 54 68 65 20 66 69 72  4101 	.ascii "The first mode generates a random number from 0 to 4."
+      0019CC                       4098 ___str_5:
+      0019CC 0A                    4099 	.db 0x0a
+      0019CD 0D                    4100 	.db 0x0d
+      0019CE 54 68 65 20 66 69 72  4101 	.ascii "The first mode generates a random number from 0 to 4."
              73 74 20 6D 6F 64 65
              20 67 65 6E 65 72 61
              74 65 73 20 61 20 72
@@ -4146,10 +4146,10 @@
              75 6D 62 65 72 20 66
              72 6F 6D 20 30 20 74
              6F 20 34 2E
-      000179 0A                    4102 	.db 0x0a
-      00017A 0D                    4103 	.db 0x0d
-      00017B 54 68 65              4104 	.ascii "The"
-      00017E 20 67 65 6E 65 72 61  4105 	.ascii " generated number lights up none to all 4 LEDs in a line. Th"
+      001A03 0A                    4102 	.db 0x0a
+      001A04 0D                    4103 	.db 0x0d
+      001A05 54 68 65              4104 	.ascii "The"
+      001A08 20 67 65 6E 65 72 61  4105 	.ascii " generated number lights up none to all 4 LEDs in a line. Th"
              74 65 64 20 6E 75 6D
              62 65 72 20 6C 69 67
              68 74 73 20 75 70 20
@@ -4158,18 +4158,18 @@
              4C 45 44 73 20 69 6E
              20 61 20 6C 69 6E 65
              2E 20 54 68
-      0001BA 65 20 4C 45 44 73 20  4106 	.ascii "e LEDs stay on 0.5 s, then turn off"
+      001A44 65 20 4C 45 44 73 20  4106 	.ascii "e LEDs stay on 0.5 s, then turn off"
              73 74 61 79 20 6F 6E
              20 30 2E 35 20 73 2C
              20 74 68 65 6E 20 74
              75 72 6E 20 6F 66 66
-      0001DD 0A                    4107 	.db 0x0a
-      0001DE 0D                    4108 	.db 0x0d
-      0001DF 61 6E 64 20 61 20 74  4109 	.ascii "and a timer is started."
+      001A67 0A                    4107 	.db 0x0a
+      001A68 0D                    4108 	.db 0x0d
+      001A69 61 6E 64 20 61 20 74  4109 	.ascii "and a timer is started."
              69 6D 65 72 20 69 73
              20 73 74 61 72 74 65
              64 2E
-      0001F6 20 54 68 65 20 70 6C  4110 	.ascii " The player then turns a potentiometer whose voltage value i"
+      001A80 20 54 68 65 20 70 6C  4110 	.ascii " The player then turns a potentiometer whose voltage value i"
              61 79 65 72 20 74 68
              65 6E 20 74 75 72 6E
              73 20 61 20 70 6F 74
@@ -4178,18 +4178,18 @@
              73 65 20 76 6F 6C 74
              61 67 65 20 76 61 6C
              75 65 20 69
-      000232 73 20 75 73 65 64 20  4111 	.ascii "s used to turn on the"
+      001ABC 73 20 75 73 65 64 20  4111 	.ascii "s used to turn on the"
              74 6F 20 74 75 72 6E
              20 6F 6E 20 74 68 65
-      000247 0A                    4112 	.db 0x0a
-      000248 0D                    4113 	.db 0x0d
-      000249 4C 45 44 73 20 69 6E  4114 	.ascii "LEDs in sequence until the same patte"
+      001AD1 0A                    4112 	.db 0x0a
+      001AD2 0D                    4113 	.db 0x0d
+      001AD3 4C 45 44 73 20 69 6E  4114 	.ascii "LEDs in sequence until the same patte"
              20 73 65 71 75 65 6E
              63 65 20 75 6E 74 69
              6C 20 74 68 65 20 73
              61 6D 65 20 70 61 74
              74 65
-      00026E 72 6E 20 61 70 70 65  4115 	.ascii "rn appears. The pushbutton is then pressed to stop the timer"
+      001AF8 72 6E 20 61 70 70 65  4115 	.ascii "rn appears. The pushbutton is then pressed to stop the timer"
              61 72 73 2E 20 54 68
              65 20 70 75 73 68 62
              75 74 74 6F 6E 20 69
@@ -4198,10 +4198,10 @@
              20 74 6F 20 73 74 6F
              70 20 74 68 65 20 74
              69 6D 65 72
-      0002AA 20 61 6E 64           4116 	.ascii " and"
-      0002AE 0A                    4117 	.db 0x0a
-      0002AF 0D                    4118 	.db 0x0d
-      0002B0 72 65 63 6F 72 64 20  4119 	.ascii "record the LED pattern, which is then compared to that"
+      001B34 20 61 6E 64           4116 	.ascii " and"
+      001B38 0A                    4117 	.db 0x0a
+      001B39 0D                    4118 	.db 0x0d
+      001B3A 72 65 63 6F 72 64 20  4119 	.ascii "record the LED pattern, which is then compared to that"
              74 68 65 20 4C 45 44
              20 70 61 74 74 65 72
              6E 2C 20 77 68 69 63
@@ -4209,19 +4209,19 @@
              65 6E 20 63 6F 6D 70
              61 72 65 64 20 74 6F
              20 74 68 61 74
-      0002E6 20 67 65 6E 65 72 61  4120 	.ascii " generated by the random number. Scoring is"
+      001B70 20 67 65 6E 65 72 61  4120 	.ascii " generated by the random number. Scoring is"
              74 65 64 20 62 79 20
              74 68 65 20 72 61 6E
              64 6F 6D 20 6E 75 6D
              62 65 72 2E 20 53 63
              6F 72 69 6E 67 20 69
              73
-      000311 0A                    4121 	.db 0x0a
-      000312 0D                    4122 	.db 0x0d
-      000313 62 61 73 65 64 20 6F  4123 	.ascii "based on correc"
+      001B9B 0A                    4121 	.db 0x0a
+      001B9C 0D                    4122 	.db 0x0d
+      001B9D 62 61 73 65 64 20 6F  4123 	.ascii "based on correc"
              6E 20 63 6F 72 72 65
              63
-      000322 74 6E 65 73 73 20 61  4124 	.ascii "tness and speed of entry. The whole process is repeated 5 ti"
+      001BAC 74 6E 65 73 73 20 61  4124 	.ascii "tness and speed of entry. The whole process is repeated 5 ti"
              6E 64 20 73 70 65 65
              64 20 6F 66 20 65 6E
              74 72 79 2E 20 54 68
@@ -4230,51 +4230,51 @@
              73 20 69 73 20 72 65
              70 65 61 74 65 64 20
              35 20 74 69
-      00035E 6D 65 73 20 61 6E 64  4125 	.ascii "mes and the final score is"
+      001BE8 6D 65 73 20 61 6E 64  4125 	.ascii "mes and the final score is"
              20 74 68 65 20 66 69
              6E 61 6C 20 73 63 6F
              72 65 20 69 73
-      000378 0A                    4126 	.db 0x0a
-      000379 0D                    4127 	.db 0x0d
-      00037A 64 69 73 70 6C 61 79  4128 	.ascii "displayed on the terminal. The l"
+      001C02 0A                    4126 	.db 0x0a
+      001C03 0D                    4127 	.db 0x0d
+      001C04 64 69 73 70 6C 61 79  4128 	.ascii "displayed on the terminal. The l"
              65 64 20 6F 6E 20 74
              68 65 20 74 65 72 6D
              69 6E 61 6C 2E 20 54
              68 65 20 6C
-      00039A 6F 77 65 72 20 74 68  4129 	.ascii "ower the score the better you did."
+      001C24 6F 77 65 72 20 74 68  4129 	.ascii "ower the score the better you did."
              65 20 73 63 6F 72 65
              20 74 68 65 20 62 65
              74 74 65 72 20 79 6F
              75 20 64 69 64 2E
-      0003BC 00                    4130 	.db 0x00
+      001C46 00                    4130 	.db 0x00
                            0003BD  4131 FLab2$__str_6$0$0 == .
-      0003BD                       4132 ___str_6:
-      0003BD 53 74 61 72 74        4133 	.ascii "Start"
-      0003C2 00                    4134 	.db 0x00
+      001C47                       4132 ___str_6:
+      001C47 53 74 61 72 74        4133 	.ascii "Start"
+      001C4C 00                    4134 	.db 0x00
                            0003C3  4135 FLab2$__str_7$0$0 == .
-      0003C3                       4136 ___str_7:
-      0003C3 52 6F 75 6E 64 20 53  4137 	.ascii "Round Score: %d"
+      001C4D                       4136 ___str_7:
+      001C4D 52 6F 75 6E 64 20 53  4137 	.ascii "Round Score: %d"
              63 6F 72 65 3A 20 25
              64
-      0003D2 00                    4138 	.db 0x00
+      001C5C 00                    4138 	.db 0x00
                            0003D3  4139 FLab2$__str_8$0$0 == .
-      0003D3                       4140 ___str_8:
-      0003D3 54 6F 74 61 6C 20 53  4141 	.ascii "Total Score: %d"
+      001C5D                       4140 ___str_8:
+      001C5D 54 6F 74 61 6C 20 53  4141 	.ascii "Total Score: %d"
              63 6F 72 65 3A 20 25
              64
-      0003E2 00                    4142 	.db 0x00
+      001C6C 00                    4142 	.db 0x00
                            0003E3  4143 FLab2$__str_9$0$0 == .
-      0003E3                       4144 ___str_9:
-      0003E3 46 69 6E 61 6C 20 53  4145 	.ascii "Final Score: %d"
+      001C6D                       4144 ___str_9:
+      001C6D 46 69 6E 61 6C 20 53  4145 	.ascii "Final Score: %d"
              63 6F 72 65 3A 20 25
              64
-      0003F2 00                    4146 	.db 0x00
+      001C7C 00                    4146 	.db 0x00
                            0003F3  4147 FLab2$__str_10$0$0 == .
-      0003F3                       4148 ___str_10:
-      0003F3 0D                    4149 	.db 0x0d
-      0003F4 0A                    4150 	.db 0x0a
-      0003F5 0A                    4151 	.db 0x0a
-      0003F6 50 6C 61 79 65 72 20  4152 	.ascii "Player 1 will have 1 second to adjust the potentionmeter "
+      001C7D                       4148 ___str_10:
+      001C7D 0D                    4149 	.db 0x0d
+      001C7E 0A                    4150 	.db 0x0a
+      001C7F 0A                    4151 	.db 0x0a
+      001C80 50 6C 61 79 65 72 20  4152 	.ascii "Player 1 will have 1 second to adjust the potentionmeter "
              31 20 77 69 6C 6C 20
              68 61 76 65 20 31 20
              73 65 63 6F 6E 64 20
@@ -4283,62 +4283,62 @@
              70 6F 74 65 6E 74 69
              6F 6E 6D 65 74 65 72
              20
-      00042F 74 6F 20 6C 69 67 68  4153 	.ascii "to light up LEDs."
+      001CB9 74 6F 20 6C 69 67 68  4153 	.ascii "to light up LEDs."
              74 20 75 70 20 4C 45
              44 73 2E
-      000440 0D                    4154 	.db 0x0d
-      000441 0A                    4155 	.db 0x0a
-      000442 50 6C 61 79 65 72 20  4156 	.ascii "Player 2 must then push the button for ea"
+      001CCA 0D                    4154 	.db 0x0d
+      001CCB 0A                    4155 	.db 0x0a
+      001CCC 50 6C 61 79 65 72 20  4156 	.ascii "Player 2 must then push the button for ea"
              32 20 6D 75 73 74 20
              74 68 65 6E 20 70 75
              73 68 20 74 68 65 20
              62 75 74 74 6F 6E 20
              66 6F 72 20 65 61
-      00046B 63 68 20 4C 45 44 20  4157 	.ascii "ch LED that was lit within 1.5s"
+      001CF5 63 68 20 4C 45 44 20  4157 	.ascii "ch LED that was lit within 1.5s"
              74 68 61 74 20 77 61
              73 20 6C 69 74 20 77
              69 74 68 69 6E 20 31
              2E 35 73
-      00048A 0D                    4158 	.db 0x0d
-      00048B 0A                    4159 	.db 0x0a
-      00048C 00                    4160 	.db 0x00
+      001D14 0D                    4158 	.db 0x0d
+      001D15 0A                    4159 	.db 0x0a
+      001D16 00                    4160 	.db 0x00
                            00048D  4161 FLab2$__str_11$0$0 == .
-      00048D                       4162 ___str_11:
-      00048D 0D                    4163 	.db 0x0d
-      00048E 0A                    4164 	.db 0x0a
-      00048F 31 30 20 70 6F 69 6E  4165 	.ascii "10 points gained!"
+      001D17                       4162 ___str_11:
+      001D17 0D                    4163 	.db 0x0d
+      001D18 0A                    4164 	.db 0x0a
+      001D19 31 30 20 70 6F 69 6E  4165 	.ascii "10 points gained!"
              74 73 20 67 61 69 6E
              65 64 21
-      0004A0 00                    4166 	.db 0x00
+      001D2A 00                    4166 	.db 0x00
                            0004A1  4167 FLab2$__str_12$0$0 == .
-      0004A1                       4168 ___str_12:
-      0004A1 0D                    4169 	.db 0x0d
-      0004A2 0A                    4170 	.db 0x0a
-      0004A3 30 20 70 6F 69 6E 74  4171 	.ascii "0 points gained!"
+      001D2B                       4168 ___str_12:
+      001D2B 0D                    4169 	.db 0x0d
+      001D2C 0A                    4170 	.db 0x0a
+      001D2D 30 20 70 6F 69 6E 74  4171 	.ascii "0 points gained!"
              73 20 67 61 69 6E 65
              64 21
-      0004B3 00                    4172 	.db 0x00
+      001D3D 00                    4172 	.db 0x00
                            0004B4  4173 FLab2$__str_13$0$0 == .
-      0004B4                       4174 ___str_13:
-      0004B4 0D                    4175 	.db 0x0d
-      0004B5 0A                    4176 	.db 0x0a
-      0004B6 54 6F 74 61 6C 20 73  4177 	.ascii "Total score: %d"
+      001D3E                       4174 ___str_13:
+      001D3E 0D                    4175 	.db 0x0d
+      001D3F 0A                    4176 	.db 0x0a
+      001D40 54 6F 74 61 6C 20 73  4177 	.ascii "Total score: %d"
              63 6F 72 65 3A 20 25
              64
-      0004C5 00                    4178 	.db 0x00
+      001D4F 00                    4178 	.db 0x00
                            0004C6  4179 FLab2$__str_14$0$0 == .
-      0004C6                       4180 ___str_14:
-      0004C6 0D                    4181 	.db 0x0d
-      0004C7 0A                    4182 	.db 0x0a
-      0004C8 46 69 6E 61 6C 20 73  4183 	.ascii "Final score: %d"
+      001D50                       4180 ___str_14:
+      001D50 0D                    4181 	.db 0x0d
+      001D51 0A                    4182 	.db 0x0a
+      001D52 46 69 6E 61 6C 20 73  4183 	.ascii "Final score: %d"
              63 6F 72 65 3A 20 25
              64
-      0004D7 00                    4184 	.db 0x00
+      001D61 00                    4184 	.db 0x00
                            0004D8  4185 FLab2$__str_15$0$0 == .
-      0004D8                       4186 ___str_15:
-      0004D8 0A                    4187 	.db 0x0a
-      0004D9 0D                    4188 	.db 0x0d
-      0004DA 55 73 65 20 74 68 65  4189 	.ascii "Use the potentiometer to draw a bar graph on the terminal."
+      001D62                       4186 ___str_15:
+      001D62 0A                    4187 	.db 0x0a
+      001D63 0D                    4188 	.db 0x0d
+      001D64 55 73 65 20 74 68 65  4189 	.ascii "Use the potentiometer to draw a bar graph on the terminal."
              20 70 6F 74 65 6E 74
              69 6F 6D 65 74 65 72
              20 74 6F 20 64 72 61
@@ -4347,9 +4347,9 @@
              6F 6E 20 74 68 65 20
              74 65 72 6D 69 6E 61
              6C 2E
-      000514 0A                    4190 	.db 0x0a
-      000515 0D                    4191 	.db 0x0d
-      000516 49 74 73 20 6C 65 6E  4192 	.ascii "Its length should be a percentage of the maximum length as"
+      001D9E 0A                    4190 	.db 0x0a
+      001D9F 0D                    4191 	.db 0x0d
+      001DA0 49 74 73 20 6C 65 6E  4192 	.ascii "Its length should be a percentage of the maximum length as"
              67 74 68 20 73 68 6F
              75 6C 64 20 62 65 20
              61 20 70 65 72 63 65
@@ -4358,19 +4358,19 @@
              61 78 69 6D 75 6D 20
              6C 65 6E 67 74 68 20
              61 73
-      000550 20 73 70 65 63 69 66  4193 	.ascii " specified by the number of LEDs lit."
+      001DDA 20 73 70 65 63 69 66  4193 	.ascii " specified by the number of LEDs lit."
              69 65 64 20 62 79 20
              74 68 65 20 6E 75 6D
              62 65 72 20 6F 66 20
              4C 45 44 73 20 6C 69
              74 2E
-      000575 0A                    4194 	.db 0x0a
-      000576 0A                    4195 	.db 0x0a
-      000577 0D                    4196 	.db 0x0d
-      000578 4E 6F 20 6C 69 74 20  4197 	.ascii "No lit LEDs indicate"
+      001DFF 0A                    4194 	.db 0x0a
+      001E00 0A                    4195 	.db 0x0a
+      001E01 0D                    4196 	.db 0x0d
+      001E02 4E 6F 20 6C 69 74 20  4197 	.ascii "No lit LEDs indicate"
              4C 45 44 73 20 69 6E
              64 69 63 61 74 65
-      00058C 20 74 68 61 74 20 74  4198 	.ascii " that the bar should be 0% of the maximum length, 1 lit LED "
+      001E16 20 74 68 61 74 20 74  4198 	.ascii " that the bar should be 0% of the maximum length, 1 lit LED "
              68 65 20 62 61 72 20
              73 68 6F 75 6C 64 20
              62 65 20 30 25 20 6F
@@ -4379,18 +4379,18 @@
              6C 65 6E 67 74 68 2C
              20 31 20 6C 69 74 20
              4C 45 44 20
-      0005C8 69 6E 64 69 63 61 74  4199 	.ascii "indicates a bar 25% of the maximum length,"
+      001E52 69 6E 64 69 63 61 74  4199 	.ascii "indicates a bar 25% of the maximum length,"
              65 73 20 61 20 62 61
              72 20 32 35 25 20 6F
              66 20 74 68 65 20 6D
              61 78 69 6D 75 6D 20
              6C 65 6E 67 74 68 2C
-      0005F2 0A                    4200 	.db 0x0a
-      0005F3 0D                    4201 	.db 0x0d
-      0005F4 32 20 6C 69 74 20 4C  4202 	.ascii "2 lit LEDs indic"
+      001E7C 0A                    4200 	.db 0x0a
+      001E7D 0D                    4201 	.db 0x0d
+      001E7E 32 20 6C 69 74 20 4C  4202 	.ascii "2 lit LEDs indic"
              45 44 73 20 69 6E 64
              69 63
-      000604 61 74 65 20 35 30 25  4203 	.ascii "ate 50%, 3 lit LEDs indicate 75%, and 4 lit LEDs indicate 10"
+      001E8E 61 74 65 20 35 30 25  4203 	.ascii "ate 50%, 3 lit LEDs indicate 75%, and 4 lit LEDs indicate 10"
              2C 20 33 20 6C 69 74
              20 4C 45 44 73 20 69
              6E 64 69 63 61 74 65
@@ -4399,11 +4399,11 @@
              74 20 4C 45 44 73 20
              69 6E 64 69 63 61 74
              65 20 31 30
-      000640 30 25 2E              4204 	.ascii "0%."
-      000643 0A                    4205 	.db 0x0a
-      000644 0A                    4206 	.db 0x0a
-      000645 0D                    4207 	.db 0x0d
-      000646 59 6F 75 20 68 61 76  4208 	.ascii "You have one second to draw the appropriate graph. If "
+      001ECA 30 25 2E              4204 	.ascii "0%."
+      001ECD 0A                    4205 	.db 0x0a
+      001ECE 0A                    4206 	.db 0x0a
+      001ECF 0D                    4207 	.db 0x0d
+      001ED0 59 6F 75 20 68 61 76  4208 	.ascii "You have one second to draw the appropriate graph. If "
              65 20 6F 6E 65 20 73
              65 63 6F 6E 64 20 74
              6F 20 64 72 61 77 20
@@ -4411,7 +4411,7 @@
              72 6F 70 72 69 61 74
              65 20 67 72 61 70 68
              2E 20 49 66 20
-      00067C 74 68 65 20 67 72 61  4209 	.ascii "the graph is longer than the desired value, the BILED will t"
+      001F06 74 68 65 20 67 72 61  4209 	.ascii "the graph is longer than the desired value, the BILED will t"
              70 68 20 69 73 20 6C
              6F 6E 67 65 72 20 74
              68 61 6E 20 74 68 65
@@ -4420,11 +4420,11 @@
              2C 20 74 68 65 20 42
              49 4C 45 44 20 77 69
              6C 6C 20 74
-      0006B8 75 72 6E 20 72 65 64  4210 	.ascii "urn red."
+      001F42 75 72 6E 20 72 65 64  4210 	.ascii "urn red."
              2E
-      0006C0 0A                    4211 	.db 0x0a
-      0006C1 0D                    4212 	.db 0x0d
-      0006C2 49 66 20 74 68 65 20  4213 	.ascii "If the graph is shorter than the desired value, th"
+      001F4A 0A                    4211 	.db 0x0a
+      001F4B 0D                    4212 	.db 0x0d
+      001F4C 49 66 20 74 68 65 20  4213 	.ascii "If the graph is shorter than the desired value, th"
              67 72 61 70 68 20 69
              73 20 73 68 6F 72 74
              65 72 20 74 68 61 6E
@@ -4432,77 +4432,77 @@
              73 69 72 65 64 20 76
              61 6C 75 65 2C 20 74
              68
-      0006F4 65 20 42 49 4C 45 44  4214 	.ascii "e BILED will turn green."
+      001F7E 65 20 42 49 4C 45 44  4214 	.ascii "e BILED will turn green."
              20 77 69 6C 6C 20 74
              75 72 6E 20 67 72 65
              65 6E 2E
-      00070C 0A                    4215 	.db 0x0a
-      00070D 0A                    4216 	.db 0x0a
-      00070E 0D                    4217 	.db 0x0d
-      00070F 41 20 6D 61 78 69 6D  4218 	.ascii "A maximum of 10 points are awarde"
+      001F96 0A                    4215 	.db 0x0a
+      001F97 0A                    4216 	.db 0x0a
+      001F98 0D                    4217 	.db 0x0d
+      001F99 41 20 6D 61 78 69 6D  4218 	.ascii "A maximum of 10 points are awarde"
              75 6D 20 6F 66 20 31
              30 20 70 6F 69 6E 74
              73 20 61 72 65 20 61
              77 61 72 64 65
-      000730 64 20 66 6F 72 20 65  4219 	.ascii "d for each correct answer."
+      001FBA 64 20 66 6F 72 20 65  4219 	.ascii "d for each correct answer."
              61 63 68 20 63 6F 72
              72 65 63 74 20 61 6E
              73 77 65 72 2E
-      00074A 0A                    4220 	.db 0x0a
-      00074B 0D                    4221 	.db 0x0d
-      00074C 54 77 6F 20 70 6F 69  4222 	.ascii "Two points are deducted for each"
+      001FD4 0A                    4220 	.db 0x0a
+      001FD5 0D                    4221 	.db 0x0d
+      001FD6 54 77 6F 20 70 6F 69  4222 	.ascii "Two points are deducted for each"
              6E 74 73 20 61 72 65
              20 64 65 64 75 63 74
              65 64 20 66 6F 72 20
              65 61 63 68
-      00076C 20 63 68 61 72 61 63  4223 	.ascii " character position off. There are 5 rounds."
+      001FF6 20 63 68 61 72 61 63  4223 	.ascii " character position off. There are 5 rounds."
              74 65 72 20 70 6F 73
              69 74 69 6F 6E 20 6F
              66 66 2E 20 54 68 65
              72 65 20 61 72 65 20
              35 20 72 6F 75 6E 64
              73 2E
-      000798 0A                    4224 	.db 0x0a
-      000799 0A                    4225 	.db 0x0a
-      00079A 0A                    4226 	.db 0x0a
-      00079B 0D                    4227 	.db 0x0d
-      00079C 50 72 65 73 73 20 74  4228 	.ascii "Press the pu"
+      002022 0A                    4224 	.db 0x0a
+      002023 0A                    4225 	.db 0x0a
+      002024 0A                    4226 	.db 0x0a
+      002025 0D                    4227 	.db 0x0d
+      002026 50 72 65 73 73 20 74  4228 	.ascii "Press the pu"
              68 65 20 70 75
-      0007A8 73 68 62 75 74 74 6F  4229 	.ascii "shbutton to start."
+      002032 73 68 62 75 74 74 6F  4229 	.ascii "shbutton to start."
              6E 20 74 6F 20 73 74
              61 72 74 2E
-      0007BA 00                    4230 	.db 0x00
+      002044 00                    4230 	.db 0x00
                            0007BB  4231 FLab2$__str_16$0$0 == .
-      0007BB                       4232 ___str_16:
-      0007BB 0A                    4233 	.db 0x0a
-      0007BC 0A                    4234 	.db 0x0a
-      0007BD 0A                    4235 	.db 0x0a
-      0007BE 0D                    4236 	.db 0x0d
-      0007BF 53 54 41 52 54        4237 	.ascii "START"
-      0007C4 00                    4238 	.db 0x00
+      002045                       4232 ___str_16:
+      002045 0A                    4233 	.db 0x0a
+      002046 0A                    4234 	.db 0x0a
+      002047 0A                    4235 	.db 0x0a
+      002048 0D                    4236 	.db 0x0d
+      002049 53 54 41 52 54        4237 	.ascii "START"
+      00204E 00                    4238 	.db 0x00
                            0007C5  4239 FLab2$__str_17$0$0 == .
-      0007C5                       4240 ___str_17:
-      0007C5 0A                    4241 	.db 0x0a
-      0007C6 0A                    4242 	.db 0x0a
-      0007C7 0D                    4243 	.db 0x0d
-      0007C8 53 63 6F 72 65 20 66  4244 	.ascii "Score for this round: %d"
+      00204F                       4240 ___str_17:
+      00204F 0A                    4241 	.db 0x0a
+      002050 0A                    4242 	.db 0x0a
+      002051 0D                    4243 	.db 0x0d
+      002052 53 63 6F 72 65 20 66  4244 	.ascii "Score for this round: %d"
              6F 72 20 74 68 69 73
              20 72 6F 75 6E 64 3A
              20 25 64
-      0007E0 0A                    4245 	.db 0x0a
-      0007E1 0D                    4246 	.db 0x0d
-      0007E2 54 6F 74 61 6C 20 73  4247 	.ascii "Total score: %d"
+      00206A 0A                    4245 	.db 0x0a
+      00206B 0D                    4246 	.db 0x0d
+      00206C 54 6F 74 61 6C 20 73  4247 	.ascii "Total score: %d"
              63 6F 72 65 3A 20 25
              64
-      0007F1 00                    4248 	.db 0x00
+      00207B 00                    4248 	.db 0x00
                            0007F2  4249 FLab2$__str_18$0$0 == .
-      0007F2                       4250 ___str_18:
-      0007F2 0A                    4251 	.db 0x0a
-      0007F3 0A                    4252 	.db 0x0a
-      0007F4 0D                    4253 	.db 0x0d
-      0007F5 46 69 6E 61 6C 20 73  4254 	.ascii "Final score: %d"
+      00207C                       4250 ___str_18:
+      00207C 0A                    4251 	.db 0x0a
+      00207D 0A                    4252 	.db 0x0a
+      00207E 0D                    4253 	.db 0x0d
+      00207F 46 69 6E 61 6C 20 73  4254 	.ascii "Final score: %d"
              63 6F 72 65 3A 20 25
              64
-      000804 00                    4255 	.db 0x00
+      00208E 00                    4255 	.db 0x00
                                    4256 	.area XINIT   (CODE)
                                    4257 	.area CABS    (ABS,CODE)

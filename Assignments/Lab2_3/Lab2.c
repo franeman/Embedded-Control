@@ -260,6 +260,94 @@ void Mode_One(void)
 	{
 		SetBILED('o'); //turn off BILED
 		random_Result = random();
+
+		TR0 = 1; //start timer
+		while (counts <= 169)
+		{
+			if (random_Result == 0) 
+			{
+				SetAllLEDs(1); //turn off all LEDs
+			}
+			else if (random_Result == 1) 
+			{
+				LED0 = 0; //turn on LED0
+				LED1 = 1;
+				LED2 = 1;
+				LED3 = 1;
+			}
+			else if (random_Result == 2) 
+			{
+				LED0 = 0; //turn on LED0 and LED1
+				LED1 = 0;
+				LED2 = 1;
+				LED3 = 1;
+			}
+			else if (random_Result == 3) 
+			{
+				LED0 = 0; //turn on LED0,LED1, and LED2
+				LED1 = 0;
+				LED2 = 0;
+				LED3 = 1;
+			}
+			else if (random_Result == 4) 
+			{
+				LED0 = 0; //turn on all LEDS
+				LED1 = 0;
+				LED2 = 0;
+				LED3 = 0;
+			}
+		}
+		ClearTimer0();
+		TR0=1;
+		while (PB0 == 1)
+		{
+			ADC_value = read_AD_input();
+			if (ADC_value <= 51)
+			{
+				LED0 = 1; //turn off all LEDs
+				LED1 = 1;
+				LED2 = 1;
+				LED3 = 1;
+			}
+			else if (ADC_value <= 102) 
+			{
+				LED0 = 0; //turn on LED0
+				LED1 = 1;
+				LED2 = 1;
+				LED3 = 1;
+			}
+			else if (ADC_value <= 153) 
+			{
+				LED0 = 0; //turn on LED0 and LED1
+				LED1 = 0;
+				LED2 = 1;
+				LED3 = 1;
+			}
+			else if (ADC_value <= 204) 
+			{
+				LED0 = 0; //turn on LED0,LED1, and LED2
+				LED1 = 0;
+				LED2 = 0;
+				LED3 = 1;
+			}
+			else  
+			{
+				LED0 = 0; //turn on all LEDS
+				LED1 = 0;
+				LED2 = 0;
+				LED3 = 0;
+			}
+		}
+		game_Time = counts;
+		ClearTimer0();
+		TR0 = 1; //start timer
+		while (counts <=7)
+		{
+			LED0 = 1; //turn off all LEDs
+			LED1 = 1;
+			LED2 = 1;
+			LED3 = 1;
+		}
 		ClearTimer0();
 		TR0 = 1; //start timer
 		LightNumLEDs(random_Result);
@@ -320,11 +408,12 @@ void Mode_Two(void)
 
 		while ( counts < 338) // Wait 1 second for player 1 to set pot
 		{
-			LightNumLEDs(MapADC(read_AD_input(),0,4)); // Light the corresponding number of LEDs relative to the value of the potentionmeter. (Dosn't need to be here)
+			for (var = 0;var<100;var++); // Do something in loop to wait more accurately
 		}	
 
 		SetBILED('o'); // Turn off BILED
-		numLEDs = MapADC(read_AD_input(),0,4); // Read the corresponding number of LEDs relative to the value of the potentionmeter
+		ADC_value = read_AD_input();
+		numLEDs = MapADC(ADC_value,0,4); // Read the corresponding number of LEDs relative to the value of the potentionmeter
 		LightNumLEDs(numLEDs); // Light the corresponding number of LEDs
 		ClearTimer0(); // Clear timer and overflows
 		TR0 = 1; // Start timer0
@@ -334,6 +423,7 @@ void Mode_Two(void)
 			{
 				buttonPresses++; // Increment number of presses
 			}
+			for (var = 0;var<100;var++);
 		}
 		
 		if (buttonPresses == numLEDs) // If they got the correct number of presses
@@ -345,11 +435,17 @@ void Mode_Two(void)
 		TR0 = 1; // Start the timer
 
 		SetAllLEDs(1); // Turn off all LEDs
-		while (counts < 7); // wait 20ms
+		while (counts < 7) // wait 20ms
+		{
+			for (var = 0;var<100;var++);
+		} 
 		SetAllLEDs(0); // Turn on all LEDs
 		ClearTimer0(); // Clear Timer0 and overflows
 		TR0 = 1; // Start the timer
-		while (counts < 7); // wait 20ms
+		while (counts < 7) // wait 20ms
+		{
+			for (var = 0;var<100;var++);
+		} 
 		SetAllLEDs(1); // Turn off all LEDs
 
 		CompareVals(buttonPresses, numLEDs); // Turn BILED red or green if it was low or high
@@ -370,12 +466,15 @@ void Mode_Two(void)
 
 		while (counts < 338) // Wait 1 second
 		{	
-			TR0 = 1; // Do something to get more accurate time
+			for (var = 0;var<100;var++); // Do something to get more accurate time
 		}
 		SetBILED('o'); // Turn off BILED
 		ClearTimer0(); // Clear Timer0 and overflows
 		TR0 = 1; // Start the timer
-		while (counts < 169); // Wait 0.5s
+		while (counts < 169) // Wait 0.5s
+		{
+			for (var = 0;var<100;var++);
+		} 
 	}
 
 	printf("\r\nFinal score: %d", score); // Print the final score
@@ -519,7 +618,7 @@ Where
 	-----------  =  -----------  --> ANSx = (high - low) * --------- + low
 	INPh - INPl		REFh - REFl								255 - 0
 	*/
-	return ((high - low)*((val/255.0)) + low); // return mapped value
+	return ((high - low)*(((float)val/255.0f)) + low); // return mapped value
 }
 
 //****************
