@@ -300,11 +300,12 @@ void Mode_Two(void)
 
 		while ( counts < 338) // Wait 1 second for player 1 to set pot
 		{
-			LightNumLEDs(MapADC(read_AD_input(),0,4)); // Light the corresponding number of LEDs relative to the value of the potentionmeter. (Dosn't need to be here)
+			for (var = 0;var<100;var++); // Do something in loop to wait more accurately
 		}	
 
 		SetBILED('o'); // Turn off BILED
-		numLEDs = MapADC(read_AD_input(),0,4); // Read the corresponding number of LEDs relative to the value of the potentionmeter
+		ADC_value = read_AD_input();
+		numLEDs = MapADC(ADC_value,0,4); // Read the corresponding number of LEDs relative to the value of the potentionmeter
 		LightNumLEDs(numLEDs); // Light the corresponding number of LEDs
 		ClearTimer0(); // Clear timer and overflows
 		TR0 = 1; // Start timer0
@@ -314,6 +315,7 @@ void Mode_Two(void)
 			{
 				buttonPresses++; // Increment number of presses
 			}
+			for (var = 0;var<100;var++);
 		}
 		
 		if (buttonPresses == numLEDs) // If they got the correct number of presses
@@ -325,11 +327,17 @@ void Mode_Two(void)
 		TR0 = 1; // Start the timer
 
 		SetAllLEDs(1); // Turn off all LEDs
-		while (counts < 7); // wait 20ms
+		while (counts < 7) // wait 20ms
+		{
+			for (var = 0;var<100;var++);
+		} 
 		SetAllLEDs(0); // Turn on all LEDs
 		ClearTimer0(); // Clear Timer0 and overflows
 		TR0 = 1; // Start the timer
-		while (counts < 7); // wait 20ms
+		while (counts < 7) // wait 20ms
+		{
+			for (var = 0;var<100;var++);
+		} 
 		SetAllLEDs(1); // Turn off all LEDs
 
 		CompareVals(buttonPresses, numLEDs); // Turn BILED red or green if it was low or high
@@ -350,31 +358,20 @@ void Mode_Two(void)
 
 		while (counts < 338) // Wait 1 second
 		{	
-			TR0 = 1; // Do something to get more accurate time
+			for (var = 0;var<100;var++); // Do something to get more accurate time
 		}
 		SetBILED('o'); // Turn off BILED
 		ClearTimer0(); // Clear Timer0 and overflows
 		TR0 = 1; // Start the timer
-		while (counts < 169); // Wait 0.5s
+		while (counts < 169) // Wait 0.5s
+		{
+			for (var = 0;var<100;var++);
+		} 
 	}
 
 	printf("\r\nFinal score: %d", score); // Print the final score
 	
-	ClearTimer0(); // Clear Timer0 and overflows
-	TR0 = 1; // Start the timer	
-	tmpCount = 0; // Create temp value
-
-	while (counts < 338) // For 1 second
-	{
-		SetBILED('r'); // Turn BILED red
-		tmpCount = counts; // Save current counts
-		while(counts < (tmpCount + 7)); // wait 20ms
-		SetBILED('g'); // Turn BILED green
-		tmpCount = counts; // Save current counts
-		while(counts < (tmpCount + 7)); // wait 20ms
-	}
-
-	SetBILED('o'); // Turn off BILED
+	Flash_Biled();
 }
 
 
@@ -420,7 +417,7 @@ void Mode_Three(void)
 			desiredValue = 16;
 		else if (randomNumber == 2)
 			desiredValue = 32;
-		else if (randomNumber ==l 3)
+		else if (randomNumber == 3)
 			desiredValue = 48;
 		else 
 			desiredValue = 63;
