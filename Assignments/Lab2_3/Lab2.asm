@@ -8,9 +8,8 @@
 ;--------------------------------------------------------
 ; Public variables in this module
 ;--------------------------------------------------------
-	.globl _Pot_Scaling_PARM_2
 	.globl _main
-	.globl _abs
+	.globl _srand
 	.globl _rand
 	.globl _putchar
 	.globl _printf
@@ -322,6 +321,7 @@
 	.globl _totalPoints
 	.globl _points
 	.globl _round
+	.globl _n
 	.globl _var
 	.globl _counts
 	.globl _Port_Init
@@ -329,9 +329,9 @@
 	.globl _Interrupt_Init
 	.globl _ADC1_Init
 	.globl _read_AD_input
-	.globl _Pot_Scaling
 	.globl _Compare_Answer
 	.globl _Flash_Biled
+	.globl _Flash_LEDs
 	.globl _Mode_One
 	.globl _Mode_Two
 	.globl _Mode_Three
@@ -940,6 +940,9 @@ _counts::
 G$var$0$0==.
 _var::
 	.ds 2
+G$n$0$0==.
+_n::
+	.ds 1
 G$round$0$0==.
 _round::
 	.ds 2
@@ -985,19 +988,22 @@ _tries::
 LLab2.aligned_alloc$size$1$39==.
 _aligned_alloc_PARM_2:
 	.ds 2
-LLab2.Compare_Answer$randomNumber$1$90==.
+LLab2.Compare_Answer$randomNumber$1$86==.
 _Compare_Answer_PARM_2:
+	.ds 1
+LLab2.Mode_One$ADC_mapped$1$97==.
+_Mode_One_ADC_mapped_1_97:
 	.ds 1
 LLab2.SetAllLEDs$sloc0$1$0==.
 _SetAllLEDs_sloc0_1_0:
 	.ds 1
-LLab2.MapADC$low$1$167==.
+LLab2.MapADC$low$1$143==.
 _MapADC_PARM_2:
 	.ds 1
-LLab2.MapADC$high$1$167==.
+LLab2.MapADC$high$1$143==.
 _MapADC_PARM_3:
 	.ds 1
-LLab2.CompareVals$expected$1$184==.
+LLab2.CompareVals$expected$1$160==.
 _CompareVals_PARM_2:
 	.ds 1
 ;--------------------------------------------------------
@@ -1005,10 +1011,6 @@ _CompareVals_PARM_2:
 ;--------------------------------------------------------
 	.area	OSEG    (OVR,DATA)
 	.area	OSEG    (OVR,DATA)
-	.area	OSEG    (OVR,DATA)
-LLab2.Pot_Scaling$mode$1$86==.
-_Pot_Scaling_PARM_2:
-	.ds 1
 	.area	OSEG    (OVR,DATA)
 	.area	OSEG    (OVR,DATA)
 	.area	OSEG    (OVR,DATA)
@@ -1080,13 +1082,17 @@ __interrupt_vect:
 	.globl __mcs51_genXINIT
 	.globl __mcs51_genXRAMCLEAR
 	.globl __mcs51_genRAMCLEAR
-	C$Lab2.c$50$1$185 ==.
+	C$Lab2.c$50$1$161 ==.
 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:50: unsigned int counts = 0;
 	clr	a
 	mov	_counts,a
 	mov	(_counts + 1),a
-	C$Lab2.c$63$1$185 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:63: int overflows[5] = {508,457,413,372,339}; // create an array that hold overflows values for 1.5, 1.35, 1.22, 1.1, and 1 second respectively;
+	C$Lab2.c$52$1$161 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:52: char n = 0;
+;	1-genFromRTrack replaced	mov	_n,#0x00
+	mov	_n,a
+	C$Lab2.c$64$1$161 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:64: int overflows[5] = {508,457,413,372,339}; // create an array that hold overflows values for 1.5, 1.35, 1.22, 1.1, and 1 second respectively;
 	mov	(_overflows + 0),#0xfc
 	mov	(_overflows + 1),#0x01
 	mov	((_overflows + 0x0002) + 0),#0xc9
@@ -1329,32 +1335,32 @@ _getchar_nw:
 ;Allocation info for local variables in function 'main'
 ;------------------------------------------------------------
 	G$main$0$0 ==.
-	C$Lab2.c$68$1$12 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:68: void main(void)
+	C$Lab2.c$69$1$12 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:69: void main(void)
 ;	-----------------------------------------
 ;	 function main
 ;	-----------------------------------------
 _main:
-	C$Lab2.c$70$1$69 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:70: Sys_Init();      // System Initialization
-	lcall	_Sys_Init
 	C$Lab2.c$71$1$69 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:71: Port_Init();     // Initialize ports 2 and 3 
-	lcall	_Port_Init
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:71: Sys_Init();      // System Initialization
+	lcall	_Sys_Init
 	C$Lab2.c$72$1$69 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:72: Interrupt_Init(); // Initialize interrupts
-	lcall	_Interrupt_Init
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:72: Port_Init();     // Initialize ports 2 and 3 
+	lcall	_Port_Init
 	C$Lab2.c$73$1$69 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:73: Timer_Init();    // Initialize Timer 0 
-	lcall	_Timer_Init
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:73: Interrupt_Init(); // Initialize interrupts
+	lcall	_Interrupt_Init
 	C$Lab2.c$74$1$69 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:74: ADC1_Init();	// Initialize ADC1
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:74: Timer_Init();    // Initialize Timer 0 
+	lcall	_Timer_Init
+	C$Lab2.c$75$1$69 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:75: ADC1_Init();	// Initialize ADC1
 	lcall	_ADC1_Init
-	C$Lab2.c$76$1$69 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:76: while(1) {
+	C$Lab2.c$77$1$69 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:77: while(1) {
 00131$:
-	C$Lab2.c$77$2$70 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:77: printf("\r\n\nSelect a mode using the slide switches.\r\nPress the pushbutton to select a mode, push it again to confirm.");
+	C$Lab2.c$78$2$70 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:78: printf("\r\n\nSelect a mode using the slide switches.\r\nPress the pushbutton to select a mode, push it again to confirm.");
 	mov	a,#___str_0
 	push	acc
 	mov	a,#(___str_0 >> 8)
@@ -1365,24 +1371,34 @@ _main:
 	dec	sp
 	dec	sp
 	dec	sp
-	C$Lab2.c$79$2$70 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:79: TR0 = 1;
+	C$Lab2.c$80$2$70 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:80: TR0 = 1;
 	setb	_TR0
-	C$Lab2.c$81$2$70 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:81: while(DebounceButton()==0);
+	C$Lab2.c$82$2$70 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:82: while(DebounceButton()==0);
 00101$:
 	lcall	_DebounceButton
 	mov	a,dpl
 	jz	00101$
-	C$Lab2.c$83$4$75 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:83: do{
+	C$Lab2.c$84$2$70 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:84: n = counts;
+	mov	_n,_counts
+	C$Lab2.c$85$2$70 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:85: srand(n);
+	mov	r6,_n
+	mov	r7,#0x00
+	mov	dpl,r6
+	mov	dph,r7
+	lcall	_srand
+	C$Lab2.c$87$4$75 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:87: do{
 00116$:
-	C$Lab2.c$84$3$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:84: if (!SS0 && SS1) {
+	C$Lab2.c$88$3$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:88: if (!SS0 && SS1) {
 	jb	_SS0,00113$
 	jnb	_SS1,00113$
-	C$Lab2.c$85$4$72 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:85: printf("\r\nMode 1: Slide switch 1 is ON, slide switch 2 is OFF");
+	C$Lab2.c$89$4$72 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:89: printf("\r\nMode 1: Slide switch 1 is ON, slide switch 2 is OFF");
 	mov	a,#___str_1
 	push	acc
 	mov	a,#(___str_1 >> 8)
@@ -1395,12 +1411,12 @@ _main:
 	dec	sp
 	sjmp	00117$
 00113$:
-	C$Lab2.c$88$3$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:88: else if (SS0 && !SS1) {
+	C$Lab2.c$92$3$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:92: else if (SS0 && !SS1) {
 	jnb	_SS0,00109$
 	jb	_SS1,00109$
-	C$Lab2.c$89$4$73 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:89: printf("\r\nMode 2: Slide switch 1 is OFF, slide switch 2 is ON");
+	C$Lab2.c$93$4$73 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:93: printf("\r\nMode 2: Slide switch 1 is OFF, slide switch 2 is ON");
 	mov	a,#___str_2
 	push	acc
 	mov	a,#(___str_2 >> 8)
@@ -1413,12 +1429,12 @@ _main:
 	dec	sp
 	sjmp	00117$
 00109$:
-	C$Lab2.c$92$3$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:92: else if (!SS0 && !SS1) {
+	C$Lab2.c$96$3$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:96: else if (!SS0 && !SS1) {
 	jb	_SS0,00105$
 	jb	_SS1,00105$
-	C$Lab2.c$93$4$74 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:93: printf("\r\nMode 3: Slide switch 1 is ON, slide switch 2 is ON");
+	C$Lab2.c$97$4$74 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:97: printf("\r\nMode 3: Slide switch 1 is ON, slide switch 2 is ON");
 	mov	a,#___str_3
 	push	acc
 	mov	a,#(___str_3 >> 8)
@@ -1431,8 +1447,8 @@ _main:
 	dec	sp
 	sjmp	00117$
 00105$:
-	C$Lab2.c$97$4$75 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:97: printf("\r\nOFF: Slide switch 1 is OFF, slide switch 2 is OFF");
+	C$Lab2.c$101$4$75 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:101: printf("\r\nOFF: Slide switch 1 is OFF, slide switch 2 is OFF");
 	mov	a,#___str_4
 	push	acc
 	mov	a,#(___str_4 >> 8)
@@ -1444,255 +1460,187 @@ _main:
 	dec	sp
 	dec	sp
 00117$:
-	C$Lab2.c$99$2$70 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:99: } while(DebounceButton()==0);
+	C$Lab2.c$103$2$70 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:103: } while(DebounceButton()==0);
 	lcall	_DebounceButton
 	mov	a,dpl
 	jz	00116$
-	C$Lab2.c$103$2$70 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:103: if (!SS0 && SS1)
+	C$Lab2.c$107$2$70 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:107: if (!SS0 && SS1)
 	jb	_SS0,00127$
 	jnb	_SS1,00127$
-	C$Lab2.c$104$2$70 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:104: Mode_One();
+	C$Lab2.c$108$2$70 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:108: Mode_One();
 	lcall	_Mode_One
 	ljmp	00131$
 00127$:
-	C$Lab2.c$105$2$70 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:105: else if (SS0 && !SS1)
+	C$Lab2.c$109$2$70 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:109: else if (SS0 && !SS1)
 	jnb	_SS0,00123$
 	jb	_SS1,00123$
-	C$Lab2.c$106$2$70 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:106: Mode_Two();
+	C$Lab2.c$110$2$70 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:110: Mode_Two();
 	lcall	_Mode_Two
 	ljmp	00131$
 00123$:
-	C$Lab2.c$107$2$70 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:107: else if (!SS0 && !SS1)
-	jnb	_SS0,00197$
-	ljmp	00131$
-00197$:
-	jnb	_SS1,00198$
+	C$Lab2.c$111$2$70 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:111: else if (!SS0 && !SS1)
+	jnb	_SS0,00198$
 	ljmp	00131$
 00198$:
-	C$Lab2.c$108$2$70 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:108: Mode_Three();
+	jnb	_SS1,00199$
+	ljmp	00131$
+00199$:
+	C$Lab2.c$112$2$70 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:112: Mode_Three();
 	lcall	_Mode_Three
 	ljmp	00131$
-	C$Lab2.c$110$1$69 ==.
+	C$Lab2.c$114$1$69 ==.
 	XG$main$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'Port_Init'
 ;------------------------------------------------------------
 	G$Port_Init$0$0 ==.
-	C$Lab2.c$114$1$69 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:114: void Port_Init(void)
+	C$Lab2.c$118$1$69 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:118: void Port_Init(void)
 ;	-----------------------------------------
 ;	 function Port_Init
 ;	-----------------------------------------
 _Port_Init:
-	C$Lab2.c$118$1$77 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:118: P3MDOUT |= 0xFC; // set Port 3 output pins to push-pull mode 
+	C$Lab2.c$122$1$77 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:122: P3MDOUT |= 0xFC; // set Port 3 output pins to push-pull mode 
 	orl	_P3MDOUT,#0xfc
-	C$Lab2.c$119$1$77 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:119: P3MDOUT &= 0xFE; // set Port 3 input pins to open drain mode
-	anl	_P3MDOUT,#0xfe
-	C$Lab2.c$120$1$77 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:120: P3 |= 0x01; // set Port 3 input pins to high impedance state
-	orl	_P3,#0x01
 	C$Lab2.c$123$1$77 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:123: P2MDOUT &= 0xFC; // set Port 2 input pins to open drain mode
-	anl	_P2MDOUT,#0xfc
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:123: P3MDOUT &= 0xFE; // set Port 3 input pins to open drain mode
+	anl	_P3MDOUT,#0xfe
 	C$Lab2.c$124$1$77 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:124: P2 |= 0x03; // set Port 2 input pins to high impedance state
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:124: P3 |= 0x01; // set Port 3 input pins to high impedance state
+	orl	_P3,#0x01
+	C$Lab2.c$127$1$77 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:127: P2MDOUT &= 0xFC; // set Port 2 input pins to open drain mode
+	anl	_P2MDOUT,#0xfc
+	C$Lab2.c$128$1$77 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:128: P2 |= 0x03; // set Port 2 input pins to high impedance state
 	orl	_P2,#0x03
-	C$Lab2.c$126$1$77 ==.
+	C$Lab2.c$130$1$77 ==.
 	XG$Port_Init$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'Timer_Init'
 ;------------------------------------------------------------
 	G$Timer_Init$0$0 ==.
-	C$Lab2.c$129$1$77 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:129: void Timer_Init(void)
+	C$Lab2.c$133$1$77 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:133: void Timer_Init(void)
 ;	-----------------------------------------
 ;	 function Timer_Init
 ;	-----------------------------------------
 _Timer_Init:
-	C$Lab2.c$132$1$79 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:132: CKCON |= 0x08;  // Timer0 uses SYSCLK as source
-	orl	_CKCON,#0x08
-	C$Lab2.c$133$1$79 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:133: TMOD &= 0xF0;   // clear the 4 least significant bits
-	anl	_TMOD,#0xf0
-	C$Lab2.c$134$1$79 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:134: TMOD |= 0x01;   // Timer0 in mode 1 (16-bit)
-	orl	_TMOD,#0x01
-	C$Lab2.c$135$1$79 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:135: TR0 = 0;        // Stop Timer0
-	clr	_TR0
 	C$Lab2.c$136$1$79 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:136: TMR0 = 0;       // Clear high & low byte of T0
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:136: CKCON |= 0x08;  // Timer0 uses SYSCLK as source
+	orl	_CKCON,#0x08
+	C$Lab2.c$137$1$79 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:137: TMOD &= 0xF0;   // clear the 4 least significant bits
+	anl	_TMOD,#0xf0
+	C$Lab2.c$138$1$79 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:138: TMOD |= 0x01;   // Timer0 in mode 1 (16-bit)
+	orl	_TMOD,#0x01
+	C$Lab2.c$139$1$79 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:139: TR0 = 0;        // Stop Timer0
+	clr	_TR0
+	C$Lab2.c$140$1$79 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:140: TMR0 = 0;       // Clear high & low byte of T0
 	clr	a
 	mov	((_TMR0 >> 0) & 0xFF),a
 	mov	((_TMR0 >> 8) & 0xFF),a
-	C$Lab2.c$138$1$79 ==.
+	C$Lab2.c$142$1$79 ==.
 	XG$Timer_Init$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'Interrupt_Init'
 ;------------------------------------------------------------
 	G$Interrupt_Init$0$0 ==.
-	C$Lab2.c$142$1$79 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:142: void Interrupt_Init(void)
+	C$Lab2.c$146$1$79 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:146: void Interrupt_Init(void)
 ;	-----------------------------------------
 ;	 function Interrupt_Init
 ;	-----------------------------------------
 _Interrupt_Init:
-	C$Lab2.c$144$1$81 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:144: IE |= 0x82;      // enable Timer0 Interrupt request (by masking)
+	C$Lab2.c$148$1$81 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:148: IE |= 0x82;      // enable Timer0 Interrupt request (by masking)
 	orl	_IE,#0x82
-	C$Lab2.c$145$1$81 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:145: EA = 1;       // enable global interrupts (by sbit)
-	setb	_EA
-	C$Lab2.c$146$1$81 ==.
+	C$Lab2.c$149$1$81 ==.
 	XG$Interrupt_Init$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'ADC1_Init'
 ;------------------------------------------------------------
 	G$ADC1_Init$0$0 ==.
-	C$Lab2.c$149$1$81 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:149: void ADC1_Init(void)
+	C$Lab2.c$152$1$81 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:152: void ADC1_Init(void)
 ;	-----------------------------------------
 ;	 function ADC1_Init
 ;	-----------------------------------------
 _ADC1_Init:
-	C$Lab2.c$151$1$83 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:151: P1MDIN &= ~0x01;
+	C$Lab2.c$154$1$83 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:154: P1MDIN &= ~0x01;
 	anl	_P1MDIN,#0xfe
-	C$Lab2.c$152$1$83 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:152: P1MDOUT &= ~0x01;
-	anl	_P1MDOUT,#0xfe
-	C$Lab2.c$153$1$83 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:153: P1 |= 0x01;
-	orl	_P1,#0x01
 	C$Lab2.c$155$1$83 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:155: REF0CN = 0x03;
-	mov	_REF0CN,#0x03
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:155: P1MDOUT &= ~0x01;
+	anl	_P1MDOUT,#0xfe
 	C$Lab2.c$156$1$83 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:156: ADC1CF |= 0x01;
-	orl	_ADC1CF,#0x01
-	C$Lab2.c$157$1$83 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:157: ADC1CF &= 0xFD;
-	anl	_ADC1CF,#0xfd
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:156: P1 |= 0x01;
+	orl	_P1,#0x01
 	C$Lab2.c$158$1$83 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:158: ADC1CN = 0x80;
-	mov	_ADC1CN,#0x80
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:158: REF0CN = 0x03;
+	mov	_REF0CN,#0x03
+	C$Lab2.c$159$1$83 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:159: ADC1CF |= 0x01;
+	orl	_ADC1CF,#0x01
 	C$Lab2.c$160$1$83 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:160: ADC_value = read_AD_input(); // reads initial garbage value
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:160: ADC1CF &= 0xFD;
+	anl	_ADC1CF,#0xfd
+	C$Lab2.c$161$1$83 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:161: ADC1CN = 0x80;
+	mov	_ADC1CN,#0x80
+	C$Lab2.c$163$1$83 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:163: ADC_value = read_AD_input(); // reads initial garbage value
 	lcall	_read_AD_input
 	mov	r7,dpl
 	mov	_ADC_value,r7
 	mov	(_ADC_value + 1),#0x00
-	C$Lab2.c$161$1$83 ==.
+	C$Lab2.c$164$1$83 ==.
 	XG$ADC1_Init$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'read_AD_input'
 ;------------------------------------------------------------
 	G$read_AD_input$0$0 ==.
-	C$Lab2.c$164$1$83 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:164: unsigned char read_AD_input(void)
+	C$Lab2.c$167$1$83 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:167: unsigned char read_AD_input(void)
 ;	-----------------------------------------
 ;	 function read_AD_input
 ;	-----------------------------------------
 _read_AD_input:
-	C$Lab2.c$166$1$85 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:166: AMX1SL = 0;
-	mov	_AMX1SL,#0x00
-	C$Lab2.c$167$1$85 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:167: ADC1CN = ADC1CN & ~0x20;
-	anl	_ADC1CN,#0xdf
-	C$Lab2.c$168$1$85 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:168: ADC1CN = ADC1CN | 0x10;
-	orl	_ADC1CN,#0x10
 	C$Lab2.c$169$1$85 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:169: while ((ADC1CN & 0x20) == 0x00);
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:169: AMX1SL = 0;
+	mov	_AMX1SL,#0x00
+	C$Lab2.c$170$1$85 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:170: ADC1CN = ADC1CN & ~0x20;
+	anl	_ADC1CN,#0xdf
+	C$Lab2.c$171$1$85 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:171: ADC1CN = ADC1CN | 0x10;
+	orl	_ADC1CN,#0x10
+	C$Lab2.c$172$1$85 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:172: while ((ADC1CN & 0x20) == 0x00);
 00101$:
 	mov	a,_ADC1CN
 	jnb	acc.5,00101$
-	C$Lab2.c$170$1$85 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:170: return ADC1;
+	C$Lab2.c$173$1$85 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:173: return ADC1;
 	mov	dpl,_ADC1
-	C$Lab2.c$171$1$85 ==.
-	XG$read_AD_input$0$0 ==.
-	ret
-;------------------------------------------------------------
-;Allocation info for local variables in function 'Pot_Scaling'
-;------------------------------------------------------------
-;mode                      Allocated with name '_Pot_Scaling_PARM_2'
-;Pot_Value                 Allocated to registers r6 r7 
-;------------------------------------------------------------
-	G$Pot_Scaling$0$0 ==.
 	C$Lab2.c$174$1$85 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:174: unsigned int Pot_Scaling(unsigned int Pot_Value, unsigned char mode)
-;	-----------------------------------------
-;	 function Pot_Scaling
-;	-----------------------------------------
-_Pot_Scaling:
-	mov	r6,dpl
-	mov	r7,dph
-	C$Lab2.c$176$1$87 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:176: if (mode == 1) {
-	mov	a,#0x01
-	cjne	a,_Pot_Scaling_PARM_2,00104$
-	C$Lab2.c$177$2$88 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:177: scaledValue = Pot_Value/64;
-	mov	_scaledValue,r6
-	mov	a,r7
-	mov	c,acc.7
-	xch	a,_scaledValue
-	rlc	a
-	xch	a,_scaledValue
-	rlc	a
-	mov	c,acc.7
-	xch	a,_scaledValue
-	rlc	a
-	xch	a,_scaledValue
-	rlc	a
-	xch	a,_scaledValue
-	anl	a,#0x03
-	mov	(_scaledValue + 1),a
-	sjmp	00105$
-00104$:
-	C$Lab2.c$180$1$87 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:180: else if (mode == 3) {
-	mov	a,#0x03
-	cjne	a,_Pot_Scaling_PARM_2,00105$
-	C$Lab2.c$181$2$89 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:181: scaledValue = Pot_Value/4;
-	mov	_scaledValue,r6
-	mov	a,r7
-	clr	c
-	rrc	a
-	xch	a,_scaledValue
-	rrc	a
-	xch	a,_scaledValue
-	clr	c
-	rrc	a
-	xch	a,_scaledValue
-	rrc	a
-	xch	a,_scaledValue
-	mov	(_scaledValue + 1),a
-00105$:
-	C$Lab2.c$184$1$87 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:184: return scaledValue;
-	mov	dpl,_scaledValue
-	mov	dph,(_scaledValue + 1)
-	C$Lab2.c$185$1$87 ==.
-	XG$Pot_Scaling$0$0 ==.
+	XG$read_AD_input$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'Compare_Answer'
@@ -1701,21 +1649,21 @@ _Pot_Scaling:
 ;yourAnswer                Allocated to registers r6 r7 
 ;------------------------------------------------------------
 	G$Compare_Answer$0$0 ==.
-	C$Lab2.c$188$1$87 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:188: void Compare_Answer(unsigned int yourAnswer, unsigned char randomNumber)
+	C$Lab2.c$178$1$85 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:178: void Compare_Answer(unsigned int yourAnswer, unsigned char randomNumber)
 ;	-----------------------------------------
 ;	 function Compare_Answer
 ;	-----------------------------------------
 _Compare_Answer:
 	mov	r6,dpl
 	mov	r7,dph
-	C$Lab2.c$190$1$91 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:190: counts = 0;			// resets counts
+	C$Lab2.c$180$1$87 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:180: counts = 0;			// resets counts
 	clr	a
 	mov	_counts,a
 	mov	(_counts + 1),a
-	C$Lab2.c$192$1$91 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:192: if (yourAnswer<randomNumber) {		// turns BILED red if answer is low
+	C$Lab2.c$182$1$87 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:182: if (yourAnswer<randomNumber) {		// turns BILED red if answer is low
 	mov	r4,_Compare_Answer_PARM_2
 	mov	r5,#0x00
 	clr	c
@@ -1724,8 +1672,8 @@ _Compare_Answer:
 	mov	a,r7
 	subb	a,r5
 	jnc	00110$
-	C$Lab2.c$193$2$92 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:193: while (counts<337) {
+	C$Lab2.c$183$2$88 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:183: while (counts<337) {
 00101$:
 	clr	c
 	mov	a,_counts
@@ -1733,14 +1681,14 @@ _Compare_Answer:
 	mov	a,(_counts + 1)
 	subb	a,#0x01
 	jnc	00112$
-	C$Lab2.c$194$3$93 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:194: SetBILED('r');
+	C$Lab2.c$184$3$89 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:184: SetBILED('r');
 	mov	dpl,#0x72
 	lcall	_SetBILED
 	sjmp	00101$
 00110$:
-	C$Lab2.c$198$1$91 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:198: else if (yourAnswer>randomNumber) {	// turns BILED green if answer is high
+	C$Lab2.c$188$1$87 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:188: else if (yourAnswer>randomNumber) {	// turns BILED green if answer is high
 	mov	r4,_Compare_Answer_PARM_2
 	mov	r5,#0x00
 	clr	c
@@ -1749,8 +1697,8 @@ _Compare_Answer:
 	mov	a,r5
 	subb	a,r7
 	jnc	00112$
-	C$Lab2.c$199$2$94 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:199: while (counts<337) {
+	C$Lab2.c$189$2$90 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:189: while (counts<337) {
 00104$:
 	clr	c
 	mov	a,_counts
@@ -1758,57 +1706,259 @@ _Compare_Answer:
 	mov	a,(_counts + 1)
 	subb	a,#0x01
 	jnc	00112$
-	C$Lab2.c$200$3$95 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:200: SetBILED('g');
+	C$Lab2.c$190$3$91 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:190: SetBILED('g');
 	mov	dpl,#0x67
 	lcall	_SetBILED
 	sjmp	00104$
 00112$:
-	C$Lab2.c$203$1$91 ==.
+	C$Lab2.c$193$1$87 ==.
 	XG$Compare_Answer$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'Flash_Biled'
 ;------------------------------------------------------------
 	G$Flash_Biled$0$0 ==.
-	C$Lab2.c$206$1$91 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:206: void Flash_Biled(void)
+	C$Lab2.c$196$1$87 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:196: void Flash_Biled(void)
 ;	-----------------------------------------
 ;	 function Flash_Biled
 ;	-----------------------------------------
 _Flash_Biled:
-	C$Lab2.c$208$1$97 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:208: counts = 0;
+	C$Lab2.c$198$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:198: ClearTimer0();
+	lcall	_ClearTimer0
+	C$Lab2.c$199$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:199: counts = 0;
 	clr	a
 	mov	_counts,a
 	mov	(_counts + 1),a
-	C$Lab2.c$210$1$97 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:210: while (counts <= 337) {
-00104$:
-	clr	c
-	mov	a,#0x51
-	subb	a,_counts
-	mov	a,#0x01
-	subb	a,(_counts + 1)
-	jc	00107$
-	C$Lab2.c$211$2$98 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:211: if (counts%2 == 0) {
-	mov	a,_counts
-	jb	acc.0,00102$
-	C$Lab2.c$212$3$99 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:212: SetBILED('r');
+	C$Lab2.c$200$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:200: TR0 = 1;
+	setb	_TR0
+	C$Lab2.c$202$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:202: SetBILED('r');
 	mov	dpl,#0x72
 	lcall	_SetBILED
+	C$Lab2.c$203$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:203: while(counts!=30);
+00101$:
+	mov	a,#0x1e
+	cjne	a,_counts,00202$
+	clr	a
+	cjne	a,(_counts + 1),00202$
+	sjmp	00203$
+00202$:
+	sjmp	00101$
+00203$:
+	C$Lab2.c$204$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:204: SetBILED('g');
+	mov	dpl,#0x67
+	lcall	_SetBILED
+	C$Lab2.c$205$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:205: while(counts!=60);
+00104$:
+	mov	a,#0x3c
+	cjne	a,_counts,00204$
+	clr	a
+	cjne	a,(_counts + 1),00204$
+	sjmp	00205$
+00204$:
 	sjmp	00104$
-00102$:
-	C$Lab2.c$216$3$100 ==.
+00205$:
+	C$Lab2.c$206$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:206: SetBILED('r');
+	mov	dpl,#0x72
+	lcall	_SetBILED
+	C$Lab2.c$207$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:207: while(counts!=90);
+00107$:
+	mov	a,#0x5a
+	cjne	a,_counts,00206$
+	clr	a
+	cjne	a,(_counts + 1),00206$
+	sjmp	00207$
+00206$:
+	sjmp	00107$
+00207$:
+	C$Lab2.c$208$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:208: SetBILED('g');
+	mov	dpl,#0x67
+	lcall	_SetBILED
+	C$Lab2.c$209$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:209: while(counts!=120);
+00110$:
+	mov	a,#0x78
+	cjne	a,_counts,00208$
+	clr	a
+	cjne	a,(_counts + 1),00208$
+	sjmp	00209$
+00208$:
+	sjmp	00110$
+00209$:
+	C$Lab2.c$210$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:210: SetBILED('r');
+	mov	dpl,#0x72
+	lcall	_SetBILED
+	C$Lab2.c$211$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:211: while(counts!=150);
+00113$:
+	mov	a,#0x96
+	cjne	a,_counts,00210$
+	clr	a
+	cjne	a,(_counts + 1),00210$
+	sjmp	00211$
+00210$:
+	sjmp	00113$
+00211$:
+	C$Lab2.c$212$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:212: SetBILED('g');
+	mov	dpl,#0x67
+	lcall	_SetBILED
+	C$Lab2.c$213$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:213: while(counts!=180);
+00116$:
+	mov	a,#0xb4
+	cjne	a,_counts,00212$
+	clr	a
+	cjne	a,(_counts + 1),00212$
+	sjmp	00213$
+00212$:
+	sjmp	00116$
+00213$:
+	C$Lab2.c$214$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:214: SetBILED('r');
+	mov	dpl,#0x72
+	lcall	_SetBILED
+	C$Lab2.c$215$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:215: while(counts!=210);
+00119$:
+	mov	a,#0xd2
+	cjne	a,_counts,00214$
+	clr	a
+	cjne	a,(_counts + 1),00214$
+	sjmp	00215$
+00214$:
+	sjmp	00119$
+00215$:
+	C$Lab2.c$216$1$93 ==.
 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:216: SetBILED('g');
 	mov	dpl,#0x67
 	lcall	_SetBILED
-	sjmp	00104$
-00107$:
-	C$Lab2.c$219$1$97 ==.
+	C$Lab2.c$217$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:217: while(counts!=240);
+00122$:
+	mov	a,#0xf0
+	cjne	a,_counts,00216$
+	clr	a
+	cjne	a,(_counts + 1),00216$
+	sjmp	00217$
+00216$:
+	sjmp	00122$
+00217$:
+	C$Lab2.c$218$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:218: SetBILED('r');
+	mov	dpl,#0x72
+	lcall	_SetBILED
+	C$Lab2.c$219$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:219: while(counts!=270);
+00125$:
+	mov	a,#0x0e
+	cjne	a,_counts,00125$
+	mov	a,#0x01
+	cjne	a,(_counts + 1),00125$
+	C$Lab2.c$220$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:220: SetBILED('g');
+	mov	dpl,#0x67
+	lcall	_SetBILED
+	C$Lab2.c$221$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:221: while(counts!=300);
+00128$:
+	mov	a,#0x2c
+	cjne	a,_counts,00128$
+	mov	a,#0x01
+	cjne	a,(_counts + 1),00128$
+	C$Lab2.c$222$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:222: SetBILED('r');
+	mov	dpl,#0x72
+	lcall	_SetBILED
+	C$Lab2.c$223$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:223: while(counts!=330);
+00131$:
+	mov	a,#0x4a
+	cjne	a,_counts,00131$
+	mov	a,#0x01
+	cjne	a,(_counts + 1),00131$
+	C$Lab2.c$224$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:224: SetBILED('o');
+	mov	dpl,#0x6f
+	lcall	_SetBILED
+	C$Lab2.c$225$1$93 ==.
 	XG$Flash_Biled$0$0 ==.
+	ret
+;------------------------------------------------------------
+;Allocation info for local variables in function 'Flash_LEDs'
+;------------------------------------------------------------
+	G$Flash_LEDs$0$0 ==.
+	C$Lab2.c$228$1$93 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:228: void Flash_LEDs(void) {
+;	-----------------------------------------
+;	 function Flash_LEDs
+;	-----------------------------------------
+_Flash_LEDs:
+	C$Lab2.c$230$1$95 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:230: ClearTimer0();
+	lcall	_ClearTimer0
+	C$Lab2.c$231$1$95 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:231: TR0 = 1;
+	setb	_TR0
+	C$Lab2.c$232$1$95 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:232: SetAllLEDs(1);
+	mov	dpl,#0x01
+	lcall	_SetAllLEDs
+	C$Lab2.c$233$1$95 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:233: while (counts!=40);
+00101$:
+	mov	a,#0x28
+	cjne	a,_counts,00127$
+	clr	a
+	cjne	a,(_counts + 1),00127$
+	sjmp	00128$
+00127$:
+	sjmp	00101$
+00128$:
+	C$Lab2.c$235$1$95 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:235: SetAllLEDs(0);
+	mov	dpl,#0x00
+	lcall	_SetAllLEDs
+	C$Lab2.c$236$1$95 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:236: while (counts!=80);
+00104$:
+	mov	a,#0x50
+	cjne	a,_counts,00129$
+	clr	a
+	cjne	a,(_counts + 1),00129$
+	sjmp	00130$
+00129$:
+	sjmp	00104$
+00130$:
+	C$Lab2.c$238$1$95 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:238: SetAllLEDs(1);
+	mov	dpl,#0x01
+	lcall	_SetAllLEDs
+	C$Lab2.c$239$1$95 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:239: while (counts!=120);
+00107$:
+	mov	a,#0x78
+	cjne	a,_counts,00131$
+	clr	a
+	cjne	a,(_counts + 1),00131$
+	sjmp	00132$
+00131$:
+	sjmp	00107$
+00132$:
+	C$Lab2.c$240$1$95 ==.
+	XG$Flash_LEDs$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'Mode_One'
@@ -1818,16 +1968,18 @@ _Flash_Biled:
 ;total_Score               Allocated to registers r6 r7 
 ;round_Score               Allocated to registers r3 r4 
 ;rounds                    Allocated to registers 
+;ADC_mapped                Allocated with name '_Mode_One_ADC_mapped_1_97'
+;ADC_final                 Allocated to registers 
 ;------------------------------------------------------------
 	G$Mode_One$0$0 ==.
-	C$Lab2.c$223$1$97 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:223: void Mode_One(void)
+	C$Lab2.c$244$1$95 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:244: void Mode_One(void)
 ;	-----------------------------------------
 ;	 function Mode_One
 ;	-----------------------------------------
 _Mode_One:
-	C$Lab2.c$230$1$102 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:230: printf("\n\rThe first mode generates a random number from 0 to 4.\n\rThe generated number lights up none to all 4 LEDs in a line. The LEDs stay on 0.5 s, then turn off\n\rand a timer is started. The player then turns a potentiometer whose voltage value is used to turn on the\n\rLEDs in sequence until the same pattern appears. The pushbutton is then pressed to stop the timer and\n\rrecord the LED pattern, which is then compared to that generated by the random number. Scoring is\n\rbased on correctness and speed of entry. The whole process is repeated 5 times and the final score is\n\rdisplayed on the terminal. The lower the score the better you did.");
+	C$Lab2.c$253$1$97 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:253: printf("\n\n\rThe first mode generates a random number from 0 to 4.\n\rThe generated number lights up none to all 4 LEDs in a line.\n\rThe LEDs stay on 0.5 s, then turn off and a timer is started.\n\rThe player then turns a potentiometer whose voltage value is used to turn on the \n\rLEDs in sequence until the same pattern appears.\n\rThe pushbutton is then pressed to stop the timer and record the LED pattern,\n\rwhich is then compared to that generated by the random number.\n\r Scoring is based on correctness and speed of entry. The whole process is repeated \n\r5 times and the final score is displayed on the terminal.\n\r The lower the score the better you did.");
 	mov	a,#___str_5
 	push	acc
 	mov	a,#(___str_5 >> 8)
@@ -1838,41 +1990,36 @@ _Mode_One:
 	dec	sp
 	dec	sp
 	dec	sp
-	C$Lab2.c$232$1$102 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:232: total_Score = 0; //reset score
+	C$Lab2.c$254$1$97 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:254: total_Score = 0; //reset score
 	mov	r6,#0x00
 	mov	r7,#0x00
-	C$Lab2.c$233$1$102 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:233: SetAllLEDs(1);	//turn off all LEDs
+	C$Lab2.c$255$1$97 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:255: SetAllLEDs(1);	//turn off all LEDs
 	mov	dpl,#0x01
 	push	ar7
 	push	ar6
 	lcall	_SetAllLEDs
-	C$Lab2.c$234$1$102 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:234: SetBILED('r'); // turn BILED red
+	C$Lab2.c$256$1$97 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:256: SetBILED('r'); // turn BILED red
 	mov	dpl,#0x72
 	lcall	_SetBILED
 	pop	ar6
 	pop	ar7
-	C$Lab2.c$235$1$102 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:235: while (PB0 == 1); //wait for pushbutton to be pressed
+	C$Lab2.c$257$1$97 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:257: while (DebounceButton() == 0); //wait for pushbutton to be pressed
 00101$:
-	jb	_PB0,00101$
-	C$Lab2.c$236$1$102 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:236: for (rounds=0; rounds++; rounds<5)
-	mov	r5,#0x00
-00181$:
-	mov	ar4,r5
-	inc	r5
-	mov	a,r4
-	jnz	00304$
-	ljmp	00179$
-00304$:
-	C$Lab2.c$238$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:238: printf("Start");
 	push	ar7
 	push	ar6
-	push	ar5
+	lcall	_DebounceButton
+	mov	a,dpl
+	pop	ar6
+	pop	ar7
+	jz	00101$
+	C$Lab2.c$258$1$97 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:258: printf("\r\nStart");
+	push	ar7
+	push	ar6
 	mov	a,#___str_6
 	push	acc
 	mov	a,#(___str_6 >> 8)
@@ -1883,43 +2030,52 @@ _Mode_One:
 	dec	sp
 	dec	sp
 	dec	sp
-	C$Lab2.c$239$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:239: SetBILED('o'); //turn off BILED
+	pop	ar6
+	pop	ar7
+	C$Lab2.c$259$1$97 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:259: for (rounds = 1; rounds <= 5; rounds++ )
+	mov	r5,#0x01
+00154$:
+	C$Lab2.c$261$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:261: SetBILED('o'); //turn off BILED
 	mov	dpl,#0x6f
+	push	ar7
+	push	ar6
+	push	ar5
 	lcall	_SetBILED
-	C$Lab2.c$240$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:240: random_Result = random();
+	C$Lab2.c$262$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:262: random_Result = random();
 	lcall	_random
 	mov	r4,dpl
 	pop	ar5
 	pop	ar6
 	pop	ar7
-	C$Lab2.c$241$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:241: TR0 = 1; //start timer
+	C$Lab2.c$264$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:264: TR0 = 1; //start timer
 	setb	_TR0
-	C$Lab2.c$242$3$104 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:242: while (counts <= 169)
-	cjne	r4,#0x01,00305$
+	C$Lab2.c$265$3$99 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:265: while (counts <= 169)
+	cjne	r4,#0x01,00241$
 	mov	a,r4
-	sjmp	00306$
-00305$:
+	sjmp	00242$
+00241$:
 	clr	a
-00306$:
+00242$:
 	mov	r3,a
 	clr	a
-	cjne	r4,#0x02,00307$
+	cjne	r4,#0x02,00243$
 	inc	a
-00307$:
+00243$:
 	mov	r2,a
 	clr	a
-	cjne	r4,#0x03,00309$
+	cjne	r4,#0x03,00245$
 	inc	a
-00309$:
+00245$:
 	mov	r1,a
 	clr	a
-	cjne	r4,#0x04,00311$
+	cjne	r4,#0x04,00247$
 	inc	a
-00311$:
+00247$:
 	mov	r0,a
 00118$:
 	clr	c
@@ -1928,12 +2084,12 @@ _Mode_One:
 	clr	a
 	subb	a,(_counts + 1)
 	jc	00120$
-	C$Lab2.c$244$3$104 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:244: if (random_Result == 0) 
+	C$Lab2.c$267$3$99 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:267: if (random_Result == 0) 
 	mov	a,r4
 	jnz	00116$
-	C$Lab2.c$246$4$105 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:246: SetAllLEDs(1); //turn off all LEDs
+	C$Lab2.c$269$4$100 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:269: SetAllLEDs(1); //turn off all LEDs
 	mov	dpl,#0x01
 	push	ar7
 	push	ar6
@@ -1954,80 +2110,80 @@ _Mode_One:
 	pop	ar7
 	sjmp	00118$
 00116$:
-	C$Lab2.c$248$3$104 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:248: else if (random_Result == 1) 
+	C$Lab2.c$271$3$99 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:271: else if (random_Result == 1) 
 	mov	a,r3
 	jz	00113$
-	C$Lab2.c$250$4$106 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:250: LED0 = 0; //turn on LED0
+	C$Lab2.c$273$4$101 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:273: LED0 = 0; //turn on LED0
 	clr	_LED0
-	C$Lab2.c$251$4$106 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:251: LED1 = 1;
+	C$Lab2.c$274$4$101 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:274: LED1 = 1;
 	setb	_LED1
-	C$Lab2.c$252$4$106 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:252: LED2 = 1;
+	C$Lab2.c$275$4$101 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:275: LED2 = 1;
 	setb	_LED2
-	C$Lab2.c$253$4$106 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:253: LED3 = 1;
+	C$Lab2.c$276$4$101 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:276: LED3 = 1;
 	setb	_LED3
 	sjmp	00118$
 00113$:
-	C$Lab2.c$255$3$104 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:255: else if (random_Result == 2) 
+	C$Lab2.c$278$3$99 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:278: else if (random_Result == 2) 
 	mov	a,r2
 	jz	00110$
-	C$Lab2.c$257$4$107 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:257: LED0 = 0; //turn on LED0 and LED1
+	C$Lab2.c$280$4$102 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:280: LED0 = 0; //turn on LED0 and LED1
 	clr	_LED0
-	C$Lab2.c$258$4$107 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:258: LED1 = 0;
+	C$Lab2.c$281$4$102 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:281: LED1 = 0;
 	clr	_LED1
-	C$Lab2.c$259$4$107 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:259: LED2 = 1;
+	C$Lab2.c$282$4$102 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:282: LED2 = 1;
 	setb	_LED2
-	C$Lab2.c$260$4$107 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:260: LED3 = 1;
+	C$Lab2.c$283$4$102 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:283: LED3 = 1;
 	setb	_LED3
 	sjmp	00118$
 00110$:
-	C$Lab2.c$262$3$104 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:262: else if (random_Result == 3) 
+	C$Lab2.c$285$3$99 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:285: else if (random_Result == 3) 
 	mov	a,r1
 	jz	00107$
-	C$Lab2.c$264$4$108 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:264: LED0 = 0; //turn on LED0,LED1, and LED2
+	C$Lab2.c$287$4$103 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:287: LED0 = 0; //turn on LED0,LED1, and LED2
 	clr	_LED0
-	C$Lab2.c$265$4$108 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:265: LED1 = 0;
+	C$Lab2.c$288$4$103 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:288: LED1 = 0;
 	clr	_LED1
-	C$Lab2.c$266$4$108 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:266: LED2 = 0;
+	C$Lab2.c$289$4$103 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:289: LED2 = 0;
 	clr	_LED2
-	C$Lab2.c$267$4$108 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:267: LED3 = 1;
+	C$Lab2.c$290$4$103 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:290: LED3 = 1;
 	setb	_LED3
 	sjmp	00118$
 00107$:
-	C$Lab2.c$269$3$104 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:269: else if (random_Result == 4) 
+	C$Lab2.c$292$3$99 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:292: else if (random_Result == 4) 
 	mov	a,r0
 	jz	00118$
-	C$Lab2.c$271$4$109 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:271: LED0 = 0; //turn on all LEDS
+	C$Lab2.c$294$4$104 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:294: LED0 = 0; //turn on all LEDS
 	clr	_LED0
-	C$Lab2.c$272$4$109 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:272: LED1 = 0;
+	C$Lab2.c$295$4$104 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:295: LED1 = 0;
 	clr	_LED1
-	C$Lab2.c$273$4$109 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:273: LED2 = 0;
+	C$Lab2.c$296$4$104 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:296: LED2 = 0;
 	clr	_LED2
-	C$Lab2.c$274$4$109 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:274: LED3 = 0;
+	C$Lab2.c$297$4$104 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:297: LED3 = 0;
 	clr	_LED3
 	sjmp	00118$
 00120$:
-	C$Lab2.c$277$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:277: ClearTimer0();
+	C$Lab2.c$300$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:300: ClearTimer0();
 	push	ar7
 	push	ar6
 	push	ar5
@@ -2037,15 +2193,15 @@ _Mode_One:
 	pop	ar5
 	pop	ar6
 	pop	ar7
-	C$Lab2.c$278$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:278: TR0=1;
+	C$Lab2.c$301$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:301: TR0=1;
 	setb	_TR0
-	C$Lab2.c$279$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:279: while (PB0 == 1)
+	C$Lab2.c$302$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:302: while (PB0 == 1)
 00133$:
 	jnb	_PB0,00135$
-	C$Lab2.c$281$3$110 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:281: ADC_value = read_AD_input();
+	C$Lab2.c$304$3$105 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:304: ADC_value = read_AD_input();
 	push	ar7
 	push	ar6
 	push	ar5
@@ -2058,132 +2214,124 @@ _Mode_One:
 	pop	ar7
 	mov	_ADC_value,r3
 	mov	(_ADC_value + 1),#0x00
-	C$Lab2.c$282$3$110 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:282: if (ADC_value <= 51)
+	C$Lab2.c$305$3$105 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:305: if (ADC_value <= 51)
 	clr	c
 	mov	a,#0x33
 	subb	a,_ADC_value
 	clr	a
 	subb	a,(_ADC_value + 1)
 	jc	00131$
-	C$Lab2.c$284$4$111 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:284: LED0 = 1; //turn off all LEDs
+	C$Lab2.c$307$4$106 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:307: LED0 = 1; //turn off all LEDs
 	setb	_LED0
-	C$Lab2.c$285$4$111 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:285: LED1 = 1;
+	C$Lab2.c$308$4$106 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:308: LED1 = 1;
 	setb	_LED1
-	C$Lab2.c$286$4$111 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:286: LED2 = 1;
+	C$Lab2.c$309$4$106 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:309: LED2 = 1;
 	setb	_LED2
-	C$Lab2.c$287$4$111 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:287: LED3 = 1;
+	C$Lab2.c$310$4$106 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:310: LED3 = 1;
 	setb	_LED3
 	sjmp	00133$
 00131$:
-	C$Lab2.c$289$3$110 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:289: else if (ADC_value <= 102) 
+	C$Lab2.c$312$3$105 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:312: else if (ADC_value <= 102) 
 	clr	c
 	mov	a,#0x66
 	subb	a,_ADC_value
 	clr	a
 	subb	a,(_ADC_value + 1)
 	jc	00128$
-	C$Lab2.c$291$4$112 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:291: LED0 = 0; //turn on LED0
+	C$Lab2.c$314$4$107 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:314: LED0 = 0; //turn on LED0
 	clr	_LED0
-	C$Lab2.c$292$4$112 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:292: LED1 = 1;
+	C$Lab2.c$315$4$107 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:315: LED1 = 1;
 	setb	_LED1
-	C$Lab2.c$293$4$112 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:293: LED2 = 1;
+	C$Lab2.c$316$4$107 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:316: LED2 = 1;
 	setb	_LED2
-	C$Lab2.c$294$4$112 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:294: LED3 = 1;
+	C$Lab2.c$317$4$107 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:317: LED3 = 1;
 	setb	_LED3
 	sjmp	00133$
 00128$:
-	C$Lab2.c$296$3$110 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:296: else if (ADC_value <= 153) 
+	C$Lab2.c$319$3$105 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:319: else if (ADC_value <= 153) 
 	clr	c
 	mov	a,#0x99
 	subb	a,_ADC_value
 	clr	a
 	subb	a,(_ADC_value + 1)
 	jc	00125$
-	C$Lab2.c$298$4$113 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:298: LED0 = 0; //turn on LED0 and LED1
+	C$Lab2.c$321$4$108 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:321: LED0 = 0; //turn on LED0 and LED1
 	clr	_LED0
-	C$Lab2.c$299$4$113 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:299: LED1 = 0;
+	C$Lab2.c$322$4$108 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:322: LED1 = 0;
 	clr	_LED1
-	C$Lab2.c$300$4$113 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:300: LED2 = 1;
+	C$Lab2.c$323$4$108 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:323: LED2 = 1;
 	setb	_LED2
-	C$Lab2.c$301$4$113 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:301: LED3 = 1;
+	C$Lab2.c$324$4$108 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:324: LED3 = 1;
 	setb	_LED3
 	sjmp	00133$
 00125$:
-	C$Lab2.c$303$3$110 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:303: else if (ADC_value <= 204) 
+	C$Lab2.c$326$3$105 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:326: else if (ADC_value <= 204) 
 	clr	c
 	mov	a,#0xcc
 	subb	a,_ADC_value
 	clr	a
 	subb	a,(_ADC_value + 1)
 	jc	00122$
-	C$Lab2.c$305$4$114 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:305: LED0 = 0; //turn on LED0,LED1, and LED2
+	C$Lab2.c$328$4$109 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:328: LED0 = 0; //turn on LED0,LED1, and LED2
 	clr	_LED0
-	C$Lab2.c$306$4$114 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:306: LED1 = 0;
+	C$Lab2.c$329$4$109 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:329: LED1 = 0;
 	clr	_LED1
-	C$Lab2.c$307$4$114 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:307: LED2 = 0;
+	C$Lab2.c$330$4$109 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:330: LED2 = 0;
 	clr	_LED2
-	C$Lab2.c$308$4$114 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:308: LED3 = 1;
+	C$Lab2.c$331$4$109 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:331: LED3 = 1;
 	setb	_LED3
 	sjmp	00133$
 00122$:
-	C$Lab2.c$312$4$115 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:312: LED0 = 0; //turn on all LEDS
+	C$Lab2.c$335$4$110 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:335: LED0 = 0; //turn on all LEDS
 	clr	_LED0
-	C$Lab2.c$313$4$115 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:313: LED1 = 0;
+	C$Lab2.c$336$4$110 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:336: LED1 = 0;
 	clr	_LED1
-	C$Lab2.c$314$4$115 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:314: LED2 = 0;
+	C$Lab2.c$337$4$110 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:337: LED2 = 0;
 	clr	_LED2
-	C$Lab2.c$315$4$115 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:315: LED3 = 0;
+	C$Lab2.c$338$4$110 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:338: LED3 = 0;
 	clr	_LED3
 	sjmp	00133$
 00135$:
-	C$Lab2.c$318$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:318: game_Time = counts;
-	mov	r2,_counts
-	mov	r3,(_counts + 1)
-	C$Lab2.c$319$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:319: ClearTimer0();
+	C$Lab2.c$342$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:342: ClearTimer0();
 	push	ar7
 	push	ar6
 	push	ar5
 	push	ar4
-	push	ar3
-	push	ar2
 	lcall	_ClearTimer0
-	pop	ar2
-	pop	ar3
 	pop	ar4
 	pop	ar5
 	pop	ar6
 	pop	ar7
-	C$Lab2.c$320$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:320: TR0 = 1; //start timer
+	C$Lab2.c$343$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:343: TR0 = 1; //start timer
 	setb	_TR0
-	C$Lab2.c$321$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:321: while (counts <=7)
+	C$Lab2.c$344$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:344: while (counts <=7)
 00136$:
 	clr	c
 	mov	a,#0x07
@@ -2191,368 +2339,159 @@ _Mode_One:
 	clr	a
 	subb	a,(_counts + 1)
 	jc	00138$
-	C$Lab2.c$323$3$116 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:323: LED0 = 1; //turn off all LEDs
+	C$Lab2.c$346$3$111 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:346: LED0 = 1; //turn off all LEDs
 	setb	_LED0
-	C$Lab2.c$324$3$116 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:324: LED1 = 1;
+	C$Lab2.c$347$3$111 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:347: LED1 = 1;
 	setb	_LED1
-	C$Lab2.c$325$3$116 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:325: LED2 = 1;
+	C$Lab2.c$348$3$111 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:348: LED2 = 1;
 	setb	_LED2
-	C$Lab2.c$326$3$116 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:326: LED3 = 1;
+	C$Lab2.c$349$3$111 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:349: LED3 = 1;
 	setb	_LED3
 	sjmp	00136$
 00138$:
-	C$Lab2.c$328$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:328: ClearTimer0();
+	C$Lab2.c$351$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:351: ClearTimer0();
 	push	ar7
 	push	ar6
 	push	ar5
 	push	ar4
-	push	ar3
-	push	ar2
 	lcall	_ClearTimer0
-	pop	ar2
-	pop	ar3
+	pop	ar4
+	C$Lab2.c$352$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:352: TR0 = 1; //start timer
+	setb	_TR0
+	C$Lab2.c$353$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:353: LightNumLEDs(random_Result);
+	mov	dpl,r4
+	push	ar4
+	lcall	_LightNumLEDs
 	pop	ar4
 	pop	ar5
 	pop	ar6
 	pop	ar7
-	C$Lab2.c$329$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:329: TR0 = 1; //start timer
-	setb	_TR0
-	C$Lab2.c$330$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:330: while (counts <=7)
+	C$Lab2.c$354$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:354: while (counts != 338); //Lights 0-4 LEDs for 1.0 seconds
 00139$:
-	clr	c
-	mov	a,#0x07
-	subb	a,_counts
-	clr	a
-	subb	a,(_counts + 1)
-	jc	00141$
-	C$Lab2.c$332$3$117 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:332: LED0 = 0; //turn on all LEDs
-	clr	_LED0
-	C$Lab2.c$333$3$117 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:333: LED1 = 0;
-	clr	_LED1
-	C$Lab2.c$334$3$117 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:334: LED2 = 0;
-	clr	_LED2
-	C$Lab2.c$335$3$117 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:335: LED3 = 0;
-	clr	_LED3
-	sjmp	00139$
-00141$:
-	C$Lab2.c$337$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:337: ClearTimer0();
+	mov	a,#0x52
+	cjne	a,_counts,00139$
+	mov	a,#0x01
+	cjne	a,(_counts + 1),00139$
+	C$Lab2.c$355$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:355: ClearTimer0();
 	push	ar7
 	push	ar6
 	push	ar5
 	push	ar4
-	push	ar3
-	push	ar2
 	lcall	_ClearTimer0
-	pop	ar2
-	pop	ar3
 	pop	ar4
 	pop	ar5
 	pop	ar6
 	pop	ar7
-	C$Lab2.c$338$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:338: TR0 = 1; //start timer
+	C$Lab2.c$356$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:356: TR0=1;
 	setb	_TR0
-	C$Lab2.c$339$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:339: while (counts <=7)
+	C$Lab2.c$357$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:357: while (DebounceButton() == 0) //maps ADC to 0-4 and lights LEDs continuously
 00142$:
-	clr	c
-	mov	a,#0x07
-	subb	a,_counts
-	clr	a
-	subb	a,(_counts + 1)
-	jc	00144$
-	C$Lab2.c$341$3$118 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:341: LED0 = 1; //turn off all LEDs
-	setb	_LED0
-	C$Lab2.c$342$3$118 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:342: LED1 = 1;
-	setb	_LED1
-	C$Lab2.c$343$3$118 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:343: LED2 = 1;
-	setb	_LED2
-	C$Lab2.c$344$3$118 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:344: LED3 = 1;
-	setb	_LED3
+	push	ar7
+	push	ar6
+	push	ar5
+	push	ar4
+	lcall	_DebounceButton
+	mov	a,dpl
+	pop	ar4
+	pop	ar5
+	pop	ar6
+	pop	ar7
+	jnz	00144$
+	C$Lab2.c$359$3$112 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:359: ADC_value = read_AD_input();
+	push	ar7
+	push	ar6
+	push	ar5
+	push	ar4
+	lcall	_read_AD_input
+	mov	r3,dpl
+	mov	_ADC_value,r3
+	mov	(_ADC_value + 1),#0x00
+	C$Lab2.c$360$1$97 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:360: ADC_mapped = MapADC(ADC_value,0,4);
+	mov	dpl,_ADC_value
+	mov	dph,(_ADC_value + 1)
+	lcall	___uint2fs
+	mov	r0,dpl
+	mov	r1,dph
+	mov	r2,b
+	mov	r3,a
+	mov	_MapADC_PARM_2,#0x00
+	mov	_MapADC_PARM_3,#0x04
+	mov	dpl,r0
+	mov	dph,r1
+	mov	b,r2
+	mov	a,r3
+	lcall	_MapADC
+	C$Lab2.c$361$3$112 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:361: LightNumLEDs(ADC_mapped);
+	mov  _Mode_One_ADC_mapped_1_97,dpl
+	lcall	_LightNumLEDs
+	pop	ar4
+	pop	ar5
+	pop	ar6
+	pop	ar7
 	sjmp	00142$
 00144$:
-	C$Lab2.c$346$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:346: ClearTimer0();
+	C$Lab2.c$364$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:364: game_Time = counts; // counting time in game
+	mov	r2,_counts
+	mov	r3,(_counts + 1)
+	C$Lab2.c$365$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:365: Flash_LEDs();
 	push	ar7
 	push	ar6
 	push	ar5
 	push	ar4
 	push	ar3
 	push	ar2
-	lcall	_ClearTimer0
+	lcall	_Flash_LEDs
+	pop	ar2
+	pop	ar3
+	pop	ar4
+	C$Lab2.c$366$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:366: CompareVals(ADC_final, random_Result); //compares the input and expected result and lights BILED apropriately
+	mov	_CompareVals_PARM_2,r4
+	mov	dpl,_Mode_One_ADC_mapped_1_97
+	push	ar4
+	push	ar3
+	push	ar2
+	lcall	_CompareVals
 	pop	ar2
 	pop	ar3
 	pop	ar4
 	pop	ar5
 	pop	ar6
 	pop	ar7
-	C$Lab2.c$347$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:347: if (random_Result == 0)
+	C$Lab2.c$367$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:367: if (ADC_final == random_Result) // determines whether or not the correct input was given
 	mov	a,r4
-	jnz	00148$
-	C$Lab2.c$349$3$119 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:349: if (ADC_value >= 51) //greater than
-	clr	c
-	mov	a,_ADC_value
-	subb	a,#0x33
-	mov	a,(_ADC_value + 1)
-	subb	a,#0x00
-	jc	00148$
-	C$Lab2.c$351$4$120 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:351: SetBILED('g'); //turn BILED green
-	mov	dpl,#0x67
-	push	ar7
-	push	ar6
-	push	ar5
-	push	ar4
-	push	ar3
-	push	ar2
-	lcall	_SetBILED
-	pop	ar2
-	pop	ar3
-	pop	ar4
-	pop	ar5
-	pop	ar6
-	pop	ar7
-	C$Lab2.c$352$4$120 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:352: error = 1;
-	mov	_error,#0x01
-	mov	(_error + 1),#0x00
-00148$:
-	C$Lab2.c$355$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:355: if (random_Result == 1)
-	cjne	r4,#0x01,00155$
-	C$Lab2.c$357$3$121 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:357: if (ADC_value <= 51) //less than
-	clr	c
-	mov	a,#0x33
-	subb	a,_ADC_value
+	cjne	a,_Mode_One_ADC_mapped_1_97,00146$
+	C$Lab2.c$369$3$113 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:369: error = 0;
 	clr	a
-	subb	a,(_ADC_value + 1)
-	jc	00152$
-	C$Lab2.c$359$4$122 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:359: SetBILED('r'); // turn BILED red
-	mov	dpl,#0x72
-	push	ar7
-	push	ar6
-	push	ar5
-	push	ar4
-	push	ar3
-	push	ar2
-	lcall	_SetBILED
-	pop	ar2
-	pop	ar3
-	pop	ar4
-	pop	ar5
-	pop	ar6
-	pop	ar7
-	C$Lab2.c$360$4$122 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:360: error = 1;
-	mov	_error,#0x01
-	mov	(_error + 1),#0x00
-	sjmp	00155$
-00152$:
-	C$Lab2.c$362$3$121 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:362: else if (ADC_value >= 102) //greater than
-	clr	c
-	mov	a,_ADC_value
-	subb	a,#0x66
-	mov	a,(_ADC_value + 1)
-	subb	a,#0x00
-	jc	00155$
-	C$Lab2.c$364$4$123 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:364: SetBILED('g'); //turn BILED green
-	mov	dpl,#0x67
-	push	ar7
-	push	ar6
-	push	ar5
-	push	ar4
-	push	ar3
-	push	ar2
-	lcall	_SetBILED
-	pop	ar2
-	pop	ar3
-	pop	ar4
-	pop	ar5
-	pop	ar6
-	pop	ar7
-	C$Lab2.c$365$4$123 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:365: error = 1;
-	mov	_error,#0x01
-	mov	(_error + 1),#0x00
-00155$:
-	C$Lab2.c$368$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:368: if (random_Result == 2)
-	cjne	r4,#0x02,00162$
-	C$Lab2.c$370$3$124 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:370: if (ADC_value <= 102) //less than
-	clr	c
-	mov	a,#0x66
-	subb	a,_ADC_value
-	clr	a
-	subb	a,(_ADC_value + 1)
-	jc	00159$
-	C$Lab2.c$372$4$125 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:372: SetBILED('r'); // turn BILED red
-	mov	dpl,#0x72
-	push	ar7
-	push	ar6
-	push	ar5
-	push	ar4
-	push	ar3
-	push	ar2
-	lcall	_SetBILED
-	pop	ar2
-	pop	ar3
-	pop	ar4
-	pop	ar5
-	pop	ar6
-	pop	ar7
-	C$Lab2.c$373$4$125 ==.
+	mov	_error,a
+	mov	(_error + 1),a
+	sjmp	00147$
+00146$:
+	C$Lab2.c$373$3$114 ==.
 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:373: error = 1;
 	mov	_error,#0x01
 	mov	(_error + 1),#0x00
-	sjmp	00162$
-00159$:
-	C$Lab2.c$375$3$124 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:375: else if (ADC_value >= 153) //greater than
-	clr	c
-	mov	a,_ADC_value
-	subb	a,#0x99
-	mov	a,(_ADC_value + 1)
-	subb	a,#0x00
-	jc	00162$
-	C$Lab2.c$377$4$126 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:377: SetBILED('g'); //turn BILED green
-	mov	dpl,#0x67
-	push	ar7
-	push	ar6
-	push	ar5
-	push	ar4
-	push	ar3
-	push	ar2
-	lcall	_SetBILED
-	pop	ar2
-	pop	ar3
-	pop	ar4
-	pop	ar5
-	pop	ar6
-	pop	ar7
-	C$Lab2.c$378$4$126 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:378: error = 1;
-	mov	_error,#0x01
-	mov	(_error + 1),#0x00
-00162$:
-	C$Lab2.c$381$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:381: if (random_Result == 3)
-	cjne	r4,#0x03,00169$
-	C$Lab2.c$383$3$127 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:383: if (ADC_value <= 153) //less than
-	clr	c
-	mov	a,#0x99
-	subb	a,_ADC_value
-	clr	a
-	subb	a,(_ADC_value + 1)
-	jc	00166$
-	C$Lab2.c$385$4$128 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:385: SetBILED('r'); // turn BILED red
-	mov	dpl,#0x72
-	push	ar7
-	push	ar6
-	push	ar5
-	push	ar4
-	push	ar3
-	push	ar2
-	lcall	_SetBILED
-	pop	ar2
-	pop	ar3
-	pop	ar4
-	pop	ar5
-	pop	ar6
-	pop	ar7
-	C$Lab2.c$386$4$128 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:386: error = 1;
-	mov	_error,#0x01
-	mov	(_error + 1),#0x00
-	sjmp	00169$
-00166$:
-	C$Lab2.c$388$3$127 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:388: else if (ADC_value >= 204) //greater than
-	clr	c
-	mov	a,_ADC_value
-	subb	a,#0xcc
-	mov	a,(_ADC_value + 1)
-	subb	a,#0x00
-	jc	00169$
-	C$Lab2.c$390$4$129 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:390: SetBILED('g'); //turn BILED green
-	mov	dpl,#0x67
-	push	ar7
-	push	ar6
-	push	ar5
-	push	ar4
-	push	ar3
-	push	ar2
-	lcall	_SetBILED
-	pop	ar2
-	pop	ar3
-	pop	ar4
-	pop	ar5
-	pop	ar6
-	pop	ar7
-	C$Lab2.c$391$4$129 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:391: error = 1;
-	mov	_error,#0x01
-	mov	(_error + 1),#0x00
-00169$:
-	C$Lab2.c$394$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:394: if (random_Result == 4)
-	cjne	r4,#0x04,00173$
-	C$Lab2.c$396$3$130 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:396: if (ADC_value <= 204) //less than
-	clr	c
-	mov	a,#0xcc
-	subb	a,_ADC_value
-	clr	a
-	subb	a,(_ADC_value + 1)
-	jc	00173$
-	C$Lab2.c$398$4$131 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:398: SetBILED('r'); // turn BILED red
-	mov	dpl,#0x72
-	push	ar7
-	push	ar6
-	push	ar5
-	push	ar3
-	push	ar2
-	lcall	_SetBILED
-	pop	ar2
-	pop	ar3
-	pop	ar5
-	pop	ar6
-	pop	ar7
-	C$Lab2.c$399$4$131 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:399: error = 1;
-	mov	_error,#0x01
-	mov	(_error + 1),#0x00
-00173$:
-	C$Lab2.c$402$1$102 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:402: round_Score = game_Time /169;
+00147$:
+	C$Lab2.c$375$1$97 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:375: round_Score = game_Time /169;
 	mov	__divuint_PARM_2,#0xa9
 	mov	(__divuint_PARM_2 + 1),#0x00
 	mov	dpl,r2
@@ -2566,35 +2505,35 @@ _Mode_One:
 	pop	ar5
 	pop	ar6
 	pop	ar7
-	C$Lab2.c$403$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:403: if (error == 1)
+	C$Lab2.c$376$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:376: if (error == 1)
 	mov	a,#0x01
-	cjne	a,_error,00344$
+	cjne	a,_error,00266$
 	dec	a
-	cjne	a,(_error + 1),00344$
-	sjmp	00345$
-00344$:
-	sjmp	00175$
-00345$:
-	C$Lab2.c$405$3$132 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:405: round_Score = round_Score + 10;
+	cjne	a,(_error + 1),00266$
+	sjmp	00267$
+00266$:
+	sjmp	00149$
+00267$:
+	C$Lab2.c$378$3$115 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:378: round_Score = round_Score + 10;
 	mov	a,#0x0a
 	add	a,r3
 	mov	r3,a
 	clr	a
 	addc	a,r4
 	mov	r4,a
-00175$:
-	C$Lab2.c$407$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:407: total_Score = total_Score + round_Score;
+00149$:
+	C$Lab2.c$380$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:380: total_Score = total_Score + round_Score;
 	mov	a,r3
 	add	a,r6
 	mov	r6,a
 	mov	a,r4
 	addc	a,r7
 	mov	r7,a
-	C$Lab2.c$408$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:408: printf("Round Score: %d",round_Score);
+	C$Lab2.c$381$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:381: printf("\r\nRound Score: %d",round_Score);
 	push	ar7
 	push	ar6
 	push	ar5
@@ -2613,8 +2552,8 @@ _Mode_One:
 	pop	ar5
 	pop	ar6
 	pop	ar7
-	C$Lab2.c$409$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:409: printf("Total Score: %d",total_Score);
+	C$Lab2.c$382$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:382: printf("\r\nTotal Score: %d",total_Score);
 	push	ar7
 	push	ar6
 	push	ar5
@@ -2633,24 +2572,28 @@ _Mode_One:
 	pop	ar5
 	pop	ar6
 	pop	ar7
-	C$Lab2.c$412$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:412: TR0 = 1; //start timer
+	C$Lab2.c$385$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:385: TR0 = 1; //start timer
 	setb	_TR0
-	C$Lab2.c$413$2$103 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:413: while (counts <= 169);
-00176$:
+	C$Lab2.c$386$2$98 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:386: while (counts <= 169); //wait for half a second before moving on to the next value
+00150$:
 	clr	c
 	mov	a,#0xa9
 	subb	a,_counts
 	clr	a
 	subb	a,(_counts + 1)
-	jnc	00176$
-	C$Lab2.c$236$1$102 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:236: for (rounds=0; rounds++; rounds<5)
-	ljmp	00181$
-00179$:
-	C$Lab2.c$415$1$102 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:415: printf("Final Score: %d",total_Score);
+	jnc	00150$
+	C$Lab2.c$259$1$97 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:259: for (rounds = 1; rounds <= 5; rounds++ )
+	inc	r5
+	mov	a,r5
+	add	a,#0xff - 0x05
+	jc	00269$
+	ljmp	00154$
+00269$:
+	C$Lab2.c$388$1$97 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:388: printf("\r\nFinal Score: %d",total_Score);
 	push	ar6
 	push	ar7
 	mov	a,#___str_9
@@ -2663,24 +2606,24 @@ _Mode_One:
 	mov	a,sp
 	add	a,#0xfb
 	mov	sp,a
-	C$Lab2.c$416$1$102 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:416: Flash_Biled();
+	C$Lab2.c$389$1$97 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:389: Flash_Biled();
 	lcall	_Flash_Biled
-	C$Lab2.c$417$1$102 ==.
+	C$Lab2.c$390$1$97 ==.
 	XG$Mode_One$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'Mode_Two'
 ;------------------------------------------------------------
 	G$Mode_Two$0$0 ==.
-	C$Lab2.c$420$1$102 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:420: void Mode_Two(void)
+	C$Lab2.c$393$1$97 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:393: void Mode_Two(void)
 ;	-----------------------------------------
 ;	 function Mode_Two
 ;	-----------------------------------------
 _Mode_Two:
-	C$Lab2.c$422$1$134 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:422: printf("\r\n\nPlayer 1 will have 1 second to adjust the potentionmeter to light up LEDs.\r\nPlayer 2 must then push the button for each LED that was lit within 1.5s\r\n"); // Instructions 
+	C$Lab2.c$395$1$117 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:395: printf("\r\n\nPlayer 1 will have 1 second to adjust the potentionmeter to light up LEDs.\r\nPlayer 2 must then push the button for each LED that was lit within 1.5s\r\n"); // Instructions 
 	mov	a,#___str_10
 	push	acc
 	mov	a,#(___str_10 >> 8)
@@ -2691,46 +2634,46 @@ _Mode_Two:
 	dec	sp
 	dec	sp
 	dec	sp
-	C$Lab2.c$424$1$134 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:424: score = 0; // keeps track of the score
+	C$Lab2.c$397$1$117 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:397: score = 0; // keeps track of the score
 	clr	a
 	mov	_score,a
 	mov	(_score + 1),a
-	C$Lab2.c$425$1$134 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:425: SetAllLEDs(1); // Turn off all LEDs 
+	C$Lab2.c$398$1$117 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:398: SetAllLEDs(1); // Turn off all LEDs 
 	mov	dpl,#0x01
 	lcall	_SetAllLEDs
-	C$Lab2.c$426$1$134 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:426: buttonPresses = 0; // Keeps track of button presses
+	C$Lab2.c$399$1$117 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:399: buttonPresses = 0; // Keeps track of button presses
 	clr	a
 	mov	_buttonPresses,a
 	mov	(_buttonPresses + 1),a
-	C$Lab2.c$427$1$134 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:427: numLEDs = 0; // Counts the number of LEDs lit
+	C$Lab2.c$400$1$117 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:400: numLEDs = 0; // Counts the number of LEDs lit
 	mov	_numLEDs,a
 	mov	(_numLEDs + 1),a
-	C$Lab2.c$429$1$134 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:429: for (tries = 0; tries < 5; tries++)
+	C$Lab2.c$402$1$117 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:402: for (tries = 0; tries < 5; tries++)
 	mov	_tries,a
 	mov	(_tries + 1),a
-00160$:
-	C$Lab2.c$431$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:431: buttonPresses = 0; // Clear number of button presses
+00151$:
+	C$Lab2.c$404$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:404: buttonPresses = 0; // Clear number of button presses
 	clr	a
 	mov	_buttonPresses,a
 	mov	(_buttonPresses + 1),a
-	C$Lab2.c$432$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:432: ClearTimer0(); // Stop and clear Timer0 and overflows
+	C$Lab2.c$405$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:405: ClearTimer0(); // Stop and clear Timer0 and overflows
 	lcall	_ClearTimer0
-	C$Lab2.c$433$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:433: SetBILED('r'); // Turn BILED red
+	C$Lab2.c$406$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:406: SetBILED('r'); // Turn BILED red
 	mov	dpl,#0x72
 	lcall	_SetBILED
-	C$Lab2.c$434$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:434: TR0 = 1; // Start Timer0
+	C$Lab2.c$407$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:407: TR0 = 1; // Start Timer0
 	setb	_TR0
-	C$Lab2.c$436$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:436: while ( counts < 338) // Wait 1 second for player 1 to set pot
+	C$Lab2.c$409$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:409: while ( counts < 338) // Wait 1 second for player 1 to set pot
 00102$:
 	clr	c
 	mov	a,_counts
@@ -2738,54 +2681,64 @@ _Mode_Two:
 	mov	a,(_counts + 1)
 	subb	a,#0x01
 	jnc	00104$
-	C$Lab2.c$438$3$136 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:438: for (var = 0;var<100;var++); // Do something in loop to wait more accurately
+	C$Lab2.c$411$3$119 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:411: for (var = 0;var<100;var++); // Do something in loop to wait more accurately
 	mov	_var,#0x64
 	mov	(_var + 1),#0x00
-00144$:
+00135$:
 	dec	_var
 	mov	a,#0xff
-	cjne	a,_var,00270$
+	cjne	a,_var,00243$
 	dec	(_var + 1)
-00270$:
+00243$:
 	mov	a,_var
 	orl	a,(_var + 1)
-	jnz	00144$
+	jnz	00135$
 	mov	_var,#0x64
 	mov	(_var + 1),a
 	sjmp	00102$
 00104$:
-	C$Lab2.c$441$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:441: SetBILED('o'); // Turn off BILED
+	C$Lab2.c$414$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:414: SetBILED('o'); // Turn off BILED
 	mov	dpl,#0x6f
 	lcall	_SetBILED
-	C$Lab2.c$442$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:442: ADC_value = read_AD_input();
+	C$Lab2.c$415$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:415: ADC_value = read_AD_input();
 	lcall	_read_AD_input
 	mov	r7,dpl
 	mov	_ADC_value,r7
 	mov	(_ADC_value + 1),#0x00
-	C$Lab2.c$443$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:443: numLEDs = MapADC(ADC_value,0,4); // Read the corresponding number of LEDs relative to the value of the potentionmeter
+	C$Lab2.c$416$1$117 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:416: numLEDs = MapADC(ADC_value,0,4); // Read the corresponding number of LEDs relative to the value of the potentionmeter
 	mov	dpl,_ADC_value
+	mov	dph,(_ADC_value + 1)
+	lcall	___uint2fs
+	mov	r4,dpl
+	mov	r5,dph
+	mov	r6,b
+	mov	r7,a
 	mov	_MapADC_PARM_2,#0x00
 	mov	_MapADC_PARM_3,#0x04
+	mov	dpl,r4
+	mov	dph,r5
+	mov	b,r6
+	mov	a,r7
 	lcall	_MapADC
 	mov	r7,dpl
 	mov	_numLEDs,r7
 	mov	(_numLEDs + 1),#0x00
-	C$Lab2.c$444$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:444: LightNumLEDs(numLEDs); // Light the corresponding number of LEDs
+	C$Lab2.c$417$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:417: LightNumLEDs(numLEDs); // Light the corresponding number of LEDs
 	mov	dpl,_numLEDs
 	lcall	_LightNumLEDs
-	C$Lab2.c$445$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:445: ClearTimer0(); // Clear timer and overflows
+	C$Lab2.c$418$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:418: ClearTimer0(); // Clear timer and overflows
 	lcall	_ClearTimer0
-	C$Lab2.c$446$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:446: TR0 = 1; // Start timer0
+	C$Lab2.c$419$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:419: TR0 = 1; // Start timer0
 	setb	_TR0
-	C$Lab2.c$447$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:447: while (counts < overflows[tries]) // Wait for round timer to end
+	C$Lab2.c$420$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:420: while (counts < overflows[tries]) // Wait for round timer to end
 00108$:
 	mov	a,_tries
 	add	a,_tries
@@ -2805,44 +2758,44 @@ _Mode_Two:
 	mov	a,(_counts + 1)
 	subb	a,r7
 	jnc	00110$
-	C$Lab2.c$449$3$137 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:449: if(DebounceButton()==1) // If the button was pressed
+	C$Lab2.c$422$3$120 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:422: if(DebounceButton()==1) // If the button was pressed
 	lcall	_DebounceButton
 	mov	r7,dpl
 	cjne	r7,#0x01,00106$
-	C$Lab2.c$451$4$138 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:451: buttonPresses++; // Increment number of presses
+	C$Lab2.c$424$4$121 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:424: buttonPresses++; // Increment number of presses
 	inc	_buttonPresses
 	clr	a
-	cjne	a,_buttonPresses,00275$
+	cjne	a,_buttonPresses,00248$
 	inc	(_buttonPresses + 1)
-00275$:
+00248$:
 00106$:
-	C$Lab2.c$453$3$137 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:453: for (var = 0;var<100;var++);
+	C$Lab2.c$426$3$120 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:426: for (var = 0;var<100;var++);
 	mov	_var,#0x64
 	mov	(_var + 1),#0x00
-00147$:
+00138$:
 	dec	_var
 	mov	a,#0xff
-	cjne	a,_var,00276$
+	cjne	a,_var,00249$
 	dec	(_var + 1)
-00276$:
+00249$:
 	mov	a,_var
 	orl	a,(_var + 1)
-	jnz	00147$
+	jnz	00138$
 	mov	_var,#0x64
 	mov	(_var + 1),a
 	sjmp	00108$
 00110$:
-	C$Lab2.c$456$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:456: if (buttonPresses == numLEDs) // If they got the correct number of presses
+	C$Lab2.c$429$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:429: if (buttonPresses == numLEDs) // If they got the correct number of presses
 	mov	a,_numLEDs
 	cjne	a,_buttonPresses,00112$
 	mov	a,(_numLEDs + 1)
 	cjne	a,(_buttonPresses + 1),00112$
-	C$Lab2.c$458$3$139 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:458: score += 10; // gain 10 points
+	C$Lab2.c$431$3$122 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:431: score += 10; // gain 10 points
 	mov	a,#0x0a
 	add	a,_score
 	mov	_score,a
@@ -2850,18 +2803,18 @@ _Mode_Two:
 	addc	a,(_score + 1)
 	mov	(_score + 1),a
 00112$:
-	C$Lab2.c$461$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:461: ClearTimer0(); // Clear Timer0 and overflows
+	C$Lab2.c$434$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:434: ClearTimer0(); // Clear Timer0 and overflows
 	lcall	_ClearTimer0
-	C$Lab2.c$462$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:462: TR0 = 1; // Start the timer
+	C$Lab2.c$435$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:435: TR0 = 1; // Start the timer
 	setb	_TR0
-	C$Lab2.c$464$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:464: SetAllLEDs(1); // Turn off all LEDs
+	C$Lab2.c$437$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:437: SetAllLEDs(1); // Turn off all LEDs
 	mov	dpl,#0x01
 	lcall	_SetAllLEDs
-	C$Lab2.c$465$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:465: while (counts < 7) // wait 20ms
+	C$Lab2.c$438$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:438: while (counts < 7) // wait 20ms
 00114$:
 	clr	c
 	mov	a,_counts
@@ -2869,35 +2822,35 @@ _Mode_Two:
 	mov	a,(_counts + 1)
 	subb	a,#0x00
 	jnc	00116$
-	C$Lab2.c$467$3$140 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:467: for (var = 0;var<100;var++);
+	C$Lab2.c$440$3$123 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:440: for (var = 0;var<100;var++);
 	mov	_var,#0x64
 	mov	(_var + 1),#0x00
-00150$:
+00141$:
 	dec	_var
 	mov	a,#0xff
-	cjne	a,_var,00281$
+	cjne	a,_var,00254$
 	dec	(_var + 1)
-00281$:
+00254$:
 	mov	a,_var
 	orl	a,(_var + 1)
-	jnz	00150$
+	jnz	00141$
 	mov	_var,#0x64
 	mov	(_var + 1),a
 	sjmp	00114$
 00116$:
-	C$Lab2.c$469$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:469: SetAllLEDs(0); // Turn on all LEDs
+	C$Lab2.c$442$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:442: SetAllLEDs(0); // Turn on all LEDs
 	mov	dpl,#0x00
 	lcall	_SetAllLEDs
-	C$Lab2.c$470$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:470: ClearTimer0(); // Clear Timer0 and overflows
+	C$Lab2.c$443$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:443: ClearTimer0(); // Clear Timer0 and overflows
 	lcall	_ClearTimer0
-	C$Lab2.c$471$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:471: TR0 = 1; // Start the timer
+	C$Lab2.c$444$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:444: TR0 = 1; // Start the timer
 	setb	_TR0
-	C$Lab2.c$472$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:472: while (counts < 7) // wait 20ms
+	C$Lab2.c$445$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:445: while (counts < 7) // wait 20ms
 00118$:
 	clr	c
 	mov	a,_counts
@@ -2905,40 +2858,40 @@ _Mode_Two:
 	mov	a,(_counts + 1)
 	subb	a,#0x00
 	jnc	00120$
-	C$Lab2.c$474$3$141 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:474: for (var = 0;var<100;var++);
+	C$Lab2.c$447$3$124 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:447: for (var = 0;var<100;var++);
 	mov	_var,#0x64
 	mov	(_var + 1),#0x00
-00153$:
+00144$:
 	dec	_var
 	mov	a,#0xff
-	cjne	a,_var,00284$
+	cjne	a,_var,00257$
 	dec	(_var + 1)
-00284$:
+00257$:
 	mov	a,_var
 	orl	a,(_var + 1)
-	jnz	00153$
+	jnz	00144$
 	mov	_var,#0x64
 	mov	(_var + 1),a
 	sjmp	00118$
 00120$:
-	C$Lab2.c$476$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:476: SetAllLEDs(1); // Turn off all LEDs
+	C$Lab2.c$449$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:449: SetAllLEDs(1); // Turn off all LEDs
 	mov	dpl,#0x01
 	lcall	_SetAllLEDs
-	C$Lab2.c$478$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:478: CompareVals(buttonPresses, numLEDs); // Turn BILED red or green if it was low or high
+	C$Lab2.c$451$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:451: CompareVals(buttonPresses, numLEDs); // Turn BILED red or green if it was low or high
 	mov	dpl,_buttonPresses
 	mov	_CompareVals_PARM_2,_numLEDs
 	lcall	_CompareVals
-	C$Lab2.c$480$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:480: if (buttonPresses == numLEDs) // If they got it correct
+	C$Lab2.c$453$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:453: if (buttonPresses == numLEDs) // If they got it correct
 	mov	a,_numLEDs
 	cjne	a,_buttonPresses,00122$
 	mov	a,(_numLEDs + 1)
 	cjne	a,(_buttonPresses + 1),00122$
-	C$Lab2.c$482$3$142 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:482: printf("\r\n10 points gained!"); // Show that they gained 10 points
+	C$Lab2.c$455$3$125 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:455: printf("\r\n10 points gained!"); // Show that they gained 10 points
 	mov	a,#___str_11
 	push	acc
 	mov	a,#(___str_11 >> 8)
@@ -2951,8 +2904,8 @@ _Mode_Two:
 	dec	sp
 	sjmp	00123$
 00122$:
-	C$Lab2.c$486$3$143 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:486: printf("\r\n0 points gained!"); // Show they gained 0 points
+	C$Lab2.c$459$3$126 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:459: printf("\r\n0 points gained!"); // Show they gained 0 points
 	mov	a,#___str_12
 	push	acc
 	mov	a,#(___str_12 >> 8)
@@ -2964,8 +2917,8 @@ _Mode_Two:
 	dec	sp
 	dec	sp
 00123$:
-	C$Lab2.c$489$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:489: printf("\r\nTotal score: %d",score); // print the total score
+	C$Lab2.c$462$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:462: printf("\r\nTotal score: %d",score); // print the total score
 	push	_score
 	push	(_score + 1)
 	mov	a,#___str_13
@@ -2978,14 +2931,14 @@ _Mode_Two:
 	mov	a,sp
 	add	a,#0xfb
 	mov	sp,a
-	C$Lab2.c$491$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:491: ClearTimer0(); // Clear Timer0 and overflows
+	C$Lab2.c$464$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:464: ClearTimer0(); // Clear Timer0 and overflows
 	lcall	_ClearTimer0
-	C$Lab2.c$492$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:492: TR0 = 1; // Start the timer
+	C$Lab2.c$465$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:465: TR0 = 1; // Start the timer
 	setb	_TR0
-	C$Lab2.c$494$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:494: while (counts < 338) // Wait 1 second
+	C$Lab2.c$467$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:467: while (counts < 338) // Wait 1 second
 00125$:
 	clr	c
 	mov	a,_counts
@@ -2993,77 +2946,77 @@ _Mode_Two:
 	mov	a,(_counts + 1)
 	subb	a,#0x01
 	jnc	00127$
-	C$Lab2.c$496$3$144 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:496: for (var = 0;var<100;var++); // Do something to get more accurate time
+	C$Lab2.c$469$3$127 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:469: for (var = 0;var<100;var++); // Do something to get more accurate time
 	mov	_var,#0x64
 	mov	(_var + 1),#0x00
-00156$:
+00147$:
 	dec	_var
 	mov	a,#0xff
-	cjne	a,_var,00289$
+	cjne	a,_var,00262$
 	dec	(_var + 1)
-00289$:
+00262$:
 	mov	a,_var
 	orl	a,(_var + 1)
-	jnz	00156$
+	jnz	00147$
 	mov	_var,#0x64
 	mov	(_var + 1),a
 	sjmp	00125$
 00127$:
-	C$Lab2.c$498$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:498: SetBILED('o'); // Turn off BILED
+	C$Lab2.c$471$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:471: SetBILED('o'); // Turn off BILED
 	mov	dpl,#0x6f
 	lcall	_SetBILED
-	C$Lab2.c$499$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:499: ClearTimer0(); // Clear Timer0 and overflows
+	C$Lab2.c$472$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:472: ClearTimer0(); // Clear Timer0 and overflows
 	lcall	_ClearTimer0
-	C$Lab2.c$500$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:500: TR0 = 1; // Start the timer
+	C$Lab2.c$473$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:473: TR0 = 1; // Start the timer
 	setb	_TR0
-	C$Lab2.c$501$2$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:501: while (counts < 169) // Wait 0.5s
+	C$Lab2.c$474$2$118 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:474: while (counts < 169) // Wait 0.5s
 00129$:
 	clr	c
 	mov	a,_counts
 	subb	a,#0xa9
 	mov	a,(_counts + 1)
 	subb	a,#0x00
-	jnc	00161$
-	C$Lab2.c$503$3$145 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:503: for (var = 0;var<100;var++);
+	jnc	00152$
+	C$Lab2.c$476$3$128 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:476: for (var = 0;var<100;var++);
 	mov	_var,#0x64
 	mov	(_var + 1),#0x00
-00159$:
+00150$:
 	dec	_var
 	mov	a,#0xff
-	cjne	a,_var,00292$
+	cjne	a,_var,00265$
 	dec	(_var + 1)
-00292$:
+00265$:
 	mov	a,_var
 	orl	a,(_var + 1)
-	jnz	00159$
+	jnz	00150$
 	mov	_var,#0x64
 	mov	(_var + 1),a
 	sjmp	00129$
-00161$:
-	C$Lab2.c$429$1$134 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:429: for (tries = 0; tries < 5; tries++)
+00152$:
+	C$Lab2.c$402$1$117 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:402: for (tries = 0; tries < 5; tries++)
 	inc	_tries
 	clr	a
-	cjne	a,_tries,00294$
+	cjne	a,_tries,00267$
 	inc	(_tries + 1)
-00294$:
+00267$:
 	clr	c
 	mov	a,_tries
 	subb	a,#0x05
 	mov	a,(_tries + 1)
 	xrl	a,#0x80
 	subb	a,#0x80
-	jnc	00295$
-	ljmp	00160$
-00295$:
-	C$Lab2.c$507$1$134 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:507: printf("\r\nFinal score: %d", score); // Print the final score
+	jnc	00268$
+	ljmp	00151$
+00268$:
+	C$Lab2.c$480$1$117 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:480: printf("\r\nFinal score: %d", score); // Print the final score
 	push	_score
 	push	(_score + 1)
 	mov	a,#___str_14
@@ -3076,93 +3029,24 @@ _Mode_Two:
 	mov	a,sp
 	add	a,#0xfb
 	mov	sp,a
-	C$Lab2.c$509$1$134 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:509: ClearTimer0(); // Clear Timer0 and overflows
-	lcall	_ClearTimer0
-	C$Lab2.c$510$1$134 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:510: TR0 = 1; // Start the timer	
-	setb	_TR0
-	C$Lab2.c$511$1$134 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:511: tmpCount = 0; // Create temp value
-	clr	a
-	mov	_tmpCount,a
-	mov	(_tmpCount + 1),a
-	C$Lab2.c$513$1$134 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:513: while (counts < 338) // For 1 second
-00139$:
-	clr	c
-	mov	a,_counts
-	subb	a,#0x52
-	mov	a,(_counts + 1)
-	subb	a,#0x01
-	jnc	00141$
-	C$Lab2.c$515$2$146 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:515: SetBILED('r'); // Turn BILED red
-	mov	dpl,#0x72
-	lcall	_SetBILED
-	C$Lab2.c$516$2$146 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:516: tmpCount = counts; // Save current counts
-	mov	_tmpCount,_counts
-	mov	(_tmpCount + 1),(_counts + 1)
-	C$Lab2.c$517$2$146 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:517: while(counts < (tmpCount + 7)); // wait 20ms
-00133$:
-	mov	a,#0x07
-	add	a,_tmpCount
-	mov	r6,a
-	clr	a
-	addc	a,(_tmpCount + 1)
-	mov	r7,a
-	clr	c
-	mov	a,_counts
-	subb	a,r6
-	mov	a,(_counts + 1)
-	subb	a,r7
-	jc	00133$
-	C$Lab2.c$518$2$146 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:518: SetBILED('g'); // Turn BILED green
-	mov	dpl,#0x67
-	lcall	_SetBILED
-	C$Lab2.c$519$2$146 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:519: tmpCount = counts; // Save current counts
-	mov	_tmpCount,_counts
-	mov	(_tmpCount + 1),(_counts + 1)
-	C$Lab2.c$520$2$146 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:520: while(counts < (tmpCount + 7)); // wait 20ms
-00136$:
-	mov	a,#0x07
-	add	a,_tmpCount
-	mov	r6,a
-	clr	a
-	addc	a,(_tmpCount + 1)
-	mov	r7,a
-	clr	c
-	mov	a,_counts
-	subb	a,r6
-	mov	a,(_counts + 1)
-	subb	a,r7
-	jnc	00139$
-	sjmp	00136$
-00141$:
-	C$Lab2.c$523$1$134 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:523: SetBILED('o'); // Turn off BILED
-	mov	dpl,#0x6f
-	lcall	_SetBILED
-	C$Lab2.c$524$1$134 ==.
+	C$Lab2.c$482$1$117 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:482: Flash_Biled();
+	lcall	_Flash_Biled
+	C$Lab2.c$483$1$117 ==.
 	XG$Mode_Two$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'Mode_Three'
 ;------------------------------------------------------------
 	G$Mode_Three$0$0 ==.
-	C$Lab2.c$528$1$134 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:528: void Mode_Three(void)
+	C$Lab2.c$487$1$117 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:487: void Mode_Three(void)
 ;	-----------------------------------------
 ;	 function Mode_Three
 ;	-----------------------------------------
 _Mode_Three:
-	C$Lab2.c$530$1$148 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:530: printf("\n\rUse the potentiometer to draw a bar graph on the terminal.\n\rIts length should be a percentage of the maximum length as specified by the number of LEDs lit.\n\n\rNo lit LEDs indicate that the bar should be 0% of the maximum length, 1 lit LED indicates a bar 25% of the maximum length,\n\r2 lit LEDs indicate 50%, 3 lit LEDs indicate 75%, and 4 lit LEDs indicate 100%.\n\n\rYou have one second to draw the appropriate graph. If the graph is longer than the desired value, the BILED will turn red.\n\rIf the graph is shorter than the desired value, the BILED will turn green.\n\n\rA maximum of 10 points are awarded for each correct answer.\n\rTwo points are deducted for each character position off. There are 5 rounds.\n\n\n\rPress the pushbutton to start.");
+	C$Lab2.c$489$1$130 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:489: printf("\n\n\rUse the potentiometer to draw a bar graph on the terminal.\n\rIts length should be a percentage of the maximum length as specified by the number of LEDs lit.\n\n\rNo lit LEDs indicate that the bar should be empty, 1 lit LED indicates a bar 1/4 of the maximum length,\n\r2 lit LEDs indicate 1/2, 3 lit LEDs indicate 3/4, and 4 lit LEDs indicate a full bar.\n\n\rYou have one second to draw the appropriate graph. If the graph is longer than the desired value, the BILED will turn red.\n\rIf the graph is shorter than the desired value, the BILED will turn green.\n\n\rA maximum of 10 points are awarded for each correct answer.\n\rTwo points are deducted for each character position off. There are 5 rounds.\n\n\rPress the pushbutton to start.");
 	mov	a,#___str_15
 	push	acc
 	mov	a,#(___str_15 >> 8)
@@ -3173,14 +3057,14 @@ _Mode_Three:
 	dec	sp
 	dec	sp
 	dec	sp
-	C$Lab2.c$532$1$148 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:532: while(DebounceButton()==0);
+	C$Lab2.c$491$1$130 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:491: while(DebounceButton()==0);
 00101$:
 	lcall	_DebounceButton
 	mov	a,dpl
 	jz	00101$
-	C$Lab2.c$534$1$148 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:534: printf("\n\n\n\rSTART");
+	C$Lab2.c$493$1$130 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:493: printf("\n\n\rSTART");
 	mov	a,#___str_16
 	push	acc
 	mov	a,#(___str_16 >> 8)
@@ -3191,214 +3075,200 @@ _Mode_Three:
 	dec	sp
 	dec	sp
 	dec	sp
-	C$Lab2.c$536$1$148 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:536: score = 0;	// sets score to 0
+	C$Lab2.c$495$1$130 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:495: score = 0;	// sets score to 0
 	clr	a
 	mov	_score,a
 	mov	(_score + 1),a
-	C$Lab2.c$537$1$148 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:537: LED0 = 1;	// turns off LED0
-	setb	_LED0
-	C$Lab2.c$538$1$148 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:538: LED1 = 1;	// turns off LED1
-	setb	_LED1
-	C$Lab2.c$539$1$148 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:539: LED2 = 1;	// turns off LED2
-	setb	_LED2
-	C$Lab2.c$540$1$148 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:540: LED3 = 1;	// turns off LED3
-	setb	_LED3
-	C$Lab2.c$541$1$148 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:541: SetBILED('r');	//	turns BILED red
+	C$Lab2.c$496$1$130 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:496: totalPoints = 0; // sets total points to 0
+	mov	_totalPoints,a
+	mov	(_totalPoints + 1),a
+	C$Lab2.c$497$1$130 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:497: SetAllLEDs(1);	// Turns off all LEDs
+	mov	dpl,#0x01
+	lcall	_SetAllLEDs
+	C$Lab2.c$498$1$130 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:498: SetBILED('r');	//	turns BILED red
 	mov	dpl,#0x72
 	lcall	_SetBILED
-	C$Lab2.c$543$1$148 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:543: for (round = 0; round<=5; round++) {
+	C$Lab2.c$500$1$130 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:500: for (round = 0; round<=5; round++) {
 	clr	a
 	mov	_round,a
 	mov	(_round + 1),a
-00127$:
-	C$Lab2.c$544$2$149 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:544: randomNumber = random();
+00114$:
+	C$Lab2.c$502$2$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:502: randomNumber = random();
 	lcall	_random
 	mov	r7,dpl
 	mov	_randomNumber,r7
 	mov	(_randomNumber + 1),#0x00
-	C$Lab2.c$545$2$149 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:545: LightNumLEDs(randomNumber);
+	C$Lab2.c$503$2$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:503: LightNumLEDs(randomNumber);
 	mov	dpl,_randomNumber
 	lcall	_LightNumLEDs
-	C$Lab2.c$547$2$149 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:547: SetBILED('o'); // turns off BILED
+	C$Lab2.c$505$2$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:505: SetBILED('o'); // turns off BILED
 	mov	dpl,#0x6f
 	lcall	_SetBILED
-	C$Lab2.c$549$2$149 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:549: counts = 0; // sets timer to 0
-	clr	a
-	mov	_counts,a
-	mov	(_counts + 1),a
-	C$Lab2.c$550$2$149 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:550: TR0 = 1; // starts timer
+	C$Lab2.c$507$2$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:507: ClearTimer0();
+	lcall	_ClearTimer0
+	C$Lab2.c$508$2$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:508: TR0 = 1; // starts timer
 	setb	_TR0
-	C$Lab2.c$552$2$149 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:552: while (counts<337) {
+	C$Lab2.c$510$2$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:510: while (counts<338) {
 00104$:
 	clr	c
 	mov	a,_counts
-	subb	a,#0x51
+	subb	a,#0x52
 	mov	a,(_counts + 1)
 	subb	a,#0x01
 	jnc	00106$
-	C$Lab2.c$553$3$150 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:553: Draw_Bar(read_AD_input());	// continuously reads pot AD value and passes value to Draw_Bar()
+	C$Lab2.c$511$3$132 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:511: Draw_Bar(read_AD_input());	// continuously reads pot AD value and passes value to Draw_Bar()
 	lcall	_read_AD_input
 	lcall	_Draw_Bar
 	sjmp	00104$
 00106$:
-	C$Lab2.c$556$2$149 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:556: ADC_value = (read_AD_input()/4);	// saves current (ADC value)/4
+	C$Lab2.c$514$2$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:514: ADC_value = read_AD_input();	// saves current ADC value
 	lcall	_read_AD_input
-	mov	a,dpl
-	rr	a
-	rr	a
-	anl	a,#0x3f
-	mov	r7,a
+	mov	r7,dpl
 	mov	_ADC_value,r7
 	mov	(_ADC_value + 1),#0x00
-	C$Lab2.c$558$2$149 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:558: while (counts<437) {	//flashes all LEDS off
-00107$:
-	clr	c
-	mov	a,_counts
-	subb	a,#0xb5
-	mov	a,(_counts + 1)
-	subb	a,#0x01
-	jnc	00110$
-	C$Lab2.c$559$3$151 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:559: LED0 = 1;
-	setb	_LED0
-	C$Lab2.c$560$3$151 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:560: LED1 = 1;
-	setb	_LED1
-	C$Lab2.c$561$3$151 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:561: LED2 = 1;
-	setb	_LED2
-	C$Lab2.c$562$3$151 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:562: LED3 = 1;
-	setb	_LED3
-	C$Lab2.c$564$2$149 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:564: while (counts<537) {	//flashes all LEDS on
-	sjmp	00107$
-00110$:
-	clr	c
-	mov	a,_counts
-	subb	a,#0x19
-	mov	a,(_counts + 1)
-	subb	a,#0x02
-	jnc	00113$
-	C$Lab2.c$565$3$152 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:565: LED0 = 0;
-	clr	_LED0
-	C$Lab2.c$566$3$152 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:566: LED1 = 0;
-	clr	_LED1
-	C$Lab2.c$567$3$152 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:567: LED2 = 0;
-	clr	_LED2
-	C$Lab2.c$568$3$152 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:568: LED3 = 0;
-	clr	_LED3
-	C$Lab2.c$570$2$149 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:570: while (counts<637) {	//flashes all LEDS off
-	sjmp	00110$
-00113$:
-	clr	c
-	mov	a,_counts
-	subb	a,#0x7d
-	mov	a,(_counts + 1)
-	subb	a,#0x02
-	jnc	00115$
-	C$Lab2.c$571$3$153 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:571: LED0 = 1;
-	setb	_LED0
-	C$Lab2.c$572$3$153 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:572: LED1 = 1;
-	setb	_LED1
-	C$Lab2.c$573$3$153 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:573: LED2 = 1;
-	setb	_LED2
-	C$Lab2.c$574$3$153 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:574: LED3 = 1;
-	setb	_LED3
-	C$Lab2.c$576$3$153 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:576: counts = 0;			// resets counts
-	clr	a
-	mov	_counts,a
-	mov	(_counts + 1),a
-	C$Lab2.c$578$3$153 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:578: Compare_Answer((ADC_value/16), randomNumber);
+	C$Lab2.c$516$2$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:516: Flash_LEDs();
+	lcall	_Flash_LEDs
+	C$Lab2.c$518$1$130 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:518: Compare_Answer(MapADC(ADC_value, 0, 63), MapADC((randomNumber*64), 0, 63));
 	mov	dpl,_ADC_value
-	mov	a,(_ADC_value + 1)
-	swap	a
+	mov	dph,(_ADC_value + 1)
+	lcall	___uint2fs
+	mov	r4,dpl
+	mov	r5,dph
+	mov	r6,b
+	mov	r7,a
+	mov	_MapADC_PARM_2,#0x00
+	mov	_MapADC_PARM_3,#0x3f
+	mov	dpl,r4
+	mov	dph,r5
+	mov	b,r6
+	mov	a,r7
+	lcall	_MapADC
+	mov	r7,dpl
+	mov	r6,#0x00
+	mov	dpl,_randomNumber
+	mov	a,(_randomNumber + 1)
+	anl	a,#0x03
+	mov	c,acc.0
 	xch	a,dpl
-	swap	a
-	anl	a,#0x0f
-	xrl	a,dpl
+	rrc	a
 	xch	a,dpl
-	anl	a,#0x0f
+	rrc	a
+	mov	c,acc.0
 	xch	a,dpl
-	xrl	a,dpl
+	rrc	a
+	xch	a,dpl
+	rrc	a
 	xch	a,dpl
 	mov	dph,a
-	mov	_Compare_Answer_PARM_2,_randomNumber
+	push	ar7
+	push	ar6
+	lcall	___sint2fs
+	mov	r2,dpl
+	mov	r3,dph
+	mov	r4,b
+	mov	r5,a
+	mov	_MapADC_PARM_2,#0x00
+	mov	_MapADC_PARM_3,#0x3f
+	mov	dpl,r2
+	mov	dph,r3
+	mov	b,r4
+	mov	a,r5
+	lcall	_MapADC
+	mov	_Compare_Answer_PARM_2,dpl
+	pop	ar6
+	pop	ar7
+	mov	dpl,r7
+	mov	dph,r6
 	lcall	_Compare_Answer
-	C$Lab2.c$580$3$153 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:580: error = (abs((randomNumber*16) - ADC_value)*2);	// calculates error
-	mov	r6,_randomNumber
+	C$Lab2.c$520$2$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:520: error = ((MapADC((randomNumber*64), 0, 63) - MapADC(ADC_value, 0, 63))*2);	// calculates error
+	mov	dpl,_randomNumber
 	mov	a,(_randomNumber + 1)
-	swap	a
-	anl	a,#0xf0
-	xch	a,r6
-	swap	a
-	xch	a,r6
-	xrl	a,r6
-	xch	a,r6
-	anl	a,#0xf0
-	xch	a,r6
-	xrl	a,r6
+	anl	a,#0x03
+	mov	c,acc.0
+	xch	a,dpl
+	rrc	a
+	xch	a,dpl
+	rrc	a
+	mov	c,acc.0
+	xch	a,dpl
+	rrc	a
+	xch	a,dpl
+	rrc	a
+	xch	a,dpl
+	mov	dph,a
+	lcall	___sint2fs
+	mov	r4,dpl
+	mov	r5,dph
+	mov	r6,b
+	mov	r7,a
+	mov	_MapADC_PARM_2,#0x00
+	mov	_MapADC_PARM_3,#0x3f
+	mov	dpl,r4
+	mov	dph,r5
+	mov	b,r6
+	mov	a,r7
+	lcall	_MapADC
+	mov	r7,dpl
+	mov	r6,#0x00
+	mov	dpl,_ADC_value
+	mov	dph,(_ADC_value + 1)
+	push	ar7
+	push	ar6
+	lcall	___uint2fs
+	mov	r2,dpl
+	mov	r3,dph
+	mov	r4,b
+	mov	r5,a
+	mov	_MapADC_PARM_2,#0x00
+	mov	_MapADC_PARM_3,#0x3f
+	mov	dpl,r2
+	mov	dph,r3
+	mov	b,r4
+	mov	a,r5
+	lcall	_MapADC
+	mov	r5,dpl
+	pop	ar6
+	pop	ar7
+	mov	r4,#0x00
+	mov	a,r7
+	clr	c
+	subb	a,r5
 	mov	r7,a
 	mov	a,r6
-	clr	c
-	subb	a,_ADC_value
-	mov	dpl,a
-	mov	a,r7
-	subb	a,(_ADC_value + 1)
-	mov	dph,a
-	lcall	_abs
-	mov	r6,dpl
-	mov	r7,dph
-	mov	_error,r6
-	mov	a,r7
+	subb	a,r4
+	mov	r6,a
+	mov	_error,r7
 	xch	a,_error
 	add	a,acc
 	xch	a,_error
 	rlc	a
 	mov	(_error + 1),a
-	sjmp	00113$
-00115$:
-	C$Lab2.c$583$2$149 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:583: if ((10 - error)>0) {					// calculates score for round
-	mov	a,#0x0a
+	C$Lab2.c$523$2$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:523: if (error>=10) {					// calculates score for round
 	clr	c
-	subb	a,_error
-	mov	r6,a
-	clr	a
-	subb	a,(_error + 1)
-	mov	r7,a
-	orl	a,r6
-	jz	00117$
-	C$Lab2.c$584$3$154 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:584: points = (10 - error);
+	mov	a,_error
+	subb	a,#0x0a
+	mov	a,(_error + 1)
+	subb	a,#0x00
+	jc	00108$
+	C$Lab2.c$524$3$133 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:524: points = (10 - error);
 	mov	a,#0x0a
 	clr	c
 	subb	a,_error
@@ -3406,28 +3276,24 @@ _Mode_Three:
 	clr	a
 	subb	a,(_error + 1)
 	mov	(_points + 1),a
-	sjmp	00118$
-00117$:
-	C$Lab2.c$587$3$155 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:587: points = 0;
+	sjmp	00109$
+00108$:
+	C$Lab2.c$527$3$134 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:527: points = 0;
 	clr	a
 	mov	_points,a
 	mov	(_points + 1),a
-00118$:
-	C$Lab2.c$590$2$149 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:590: totalPoints = totalPoints + points;		// calculates total score
+00109$:
+	C$Lab2.c$530$2$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:530: totalPoints = totalPoints + points;		// calculates total score
 	mov	a,_points
 	add	a,_totalPoints
 	mov	_totalPoints,a
 	mov	a,(_points + 1)
 	addc	a,(_totalPoints + 1)
 	mov	(_totalPoints + 1),a
-	C$Lab2.c$592$2$149 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:592: printf("\n\n\rScore for this round: %d\n\rTotal score: %d", points, totalPoints);	// display score for round and cumulative score
-	push	_totalPoints
-	push	(_totalPoints + 1)
-	push	_points
-	push	(_points + 1)
+	C$Lab2.c$532$2$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:532: printf("\n\n\rScore for this round: %d");
 	mov	a,#___str_17
 	push	acc
 	mov	a,#(___str_17 >> 8)
@@ -3435,61 +3301,15 @@ _Mode_Three:
 	mov	a,#0x80
 	push	acc
 	lcall	_printf
-	mov	a,sp
-	add	a,#0xf9
-	mov	sp,a
-	C$Lab2.c$594$2$149 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:594: counts = 0;		// resets counts
-	clr	a
-	mov	_counts,a
-	mov	(_counts + 1),a
-	C$Lab2.c$596$2$149 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:596: while (counts<169) {		// delay for .5s
-00120$:
-	clr	c
-	mov	a,_counts
-	subb	a,#0xa9
-	mov	a,(_counts + 1)
-	subb	a,#0x00
-	jnc	00128$
-	C$Lab2.c$597$3$156 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:597: for(var=0; var<100; var++);
-	mov	_var,#0x64
-	mov	(_var + 1),#0x00
-00126$:
-	dec	_var
-	mov	a,#0xff
-	cjne	a,_var,00189$
-	dec	(_var + 1)
-00189$:
-	mov	a,_var
-	orl	a,(_var + 1)
-	jnz	00126$
-	mov	_var,#0x64
-	mov	(_var + 1),a
-	sjmp	00120$
-00128$:
-	C$Lab2.c$543$1$148 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:543: for (round = 0; round<=5; round++) {
-	inc	_round
-	clr	a
-	cjne	a,_round,00191$
-	inc	(_round + 1)
-00191$:
-	clr	c
-	mov	a,#0x05
-	subb	a,_round
-	mov	a,#(0x00 ^ 0x80)
-	mov	b,(_round + 1)
-	xrl	b,#0x80
-	subb	a,b
-	jc	00192$
-	ljmp	00127$
-00192$:
-	C$Lab2.c$601$1$148 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:601: printf("\n\n\rFinal score: %d", totalPoints);	// print final score
+	dec	sp
+	dec	sp
+	dec	sp
+	C$Lab2.c$533$2$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:533: printf("\n\rTotal score: %d\n\n\r", points, totalPoints);	// display score for round and cumulative score
 	push	_totalPoints
 	push	(_totalPoints + 1)
+	push	_points
+	push	(_points + 1)
 	mov	a,#___str_18
 	push	acc
 	mov	a,#(___str_18 >> 8)
@@ -3498,12 +3318,60 @@ _Mode_Three:
 	push	acc
 	lcall	_printf
 	mov	a,sp
+	add	a,#0xf9
+	mov	sp,a
+	C$Lab2.c$535$2$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:535: ClearTimer0();
+	lcall	_ClearTimer0
+	C$Lab2.c$536$2$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:536: TR0 = 1;		// starts timer
+	setb	_TR0
+	C$Lab2.c$538$2$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:538: while (counts!=169);		// delay for .5s
+00110$:
+	mov	a,#0xa9
+	cjne	a,_counts,00148$
+	clr	a
+	cjne	a,(_counts + 1),00148$
+	sjmp	00149$
+00148$:
+	sjmp	00110$
+00149$:
+	C$Lab2.c$500$1$130 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:500: for (round = 0; round<=5; round++) {
+	inc	_round
+	clr	a
+	cjne	a,_round,00150$
+	inc	(_round + 1)
+00150$:
+	clr	c
+	mov	a,#0x05
+	subb	a,_round
+	mov	a,#(0x00 ^ 0x80)
+	mov	b,(_round + 1)
+	xrl	b,#0x80
+	subb	a,b
+	jc	00151$
+	ljmp	00114$
+00151$:
+	C$Lab2.c$542$1$130 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:542: printf("\n\n\rFinal score: %d", totalPoints);	// print final score
+	push	_totalPoints
+	push	(_totalPoints + 1)
+	mov	a,#___str_19
+	push	acc
+	mov	a,#(___str_19 >> 8)
+	push	acc
+	mov	a,#0x80
+	push	acc
+	lcall	_printf
+	mov	a,sp
 	add	a,#0xfb
 	mov	sp,a
-	C$Lab2.c$603$1$148 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:603: Flash_Biled();		// flash BILED red and green for 1s
+	C$Lab2.c$544$1$130 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:544: Flash_Biled();		// flash BILED red and green for 1s
 	lcall	_Flash_Biled
-	C$Lab2.c$604$1$148 ==.
+	C$Lab2.c$545$1$130 ==.
 	XG$Mode_Three$0$0 ==.
 	ret
 ;------------------------------------------------------------
@@ -3513,95 +3381,87 @@ _Mode_Three:
 ;i                         Allocated to registers r6 
 ;------------------------------------------------------------
 	G$Draw_Bar$0$0 ==.
-	C$Lab2.c$611$1$148 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:611: void Draw_Bar(unsigned char length)		
+	C$Lab2.c$552$1$130 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:552: void Draw_Bar(unsigned char length)		
 ;	-----------------------------------------
 ;	 function Draw_Bar
 ;	-----------------------------------------
 _Draw_Bar:
-	C$Lab2.c$615$1$158 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:615: length = length/4;
+	C$Lab2.c$556$1$136 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:556: length = length/4;
 	mov	a,dpl
 	rr	a
 	rr	a
 	anl	a,#0x3f
 	mov	r7,a
-	C$Lab2.c$617$1$158 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:617: for (i=0; i<length; i++) {
+	C$Lab2.c$558$1$136 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:558: for (i=0; i<length; i++) putchar('#');				// prints '#'
 	mov	r6,#0x00
 00104$:
 	clr	c
 	mov	a,r6
 	subb	a,r7
 	jnc	00101$
-	C$Lab2.c$618$2$159 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:618: putchar('#');				// prints '#'
 	mov	dpl,#0x23
 	push	ar7
 	push	ar6
 	lcall	_putchar
 	pop	ar6
 	pop	ar7
-	C$Lab2.c$617$1$158 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:617: for (i=0; i<length; i++) {
 	inc	r6
 	sjmp	00104$
 00101$:
-	C$Lab2.c$620$1$158 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:620: length = 63 - length;			// clears the rest of the line
+	C$Lab2.c$559$1$136 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:559: length = 63 - length;			// clears the rest of the line
 	mov	a,#0x3f
 	clr	c
 	subb	a,r7
 	mov	r7,a
-	C$Lab2.c$621$1$158 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:621: for (i=0; i<length; i++) {
+	C$Lab2.c$560$1$136 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:560: for (i=0; i<length; i++) putchar(' ');				// prints (63-length) spaces
 	mov	r6,#0x00
 00107$:
 	clr	c
 	mov	a,r6
 	subb	a,r7
 	jnc	00102$
-	C$Lab2.c$622$2$160 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:622: putchar(' ');				// prints (63-length) spaces
 	mov	dpl,#0x20
 	push	ar7
 	push	ar6
 	lcall	_putchar
 	pop	ar6
 	pop	ar7
-	C$Lab2.c$621$1$158 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:621: for (i=0; i<length; i++) {
 	inc	r6
 	sjmp	00107$
 00102$:
-	C$Lab2.c$624$1$158 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:624: putchar('|');					// prints end of bar '|'
+	C$Lab2.c$561$1$136 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:561: putchar('|');					// prints end of bar '|'
 	mov	dpl,#0x7c
 	lcall	_putchar
-	C$Lab2.c$626$1$158 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:626: putchar('\r');					// return to beginning of line
+	C$Lab2.c$563$1$136 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:563: putchar('\r');					// return to beginning of line
 	mov	dpl,#0x0d
 	lcall	_putchar
-	C$Lab2.c$627$1$158 ==.
+	C$Lab2.c$564$1$136 ==.
 	XG$Draw_Bar$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'Timer0_ISR'
 ;------------------------------------------------------------
 	G$Timer0_ISR$0$0 ==.
-	C$Lab2.c$630$1$158 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:630: void Timer0_ISR(void) __interrupt 1
+	C$Lab2.c$567$1$136 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:567: void Timer0_ISR(void) __interrupt 1
 ;	-----------------------------------------
 ;	 function Timer0_ISR
 ;	-----------------------------------------
 _Timer0_ISR:
 	push	acc
 	push	psw
-	C$Lab2.c$632$1$162 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:632: TF0 = 0;
+	C$Lab2.c$569$1$138 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:569: TF0 = 0;
 	clr	_TF0
-	C$Lab2.c$633$1$162 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:633: counts++;	// increments the global variable 'counts'
+	C$Lab2.c$570$1$138 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:570: counts++;	// increments the global variable 'counts'
 	inc	_counts
 	clr	a
 	cjne	a,_counts,00103$
@@ -3609,7 +3469,7 @@ _Timer0_ISR:
 00103$:
 	pop	psw
 	pop	acc
-	C$Lab2.c$634$1$162 ==.
+	C$Lab2.c$571$1$138 ==.
 	XG$Timer0_ISR$0$0 ==.
 	reti
 ;	eliminated unneeded mov psw,# (no regs used in bank)
@@ -3620,19 +3480,19 @@ _Timer0_ISR:
 ;Allocation info for local variables in function 'random'
 ;------------------------------------------------------------
 	G$random$0$0 ==.
-	C$Lab2.c$638$1$162 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:638: unsigned char random(void)
+	C$Lab2.c$575$1$138 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:575: unsigned char random(void)
 ;	-----------------------------------------
 ;	 function random
 ;	-----------------------------------------
 _random:
-	C$Lab2.c$640$1$164 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:640: return (rand()%5);  // rand returns a random number between 0 and 32767.
+	C$Lab2.c$577$1$140 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:577: return (rand()%5);  // rand returns a random number between 0 and 32767.
 	lcall	_rand
 	mov	__modsint_PARM_2,#0x05
 	mov	(__modsint_PARM_2 + 1),#0x00
 	lcall	__modsint
-	C$Lab2.c$644$1$164 ==.
+	C$Lab2.c$581$1$140 ==.
 	XG$random$0$0 ==.
 	ret
 ;------------------------------------------------------------
@@ -3642,14 +3502,14 @@ _random:
 ;num                       Allocated to registers r7 
 ;------------------------------------------------------------
 	G$SetAllLEDs$0$0 ==.
-	C$Lab2.c$647$1$164 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:647: void SetAllLEDs(char num) // Sets the output of all LEDs
+	C$Lab2.c$584$1$140 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:584: void SetAllLEDs(char num) // Sets the output of all LEDs
 ;	-----------------------------------------
 ;	 function SetAllLEDs
 ;	-----------------------------------------
 _SetAllLEDs:
-	C$Lab2.c$649$1$166 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:649: LED0 = num;
+	C$Lab2.c$586$1$142 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:586: LED0 = num;
 	mov	a,dpl
 	add	a,#0xff
 	clr	a
@@ -3657,22 +3517,22 @@ _SetAllLEDs:
 	mov	_SetAllLEDs_sloc0_1_0,a
 	add	a,#0xff
 	mov	_LED0,c
-	C$Lab2.c$650$1$166 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:650: LED1 = num;
+	C$Lab2.c$587$1$142 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:587: LED1 = num;
 	mov	a,_SetAllLEDs_sloc0_1_0
 	add	a,#0xff
 	mov	_LED1,c
-	C$Lab2.c$651$1$166 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:651: LED2 = num;
+	C$Lab2.c$588$1$142 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:588: LED2 = num;
 	mov	a,_SetAllLEDs_sloc0_1_0
 	add	a,#0xff
 	mov	_LED2,c
-	C$Lab2.c$652$1$166 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:652: LED3 = num;	
+	C$Lab2.c$589$1$142 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:589: LED3 = num;	
 	mov	a,_SetAllLEDs_sloc0_1_0
 	add	a,#0xff
 	mov	_LED3,c
-	C$Lab2.c$653$1$166 ==.
+	C$Lab2.c$590$1$142 ==.
 	XG$SetAllLEDs$0$0 ==.
 	ret
 ;------------------------------------------------------------
@@ -3680,27 +3540,26 @@ _SetAllLEDs:
 ;------------------------------------------------------------
 ;low                       Allocated with name '_MapADC_PARM_2'
 ;high                      Allocated with name '_MapADC_PARM_3'
-;val                       Allocated to registers 
+;val                       Allocated to registers r4 r5 r6 r7 
 ;------------------------------------------------------------
 	G$MapADC$0$0 ==.
-	C$Lab2.c$656$1$166 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:656: unsigned char MapADC(unsigned char val,unsigned char low, unsigned char high)
+	C$Lab2.c$593$1$142 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:593: unsigned char MapADC(float val,unsigned char low, unsigned char high)
 ;	-----------------------------------------
 ;	 function MapADC
 ;	-----------------------------------------
 _MapADC:
-	C$Lab2.c$670$1$168 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:670: return ((high - low)*(((float)val/255.0f)) + low); // return mapped value
+	mov	r4,dpl
+	mov	r5,dph
+	mov	r6,b
+	mov	r7,a
+	C$Lab2.c$607$1$144 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:607: return ((high - low)*(((float)val/255.0f)) + low); // return mapped value
 	mov	a,_MapADC_PARM_3
 	clr	c
 	subb	a,_MapADC_PARM_2
-	mov	r7,a
-	push	ar7
-	lcall	___uchar2fs
-	mov	r3,dpl
-	mov	r4,dph
-	mov	r5,b
-	mov	r6,a
+	mov	r3,a
+	push	ar3
 	clr	a
 	push	acc
 	push	acc
@@ -3708,41 +3567,41 @@ _MapADC:
 	push	acc
 	mov	a,#0x43
 	push	acc
-	mov	dpl,r3
-	mov	dph,r4
-	mov	b,r5
-	mov	a,r6
+	mov	dpl,r4
+	mov	dph,r5
+	mov	b,r6
+	mov	a,r7
 	lcall	___fsdiv
-	mov	r3,dpl
-	mov	r4,dph
-	mov	r5,b
-	mov	r6,a
+	mov	r4,dpl
+	mov	r5,dph
+	mov	r6,b
+	mov	r7,a
 	mov	a,sp
 	add	a,#0xfc
 	mov	sp,a
-	pop	ar7
-	mov	dpl,r7
+	pop	ar3
+	mov	dpl,r3
+	push	ar7
 	push	ar6
 	push	ar5
 	push	ar4
-	push	ar3
 	lcall	___uchar2fs
 	mov	r0,dpl
 	mov	r1,dph
 	mov	r2,b
-	mov	r7,a
-	pop	ar3
+	mov	r3,a
 	pop	ar4
 	pop	ar5
 	pop	ar6
-	push	ar3
+	pop	ar7
 	push	ar4
 	push	ar5
 	push	ar6
+	push	ar7
 	mov	dpl,r0
 	mov	dph,r1
 	mov	b,r2
-	mov	a,r7
+	mov	a,r3
 	lcall	___fsmul
 	mov	r4,dpl
 	mov	r5,dph
@@ -3786,7 +3645,7 @@ _MapADC:
 	mov	b,r6
 	mov	a,r7
 	lcall	___fs2uchar
-	C$Lab2.c$671$1$168 ==.
+	C$Lab2.c$608$1$144 ==.
 	XG$MapADC$0$0 ==.
 	ret
 ;------------------------------------------------------------
@@ -3795,81 +3654,81 @@ _MapADC:
 ;num                       Allocated to registers r7 
 ;------------------------------------------------------------
 	G$LightNumLEDs$0$0 ==.
-	C$Lab2.c$674$1$168 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:674: void LightNumLEDs(unsigned char num) // Lights LEDs in order from 0 to 4
+	C$Lab2.c$611$1$144 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:611: void LightNumLEDs(unsigned char num) // Lights LEDs in order from 0 to 4
 ;	-----------------------------------------
 ;	 function LightNumLEDs
 ;	-----------------------------------------
 _LightNumLEDs:
 	mov	r7,dpl
-	C$Lab2.c$676$1$170 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:676: SetAllLEDs(1); // turn off all LEDs
+	C$Lab2.c$613$1$146 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:613: SetAllLEDs(1); // turn off all LEDs
 	mov	dpl,#0x01
 	push	ar7
 	lcall	_SetAllLEDs
 	pop	ar7
-	C$Lab2.c$678$1$170 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:678: if (num >= 1) // Turn on LED0 if the number is >= 1
+	C$Lab2.c$615$1$146 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:615: if (num >= 1) // Turn on LED0 if the number is >= 1
 	cjne	r7,#0x01,00123$
 00123$:
 	jc	00102$
-	C$Lab2.c$680$2$171 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:680: LED0 = 0;
+	C$Lab2.c$617$2$147 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:617: LED0 = 0;
 	clr	_LED0
 00102$:
-	C$Lab2.c$682$1$170 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:682: if (num >= 2) // Turn on LED1 if the number is >= 2
+	C$Lab2.c$619$1$146 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:619: if (num >= 2) // Turn on LED1 if the number is >= 2
 	cjne	r7,#0x02,00125$
 00125$:
 	jc	00104$
-	C$Lab2.c$684$2$172 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:684: LED1 = 0;
+	C$Lab2.c$621$2$148 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:621: LED1 = 0;
 	clr	_LED1
 00104$:
-	C$Lab2.c$686$1$170 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:686: if (num >= 3) // Turn on LED2 if the number is >= 3
+	C$Lab2.c$623$1$146 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:623: if (num >= 3) // Turn on LED2 if the number is >= 3
 	cjne	r7,#0x03,00127$
 00127$:
 	jc	00106$
-	C$Lab2.c$688$2$173 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:688: LED2 = 0;
+	C$Lab2.c$625$2$149 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:625: LED2 = 0;
 	clr	_LED2
 00106$:
-	C$Lab2.c$690$1$170 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:690: if (num >= 4) // Turn on LED03 if the number is >= 4
+	C$Lab2.c$627$1$146 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:627: if (num >= 4) // Turn on LED03 if the number is >= 4
 	cjne	r7,#0x04,00129$
 00129$:
 	jc	00109$
-	C$Lab2.c$692$2$174 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:692: LED3 = 0;
+	C$Lab2.c$629$2$150 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:629: LED3 = 0;
 	clr	_LED3
 00109$:
-	C$Lab2.c$694$1$170 ==.
+	C$Lab2.c$631$1$146 ==.
 	XG$LightNumLEDs$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'ClearTimer0'
 ;------------------------------------------------------------
 	G$ClearTimer0$0$0 ==.
-	C$Lab2.c$697$1$170 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:697: void ClearTimer0(void) // Pauses and clears Timer0
+	C$Lab2.c$634$1$146 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:634: void ClearTimer0(void) // Pauses and clears Timer0
 ;	-----------------------------------------
 ;	 function ClearTimer0
 ;	-----------------------------------------
 _ClearTimer0:
-	C$Lab2.c$699$1$176 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:699: TR0 = 0; // Stop Timer0
+	C$Lab2.c$636$1$152 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:636: TR0 = 0; // Stop Timer0
 	clr	_TR0
-	C$Lab2.c$700$1$176 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:700: TMR0 = 0; // Clear Timer0
+	C$Lab2.c$637$1$152 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:637: TMR0 = 0; // Clear Timer0
 	clr	a
 	mov	((_TMR0 >> 0) & 0xFF),a
 	mov	((_TMR0 >> 8) & 0xFF),a
-	C$Lab2.c$701$1$176 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:701: counts = 0; // Clear overflows
+	C$Lab2.c$638$1$152 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:638: counts = 0; // Clear overflows
 	mov	_counts,a
 	mov	(_counts + 1),a
-	C$Lab2.c$702$1$176 ==.
+	C$Lab2.c$639$1$152 ==.
 	XG$ClearTimer0$0$0 ==.
 	ret
 ;------------------------------------------------------------
@@ -3878,15 +3737,15 @@ _ClearTimer0:
 ;state                     Allocated to registers r7 
 ;------------------------------------------------------------
 	G$SetBILED$0$0 ==.
-	C$Lab2.c$705$1$176 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:705: void SetBILED(unsigned char state) // Sets the BILED color
+	C$Lab2.c$642$1$152 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:642: void SetBILED(unsigned char state) // Sets the BILED color
 ;	-----------------------------------------
 ;	 function SetBILED
 ;	-----------------------------------------
 _SetBILED:
 	mov	r7,dpl
-	C$Lab2.c$707$1$178 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:707: switch (state)
+	C$Lab2.c$644$1$154 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:644: switch (state)
 	cjne	r7,#0x47,00118$
 	sjmp	00104$
 00118$:
@@ -3897,43 +3756,43 @@ _SetBILED:
 	sjmp	00104$
 00120$:
 	cjne	r7,#0x72,00105$
-	C$Lab2.c$710$2$179 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:710: case 'R':
+	C$Lab2.c$647$2$155 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:647: case 'R':
 00102$:
-	C$Lab2.c$711$2$179 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:711: BILED0 = 0;
+	C$Lab2.c$648$2$155 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:648: BILED0 = 0;
 	clr	_BILED0
-	C$Lab2.c$712$2$179 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:712: BILED1 = 1;
+	C$Lab2.c$649$2$155 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:649: BILED1 = 1;
 	setb	_BILED1
-	C$Lab2.c$713$2$179 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:713: break;
-	C$Lab2.c$715$2$179 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:715: case 'G':
+	C$Lab2.c$650$2$155 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:650: break;
+	C$Lab2.c$652$2$155 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:652: case 'G':
 	sjmp	00107$
 00104$:
-	C$Lab2.c$716$2$179 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:716: BILED0 = 1;
+	C$Lab2.c$653$2$155 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:653: BILED0 = 1;
 	setb	_BILED0
-	C$Lab2.c$717$2$179 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:717: BILED1 = 0;
+	C$Lab2.c$654$2$155 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:654: BILED1 = 0;
 	clr	_BILED1
-	C$Lab2.c$718$2$179 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:718: break;
-	C$Lab2.c$719$2$179 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:719: default:  // Turn BILED OFF
+	C$Lab2.c$655$2$155 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:655: break;
+	C$Lab2.c$656$2$155 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:656: default:  // Turn BILED OFF
 	sjmp	00107$
 00105$:
-	C$Lab2.c$720$2$179 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:720: BILED0 = 0;
+	C$Lab2.c$657$2$155 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:657: BILED0 = 0;
 	clr	_BILED0
-	C$Lab2.c$721$2$179 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:721: BILED1 = 0;
+	C$Lab2.c$658$2$155 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:658: BILED1 = 0;
 	clr	_BILED1
-	C$Lab2.c$723$1$178 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:723: }
+	C$Lab2.c$660$1$154 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:660: }
 00107$:
-	C$Lab2.c$724$1$178 ==.
+	C$Lab2.c$661$1$154 ==.
 	XG$SetBILED$0$0 ==.
 	ret
 ;------------------------------------------------------------
@@ -3942,32 +3801,32 @@ _SetBILED:
 ;pressed                   Allocated to registers r7 
 ;------------------------------------------------------------
 	G$DebounceButton$0$0 ==.
-	C$Lab2.c$727$1$178 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:727: char DebounceButton(void) // Debounces a button by waiting 20ms after a press
+	C$Lab2.c$664$1$154 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:664: char DebounceButton(void) // Debounces a button by waiting 20ms after a press
 ;	-----------------------------------------
 ;	 function DebounceButton
 ;	-----------------------------------------
 _DebounceButton:
-	C$Lab2.c$729$1$178 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:729: char pressed = 0;
+	C$Lab2.c$666$1$154 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:666: char pressed = 0;
 	mov	r7,#0x00
-	C$Lab2.c$731$1$181 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:731: TR0 = 1;
+	C$Lab2.c$668$1$157 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:668: TR0 = 1;
 	setb	_TR0
-	C$Lab2.c$733$1$181 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:733: tmpCount = 0; // Create temp value
+	C$Lab2.c$670$1$157 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:670: tmpCount = 0; // Create temp value
 	clr	a
 	mov	_tmpCount,a
 	mov	(_tmpCount + 1),a
-	C$Lab2.c$734$1$181 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:734: if (!PB0) // If the button was pressed
+	C$Lab2.c$671$1$157 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:671: if (!PB0) // If the button was pressed
 	jb	_PB0,00109$
-	C$Lab2.c$736$2$182 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:736: tmpCount = counts; // record current count
+	C$Lab2.c$673$2$158 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:673: tmpCount = counts; // record current count
 	mov	_tmpCount,_counts
 	mov	(_tmpCount + 1),(_counts + 1)
-	C$Lab2.c$737$2$182 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:737: while (counts < (tmpCount + 7)) // Wait ~20ms
+	C$Lab2.c$674$2$158 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:674: while (counts < (tmpCount + 7)) {
 00102$:
 	mov	a,#0x07
 	add	a,_tmpCount
@@ -3981,8 +3840,8 @@ _DebounceButton:
 	mov	a,(_counts + 1)
 	subb	a,r6
 	jnc	00105$
-	C$Lab2.c$739$3$183 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:739: for (var = 0;var<100;var++); // Do something to wait more accurately
+	C$Lab2.c$675$3$159 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:675: for (var=0;var<100;var++); // Wait ~20ms
 	mov	_var,#0x64
 	mov	(_var + 1),#0x00
 00112$:
@@ -3996,19 +3855,19 @@ _DebounceButton:
 	jnz	00112$
 	mov	_var,#0x64
 	mov	(_var + 1),a
-	C$Lab2.c$741$2$182 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:741: while (!PB0); // wait for button release
+	C$Lab2.c$677$2$158 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:677: while (!PB0); // wait for button release
 	sjmp	00102$
 00105$:
 	jnb	_PB0,00105$
-	C$Lab2.c$742$2$182 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:742: pressed = 1;
+	C$Lab2.c$678$2$158 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:678: pressed = 1;
 	mov	r7,#0x01
 00109$:
-	C$Lab2.c$745$1$181 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:745: return pressed;
+	C$Lab2.c$681$1$157 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:681: return pressed;
 	mov	dpl,r7
-	C$Lab2.c$746$1$181 ==.
+	C$Lab2.c$682$1$157 ==.
 	XG$DebounceButton$0$0 ==.
 	ret
 ;------------------------------------------------------------
@@ -4018,43 +3877,43 @@ _DebounceButton:
 ;input                     Allocated to registers r7 
 ;------------------------------------------------------------
 	G$CompareVals$0$0 ==.
-	C$Lab2.c$749$1$181 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:749: void CompareVals(char input, char expected) // Sets the BILED depending on if the value was lower or higher
+	C$Lab2.c$685$1$157 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:685: void CompareVals(char input, char expected) // Sets the BILED depending on if the value was lower or higher
 ;	-----------------------------------------
 ;	 function CompareVals
 ;	-----------------------------------------
 _CompareVals:
 	mov	r7,dpl
-	C$Lab2.c$751$1$185 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:751: if(input < expected) // If the value was lower
+	C$Lab2.c$687$1$161 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:687: if(input < expected) // If the value was lower
 	clr	c
 	mov	a,r7
 	subb	a,_CompareVals_PARM_2
 	jnc	00105$
-	C$Lab2.c$753$2$186 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:753: SetBILED('r'); // Turn the BILED red
+	C$Lab2.c$689$2$162 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:689: SetBILED('r'); // Turn the BILED red
 	mov	dpl,#0x72
 	lcall	_SetBILED
 	sjmp	00107$
 00105$:
-	C$Lab2.c$755$1$185 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:755: else if(input > expected) // If the value was higher
+	C$Lab2.c$691$1$161 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:691: else if(input > expected) // If the value was higher
 	clr	c
 	mov	a,_CompareVals_PARM_2
 	subb	a,r7
 	jnc	00102$
-	C$Lab2.c$757$2$187 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:757: SetBILED('g'); // Turn the BILED green
+	C$Lab2.c$693$2$163 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:693: SetBILED('g'); // Turn the BILED green
 	mov	dpl,#0x67
 	lcall	_SetBILED
 	sjmp	00107$
 00102$:
-	C$Lab2.c$761$2$188 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:761: SetBILED('o'); // Turn the BILED off
+	C$Lab2.c$697$2$164 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.c:697: SetBILED('o'); // Turn the BILED off
 	mov	dpl,#0x6f
 	lcall	_SetBILED
 00107$:
-	C$Lab2.c$763$1$185 ==.
+	C$Lab2.c$699$1$161 ==.
 	XG$CompareVals$0$0 ==.
 	ret
 	.area CSEG    (CODE)
@@ -4097,51 +3956,67 @@ ___str_4:
 FLab2$__str_5$0$0 == .
 ___str_5:
 	.db 0x0a
+	.db 0x0a
 	.db 0x0d
 	.ascii "The first mode generates a random number from 0 to 4."
 	.db 0x0a
 	.db 0x0d
-	.ascii "The"
-	.ascii " generated number lights up none to all 4 LEDs in a line. Th"
-	.ascii "e LEDs stay on 0.5 s, then turn off"
+	.ascii "Th"
+	.ascii "e generated number lights up none to all 4 LEDs in a line."
 	.db 0x0a
 	.db 0x0d
-	.ascii "and a timer is started."
-	.ascii " The player then turns a potentiometer whose voltage value i"
-	.ascii "s used to turn on the"
+	.ascii "The LEDs stay on 0.5 s, then turn off and a timer is started"
+	.ascii "."
 	.db 0x0a
 	.db 0x0d
-	.ascii "LEDs in sequence until the same patte"
-	.ascii "rn appears. The pushbutton is then pressed to stop the timer"
-	.ascii " and"
+	.ascii "The player then turns a potentiometer whose voltage value"
+	.ascii " is used to turn on the "
 	.db 0x0a
 	.db 0x0d
-	.ascii "record the LED pattern, which is then compared to that"
-	.ascii " generated by the random number. Scoring is"
+	.ascii "LEDs in sequence until the same pa"
+	.ascii "ttern appears."
 	.db 0x0a
 	.db 0x0d
-	.ascii "based on correc"
-	.ascii "tness and speed of entry. The whole process is repeated 5 ti"
-	.ascii "mes and the final score is"
+	.ascii "The pushbutton is then pressed to stop the t"
+	.ascii "imer and record the LED pattern,"
 	.db 0x0a
 	.db 0x0d
-	.ascii "displayed on the terminal. The l"
-	.ascii "ower the score the better you did."
+	.ascii "which is then compared to "
+	.ascii "that generated by the random number."
+	.db 0x0a
+	.db 0x0d
+	.ascii " Scoring is based on c"
+	.ascii "orrectness and speed of entry. The whole process is repeated"
+	.ascii " "
+	.db 0x0a
+	.db 0x0d
+	.ascii "5 times and the final score is displayed on the terminal."
+	.db 0x0a
+	.db 0x0d
+	.ascii " The lower the score the better you did."
 	.db 0x00
 FLab2$__str_6$0$0 == .
 ___str_6:
+	.db 0x0d
+	.db 0x0a
 	.ascii "Start"
 	.db 0x00
 FLab2$__str_7$0$0 == .
 ___str_7:
+	.db 0x0d
+	.db 0x0a
 	.ascii "Round Score: %d"
 	.db 0x00
 FLab2$__str_8$0$0 == .
 ___str_8:
+	.db 0x0d
+	.db 0x0a
 	.ascii "Total Score: %d"
 	.db 0x00
 FLab2$__str_9$0$0 == .
 ___str_9:
+	.db 0x0d
+	.db 0x0a
 	.ascii "Final Score: %d"
 	.db 0x00
 FLab2$__str_10$0$0 == .
@@ -4185,52 +4060,52 @@ ___str_14:
 FLab2$__str_15$0$0 == .
 ___str_15:
 	.db 0x0a
-	.db 0x0d
-	.ascii "Use the potentiometer to draw a bar graph on the terminal."
 	.db 0x0a
 	.db 0x0d
-	.ascii "Its length should be a percentage of the maximum length as"
-	.ascii " specified by the number of LEDs lit."
-	.db 0x0a
-	.db 0x0a
-	.db 0x0d
-	.ascii "No lit LEDs indicate"
-	.ascii " that the bar should be 0% of the maximum length, 1 lit LED "
-	.ascii "indicates a bar 25% of the maximum length,"
+	.ascii "Use the potentiometer to draw a bar graph on the terminal"
+	.ascii "."
 	.db 0x0a
 	.db 0x0d
-	.ascii "2 lit LEDs indic"
-	.ascii "ate 50%, 3 lit LEDs indicate 75%, and 4 lit LEDs indicate 10"
-	.ascii "0%."
+	.ascii "Its length should be a percentage of the maximum length a"
+	.ascii "s specified by the number of LEDs lit."
 	.db 0x0a
 	.db 0x0a
 	.db 0x0d
-	.ascii "You have one second to draw the appropriate graph. If "
-	.ascii "the graph is longer than the desired value, the BILED will t"
-	.ascii "urn red."
+	.ascii "No lit LEDs indicat"
+	.ascii "e that the bar should be empty, 1 lit LED indicates a bar 1/"
+	.ascii "4 of the maximum length,"
 	.db 0x0a
 	.db 0x0d
-	.ascii "If the graph is shorter than the desired value, th"
-	.ascii "e BILED will turn green."
-	.db 0x0a
-	.db 0x0a
-	.db 0x0d
-	.ascii "A maximum of 10 points are awarde"
-	.ascii "d for each correct answer."
-	.db 0x0a
-	.db 0x0d
-	.ascii "Two points are deducted for each"
-	.ascii " character position off. There are 5 rounds."
-	.db 0x0a
+	.ascii "2 lit LEDs indicate 1/2, 3 lit LED"
+	.ascii "s indicate 3/4, and 4 lit LEDs indicate a full bar."
 	.db 0x0a
 	.db 0x0a
 	.db 0x0d
-	.ascii "Press the pu"
-	.ascii "shbutton to start."
+	.ascii "You ha"
+	.ascii "ve one second to draw the appropriate graph. If the graph is"
+	.ascii " longer than the desired value, the BILED will turn red."
+	.db 0x0a
+	.db 0x0d
+	.ascii "If"
+	.ascii " the graph is shorter than the desired value, the BILED will"
+	.ascii " turn green."
+	.db 0x0a
+	.db 0x0a
+	.db 0x0d
+	.ascii "A maximum of 10 points are awarded for each c"
+	.ascii "orrect answer."
+	.db 0x0a
+	.db 0x0d
+	.ascii "Two points are deducted for each character p"
+	.ascii "osition off. There are 5 rounds."
+	.db 0x0a
+	.db 0x0a
+	.db 0x0d
+	.ascii "Press the pushbutton to s"
+	.ascii "tart."
 	.db 0x00
 FLab2$__str_16$0$0 == .
 ___str_16:
-	.db 0x0a
 	.db 0x0a
 	.db 0x0a
 	.db 0x0d
@@ -4242,12 +4117,18 @@ ___str_17:
 	.db 0x0a
 	.db 0x0d
 	.ascii "Score for this round: %d"
-	.db 0x0a
-	.db 0x0d
-	.ascii "Total score: %d"
 	.db 0x00
 FLab2$__str_18$0$0 == .
 ___str_18:
+	.db 0x0a
+	.db 0x0d
+	.ascii "Total score: %d"
+	.db 0x0a
+	.db 0x0a
+	.db 0x0d
+	.db 0x00
+FLab2$__str_19$0$0 == .
+___str_19:
 	.db 0x0a
 	.db 0x0a
 	.db 0x0d
