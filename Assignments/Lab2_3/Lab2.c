@@ -420,7 +420,7 @@ void Mode_Three(void)
 			desiredValue = 16;
 		else if (randomNumber == 2)
 			desiredValue = 32;
-		else if (randomNumber ==l 3)
+		else if (randomNumber == 3)
 			desiredValue = 48;
 		else 
 			desiredValue = 63;

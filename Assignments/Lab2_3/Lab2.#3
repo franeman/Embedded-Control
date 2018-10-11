@@ -479,21 +479,7 @@ void Mode_Two(void)
 
 	printf("\r\nFinal score: %d", score); // Print the final score
 	
-	ClearTimer0(); // Clear Timer0 and overflows
-	TR0 = 1; // Start the timer	
-	tmpCount = 0; // Create temp value
-
-	while (counts < 338) // For 1 second
-	{
-		SetBILED('r'); // Turn BILED red
-		tmpCount = counts; // Save current counts
-		while(counts < (tmpCount + 7)); // wait 20ms
-		SetBILED('g'); // Turn BILED green
-		tmpCount = counts; // Save current counts
-		while(counts < (tmpCount + 7)); // wait 20ms
-	}
-
-	SetBILED('o'); // Turn off BILED
+	Flasb_Biled();
 }
 
 

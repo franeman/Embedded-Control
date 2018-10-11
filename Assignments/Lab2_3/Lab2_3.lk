@@ -1,5 +1,5 @@
 -muwx
--i C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2_3.hex
+-i C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2_3.hex
 -M
 -Y
 -y
@@ -14,6 +14,6 @@
 -l libint
 -l liblong
 -l libfloat
-C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab2_3\Lab2.rel
+C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.rel
 
 -e
