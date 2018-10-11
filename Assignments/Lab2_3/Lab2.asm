@@ -986,13 +986,13 @@ _aligned_alloc_PARM_2:
 LLab2.SetAllLEDs$sloc0$1$0==.
 _SetAllLEDs_sloc0_1_0:
 	.ds 1
-LLab2.MapADC$low$1$121==.
+LLab2.MapADC$low$1$123==.
 _MapADC_PARM_2:
 	.ds 1
-LLab2.MapADC$high$1$121==.
+LLab2.MapADC$high$1$123==.
 _MapADC_PARM_3:
 	.ds 1
-LLab2.CompareVals$expected$1$138==.
+LLab2.CompareVals$expected$1$140==.
 _CompareVals_PARM_2:
 	.ds 1
 ;--------------------------------------------------------
@@ -1071,16 +1071,16 @@ __interrupt_vect:
 	.globl __mcs51_genXINIT
 	.globl __mcs51_genXRAMCLEAR
 	.globl __mcs51_genRAMCLEAR
-	C$Lab2.c$49$1$139 ==.
+	C$Lab2.c$49$1$141 ==.
 ;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:49: unsigned int counts = 0;
 	clr	a
 	mov	_counts,a
 	mov	(_counts + 1),a
-	C$Lab2.c$51$1$139 ==.
+	C$Lab2.c$51$1$141 ==.
 ;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:51: char n = 0;
 ;	1-genFromRTrack replaced	mov	_n,#0x00
 	mov	_n,a
-	C$Lab2.c$60$1$139 ==.
+	C$Lab2.c$60$1$141 ==.
 ;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:60: int overflows[5] = {508,457,413,372,339}; // create an array that hold overflows values for 1.5, 1.35, 1.22, 1.1, and 1 second respectively;
 	mov	(_overflows + 0),#0xfc
 	mov	(_overflows + 1),#0x01
@@ -2285,7 +2285,7 @@ _Mode_Two:
 ;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:294: for (tries = 0; tries < 5; tries++)
 	mov	_tries,a
 	mov	(_tries + 1),a
-00136$:
+00151$:
 	C$Lab2.c$296$2$98 ==.
 ;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:296: buttonPresses = 0; // Clear number of button presses
 	clr	a
@@ -2303,39 +2303,45 @@ _Mode_Two:
 	setb	_TR0
 	C$Lab2.c$301$2$98 ==.
 ;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:301: while ( counts < 338) // Wait 1 second for player 1 to set pot
-00101$:
+00102$:
 	clr	c
 	mov	a,_counts
 	subb	a,#0x52
 	mov	a,(_counts + 1)
 	subb	a,#0x01
-	jnc	00103$
+	jnc	00104$
 	C$Lab2.c$303$3$99 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:303: LightNumLEDs(MapADC(read_AD_input(),0,4)); // Light the corresponding number of LEDs relative to the value of the potentionmeter. (Dosn't need to be here)
-	lcall	_read_AD_input
-	lcall	___uchar2fs
-	mov	r4,dpl
-	mov	r5,dph
-	mov	r6,b
-	mov	r7,a
-	mov	_MapADC_PARM_2,#0x00
-	mov	_MapADC_PARM_3,#0x04
-	mov	dpl,r4
-	mov	dph,r5
-	mov	b,r6
-	mov	a,r7
-	lcall	_MapADC
-	lcall	_LightNumLEDs
-	sjmp	00101$
-00103$:
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:303: for (var = 0;var<100;var++); // Do something in loop to wait more accurately
+	mov	_var,#0x64
+	mov	(_var + 1),#0x00
+00135$:
+	dec	_var
+	mov	a,#0xff
+	cjne	a,_var,00243$
+	dec	(_var + 1)
+00243$:
+	mov	a,_var
+	orl	a,(_var + 1)
+	jnz	00135$
+	mov	_var,#0x64
+	mov	(_var + 1),a
+	sjmp	00102$
+00104$:
 	C$Lab2.c$306$2$98 ==.
 ;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:306: SetBILED('o'); // Turn off BILED
 	mov	dpl,#0x6f
 	lcall	_SetBILED
 	C$Lab2.c$307$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:307: numLEDs = MapADC(read_AD_input(),0,4); // Read the corresponding number of LEDs relative to the value of the potentionmeter
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:307: ADC_value = read_AD_input();
 	lcall	_read_AD_input
-	lcall	___uchar2fs
+	mov	r7,dpl
+	mov	_ADC_value,r7
+	mov	(_ADC_value + 1),#0x00
+	C$Lab2.c$308$1$97 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:308: numLEDs = MapADC(ADC_value,0,4); // Read the corresponding number of LEDs relative to the value of the potentionmeter
+	mov	dpl,_ADC_value
+	mov	dph,(_ADC_value + 1)
+	lcall	___uint2fs
 	mov	r4,dpl
 	mov	r5,dph
 	mov	r6,b
@@ -2350,19 +2356,19 @@ _Mode_Two:
 	mov	r7,dpl
 	mov	_numLEDs,r7
 	mov	(_numLEDs + 1),#0x00
-	C$Lab2.c$308$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:308: LightNumLEDs(numLEDs); // Light the corresponding number of LEDs
+	C$Lab2.c$309$2$98 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:309: LightNumLEDs(numLEDs); // Light the corresponding number of LEDs
 	mov	dpl,_numLEDs
 	lcall	_LightNumLEDs
-	C$Lab2.c$309$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:309: ClearTimer0(); // Clear timer and overflows
-	lcall	_ClearTimer0
 	C$Lab2.c$310$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:310: TR0 = 1; // Start timer0
-	setb	_TR0
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:310: ClearTimer0(); // Clear timer and overflows
+	lcall	_ClearTimer0
 	C$Lab2.c$311$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:311: while (counts < overflows[tries]) // Wait for round timer to end
-00106$:
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:311: TR0 = 1; // Start timer0
+	setb	_TR0
+	C$Lab2.c$312$2$98 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:312: while (counts < overflows[tries]) // Wait for round timer to end
+00108$:
 	mov	a,_tries
 	add	a,_tries
 	mov	r6,a
@@ -2380,90 +2386,141 @@ _Mode_Two:
 	subb	a,r6
 	mov	a,(_counts + 1)
 	subb	a,r7
-	jnc	00108$
-	C$Lab2.c$313$3$100 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:313: if(DebounceButton()==1) // If the button was pressed
+	jnc	00110$
+	C$Lab2.c$314$3$100 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:314: if(DebounceButton()==1) // If the button was pressed
 	lcall	_DebounceButton
 	mov	r7,dpl
 	cjne	r7,#0x01,00106$
-	C$Lab2.c$315$4$101 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:315: buttonPresses++; // Increment number of presses
+	C$Lab2.c$316$4$101 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:316: buttonPresses++; // Increment number of presses
 	inc	_buttonPresses
 	clr	a
-	cjne	a,_buttonPresses,00106$
+	cjne	a,_buttonPresses,00248$
 	inc	(_buttonPresses + 1)
-	sjmp	00106$
-00108$:
-	C$Lab2.c$319$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:319: if (buttonPresses == numLEDs) // If they got the correct number of presses
+00248$:
+00106$:
+	C$Lab2.c$318$3$100 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:318: for (var = 0;var<100;var++);
+	mov	_var,#0x64
+	mov	(_var + 1),#0x00
+00138$:
+	dec	_var
+	mov	a,#0xff
+	cjne	a,_var,00249$
+	dec	(_var + 1)
+00249$:
+	mov	a,_var
+	orl	a,(_var + 1)
+	jnz	00138$
+	mov	_var,#0x64
+	mov	(_var + 1),a
+	sjmp	00108$
+00110$:
+	C$Lab2.c$321$2$98 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:321: if (buttonPresses == numLEDs) // If they got the correct number of presses
 	mov	a,_numLEDs
-	cjne	a,_buttonPresses,00110$
+	cjne	a,_buttonPresses,00112$
 	mov	a,(_numLEDs + 1)
-	cjne	a,(_buttonPresses + 1),00110$
-	C$Lab2.c$321$3$102 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:321: score += 10; // gain 10 points
+	cjne	a,(_buttonPresses + 1),00112$
+	C$Lab2.c$323$3$102 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:323: score += 10; // gain 10 points
 	mov	a,#0x0a
 	add	a,_score
 	mov	_score,a
 	clr	a
 	addc	a,(_score + 1)
 	mov	(_score + 1),a
-00110$:
-	C$Lab2.c$324$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:324: ClearTimer0(); // Clear Timer0 and overflows
+00112$:
+	C$Lab2.c$326$2$98 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:326: ClearTimer0(); // Clear Timer0 and overflows
 	lcall	_ClearTimer0
-	C$Lab2.c$325$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:325: TR0 = 1; // Start the timer
-	setb	_TR0
 	C$Lab2.c$327$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:327: SetAllLEDs(1); // Turn off all LEDs
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:327: TR0 = 1; // Start the timer
+	setb	_TR0
+	C$Lab2.c$329$2$98 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:329: SetAllLEDs(1); // Turn off all LEDs
 	mov	dpl,#0x01
 	lcall	_SetAllLEDs
-	C$Lab2.c$328$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:328: while (counts < 7); // wait 20ms
-00111$:
-	clr	c
-	mov	a,_counts
-	subb	a,#0x07
-	mov	a,(_counts + 1)
-	subb	a,#0x00
-	jc	00111$
-	C$Lab2.c$329$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:329: SetAllLEDs(0); // Turn on all LEDs
-	mov	dpl,#0x00
-	lcall	_SetAllLEDs
 	C$Lab2.c$330$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:330: ClearTimer0(); // Clear Timer0 and overflows
-	lcall	_ClearTimer0
-	C$Lab2.c$331$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:331: TR0 = 1; // Start the timer
-	setb	_TR0
-	C$Lab2.c$332$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:332: while (counts < 7); // wait 20ms
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:330: while (counts < 7) // wait 20ms
 00114$:
 	clr	c
 	mov	a,_counts
 	subb	a,#0x07
 	mov	a,(_counts + 1)
 	subb	a,#0x00
-	jc	00114$
-	C$Lab2.c$333$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:333: SetAllLEDs(1); // Turn off all LEDs
-	mov	dpl,#0x01
+	jnc	00116$
+	C$Lab2.c$332$3$103 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:332: for (var = 0;var<100;var++);
+	mov	_var,#0x64
+	mov	(_var + 1),#0x00
+00141$:
+	dec	_var
+	mov	a,#0xff
+	cjne	a,_var,00254$
+	dec	(_var + 1)
+00254$:
+	mov	a,_var
+	orl	a,(_var + 1)
+	jnz	00141$
+	mov	_var,#0x64
+	mov	(_var + 1),a
+	sjmp	00114$
+00116$:
+	C$Lab2.c$334$2$98 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:334: SetAllLEDs(0); // Turn on all LEDs
+	mov	dpl,#0x00
 	lcall	_SetAllLEDs
 	C$Lab2.c$335$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:335: CompareVals(buttonPresses, numLEDs); // Turn BILED red or green if it was low or high
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:335: ClearTimer0(); // Clear Timer0 and overflows
+	lcall	_ClearTimer0
+	C$Lab2.c$336$2$98 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:336: TR0 = 1; // Start the timer
+	setb	_TR0
+	C$Lab2.c$337$2$98 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:337: while (counts < 7) // wait 20ms
+00118$:
+	clr	c
+	mov	a,_counts
+	subb	a,#0x07
+	mov	a,(_counts + 1)
+	subb	a,#0x00
+	jnc	00120$
+	C$Lab2.c$339$3$104 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:339: for (var = 0;var<100;var++);
+	mov	_var,#0x64
+	mov	(_var + 1),#0x00
+00144$:
+	dec	_var
+	mov	a,#0xff
+	cjne	a,_var,00257$
+	dec	(_var + 1)
+00257$:
+	mov	a,_var
+	orl	a,(_var + 1)
+	jnz	00144$
+	mov	_var,#0x64
+	mov	(_var + 1),a
+	sjmp	00118$
+00120$:
+	C$Lab2.c$341$2$98 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:341: SetAllLEDs(1); // Turn off all LEDs
+	mov	dpl,#0x01
+	lcall	_SetAllLEDs
+	C$Lab2.c$343$2$98 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:343: CompareVals(buttonPresses, numLEDs); // Turn BILED red or green if it was low or high
 	mov	dpl,_buttonPresses
 	mov	_CompareVals_PARM_2,_numLEDs
 	lcall	_CompareVals
-	C$Lab2.c$337$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:337: if (buttonPresses == numLEDs) // If they got it correct
+	C$Lab2.c$345$2$98 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:345: if (buttonPresses == numLEDs) // If they got it correct
 	mov	a,_numLEDs
-	cjne	a,_buttonPresses,00118$
+	cjne	a,_buttonPresses,00122$
 	mov	a,(_numLEDs + 1)
-	cjne	a,(_buttonPresses + 1),00118$
-	C$Lab2.c$339$3$103 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:339: printf("\r\n10 points gained!"); // Show that they gained 10 points
+	cjne	a,(_buttonPresses + 1),00122$
+	C$Lab2.c$347$3$105 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:347: printf("\r\n10 points gained!"); // Show that they gained 10 points
 	mov	a,#___str_11
 	push	acc
 	mov	a,#(___str_11 >> 8)
@@ -2474,10 +2531,10 @@ _Mode_Two:
 	dec	sp
 	dec	sp
 	dec	sp
-	sjmp	00119$
-00118$:
-	C$Lab2.c$343$3$104 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:343: printf("\r\n0 points gained!"); // Show they gained 0 points
+	sjmp	00123$
+00122$:
+	C$Lab2.c$351$3$106 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:351: printf("\r\n0 points gained!"); // Show they gained 0 points
 	mov	a,#___str_12
 	push	acc
 	mov	a,#(___str_12 >> 8)
@@ -2488,9 +2545,9 @@ _Mode_Two:
 	dec	sp
 	dec	sp
 	dec	sp
-00119$:
-	C$Lab2.c$346$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:346: printf("\r\nTotal score: %d",score); // print the total score
+00123$:
+	C$Lab2.c$354$2$98 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:354: printf("\r\nTotal score: %d",score); // print the total score
 	push	_score
 	push	(_score + 1)
 	mov	a,#___str_13
@@ -2503,63 +2560,92 @@ _Mode_Two:
 	mov	a,sp
 	add	a,#0xfb
 	mov	sp,a
-	C$Lab2.c$348$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:348: ClearTimer0(); // Clear Timer0 and overflows
-	lcall	_ClearTimer0
-	C$Lab2.c$349$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:349: TR0 = 1; // Start the timer
-	setb	_TR0
-	C$Lab2.c$351$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:351: while (counts < 338) // Wait 1 second
-00120$:
-	clr	c
-	mov	a,_counts
-	subb	a,#0x52
-	mov	a,(_counts + 1)
-	subb	a,#0x01
-	jnc	00122$
-	C$Lab2.c$353$3$105 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:353: TR0 = 1; // Do something to get more accurate time
-	setb	_TR0
-	sjmp	00120$
-00122$:
-	C$Lab2.c$355$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:355: SetBILED('o'); // Turn off BILED
-	mov	dpl,#0x6f
-	lcall	_SetBILED
 	C$Lab2.c$356$2$98 ==.
 ;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:356: ClearTimer0(); // Clear Timer0 and overflows
 	lcall	_ClearTimer0
 	C$Lab2.c$357$2$98 ==.
 ;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:357: TR0 = 1; // Start the timer
 	setb	_TR0
-	C$Lab2.c$358$2$98 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:358: while (counts < 169); // Wait 0.5s
-00123$:
+	C$Lab2.c$359$2$98 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:359: while (counts < 338) // Wait 1 second
+00125$:
+	clr	c
+	mov	a,_counts
+	subb	a,#0x52
+	mov	a,(_counts + 1)
+	subb	a,#0x01
+	jnc	00127$
+	C$Lab2.c$361$3$107 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:361: for (var = 0;var<100;var++); // Do something to get more accurate time
+	mov	_var,#0x64
+	mov	(_var + 1),#0x00
+00147$:
+	dec	_var
+	mov	a,#0xff
+	cjne	a,_var,00262$
+	dec	(_var + 1)
+00262$:
+	mov	a,_var
+	orl	a,(_var + 1)
+	jnz	00147$
+	mov	_var,#0x64
+	mov	(_var + 1),a
+	sjmp	00125$
+00127$:
+	C$Lab2.c$363$2$98 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:363: SetBILED('o'); // Turn off BILED
+	mov	dpl,#0x6f
+	lcall	_SetBILED
+	C$Lab2.c$364$2$98 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:364: ClearTimer0(); // Clear Timer0 and overflows
+	lcall	_ClearTimer0
+	C$Lab2.c$365$2$98 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:365: TR0 = 1; // Start the timer
+	setb	_TR0
+	C$Lab2.c$366$2$98 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:366: while (counts < 169) // Wait 0.5s
+00129$:
 	clr	c
 	mov	a,_counts
 	subb	a,#0xa9
 	mov	a,(_counts + 1)
 	subb	a,#0x00
-	jc	00123$
+	jnc	00152$
+	C$Lab2.c$368$3$108 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:368: for (var = 0;var<100;var++);
+	mov	_var,#0x64
+	mov	(_var + 1),#0x00
+00150$:
+	dec	_var
+	mov	a,#0xff
+	cjne	a,_var,00265$
+	dec	(_var + 1)
+00265$:
+	mov	a,_var
+	orl	a,(_var + 1)
+	jnz	00150$
+	mov	_var,#0x64
+	mov	(_var + 1),a
+	sjmp	00129$
+00152$:
 	C$Lab2.c$294$1$97 ==.
 ;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:294: for (tries = 0; tries < 5; tries++)
 	inc	_tries
 	clr	a
-	cjne	a,_tries,00222$
+	cjne	a,_tries,00267$
 	inc	(_tries + 1)
-00222$:
+00267$:
 	clr	c
 	mov	a,_tries
 	subb	a,#0x05
 	mov	a,(_tries + 1)
 	xrl	a,#0x80
 	subb	a,#0x80
-	jnc	00223$
-	ljmp	00136$
-00223$:
-	C$Lab2.c$361$1$97 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:361: printf("\r\nFinal score: %d", score); // Print the final score
+	jnc	00268$
+	ljmp	00151$
+00268$:
+	C$Lab2.c$372$1$97 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:372: printf("\r\nFinal score: %d", score); // Print the final score
 	push	_score
 	push	(_score + 1)
 	mov	a,#___str_14
@@ -2572,79 +2658,10 @@ _Mode_Two:
 	mov	a,sp
 	add	a,#0xfb
 	mov	sp,a
-	C$Lab2.c$363$1$97 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:363: ClearTimer0(); // Clear Timer0 and overflows
-	lcall	_ClearTimer0
-	C$Lab2.c$364$1$97 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:364: TR0 = 1; // Start the timer	
-	setb	_TR0
-	C$Lab2.c$365$1$97 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:365: tmpCount = 0; // Create temp value
-	clr	a
-	mov	_tmpCount,a
-	mov	(_tmpCount + 1),a
-	C$Lab2.c$367$1$97 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:367: while (counts < 338) // For 1 second
-00133$:
-	clr	c
-	mov	a,_counts
-	subb	a,#0x52
-	mov	a,(_counts + 1)
-	subb	a,#0x01
-	jnc	00135$
-	C$Lab2.c$369$2$106 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:369: SetBILED('r'); // Turn BILED red
-	mov	dpl,#0x72
-	lcall	_SetBILED
-	C$Lab2.c$370$2$106 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:370: tmpCount = counts; // Save current counts
-	mov	_tmpCount,_counts
-	mov	(_tmpCount + 1),(_counts + 1)
-	C$Lab2.c$371$2$106 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:371: while(counts < (tmpCount + 7)); // wait 20ms
-00127$:
-	mov	a,#0x07
-	add	a,_tmpCount
-	mov	r6,a
-	clr	a
-	addc	a,(_tmpCount + 1)
-	mov	r7,a
-	clr	c
-	mov	a,_counts
-	subb	a,r6
-	mov	a,(_counts + 1)
-	subb	a,r7
-	jc	00127$
-	C$Lab2.c$372$2$106 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:372: SetBILED('g'); // Turn BILED green
-	mov	dpl,#0x67
-	lcall	_SetBILED
-	C$Lab2.c$373$2$106 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:373: tmpCount = counts; // Save current counts
-	mov	_tmpCount,_counts
-	mov	(_tmpCount + 1),(_counts + 1)
-	C$Lab2.c$374$2$106 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:374: while(counts < (tmpCount + 7)); // wait 20ms
-00130$:
-	mov	a,#0x07
-	add	a,_tmpCount
-	mov	r6,a
-	clr	a
-	addc	a,(_tmpCount + 1)
-	mov	r7,a
-	clr	c
-	mov	a,_counts
-	subb	a,r6
-	mov	a,(_counts + 1)
-	subb	a,r7
-	jnc	00133$
-	sjmp	00130$
-00135$:
-	C$Lab2.c$377$1$97 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:377: SetBILED('o'); // Turn off BILED
-	mov	dpl,#0x6f
-	lcall	_SetBILED
-	C$Lab2.c$378$1$97 ==.
+	C$Lab2.c$374$1$97 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:374: Flash_Biled();
+	lcall	_Flash_Biled
+	C$Lab2.c$375$1$97 ==.
 	XG$Mode_Two$0$0 ==.
 	ret
 ;------------------------------------------------------------
@@ -2653,14 +2670,14 @@ _Mode_Two:
 ;round                     Allocated to registers 
 ;------------------------------------------------------------
 	G$Mode_Three$0$0 ==.
-	C$Lab2.c$382$1$97 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:382: void Mode_Three(void)
+	C$Lab2.c$379$1$97 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:379: void Mode_Three(void)
 ;	-----------------------------------------
 ;	 function Mode_Three
 ;	-----------------------------------------
 _Mode_Three:
-	C$Lab2.c$386$1$108 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:386: printf("\n\n\rUse the potentiometer to draw a bar graph on the terminal.\n\rIts length should be a percentage of the maximum length as specified by the number of LEDs lit.\n\n\rNo lit LEDs indicate that the bar should be empty, 1 lit LED indicates a bar 1/4 of the maximum length,\n\r2 lit LEDs indicate 1/2, 3 lit LEDs indicate 3/4, and 4 lit LEDs indicate a full bar.\n\n\rYou have one second to draw the appropriate graph. If the graph is longer than the desired value, the BILED will turn red.\n\rIf the graph is shorter than the desired value, the BILED will turn green.\n\n\rA maximum of 10 points are awarded for each correct answer.\n\rTwo points are deducted for each character position off. There are 5 rounds.\n\n\rPress the pushbutton to start.");
+	C$Lab2.c$383$1$110 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:383: printf("\n\n\rUse the potentiometer to draw a bar graph on the terminal.\n\rIts length should be a percentage of the maximum length as specified by the number of LEDs lit.\n\n\rNo lit LEDs indicate that the bar should be empty, 1 lit LED indicates a bar 1/4 of the maximum length,\n\r2 lit LEDs indicate 1/2, 3 lit LEDs indicate 3/4, and 4 lit LEDs indicate a full bar.\n\n\rYou have one second to draw the appropriate graph. If the graph is longer than the desired value, the BILED will turn red.\n\rIf the graph is shorter than the desired value, the BILED will turn green.\n\n\rA maximum of 10 points are awarded for each correct answer.\n\rTwo points are deducted for each character position off. There are 5 rounds.\n\n\rPress the pushbutton to start.");
 	mov	a,#___str_15
 	push	acc
 	mov	a,#(___str_15 >> 8)
@@ -2671,14 +2688,14 @@ _Mode_Three:
 	dec	sp
 	dec	sp
 	dec	sp
-	C$Lab2.c$388$1$108 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:388: while(DebounceButton()==0);
+	C$Lab2.c$385$1$110 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:385: while(DebounceButton()==0);
 00101$:
 	lcall	_DebounceButton
 	mov	a,dpl
 	jz	00101$
-	C$Lab2.c$390$1$108 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:390: printf("\n\n\rSTART");
+	C$Lab2.c$387$1$110 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:387: printf("\n\n\rSTART");
 	mov	a,#___str_16
 	push	acc
 	mov	a,#(___str_16 >> 8)
@@ -2689,56 +2706,56 @@ _Mode_Three:
 	dec	sp
 	dec	sp
 	dec	sp
-	C$Lab2.c$392$1$108 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:392: score = 0;	// sets score to 0
+	C$Lab2.c$389$1$110 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:389: score = 0;	// sets score to 0
 	clr	a
 	mov	_score,a
 	mov	(_score + 1),a
-	C$Lab2.c$393$1$108 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:393: totalPoints = 0; // sets total points to 0
+	C$Lab2.c$390$1$110 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:390: totalPoints = 0; // sets total points to 0
 	mov	_totalPoints,a
 	mov	(_totalPoints + 1),a
-	C$Lab2.c$394$1$108 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:394: SetAllLEDs(1);	// Turns off all LEDs
+	C$Lab2.c$391$1$110 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:391: SetAllLEDs(1);	// Turns off all LEDs
 	mov	dpl,#0x01
 	lcall	_SetAllLEDs
-	C$Lab2.c$395$1$108 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:395: SetBILED('r');	//	turns BILED red
+	C$Lab2.c$392$1$110 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:392: SetBILED('r');	//	turns BILED red
 	mov	dpl,#0x72
 	lcall	_SetBILED
-	C$Lab2.c$397$1$108 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:397: for (round = 0; round<=5; round++) {
+	C$Lab2.c$394$1$110 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:394: for (round = 0; round<=5; round++) {
 	mov	r7,#0x00
 00126$:
-	C$Lab2.c$399$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:399: score = 0;
+	C$Lab2.c$396$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:396: score = 0;
 	clr	a
 	mov	_score,a
 	mov	(_score + 1),a
-	C$Lab2.c$401$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:401: randomNumber = random();
+	C$Lab2.c$398$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:398: randomNumber = random();
 	push	ar7
 	lcall	_random
 	mov	r6,dpl
 	mov	_randomNumber,r6
 	mov	(_randomNumber + 1),#0x00
-	C$Lab2.c$402$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:402: LightNumLEDs(randomNumber);
+	C$Lab2.c$399$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:399: LightNumLEDs(randomNumber);
 	mov	dpl,_randomNumber
 	lcall	_LightNumLEDs
-	C$Lab2.c$404$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:404: SetBILED('o'); // turns off BILED
+	C$Lab2.c$401$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:401: SetBILED('o'); // turns off BILED
 	mov	dpl,#0x6f
 	lcall	_SetBILED
-	C$Lab2.c$406$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:406: ClearTimer0();
+	C$Lab2.c$403$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:403: ClearTimer0();
 	lcall	_ClearTimer0
 	pop	ar7
-	C$Lab2.c$407$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:407: TR0 = 1; // starts timer
+	C$Lab2.c$404$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:404: TR0 = 1; // starts timer
 	setb	_TR0
-	C$Lab2.c$409$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:409: while (counts<338) {
+	C$Lab2.c$406$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:406: while (counts<338) {
 00104$:
 	clr	c
 	mov	a,_counts
@@ -2746,38 +2763,38 @@ _Mode_Three:
 	mov	a,(_counts + 1)
 	subb	a,#0x01
 	jnc	00106$
-	C$Lab2.c$410$3$110 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:410: Draw_Bar(read_AD_input());	// continuously reads pot AD value and passes value to Draw_Bar()
+	C$Lab2.c$407$3$112 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:407: Draw_Bar(read_AD_input());	// continuously reads pot AD value and passes value to Draw_Bar()
 	push	ar7
 	lcall	_read_AD_input
 	lcall	_Draw_Bar
 	pop	ar7
 	sjmp	00104$
 00106$:
-	C$Lab2.c$413$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:413: ADC_value = read_AD_input();	// saves current ADC value
+	C$Lab2.c$410$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:410: ADC_value = read_AD_input();	// saves current ADC value
 	push	ar7
 	lcall	_read_AD_input
 	mov	r6,dpl
 	mov	_ADC_value,r6
 	mov	(_ADC_value + 1),#0x00
-	C$Lab2.c$415$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:415: Flash_LEDs();
+	C$Lab2.c$412$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:412: Flash_LEDs();
 	lcall	_Flash_LEDs
 	pop	ar7
-	C$Lab2.c$417$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:417: if (randomNumber == 0) 
+	C$Lab2.c$414$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:414: if (randomNumber == 0) 
 	mov	a,_randomNumber
 	orl	a,(_randomNumber + 1)
-	C$Lab2.c$418$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:418: desiredValue = 0;
+	C$Lab2.c$415$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:415: desiredValue = 0;
 	jnz	00117$
 	mov	_desiredValue,a
 	mov	(_desiredValue + 1),a
 	sjmp	00118$
 00117$:
-	C$Lab2.c$419$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:419: else if (randomNumber == 1)
+	C$Lab2.c$416$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:416: else if (randomNumber == 1)
 	mov	a,#0x01
 	cjne	a,_randomNumber,00173$
 	dec	a
@@ -2786,14 +2803,14 @@ _Mode_Three:
 00173$:
 	sjmp	00114$
 00174$:
-	C$Lab2.c$420$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:420: desiredValue = 16;
+	C$Lab2.c$417$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:417: desiredValue = 16;
 	mov	_desiredValue,#0x10
 	mov	(_desiredValue + 1),#0x00
 	sjmp	00118$
 00114$:
-	C$Lab2.c$421$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:421: else if (randomNumber == 2)
+	C$Lab2.c$418$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:418: else if (randomNumber == 2)
 	mov	a,#0x02
 	cjne	a,_randomNumber,00175$
 	clr	a
@@ -2802,14 +2819,14 @@ _Mode_Three:
 00175$:
 	sjmp	00111$
 00176$:
-	C$Lab2.c$422$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:422: desiredValue = 32;
+	C$Lab2.c$419$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:419: desiredValue = 32;
 	mov	_desiredValue,#0x20
 	mov	(_desiredValue + 1),#0x00
 	sjmp	00118$
 00111$:
-	C$Lab2.c$423$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:423: else if (randomNumber == 3)
+	C$Lab2.c$420$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:420: else if (randomNumber == 3)
 	mov	a,#0x03
 	cjne	a,_randomNumber,00177$
 	clr	a
@@ -2818,19 +2835,19 @@ _Mode_Three:
 00177$:
 	sjmp	00108$
 00178$:
-	C$Lab2.c$424$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:424: desiredValue = 48;
+	C$Lab2.c$421$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:421: desiredValue = 48;
 	mov	_desiredValue,#0x30
 	mov	(_desiredValue + 1),#0x00
 	sjmp	00118$
 00108$:
-	C$Lab2.c$426$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:426: desiredValue = 63;
+	C$Lab2.c$423$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:423: desiredValue = 63;
 	mov	_desiredValue,#0x3f
 	mov	(_desiredValue + 1),#0x00
 00118$:
-	C$Lab2.c$428$1$108 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:428: CompareVals(MapADC(ADC_value, 0, 63), desiredValue);
+	C$Lab2.c$425$1$110 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:425: CompareVals(MapADC(ADC_value, 0, 63), desiredValue);
 	mov	dpl,_ADC_value
 	mov	dph,(_ADC_value + 1)
 	push	ar7
@@ -2848,8 +2865,8 @@ _Mode_Three:
 	lcall	_MapADC
 	mov	_CompareVals_PARM_2,_desiredValue
 	lcall	_CompareVals
-	C$Lab2.c$430$1$108 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:430: error = (abs(desiredValue - MapADC(ADC_value, 0, 63))*2);	// calculates error
+	C$Lab2.c$427$1$110 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:427: error = (abs(desiredValue - MapADC(ADC_value, 0, 63))*2);	// calculates error
 	mov	dpl,_ADC_value
 	mov	dph,(_ADC_value + 1)
 	lcall	___uint2fs
@@ -2884,16 +2901,16 @@ _Mode_Three:
 	xch	a,_error
 	rlc	a
 	mov	(_error + 1),a
-	C$Lab2.c$433$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:433: if (error<10) {					// calculates score for round
+	C$Lab2.c$430$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:430: if (error<10) {					// calculates score for round
 	clr	c
 	mov	a,_error
 	subb	a,#0x0a
 	mov	a,(_error + 1)
 	subb	a,#0x00
 	jnc	00120$
-	C$Lab2.c$434$3$111 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:434: score = (10 - error);
+	C$Lab2.c$431$3$113 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:431: score = (10 - error);
 	mov	a,#0x0a
 	clr	c
 	subb	a,_error
@@ -2903,22 +2920,22 @@ _Mode_Three:
 	mov	(_score + 1),a
 	sjmp	00121$
 00120$:
-	C$Lab2.c$437$3$112 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:437: score = 0;
+	C$Lab2.c$434$3$114 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:434: score = 0;
 	clr	a
 	mov	_score,a
 	mov	(_score + 1),a
 00121$:
-	C$Lab2.c$440$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:440: totalPoints = totalPoints + score;		// calculates total score
+	C$Lab2.c$437$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:437: totalPoints = totalPoints + score;		// calculates total score
 	mov	a,_score
 	add	a,_totalPoints
 	mov	_totalPoints,a
 	mov	a,(_score + 1)
 	addc	a,(_totalPoints + 1)
 	mov	(_totalPoints + 1),a
-	C$Lab2.c$442$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:442: printf("\n\n\rScore for this round: %d", score);
+	C$Lab2.c$439$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:439: printf("\n\n\rScore for this round: %d", score);
 	push	ar7
 	push	_score
 	push	(_score + 1)
@@ -2932,8 +2949,8 @@ _Mode_Three:
 	mov	a,sp
 	add	a,#0xfb
 	mov	sp,a
-	C$Lab2.c$443$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:443: printf("\n\rTotal score: %d\n\n\r", totalPoints);	// display score for round and cumulative score
+	C$Lab2.c$440$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:440: printf("\n\rTotal score: %d\n\n\r", totalPoints);	// display score for round and cumulative score
 	push	_totalPoints
 	push	(_totalPoints + 1)
 	mov	a,#___str_18
@@ -2946,15 +2963,15 @@ _Mode_Three:
 	mov	a,sp
 	add	a,#0xfb
 	mov	sp,a
-	C$Lab2.c$445$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:445: ClearTimer0();
+	C$Lab2.c$442$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:442: ClearTimer0();
 	lcall	_ClearTimer0
 	pop	ar7
-	C$Lab2.c$446$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:446: TR0 = 1;		// starts timer
+	C$Lab2.c$443$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:443: TR0 = 1;		// starts timer
 	setb	_TR0
-	C$Lab2.c$448$2$109 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:448: while (counts!=169);		// delay for .5s
+	C$Lab2.c$445$2$111 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:445: while (counts!=169);		// delay for .5s
 00122$:
 	mov	a,#0xa9
 	cjne	a,_counts,00180$
@@ -2964,16 +2981,16 @@ _Mode_Three:
 00180$:
 	sjmp	00122$
 00181$:
-	C$Lab2.c$397$1$108 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:397: for (round = 0; round<=5; round++) {
+	C$Lab2.c$394$1$110 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:394: for (round = 0; round<=5; round++) {
 	inc	r7
 	mov	a,r7
 	add	a,#0xff - 0x05
 	jc	00182$
 	ljmp	00126$
 00182$:
-	C$Lab2.c$452$1$108 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:452: printf("\n\n\rFinal score: %d", totalPoints);	// print final score
+	C$Lab2.c$449$1$110 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:449: printf("\n\n\rFinal score: %d", totalPoints);	// print final score
 	push	_totalPoints
 	push	(_totalPoints + 1)
 	mov	a,#___str_19
@@ -2986,10 +3003,10 @@ _Mode_Three:
 	mov	a,sp
 	add	a,#0xfb
 	mov	sp,a
-	C$Lab2.c$454$1$108 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:454: Flash_Biled();		// flash BILED red and green for 1s
+	C$Lab2.c$451$1$110 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:451: Flash_Biled();		// flash BILED red and green for 1s
 	lcall	_Flash_Biled
-	C$Lab2.c$455$1$108 ==.
+	C$Lab2.c$452$1$110 ==.
 	XG$Mode_Three$0$0 ==.
 	ret
 ;------------------------------------------------------------
@@ -2999,21 +3016,21 @@ _Mode_Three:
 ;i                         Allocated to registers r6 
 ;------------------------------------------------------------
 	G$Draw_Bar$0$0 ==.
-	C$Lab2.c$462$1$108 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:462: void Draw_Bar(unsigned char length)		
+	C$Lab2.c$459$1$110 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:459: void Draw_Bar(unsigned char length)		
 ;	-----------------------------------------
 ;	 function Draw_Bar
 ;	-----------------------------------------
 _Draw_Bar:
-	C$Lab2.c$466$1$114 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:466: length = length/4;
+	C$Lab2.c$463$1$116 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:463: length = length/4;
 	mov	a,dpl
 	rr	a
 	rr	a
 	anl	a,#0x3f
 	mov	r7,a
-	C$Lab2.c$468$1$114 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:468: for (i=0; i<length; i++) putchar('#');				// prints '#'
+	C$Lab2.c$465$1$116 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:465: for (i=0; i<length; i++) putchar('#');				// prints '#'
 	mov	r6,#0x00
 00104$:
 	clr	c
@@ -3029,14 +3046,14 @@ _Draw_Bar:
 	inc	r6
 	sjmp	00104$
 00101$:
-	C$Lab2.c$469$1$114 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:469: length = 63 - length;			// clears the rest of the line
+	C$Lab2.c$466$1$116 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:466: length = 63 - length;			// clears the rest of the line
 	mov	a,#0x3f
 	clr	c
 	subb	a,r7
 	mov	r7,a
-	C$Lab2.c$470$1$114 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:470: for (i=0; i<length; i++) putchar(' ');				// prints (63-length) spaces
+	C$Lab2.c$467$1$116 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:467: for (i=0; i<length; i++) putchar(' ');				// prints (63-length) spaces
 	mov	r6,#0x00
 00107$:
 	clr	c
@@ -3052,34 +3069,34 @@ _Draw_Bar:
 	inc	r6
 	sjmp	00107$
 00102$:
-	C$Lab2.c$471$1$114 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:471: putchar('|');					// prints end of bar '|'
+	C$Lab2.c$468$1$116 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:468: putchar('|');					// prints end of bar '|'
 	mov	dpl,#0x7c
 	lcall	_putchar
-	C$Lab2.c$473$1$114 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:473: putchar('\r');					// return to beginning of line
+	C$Lab2.c$470$1$116 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:470: putchar('\r');					// return to beginning of line
 	mov	dpl,#0x0d
 	lcall	_putchar
-	C$Lab2.c$474$1$114 ==.
+	C$Lab2.c$471$1$116 ==.
 	XG$Draw_Bar$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'Timer0_ISR'
 ;------------------------------------------------------------
 	G$Timer0_ISR$0$0 ==.
-	C$Lab2.c$477$1$114 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:477: void Timer0_ISR(void) __interrupt 1
+	C$Lab2.c$474$1$116 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:474: void Timer0_ISR(void) __interrupt 1
 ;	-----------------------------------------
 ;	 function Timer0_ISR
 ;	-----------------------------------------
 _Timer0_ISR:
 	push	acc
 	push	psw
-	C$Lab2.c$479$1$116 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:479: TF0 = 0;
+	C$Lab2.c$476$1$118 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:476: TF0 = 0;
 	clr	_TF0
-	C$Lab2.c$480$1$116 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:480: counts++;	// increments the global variable 'counts'
+	C$Lab2.c$477$1$118 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:477: counts++;	// increments the global variable 'counts'
 	inc	_counts
 	clr	a
 	cjne	a,_counts,00103$
@@ -3087,7 +3104,7 @@ _Timer0_ISR:
 00103$:
 	pop	psw
 	pop	acc
-	C$Lab2.c$481$1$116 ==.
+	C$Lab2.c$478$1$118 ==.
 	XG$Timer0_ISR$0$0 ==.
 	reti
 ;	eliminated unneeded mov psw,# (no regs used in bank)
@@ -3098,19 +3115,19 @@ _Timer0_ISR:
 ;Allocation info for local variables in function 'random'
 ;------------------------------------------------------------
 	G$random$0$0 ==.
-	C$Lab2.c$485$1$116 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:485: unsigned char random(void)
+	C$Lab2.c$482$1$118 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:482: unsigned char random(void)
 ;	-----------------------------------------
 ;	 function random
 ;	-----------------------------------------
 _random:
-	C$Lab2.c$487$1$118 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:487: return (rand()%5);  // rand returns a random number between 0 and 32767.
+	C$Lab2.c$484$1$120 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:484: return (rand()%5);  // rand returns a random number between 0 and 32767.
 	lcall	_rand
 	mov	__modsint_PARM_2,#0x05
 	mov	(__modsint_PARM_2 + 1),#0x00
 	lcall	__modsint
-	C$Lab2.c$491$1$118 ==.
+	C$Lab2.c$488$1$120 ==.
 	XG$random$0$0 ==.
 	ret
 ;------------------------------------------------------------
@@ -3120,14 +3137,14 @@ _random:
 ;num                       Allocated to registers r7 
 ;------------------------------------------------------------
 	G$SetAllLEDs$0$0 ==.
-	C$Lab2.c$494$1$118 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:494: void SetAllLEDs(char num) // Sets the output of all LEDs
+	C$Lab2.c$491$1$120 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:491: void SetAllLEDs(char num) // Sets the output of all LEDs
 ;	-----------------------------------------
 ;	 function SetAllLEDs
 ;	-----------------------------------------
 _SetAllLEDs:
-	C$Lab2.c$496$1$120 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:496: LED0 = num;
+	C$Lab2.c$493$1$122 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:493: LED0 = num;
 	mov	a,dpl
 	add	a,#0xff
 	clr	a
@@ -3135,22 +3152,22 @@ _SetAllLEDs:
 	mov	_SetAllLEDs_sloc0_1_0,a
 	add	a,#0xff
 	mov	_LED0,c
-	C$Lab2.c$497$1$120 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:497: LED1 = num;
+	C$Lab2.c$494$1$122 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:494: LED1 = num;
 	mov	a,_SetAllLEDs_sloc0_1_0
 	add	a,#0xff
 	mov	_LED1,c
-	C$Lab2.c$498$1$120 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:498: LED2 = num;
+	C$Lab2.c$495$1$122 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:495: LED2 = num;
 	mov	a,_SetAllLEDs_sloc0_1_0
 	add	a,#0xff
 	mov	_LED2,c
-	C$Lab2.c$499$1$120 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:499: LED3 = num;	
+	C$Lab2.c$496$1$122 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:496: LED3 = num;	
 	mov	a,_SetAllLEDs_sloc0_1_0
 	add	a,#0xff
 	mov	_LED3,c
-	C$Lab2.c$500$1$120 ==.
+	C$Lab2.c$497$1$122 ==.
 	XG$SetAllLEDs$0$0 ==.
 	ret
 ;------------------------------------------------------------
@@ -3161,8 +3178,8 @@ _SetAllLEDs:
 ;val                       Allocated to registers r4 r5 r6 r7 
 ;------------------------------------------------------------
 	G$MapADC$0$0 ==.
-	C$Lab2.c$503$1$120 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:503: unsigned char MapADC(float val,unsigned char low, unsigned char high)
+	C$Lab2.c$500$1$122 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:500: unsigned char MapADC(float val,unsigned char low, unsigned char high)
 ;	-----------------------------------------
 ;	 function MapADC
 ;	-----------------------------------------
@@ -3171,8 +3188,8 @@ _MapADC:
 	mov	r5,dph
 	mov	r6,b
 	mov	r7,a
-	C$Lab2.c$517$1$122 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:517: return ((high - low)*((val/255.0)) + low); // return mapped value
+	C$Lab2.c$514$1$124 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:514: return ((high - low)*((val/255.0)) + low); // return mapped value
 	mov	a,_MapADC_PARM_3
 	clr	c
 	subb	a,_MapADC_PARM_2
@@ -3263,7 +3280,7 @@ _MapADC:
 	mov	b,r6
 	mov	a,r7
 	lcall	___fs2uchar
-	C$Lab2.c$518$1$122 ==.
+	C$Lab2.c$515$1$124 ==.
 	XG$MapADC$0$0 ==.
 	ret
 ;------------------------------------------------------------
@@ -3272,81 +3289,81 @@ _MapADC:
 ;num                       Allocated to registers r7 
 ;------------------------------------------------------------
 	G$LightNumLEDs$0$0 ==.
-	C$Lab2.c$521$1$122 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:521: void LightNumLEDs(unsigned char num) // Lights LEDs in order from 0 to 4
+	C$Lab2.c$518$1$124 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:518: void LightNumLEDs(unsigned char num) // Lights LEDs in order from 0 to 4
 ;	-----------------------------------------
 ;	 function LightNumLEDs
 ;	-----------------------------------------
 _LightNumLEDs:
 	mov	r7,dpl
-	C$Lab2.c$523$1$124 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:523: SetAllLEDs(1); // turn off all LEDs
+	C$Lab2.c$520$1$126 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:520: SetAllLEDs(1); // turn off all LEDs
 	mov	dpl,#0x01
 	push	ar7
 	lcall	_SetAllLEDs
 	pop	ar7
-	C$Lab2.c$525$1$124 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:525: if (num >= 1) // Turn on LED0 if the number is >= 1
+	C$Lab2.c$522$1$126 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:522: if (num >= 1) // Turn on LED0 if the number is >= 1
 	cjne	r7,#0x01,00123$
 00123$:
 	jc	00102$
-	C$Lab2.c$527$2$125 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:527: LED0 = 0;
+	C$Lab2.c$524$2$127 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:524: LED0 = 0;
 	clr	_LED0
 00102$:
-	C$Lab2.c$529$1$124 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:529: if (num >= 2) // Turn on LED1 if the number is >= 2
+	C$Lab2.c$526$1$126 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:526: if (num >= 2) // Turn on LED1 if the number is >= 2
 	cjne	r7,#0x02,00125$
 00125$:
 	jc	00104$
-	C$Lab2.c$531$2$126 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:531: LED1 = 0;
+	C$Lab2.c$528$2$128 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:528: LED1 = 0;
 	clr	_LED1
 00104$:
-	C$Lab2.c$533$1$124 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:533: if (num >= 3) // Turn on LED2 if the number is >= 3
+	C$Lab2.c$530$1$126 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:530: if (num >= 3) // Turn on LED2 if the number is >= 3
 	cjne	r7,#0x03,00127$
 00127$:
 	jc	00106$
-	C$Lab2.c$535$2$127 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:535: LED2 = 0;
+	C$Lab2.c$532$2$129 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:532: LED2 = 0;
 	clr	_LED2
 00106$:
-	C$Lab2.c$537$1$124 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:537: if (num >= 4) // Turn on LED03 if the number is >= 4
+	C$Lab2.c$534$1$126 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:534: if (num >= 4) // Turn on LED03 if the number is >= 4
 	cjne	r7,#0x04,00129$
 00129$:
 	jc	00109$
-	C$Lab2.c$539$2$128 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:539: LED3 = 0;
+	C$Lab2.c$536$2$130 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:536: LED3 = 0;
 	clr	_LED3
 00109$:
-	C$Lab2.c$541$1$124 ==.
+	C$Lab2.c$538$1$126 ==.
 	XG$LightNumLEDs$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'ClearTimer0'
 ;------------------------------------------------------------
 	G$ClearTimer0$0$0 ==.
-	C$Lab2.c$544$1$124 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:544: void ClearTimer0(void) // Pauses and clears Timer0
+	C$Lab2.c$541$1$126 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:541: void ClearTimer0(void) // Pauses and clears Timer0
 ;	-----------------------------------------
 ;	 function ClearTimer0
 ;	-----------------------------------------
 _ClearTimer0:
-	C$Lab2.c$546$1$130 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:546: TR0 = 0; // Stop Timer0
+	C$Lab2.c$543$1$132 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:543: TR0 = 0; // Stop Timer0
 	clr	_TR0
-	C$Lab2.c$547$1$130 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:547: TMR0 = 0; // Clear Timer0
+	C$Lab2.c$544$1$132 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:544: TMR0 = 0; // Clear Timer0
 	clr	a
 	mov	((_TMR0 >> 0) & 0xFF),a
 	mov	((_TMR0 >> 8) & 0xFF),a
-	C$Lab2.c$548$1$130 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:548: counts = 0; // Clear overflows
+	C$Lab2.c$545$1$132 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:545: counts = 0; // Clear overflows
 	mov	_counts,a
 	mov	(_counts + 1),a
-	C$Lab2.c$549$1$130 ==.
+	C$Lab2.c$546$1$132 ==.
 	XG$ClearTimer0$0$0 ==.
 	ret
 ;------------------------------------------------------------
@@ -3355,15 +3372,15 @@ _ClearTimer0:
 ;state                     Allocated to registers r7 
 ;------------------------------------------------------------
 	G$SetBILED$0$0 ==.
-	C$Lab2.c$552$1$130 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:552: void SetBILED(unsigned char state) // Sets the BILED color
+	C$Lab2.c$549$1$132 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:549: void SetBILED(unsigned char state) // Sets the BILED color
 ;	-----------------------------------------
 ;	 function SetBILED
 ;	-----------------------------------------
 _SetBILED:
 	mov	r7,dpl
-	C$Lab2.c$554$1$132 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:554: switch (state)
+	C$Lab2.c$551$1$134 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:551: switch (state)
 	cjne	r7,#0x47,00118$
 	sjmp	00104$
 00118$:
@@ -3374,43 +3391,43 @@ _SetBILED:
 	sjmp	00104$
 00120$:
 	cjne	r7,#0x72,00105$
-	C$Lab2.c$557$2$133 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:557: case 'R':
+	C$Lab2.c$554$2$135 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:554: case 'R':
 00102$:
-	C$Lab2.c$558$2$133 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:558: BILED0 = 0;
+	C$Lab2.c$555$2$135 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:555: BILED0 = 0;
 	clr	_BILED0
-	C$Lab2.c$559$2$133 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:559: BILED1 = 1;
+	C$Lab2.c$556$2$135 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:556: BILED1 = 1;
 	setb	_BILED1
-	C$Lab2.c$560$2$133 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:560: break;
-	C$Lab2.c$562$2$133 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:562: case 'G':
+	C$Lab2.c$557$2$135 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:557: break;
+	C$Lab2.c$559$2$135 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:559: case 'G':
 	sjmp	00107$
 00104$:
-	C$Lab2.c$563$2$133 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:563: BILED0 = 1;
+	C$Lab2.c$560$2$135 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:560: BILED0 = 1;
 	setb	_BILED0
-	C$Lab2.c$564$2$133 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:564: BILED1 = 0;
+	C$Lab2.c$561$2$135 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:561: BILED1 = 0;
 	clr	_BILED1
-	C$Lab2.c$565$2$133 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:565: break;
-	C$Lab2.c$566$2$133 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:566: default:  // Turn BILED OFF
+	C$Lab2.c$562$2$135 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:562: break;
+	C$Lab2.c$563$2$135 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:563: default:  // Turn BILED OFF
 	sjmp	00107$
 00105$:
-	C$Lab2.c$567$2$133 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:567: BILED0 = 0;
+	C$Lab2.c$564$2$135 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:564: BILED0 = 0;
 	clr	_BILED0
-	C$Lab2.c$568$2$133 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:568: BILED1 = 0;
+	C$Lab2.c$565$2$135 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:565: BILED1 = 0;
 	clr	_BILED1
-	C$Lab2.c$570$1$132 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:570: }
+	C$Lab2.c$567$1$134 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:567: }
 00107$:
-	C$Lab2.c$571$1$132 ==.
+	C$Lab2.c$568$1$134 ==.
 	XG$SetBILED$0$0 ==.
 	ret
 ;------------------------------------------------------------
@@ -3419,32 +3436,32 @@ _SetBILED:
 ;pressed                   Allocated to registers r7 
 ;------------------------------------------------------------
 	G$DebounceButton$0$0 ==.
-	C$Lab2.c$574$1$132 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:574: char DebounceButton(void) // Debounces a button by waiting 20ms after a press
+	C$Lab2.c$571$1$134 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:571: char DebounceButton(void) // Debounces a button by waiting 20ms after a press
 ;	-----------------------------------------
 ;	 function DebounceButton
 ;	-----------------------------------------
 _DebounceButton:
-	C$Lab2.c$576$1$132 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:576: char pressed = 0;
+	C$Lab2.c$573$1$134 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:573: char pressed = 0;
 	mov	r7,#0x00
-	C$Lab2.c$578$1$135 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:578: TR0 = 1;
+	C$Lab2.c$575$1$137 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:575: TR0 = 1;
 	setb	_TR0
-	C$Lab2.c$580$1$135 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:580: tmpCount = 0; // Create temp value
+	C$Lab2.c$577$1$137 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:577: tmpCount = 0; // Create temp value
 	clr	a
 	mov	_tmpCount,a
 	mov	(_tmpCount + 1),a
-	C$Lab2.c$581$1$135 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:581: if (!PB0) // If the button was pressed
+	C$Lab2.c$578$1$137 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:578: if (!PB0) // If the button was pressed
 	jb	_PB0,00109$
-	C$Lab2.c$583$2$136 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:583: tmpCount = counts; // record current count
+	C$Lab2.c$580$2$138 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:580: tmpCount = counts; // record current count
 	mov	_tmpCount,_counts
 	mov	(_tmpCount + 1),(_counts + 1)
-	C$Lab2.c$584$2$136 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:584: while (counts < (tmpCount + 7)) {
+	C$Lab2.c$581$2$138 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:581: while (counts < (tmpCount + 7)) {
 00102$:
 	mov	a,#0x07
 	add	a,_tmpCount
@@ -3458,8 +3475,8 @@ _DebounceButton:
 	mov	a,(_counts + 1)
 	subb	a,r6
 	jnc	00105$
-	C$Lab2.c$585$3$137 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:585: for (var=0;var<100;var++); // Wait ~20ms
+	C$Lab2.c$582$3$139 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:582: for (var=0;var<100;var++); // Wait ~20ms
 	mov	_var,#0x64
 	mov	(_var + 1),#0x00
 00112$:
@@ -3473,19 +3490,19 @@ _DebounceButton:
 	jnz	00112$
 	mov	_var,#0x64
 	mov	(_var + 1),a
-	C$Lab2.c$587$2$136 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:587: while (!PB0); // wait for button release
+	C$Lab2.c$584$2$138 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:584: while (!PB0); // wait for button release
 	sjmp	00102$
 00105$:
 	jnb	_PB0,00105$
-	C$Lab2.c$588$2$136 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:588: pressed = 1;
+	C$Lab2.c$585$2$138 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:585: pressed = 1;
 	mov	r7,#0x01
 00109$:
-	C$Lab2.c$591$1$135 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:591: return pressed;
+	C$Lab2.c$588$1$137 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:588: return pressed;
 	mov	dpl,r7
-	C$Lab2.c$592$1$135 ==.
+	C$Lab2.c$589$1$137 ==.
 	XG$DebounceButton$0$0 ==.
 	ret
 ;------------------------------------------------------------
@@ -3495,43 +3512,43 @@ _DebounceButton:
 ;input                     Allocated to registers r7 
 ;------------------------------------------------------------
 	G$CompareVals$0$0 ==.
-	C$Lab2.c$595$1$135 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:595: void CompareVals(char input, char expected) // Sets the BILED depending on if the value was lower or higher
+	C$Lab2.c$592$1$137 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:592: void CompareVals(char input, char expected) // Sets the BILED depending on if the value was lower or higher
 ;	-----------------------------------------
 ;	 function CompareVals
 ;	-----------------------------------------
 _CompareVals:
 	mov	r7,dpl
-	C$Lab2.c$597$1$139 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:597: if(input < expected) // If the value was lower
+	C$Lab2.c$594$1$141 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:594: if(input < expected) // If the value was lower
 	clr	c
 	mov	a,r7
 	subb	a,_CompareVals_PARM_2
 	jnc	00105$
-	C$Lab2.c$599$2$140 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:599: SetBILED('r'); // Turn the BILED red
+	C$Lab2.c$596$2$142 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:596: SetBILED('r'); // Turn the BILED red
 	mov	dpl,#0x72
 	lcall	_SetBILED
 	sjmp	00107$
 00105$:
-	C$Lab2.c$601$1$139 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:601: else if(input > expected) // If the value was higher
+	C$Lab2.c$598$1$141 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:598: else if(input > expected) // If the value was higher
 	clr	c
 	mov	a,_CompareVals_PARM_2
 	subb	a,r7
 	jnc	00102$
-	C$Lab2.c$603$2$141 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:603: SetBILED('g'); // Turn the BILED green
+	C$Lab2.c$600$2$143 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:600: SetBILED('g'); // Turn the BILED green
 	mov	dpl,#0x67
 	lcall	_SetBILED
 	sjmp	00107$
 00102$:
-	C$Lab2.c$607$2$142 ==.
-;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:607: SetBILED('o'); // Turn the BILED off
+	C$Lab2.c$604$2$144 ==.
+;	C:\Users\conroj2\Documents\RPI\Embedded Control\Git\Assignments\Lab2_3\Lab2.c:604: SetBILED('o'); // Turn the BILED off
 	mov	dpl,#0x6f
 	lcall	_SetBILED
 00107$:
-	C$Lab2.c$609$1$139 ==.
+	C$Lab2.c$606$1$141 ==.
 	XG$CompareVals$0$0 ==.
 	ret
 	.area CSEG    (CODE)
