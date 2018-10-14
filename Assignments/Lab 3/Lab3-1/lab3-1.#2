@@ -1,11 +1,3 @@
-/*  Names: Ethan Grey, Eric Segerstrom, Justin Conroy
-    Section: 2
-    Date: 10.11.2108
-    File name: Lab3-1.c
-    Description: Lab 3-1
-*/
-
-
 /* Sample code for Lab 3.1. This code provides a basic start. */
 #include <c8051_SDCC.h>
 #include <stdio.h>
@@ -120,24 +112,4 @@ void Set_Pulsewidth()
     printf("PW: %u\n", PW);
     PCA0CP1 = 0xFFFF - PW;
 
-}
-
-void Steering_Servo()
-{
-	char input;
-	//wait for a key to be pressed
-	input = getchar();
-	if(input == 'r') //if 'r' is pressed by the user
-	{
-		if(SERVO_PW < PW_RIGHT)
-		SERVO_PW = SERVO_PW + 10; //increase the steering pulsewidth by 10
-	}
-	else if(input == 'l') //if 'l' is pressed by the user
-	{
-		if(SERVO_PW > PW_LEFT)
-		SERVO_PW = SERVO_PW - 10; //decrease the steering pulsewidth by 10
-	}
-	printf("SERVO_PW: %u\n", SERVO_PW);
-	PCA0CPL0 = 0xFFFF - SERVO_PW;
-	PCA0CPH0 = (0xFFFF - SERVO_PW) >> 8;
 }
