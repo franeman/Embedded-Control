@@ -121,10 +121,12 @@ void Set_Pulsewidth()
         //if(PW > PW_MAX)  // check if greater than pulsewidth maximum
         //    PW = PW_MAX;    // set PW to the maximum value
 
+		PCA0CP1 = 65536 - PW; // Change pulse width
     }
     else if(input == '-')  // single character input to decrease the pulsewidth
     {
-        PW -= 10; // Decrease pulse width 
+        // ___________________________
+        // ___________________________
         //if(PW < PW_MIN)  // check if less than pulsewidth minimum
         //    PW = PW_MIN;     // set PW to the minimum value
     }
@@ -162,5 +164,5 @@ SYSCLK/12 = 22.1184MHz /12 = 1.8432 MHz
 -------------- * 20 ms = 36864 cycles for a 20ms period
    1 second
 
-PCA_START = (2^16) - 36864 = 28672
+PCA_Start = (2^16) - 36864 = 28672
 */
