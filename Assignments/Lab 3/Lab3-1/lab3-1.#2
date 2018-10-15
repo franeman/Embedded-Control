@@ -121,12 +121,10 @@ void Set_Pulsewidth()
         //if(PW > PW_MAX)  // check if greater than pulsewidth maximum
         //    PW = PW_MAX;    // set PW to the maximum value
 
-		PCA0CP1 = 65536 - PW; // Change pulse width
     }
     else if(input == '-')  // single character input to decrease the pulsewidth
     {
-        // ___________________________
-        // ___________________________
+        PW -= 10; // Decrease pulse width 
         //if(PW < PW_MIN)  // check if less than pulsewidth minimum
         //    PW = PW_MIN;     // set PW to the minimum value
     }
