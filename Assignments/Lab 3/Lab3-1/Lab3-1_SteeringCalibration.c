@@ -9,10 +9,12 @@ void Port_Init(void);
 void PCA_Init (void);
 void XBR0_Init();
 void Steering_Servo(void);
+void Turn(void);
 void PCA_ISR ( void ) interrupt 9;
-unsigned int PW_CENTER = _____;
-unsigned int PW_RIGHT = _____;
-unsigned int PW_LEFT = _____;
+void CalibrateSteering(void);
+unsigned int PW_CENTER;
+unsigned int PW_RIGHT;
+unsigned int PW_LEFT;
 unsigned int SERVO_PW = 0;
 
 //-----------------------------------------------------------------------------
@@ -37,6 +39,7 @@ printf("Embedded Control Steering Calibration\n");
 //set initial value for steering (set to center)
 SERVO_PW = PW_CENTER;
 while(1)
+	CalibrateSteering();
 	Steering_Servo();
 }
 //-----------------------------------------------------------------------------
@@ -108,6 +111,50 @@ void Steering_Servo()
 	}
 	printf("SERVO_PW: %u\n", SERVO_PW);
 	PCA0CP0 = 0xFFFF - SERVO_PW; // Set CEX0 compare value (May need to break up into high and low to work)
+}
+
+void Turn(void) // Turns the car left and right, Press k to escape.
+{
+	char input = 0;
+	while (input != 'k')
+	{
+		input = getchar();
+		if(input == 'r') //if 'r' is pressed by the user
+		{
+			if(SERVO_PW < PW_RIGHT)
+			SERVO_PW = SERVO_PW + 10; //increase the steering pulsewidth by 10
+		}
+		else if(input == 'l') //if 'l' is pressed by the user
+		{
+			if(SERVO_PW > PW_LEFT)
+			SERVO_PW = SERVO_PW - 10; //decrease the steering pulsewidth by 10
+		}
+		PCA0CP0 = 0xFFFF - SERVO_PW; // Set CEX0 compare value (May need to break up into high and low to work)
+	}
+}
+
+void CalibrateSteering(void)
+{
+	SERVO_PW = 2765; // Set initial pulse width to 1.5ms (approx center)
+	PCA0CP0 = 0xFFFF - SERVO_PW; // Set pulse width (May need to break up into high and low to work)
+
+	////////////////////////////////////////////////
+	// Set Center
+	////////////////////////////////////////////////
+	printf("\r\n Please center the car. \r\nUse l and r to turn left and right. Press k when done.");
+	Turn();
+
+	PW_CENTER = SERVO_PW; // Save center PW
+
+	printf("\r\n Please turn the car all the way to the right without straining it. \r\nUse l and r to turn left and right. Press k when done.");
+	Turn();
+
+	PW_RIGHT = SERVO_PW; // Save right PW
+
+	printf("\r\n Please turn the car all the way to the left without straining it. \r\nUse l and r to turn left and right. Press k when done.");
+	Turn();
+
+	PW_LEFT = SERVO_PW; // Save left PW
 }
 
 /*

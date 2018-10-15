@@ -18,7 +18,7 @@ unsigned int SERVO_PW = 0;
 //-----------------------------------------------------------------------------
 // Global Constants
 //-----------------------------------------------------------------------------
-#define PCA_START 28672 // Sets start of PCA for 20ms period
+#define PCA_START 28671 // Sets start of PCA for 20ms period
 
 //-----------------------------------------------------------------------------
 // Main Function
@@ -68,6 +68,8 @@ void XBR0_Init()
 //
 void PCA_Init(void)
 {
+	EA = 1; // Enable all interrupts
+	EIE1 |= 0x08 // Enable PCA0 interrupts
 	PCA0MD = 0x81;   // SYSCLK/12, enable CF interrupts, suspend when idle
     PCA0CPM1 = 0xC2; // 16 bit, enable compare, enable PWM
     PCA0CN |= 0x40;  // enable PCA
@@ -105,7 +107,7 @@ void Steering_Servo()
 		SERVO_PW = SERVO_PW - 10; //decrease the steering pulsewidth by 10
 	}
 	printf("SERVO_PW: %u\n", SERVO_PW);
-	PCA0CP0 = 0xFFFF - SERVO_PW;
+	PCA0CP0 = 0xFFFF - SERVO_PW; // Set CEX0 compare value (May need to break up into high and low to work)
 }
 
 /*
@@ -117,11 +119,12 @@ SYSCLK/12 = 22.1184MHz /12 = 1.8432 MHz
 -------------- * 20 ms = 36864 cycles for a 20ms Period
    1 second
 
-PCA_START = (2^16) - 36864 = 28672
+PCA_START = 65535 - 36864 = 28671
 
 1.5 ms Pulse Width:
 
 1.8432 Mcycles   
--------------- * 1.5 ms =  cycles for a 1.5ms Pulse Width
+-------------- * 1.5 ms = 2764.8 ~ 2765 cycles for a 1.5ms Pulse Width
    1 second
+
 */
