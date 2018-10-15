@@ -30,7 +30,7 @@ unsigned int PW = 0;
 //-----------------------------------------------------------------------------
 // Global Constants
 //-----------------------------------------------------------------------------
-#define PCA_START 28672 // Sets start of PCA for 20ms period
+#define PCA_START 28671 // Sets start of PCA for 20ms period
 
 //-----------------------------------------------------------------------------
 // Main Function
@@ -163,6 +163,6 @@ SYSCLK/12 = 22.1184MHz /12 = 1.8432 MHz
 -------------- * 20 ms = 36864 cycles for a 20ms Period
    1 second
 
-PCA_START = (2^16) - 36864 = 28672
+PCA_START = 65535 - 36864 = 28671
 
 */

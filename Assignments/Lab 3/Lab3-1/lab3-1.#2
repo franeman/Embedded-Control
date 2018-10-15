@@ -90,7 +90,6 @@ void PCA_Init(void)
 	PCA0MD = 0x81;   // SYSCLK/12, enable CF interrupts, suspend when idle
     PCA0CPM1 = 0xC2; // 16 bit, enable compare, enable PWM
     PCA0CN |= 0x40;  // enable PCA
-
 }
 
 //-----------------------------------------------------------------------------
@@ -159,8 +158,9 @@ void Steering_Servo()
 SYSCLK/12 = 22.1184MHz /12 = 1.8432 MHz
 
 1.8432 Mcycles   
--------------- * 20 ms = 36864 cycles for a 20ms period
+-------------- * 20 ms = 36864 cycles for a 20ms Period
    1 second
 
 PCA_START = (2^16) - 36864 = 28672
+
 */
