@@ -10,7 +10,7 @@ void PCA_Init (void);
 void XBR0_Init();
 void Steering_Servo(void);
 void Turn(void);
-void PCA_ISR ( void ) interrupt 9;
+void PCA_ISR ( void ) __interrupt 9;
 void CalibrateSteering(void);
 unsigned int PW_CENTER;
 unsigned int PW_RIGHT;
@@ -30,7 +30,7 @@ void main(void)
 char input;
 // initialize board
 Sys_Init();
-putchar(‘ ‘); //the quotes in this line may not format correctly
+putchar(' '); //the quotes in this line may not format correctly
 Port_Init();
 XBR0_Init();
 PCA_Init();
@@ -38,6 +38,7 @@ PCA_Init();
 printf("Embedded Control Steering Calibration\n");
 //set initial value for steering (set to center)
 SERVO_PW = PW_CENTER;
+CalibrateSteering(); // Calibrate boundries once
 while(1)
 	Steering_Servo();
 }

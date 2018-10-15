@@ -10,7 +10,7 @@ void PCA_Init (void);
 void XBR0_Init();
 void Steering_Servo(void);
 void Turn(void);
-void PCA_ISR ( void ) interrupt 9;
+void PCA_ISR ( void ) __interrupt 9;
 void CalibrateSteering(void);
 unsigned int PW_CENTER;
 unsigned int PW_RIGHT;
@@ -27,10 +27,9 @@ unsigned int SERVO_PW = 0;
 //-----------------------------------------------------------------------------
 void main(void)
 {
-char input;
 // initialize board
 Sys_Init();
-putchar(‘ ‘); //the quotes in this line may not format correctly
+putchar(' '); //the quotes in this line may not format correctly
 Port_Init();
 XBR0_Init();
 PCA_Init();
@@ -38,8 +37,8 @@ PCA_Init();
 printf("Embedded Control Steering Calibration\n");
 //set initial value for steering (set to center)
 SERVO_PW = PW_CENTER;
+CalibrateSteering(); // Calibrate boundries once
 while(1)
-	CalibrateSteering();
 	Steering_Servo();
 }
 //-----------------------------------------------------------------------------
@@ -72,7 +71,7 @@ void XBR0_Init()
 void PCA_Init(void)
 {
 	EA = 1; // Enable all interrupts
-	EIE1 |= 0x08 // Enable PCA0 interrupts
+	EIE1 |= 0x08; // Enable PCA0 interrupts
 	PCA0MD = 0x81;   // SYSCLK/12, enable CF interrupts, suspend when idle
     PCA0CPM1 = 0xC2; // 16 bit, enable compare, enable PWM
     PCA0CN |= 0x40;  // enable PCA

@@ -1848,7 +1848,7 @@ LargeButtons=False
 ptn_Child1=MainFrame
 ptn_Child2=ChildFrames
 [WorkState_v1_1.Frames.MainFrame]
-WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPANNPPPPPIKAAAAAAAFCAAAAAJPCAAAAA
+WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAAADIPPPPAADIPPPPPPPPPPPPPPPPPPPPANNPPPPPIKAAAAAAAFCAAAAAJPCAAAAA
 Title=Silicon Laboratories IDE - [lab3-1.c]
 [WorkState_v1_1.Frames.ChildFrames]
 ptn_Child1=Document-0
@@ -1947,6 +1947,9 @@ USB Adapter Power=0
 ptn_Child1=FileName
 [WorkState_v1_1.PFiles.FileName]
 FileName=lab3-1.c
+ptn_Child1=FileName
+[WorkState_v1_1.PFiles.FileName.FileName]
+FileName=Lab3-1_SteeringCalibration.c
 [WorkState_v1_1.AFiles]
 [WorkState_v1_1.CFiles]
 ptn_Child1=FileName
