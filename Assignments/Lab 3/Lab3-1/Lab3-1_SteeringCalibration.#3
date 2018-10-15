@@ -51,8 +51,10 @@ void Port_Init()
 //
 void XBR0_Init()
 {
-    XBR0 = 0x27;     // set up URART0, SPI, SMB, and CEX 0-3
-
+	XBR0 = __________ ; //configure crossbar with UART, SPI, SMBus, and CEX channels as
+// in worksheet
+// Embedded Control Lab Manual Lab 3 (part 1): Pulse Width Modulation
+// 11
 }
 //-----------------------------------------------------------------------------
 // PCA_Init
@@ -62,9 +64,8 @@ void XBR0_Init()
 //
 void PCA_Init(void)
 {
-	PCA0MD = 0x81;   // SYSCLK/12, enable CF interrupts, suspend when idle
-    PCA0CPM1 = 0xC2; // 16 bit, enable compare, enable PWM
-    PCA0CN |= 0x40;  // enable PCA
+// reference to the sample code in Example 4.5 -Pulse Width Modulation implemented using
+// the PCA (Programmable Counter Array), p. 50 in Lab Manual.
 }
 //-----------------------------------------------------------------------------
 // PCA_ISR
@@ -72,17 +73,11 @@ void PCA_Init(void)
 //
 // Interrupt Service Routine for Programmable Counter Array Overflow Interrupt
 //
-void PCA_ISR ( void ) __interrupt 9
+void PCA_ISR ( void ) interrupt 9
 {
-	if (CF)
-	{
-		CF = 0; // Clear overflow flag
-		PCA0 = PCA_START; // Set period for 20ms
-	}
-
-	PCA0CN &= 0x40; // Clear other PCI interrupt sources
+// reference to the sample code in Example 4.5 -Pulse Width Modulation implemented using
+// the PCA (Programmable Counter Array), p. 50 in Lab Manual.
 }
-
 void Steering_Servo()
 {
 	char input;

@@ -14,6 +14,12 @@ unsigned int PW_CENTER = _____;
 unsigned int PW_RIGHT = _____;
 unsigned int PW_LEFT = _____;
 unsigned int SERVO_PW = 0;
+
+//-----------------------------------------------------------------------------
+// Global Constants
+//-----------------------------------------------------------------------------
+#define PCA_START 28672 // Sets start of PCA for 20ms period
+
 //-----------------------------------------------------------------------------
 // Main Function
 //-----------------------------------------------------------------------------
@@ -51,10 +57,8 @@ void Port_Init()
 //
 void XBR0_Init()
 {
-	XBR0 = __________ ; //configure crossbar with UART, SPI, SMBus, and CEX channels as
-// in worksheet
-// Embedded Control Lab Manual Lab 3 (part 1): Pulse Width Modulation
-// 11
+    XBR0 = 0x27;     // set up URART0, SPI, SMB, and CEX 0-3
+
 }
 //-----------------------------------------------------------------------------
 // PCA_Init
@@ -64,8 +68,9 @@ void XBR0_Init()
 //
 void PCA_Init(void)
 {
-// reference to the sample code in Example 4.5 -Pulse Width Modulation implemented using
-// the PCA (Programmable Counter Array), p. 50 in Lab Manual.
+	PCA0MD = 0x81;   // SYSCLK/12, enable CF interrupts, suspend when idle
+    PCA0CPM1 = 0xC2; // 16 bit, enable compare, enable PWM
+    PCA0CN |= 0x40;  // enable PCA
 }
 //-----------------------------------------------------------------------------
 // PCA_ISR
@@ -73,11 +78,17 @@ void PCA_Init(void)
 //
 // Interrupt Service Routine for Programmable Counter Array Overflow Interrupt
 //
-void PCA_ISR ( void ) interrupt 9
+void PCA_ISR ( void ) __interrupt 9
 {
-// reference to the sample code in Example 4.5 -Pulse Width Modulation implemented using
-// the PCA (Programmable Counter Array), p. 50 in Lab Manual.
+	if (CF)
+	{
+		CF = 0; // Clear overflow flag
+		PCA0 = PCA_START; // Set period for 20ms
+	}
+
+	PCA0CN &= 0x40; // Clear other PCI interrupt sources
 }
+
 void Steering_Servo()
 {
 	char input;
@@ -97,3 +108,16 @@ void Steering_Servo()
 	PCA0CPL0 = 0xFFFF - SERVO_PW;
 	PCA0CPH0 = (0xFFFF - SERVO_PW) >> 8;
 }
+
+/*
+
+20 ms Period:
+SYSCLK/12 = 22.1184MHz /12 = 1.8432 MHz
+
+1.8432 Mcycles   
+-------------- * 20 ms = 36864 cycles for a 20ms period
+   1 second
+
+PCA_START = (2^16) - 36864 = 28672
+
+*/
