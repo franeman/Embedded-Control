@@ -100,16 +100,16 @@ void Steering_Servo()
 	input = getchar();
 	if(input == 'r') //if 'r' is pressed by the user
 	{
-		if(SERVO_PW < PW_RIGHT)
+		if(SERVO_PW+10 < PW_RIGHT)
 		SERVO_PW = SERVO_PW + 10; //increase the steering pulsewidth by 10
 	}
 	else if(input == 'l') //if 'l' is pressed by the user
 	{
-		if(SERVO_PW > PW_LEFT)
+		if(SERVO_PW-10 > PW_LEFT)
 		SERVO_PW = SERVO_PW - 10; //decrease the steering pulsewidth by 10
 	}
 	PCA0CP0 = 0xFFFF - SERVO_PW; // Set CEX0 compare value (May need to break up into high and low to work)
-	printf("SERVO_PW: %u\n", SERVO_PW);
+	printf("\r\nSERVO_PW: %u\n", SERVO_PW);
 	
 }
 
@@ -121,12 +121,10 @@ void Turn(void) // Turns the car left and right, Press k to escape.
 		input = getchar();
 		if(input == 'r') //if 'r' is pressed by the user
 		{
-			if(SERVO_PW < PW_RIGHT)
 			SERVO_PW = SERVO_PW + 10; //increase the steering pulsewidth by 10
 		}
 		else if(input == 'l') //if 'l' is pressed by the user
 		{
-			if(SERVO_PW > PW_LEFT)
 			SERVO_PW = SERVO_PW - 10; //decrease the steering pulsewidth by 10
 		}
 		PCA0CP0 = 0xFFFF - SERVO_PW; // Set CEX0 compare value (May need to break up into high and low to work)
@@ -164,7 +162,7 @@ void CalibrateSteering(void)
 
 	PW_LEFT = SERVO_PW; // Save left PW
 	
-	printf("\nPW_CENTER = %u \r\nPW_RIGHT = %u \r\nPW_LEFT = %u \r\n",PW_CENTER,PW_RIGHT,PW_LEFT); // Print all values
+	printf("\r\nPW_CENTER = %u \r\nPW_RIGHT = %u \r\nPW_LEFT = %u \r\n",PW_CENTER,PW_RIGHT,PW_LEFT); // Print all values
 }
 
 /*
