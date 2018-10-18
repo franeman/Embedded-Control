@@ -31,13 +31,13 @@ void CompareVals(unsigned char input, unsigned char expected); // Sets the BILED
 //-----------------------------------------------------------------------------
 __sbit __at 0x90 POT; // Analogue input on Port 1 pin 0 for potentiometer
 __sbit __at 0xA0 SS0; // Input on Port 2 pin 0 for slide switch 0
-__sbit __at 0xA1 SS1; // Input on Port 2 pin 0 for slide switch 1
+__sbit __at 0xA1 SS1; // Input on Port 2 pin 1 for slide switch 1
 __sbit __at 0xB6 LED0; // Output on Port 3 pin 6 for LED0
 __sbit __at 0xB5 LED1; // Output on Port 3 pin 5 for LED1
 __sbit __at 0xB7 LED2; // Output on Port 3 pin 7 for LED2
 __sbit __at 0xB2 LED3; // Output on Port 3 pin 2 for LED3
 __sbit __at 0xB3 BILED0; // Output on Port 3 pin 3 for BILED0
-__sbit __at 0xB4 BILED0; // Output on Port 3 pin 4 for BILED1
+__sbit __at 0xB4 BILED1; // Output on Port 3 pin 4 for BILED1
 __sbit __at 0xB0 PB0; //Output on Port 3 pin 0 for PB0
 
 int counts = 0; // Holds the number of overflows for timer0

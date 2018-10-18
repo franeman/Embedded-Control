@@ -306,7 +306,7 @@ Docking=True
 MRUDockID=0
 MRUDockLeftPos=1
 MRUDockTopPos=5
-MRUDockRightPos=1536
+MRUDockRightPos=766
 MRUDockBottomPos=135
 MRUFloatStyle=4
 MRUFloatXPos=-2147483648
@@ -318,7 +318,7 @@ MDIChild=False
 PctWidth=1000000
 MRUFloatCX=300
 MRUFloatCY=180
-MRUHorzDockCX=1535
+MRUHorzDockCX=765
 MRUHorzDockCY=130
 MRUVertDockCX=300
 MRUVertDockCY=180
@@ -1112,7 +1112,7 @@ MRUDockID=0
 MRUDockLeftPos=0
 MRUDockTopPos=-2
 MRUDockRightPos=180
-MRUDockBottomPos=586
+MRUDockBottomPos=577
 MRUFloatStyle=4
 MRUFloatXPos=-2147483648
 MRUFloatYPos=0
@@ -1126,7 +1126,7 @@ MRUFloatCY=180
 MRUHorzDockCX=300
 MRUHorzDockCY=180
 MRUVertDockCX=180
-MRUVertDockCY=588
+MRUVertDockCY=579
 MRUDockingState=0
 DockingStyle=61440
 TypeID=0
@@ -1574,7 +1574,7 @@ Docking=True
 MRUDockID=59419
 MRUDockLeftPos=-1
 MRUDockTopPos=-1
-MRUDockRightPos=1535
+MRUDockRightPos=765
 MRUDockBottomPos=28
 MRUFloatStyle=8196
 MRUFloatXPos=-2147483648
@@ -1586,7 +1586,7 @@ MDIChild=False
 PctWidth=1000000
 MRUFloatCX=503
 MRUFloatCY=29
-MRUHorzDockCX=1536
+MRUHorzDockCX=766
 MRUHorzDockCY=29
 MRUVertDockCX=80
 MRUVertDockCY=577
@@ -1848,17 +1848,26 @@ LargeButtons=False
 ptn_Child1=MainFrame
 ptn_Child2=ChildFrames
 [WorkState_v1_1.Frames.MainFrame]
-WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAAADIPPPPAADIPPPPPPPPPPPPPPPPPPPPANNPPPPPIKAAAAAAAFCAAAAAJPCAAAAA
-Title=Silicon Laboratories IDE - [lab3-1.c]
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAAADIPPPPAADIPPPPPPPPPPPPPPPPPPPPANNPPPPPIKAAAAAAAFCAAAAAJPCAAAAA
+Title=Silicon Laboratories IDE - [Lab3-1_SteeringCalibration.c]
 [WorkState_v1_1.Frames.ChildFrames]
 ptn_Child1=Document-0
+ptn_Child2=Document-1
 [WorkState_v1_1.Frames.ChildFrames.Document-0]
 ptn_Child1=ViewFrame-0
 [WorkState_v1_1.Frames.ChildFrames.Document-0.ViewFrame-0]
 DocPathName=lab3-1.c
 DocumentString=Source File
 DocTemplateIndex=0
-WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPEDAAAAAAEDAAAAAAAMEAAAAAALBAAAAA
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPEDAAAAAAEDAAAAAAAMEAAAAAALBAAAAA
+IsActiveChildFrame=False
+[WorkState_v1_1.Frames.ChildFrames.Document-1]
+ptn_Child1=ViewFrame-0
+[WorkState_v1_1.Frames.ChildFrames.Document-1.ViewFrame-0]
+DocPathName=Lab3-1_SteeringCalibration.c
+DocumentString=Source File
+DocTemplateIndex=0
+WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPKBAAAAAAKBAAAAAAKKEAAAAAKJBAAAAA
 IsActiveChildFrame=True
 [WorkState_v1_1.SerialPort]
 SerialPort=1
@@ -1879,13 +1888,13 @@ Assembler=C:\Program Files\SDCC\bin\sdas8051.exe
 [WorkState_v1_1.AssFlag]
 AssFlag=-plosgff
 [WorkState_v1_1.AssFormat]
-AssFormat=<Executable Name> <Flags> <Input File(s)> 
+AssFormat=<Executable Name> <Flags> <Input File(s)>  
 [WorkState_v1_1.Compiler]
 Compiler=C:\Program Files\SDCC\bin\sdcc.exe
 [WorkState_v1_1.CompFlag]
 CompFlag=-c --debug --use-stdout -V --nogcse
 [WorkState_v1_1.CompFormat]
-CompFormat=<Executable Name> <Flags> <Input File(s)> 
+CompFormat=<Executable Name> <Flags> <Input File(s)>  
 [WorkState_v1_1.RunOptimizer]
 RunOptimizer=0
 [WorkState_v1_1.Linker]
@@ -1893,11 +1902,11 @@ Linker=C:\Program Files\SDCC\bin\sdcc.exe
 [WorkState_v1_1.LinkFlag]
 LinkFlag=--debug --use-stdout -V
 [WorkState_v1_1.LinkFormat]
-LinkFormat=<Executable Name> <Flags> -o<Output File> <Input File(s)> 
+LinkFormat=<Executable Name> <Flags> -o<Output File> <Input File(s)>  
 [WorkState_v1_1.PreprocFlag]
 PreprocFlag=
 [WorkState_v1_1.PreprocFormat]
-PreprocFormat= 
+PreprocFormat=  
 [WorkState_v1_1.DisList]
 DisList=1
 [WorkState_v1_1.DisOP]
@@ -1954,10 +1963,10 @@ FileName=Lab3-1_SteeringCalibration.c
 [WorkState_v1_1.CFiles]
 ptn_Child1=FileName
 [WorkState_v1_1.CFiles.FileName]
-FileName=lab3-1.c
+FileName=Lab3-1_SteeringCalibration.c
 [WorkState_v1_1.LFiles]
 ptn_Child1=FileName
 [WorkState_v1_1.LFiles.FileName]
-FileName=lab3-1.rel
+FileName=Lab3-1_SteeringCalibration.rel
 [WorkState_v1_1.BankMap]
 [WorkState_v1_1.Folders]
