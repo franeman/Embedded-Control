@@ -73,7 +73,7 @@ void PCA_Init(void)
 	EA = 1; // Enable all interrupts
 	EIE1 |= 0x08; // Enable PCA0 interrupts
 	PCA0MD = 0x81;   // SYSCLK/12, enable CF interrupts, suspend when idle
-    PCA0CPM1 = 0xC2; // 16 bit, enable compare, enable PWM
+    PCA0CPM0 = 0xC2; // 16 bit, enable compare, enable PWM
     PCA0CN |= 0x40;  // enable PCA
 }
 //-----------------------------------------------------------------------------

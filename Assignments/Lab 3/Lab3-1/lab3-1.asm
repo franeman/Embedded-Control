@@ -8,6 +8,7 @@
 ;--------------------------------------------------------
 ; Public variables in this module
 ;--------------------------------------------------------
+	.globl _Steering_Servo
 	.globl _main
 	.globl _putchar
 	.globl _getchar
@@ -293,10 +294,10 @@
 	.globl _SP
 	.globl _P0
 	.globl _aligned_alloc_PARM_2
-	.globl _PW
-	.globl _PW_MAX
-	.globl _PW_MIN
-	.globl _PW_CENTER
+	.globl _SERVO_PW
+	.globl _SERVO_PW_LEFT
+	.globl _SERVO_PW_RIGHT
+	.globl _SERVO_PW_CENTER
 	.globl _Port_Init
 	.globl _XBR0_Init
 	.globl _PCA_Init
@@ -873,17 +874,17 @@ _SPIF	=	0x00ff
 ; internal ram data
 ;--------------------------------------------------------
 	.area DSEG    (DATA)
-G$PW_CENTER$0$0==.
-_PW_CENTER::
+G$SERVO_PW_CENTER$0$0==.
+_SERVO_PW_CENTER::
 	.ds 2
-G$PW_MIN$0$0==.
-_PW_MIN::
+G$SERVO_PW_RIGHT$0$0==.
+_SERVO_PW_RIGHT::
 	.ds 2
-G$PW_MAX$0$0==.
-_PW_MAX::
+G$SERVO_PW_LEFT$0$0==.
+_SERVO_PW_LEFT::
 	.ds 2
-G$PW$0$0==.
-_PW::
+G$SERVO_PW$0$0==.
+_SERVO_PW::
 	.ds 2
 Llab3_1.aligned_alloc$size$1$39==.
 _aligned_alloc_PARM_2:
@@ -977,11 +978,11 @@ __interrupt_vect:
 	.globl __mcs51_genXINIT
 	.globl __mcs51_genXRAMCLEAR
 	.globl __mcs51_genRAMCLEAR
-	C$lab3_1.c$28$1$59 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:28: unsigned int PW = 0;
+	C$lab3_1.c$28$1$63 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:28: unsigned int SERVO_PW = 0;
 	clr	a
-	mov	_PW,a
-	mov	(_PW + 1),a
+	mov	_SERVO_PW,a
+	mov	(_SERVO_PW + 1),a
 	.area GSFINAL (CODE)
 	ljmp	__sdcc_program_startup
 ;--------------------------------------------------------
@@ -1214,30 +1215,30 @@ _getchar_nw:
 ;Allocation info for local variables in function 'main'
 ;------------------------------------------------------------
 	G$main$0$0 ==.
-	C$lab3_1.c$33$1$12 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:33: void main(void)
+	C$lab3_1.c$38$1$12 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:38: void main(void)
 ;	-----------------------------------------
 ;	 function main
 ;	-----------------------------------------
 _main:
-	C$lab3_1.c$36$1$52 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:36: Sys_Init();
+	C$lab3_1.c$41$1$52 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:41: Sys_Init();
 	lcall	_Sys_Init
-	C$lab3_1.c$37$1$52 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:37: putchar(' '); //the quotes in this line may not format correctly
+	C$lab3_1.c$42$1$52 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:42: putchar(' '); //the quotes in this line may not format correctly
 	mov	dpl,#0x20
 	lcall	_putchar
-	C$lab3_1.c$38$1$52 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:38: Port_Init();
-	lcall	_Port_Init
-	C$lab3_1.c$39$1$52 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:39: XBR0_Init();
-	lcall	_XBR0_Init
-	C$lab3_1.c$40$1$52 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:40: PCA_Init();
-	lcall	_PCA_Init
 	C$lab3_1.c$43$1$52 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:43: printf("Embedded Control Pulsewidth Calibration\n");
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:43: Port_Init();
+	lcall	_Port_Init
+	C$lab3_1.c$44$1$52 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:44: XBR0_Init();
+	lcall	_XBR0_Init
+	C$lab3_1.c$45$1$52 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:45: PCA_Init();
+	lcall	_PCA_Init
+	C$lab3_1.c$48$1$52 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:48: printf("Embedded Control Pulsewidth Calibration\n");
 	mov	a,#___str_0
 	push	acc
 	mov	a,#(___str_0 >> 8)
@@ -1248,78 +1249,105 @@ _main:
 	dec	sp
 	dec	sp
 	dec	sp
-	C$lab3_1.c$47$1$52 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:47: PW = PW_CENTER;
-	mov	_PW,_PW_CENTER
-	mov	(_PW + 1),(_PW_CENTER + 1)
-	C$lab3_1.c$50$1$52 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:50: while(1)
+	C$lab3_1.c$52$1$52 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:52: SERVO_PW = SERVO_PW_CENTER;
+	mov	_SERVO_PW,_SERVO_PW_CENTER
+	mov	(_SERVO_PW + 1),(_SERVO_PW_CENTER + 1)
+	C$lab3_1.c$55$1$52 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:55: while(1)
 00102$:
-	C$lab3_1.c$51$1$52 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:51: Set_Pulsewidth();
+	C$lab3_1.c$56$1$52 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:56: Set_Pulsewidth();
 	lcall	_Set_Pulsewidth
 	sjmp	00102$
-	C$lab3_1.c$52$1$52 ==.
+	C$lab3_1.c$57$1$52 ==.
 	XG$main$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'Port_Init'
 ;------------------------------------------------------------
 	G$Port_Init$0$0 ==.
-	C$lab3_1.c$60$1$52 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:60: void Port_Init()
+	C$lab3_1.c$65$1$52 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:65: void Port_Init()
 ;	-----------------------------------------
 ;	 function Port_Init
 ;	-----------------------------------------
 _Port_Init:
-	C$lab3_1.c$63$1$52 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:63: }
-	C$lab3_1.c$63$1$52 ==.
+	C$lab3_1.c$68$1$52 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:68: }
+	C$lab3_1.c$68$1$52 ==.
 	XG$Port_Init$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'XBR0_Init'
 ;------------------------------------------------------------
 	G$XBR0_Init$0$0 ==.
-	C$lab3_1.c$71$1$52 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:71: void XBR0_Init()
+	C$lab3_1.c$76$1$52 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:76: void XBR0_Init()
 ;	-----------------------------------------
 ;	 function XBR0_Init
 ;	-----------------------------------------
 _XBR0_Init:
-	C$lab3_1.c$75$1$52 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:75: }
-	C$lab3_1.c$75$1$52 ==.
+	C$lab3_1.c$78$1$54 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:78: XBR0 = 0x27;     // set up URART0, SPI, SMB, and CEX 0-3
+	mov	_XBR0,#0x27
+	C$lab3_1.c$80$1$54 ==.
 	XG$XBR0_Init$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'PCA_Init'
 ;------------------------------------------------------------
 	G$PCA_Init$0$0 ==.
-	C$lab3_1.c$83$1$52 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:83: void PCA_Init(void)
+	C$lab3_1.c$88$1$54 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:88: void PCA_Init(void)
 ;	-----------------------------------------
 ;	 function PCA_Init
 ;	-----------------------------------------
 _PCA_Init:
-	C$lab3_1.c$87$1$52 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:87: }
-	C$lab3_1.c$87$1$52 ==.
+	C$lab3_1.c$90$1$56 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:90: EA = 1; // Enable all interrupts
+	setb	_EA
+	C$lab3_1.c$91$1$56 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:91: EIE1 |= 0x08; // Enable PCA0 interrupts
+	orl	_EIE1,#0x08
+	C$lab3_1.c$92$1$56 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:92: PCA0MD = 0x81;   // SYSCLK/12, enable CF interrupts, suspend when idle
+	mov	_PCA0MD,#0x81
+	C$lab3_1.c$93$1$56 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:93: PCA0CPM1 = 0xC2; // 16 bit, enable compare, enable PWM
+	mov	_PCA0CPM1,#0xc2
+	C$lab3_1.c$94$1$56 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:94: PCA0CN |= 0x40;  // enable PCA
+	orl	_PCA0CN,#0x40
+	C$lab3_1.c$95$1$56 ==.
 	XG$PCA_Init$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'PCA_ISR'
 ;------------------------------------------------------------
 	G$PCA_ISR$0$0 ==.
-	C$lab3_1.c$95$1$52 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:95: void PCA_ISR ( void ) __interrupt 9
+	C$lab3_1.c$103$1$56 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:103: void PCA_ISR ( void ) __interrupt 9
 ;	-----------------------------------------
 ;	 function PCA_ISR
 ;	-----------------------------------------
 _PCA_ISR:
-	C$lab3_1.c$99$1$52 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:99: }
-	C$lab3_1.c$99$1$52 ==.
+	C$lab3_1.c$105$1$58 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:105: if (CF)
+	C$lab3_1.c$107$2$59 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:107: CF = 0; // Clear overflow flag
+	jbc	_CF,00108$
+	sjmp	00102$
+00108$:
+	C$lab3_1.c$108$2$59 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:108: PCA0 = PCA_START; // Set period for 20ms
+	mov	((_PCA0 >> 0) & 0xFF),#0xff
+	mov	((_PCA0 >> 8) & 0xFF),#0x6f
+00102$:
+	C$lab3_1.c$111$1$58 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:111: PCA0CN &= 0x40; // Clear other PCI interrupt sources
+	anl	_PCA0CN,#0x40
+	C$lab3_1.c$112$1$58 ==.
 	XG$PCA_ISR$0$0 ==.
 	reti
 ;	eliminated unneeded mov psw,# (no regs used in bank)
@@ -1331,22 +1359,48 @@ _PCA_ISR:
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'Set_Pulsewidth'
 ;------------------------------------------------------------
-;input                     Allocated to registers 
+;input                     Allocated to registers r7 
 ;------------------------------------------------------------
 	G$Set_Pulsewidth$0$0 ==.
-	C$lab3_1.c$101$1$52 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:101: void Set_Pulsewidth()
+	C$lab3_1.c$114$1$58 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:114: void Set_Pulsewidth()
 ;	-----------------------------------------
 ;	 function Set_Pulsewidth
 ;	-----------------------------------------
 _Set_Pulsewidth:
-	C$lab3_1.c$105$1$59 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:105: input = getchar();
+	C$lab3_1.c$118$1$60 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:118: input = getchar();
 	lcall	_getchar
-	C$lab3_1.c$120$1$59 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:120: printf("PW: %u\n", PW);
-	push	_PW
-	push	(_PW + 1)
+	mov	r7,dpl
+	C$lab3_1.c$119$1$60 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:119: if(input == '+')  // single character input to increase the pulsewidth
+	cjne	r7,#0x2b,00104$
+	C$lab3_1.c$121$2$61 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:121: SERVO_PW += 10; // Increase pulse width 
+	mov	a,#0x0a
+	add	a,_SERVO_PW
+	mov	_SERVO_PW,a
+	clr	a
+	addc	a,(_SERVO_PW + 1)
+	mov	(_SERVO_PW + 1),a
+	sjmp	00105$
+00104$:
+	C$lab3_1.c$126$1$60 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:126: else if(input == '-')  // single character input to decrease the pulsewidth
+	cjne	r7,#0x2d,00105$
+	C$lab3_1.c$128$2$62 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:128: SERVO_PW -= 10; // Decrease pulse width 
+	mov	a,_SERVO_PW
+	add	a,#0xf6
+	mov	_SERVO_PW,a
+	mov	a,(_SERVO_PW + 1)
+	addc	a,#0xff
+	mov	(_SERVO_PW + 1),a
+00105$:
+	C$lab3_1.c$132$1$60 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:132: printf("SERVO_PW: %u\n", SERVO_PW);
+	push	_SERVO_PW
+	push	(_SERVO_PW + 1)
 	mov	a,#___str_1
 	push	acc
 	mov	a,#(___str_1 >> 8)
@@ -1357,17 +1411,107 @@ _Set_Pulsewidth:
 	mov	a,sp
 	add	a,#0xfb
 	mov	sp,a
-	C$lab3_1.c$121$1$59 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:121: PCA0CP1 = 0xFFFF - PW;
+	C$lab3_1.c$133$1$60 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:133: PCA0CP1 = 0xFFFF - SERVO_PW;
 	mov	a,#0xff
 	clr	c
-	subb	a,_PW
+	subb	a,_SERVO_PW
 	mov	((_PCA0CP1 >> 0) & 0xFF),a
 	mov	a,#0xff
-	subb	a,(_PW + 1)
+	subb	a,(_SERVO_PW + 1)
 	mov	((_PCA0CP1 >> 8) & 0xFF),a
-	C$lab3_1.c$123$1$59 ==.
+	C$lab3_1.c$135$1$60 ==.
 	XG$Set_Pulsewidth$0$0 ==.
+	ret
+;------------------------------------------------------------
+;Allocation info for local variables in function 'Steering_Servo'
+;------------------------------------------------------------
+;input                     Allocated to registers r7 
+;------------------------------------------------------------
+	G$Steering_Servo$0$0 ==.
+	C$lab3_1.c$137$1$60 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:137: void Steering_Servo()
+;	-----------------------------------------
+;	 function Steering_Servo
+;	-----------------------------------------
+_Steering_Servo:
+	C$lab3_1.c$141$1$63 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:141: input = getchar();
+	lcall	_getchar
+	mov	r7,dpl
+	C$lab3_1.c$142$1$63 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:142: if(input == 'r') //if 'r' is pressed by the user
+	cjne	r7,#0x72,00108$
+	C$lab3_1.c$144$2$64 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:144: if(SERVO_PW < SERVO_PW_RIGHT)
+	clr	c
+	mov	a,_SERVO_PW
+	subb	a,_SERVO_PW_RIGHT
+	mov	a,(_SERVO_PW + 1)
+	subb	a,(_SERVO_PW_RIGHT + 1)
+	jnc	00109$
+	C$lab3_1.c$145$2$64 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:145: SERVO_PW = SERVO_PW + 10; //increase the steering pulsewidth by 10
+	mov	a,#0x0a
+	add	a,_SERVO_PW
+	mov	_SERVO_PW,a
+	clr	a
+	addc	a,(_SERVO_PW + 1)
+	mov	(_SERVO_PW + 1),a
+	sjmp	00109$
+00108$:
+	C$lab3_1.c$147$1$63 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:147: else if(input == 'l') //if 'l' is pressed by the user
+	cjne	r7,#0x6c,00109$
+	C$lab3_1.c$149$2$65 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:149: if(SERVO_PW > SERVO_PW_LEFT)
+	clr	c
+	mov	a,_SERVO_PW_LEFT
+	subb	a,_SERVO_PW
+	mov	a,(_SERVO_PW_LEFT + 1)
+	subb	a,(_SERVO_PW + 1)
+	jnc	00109$
+	C$lab3_1.c$150$2$65 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:150: SERVO_PW = SERVO_PW - 10; //decrease the steering pulsewidth by 10
+	mov	a,_SERVO_PW
+	add	a,#0xf6
+	mov	_SERVO_PW,a
+	mov	a,(_SERVO_PW + 1)
+	addc	a,#0xff
+	mov	(_SERVO_PW + 1),a
+00109$:
+	C$lab3_1.c$152$1$63 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:152: printf("SERVO_PW: %u\n", SERVO_PW);
+	push	_SERVO_PW
+	push	(_SERVO_PW + 1)
+	mov	a,#___str_1
+	push	acc
+	mov	a,#(___str_1 >> 8)
+	push	acc
+	mov	a,#0x80
+	push	acc
+	lcall	_printf
+	mov	a,sp
+	add	a,#0xfb
+	mov	sp,a
+	C$lab3_1.c$153$1$63 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:153: PCA0CPL0 = 0xFFFF - SERVO_PW;
+	mov	r7,_SERVO_PW
+	mov	a,#0xff
+	clr	c
+	subb	a,r7
+	mov	_PCA0CPL0,a
+	C$lab3_1.c$154$1$63 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\lab3-1.c:154: PCA0CPH0 = (0xFFFF - SERVO_PW) >> 8;
+	mov	a,#0xff
+	clr	c
+	subb	a,_SERVO_PW
+	mov	a,#0xff
+	subb	a,(_SERVO_PW + 1)
+	mov	r7,a
+	mov	_PCA0CPH0,r7
+	C$lab3_1.c$155$1$63 ==.
+	XG$Steering_Servo$0$0 ==.
 	ret
 	.area CSEG    (CODE)
 	.area CONST   (CODE)
@@ -1378,7 +1522,7 @@ ___str_0:
 	.db 0x00
 Flab3_1$__str_1$0$0 == .
 ___str_1:
-	.ascii "PW: %u"
+	.ascii "SERVO_PW: %u"
 	.db 0x0a
 	.db 0x00
 	.area XINIT   (CODE)

@@ -20,7 +20,7 @@ unsigned int SERVO_PW = 0;
 //-----------------------------------------------------------------------------
 // Global Constants
 //-----------------------------------------------------------------------------
-#define PCA_START 28671 // Sets start of PCA for 20ms period
+#define PCA_START 28672 // Sets start of PCA for 20ms period
 
 //-----------------------------------------------------------------------------
 // Main Function
@@ -49,7 +49,7 @@ while(1)
 //
 void Port_Init()
 {
-	P1MDOUT = ________ ;//set output pin for CEX0 in push-pull mode
+	P1MDOUT = 0x0F ;//set output pin for CEX0 in push-pull mode
 }
 //-----------------------------------------------------------------------------
 // XBR0_Init

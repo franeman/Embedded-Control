@@ -22,10 +22,10 @@ void PCA_ISR ( void ) __interrupt 9;
 //-----------------------------------------------------------------------------
 // Global Variables
 //-----------------------------------------------------------------------------
-unsigned int PW_CENTER; //= _____;
-unsigned int PW_MIN; //= _____;
-unsigned int PW_MAX; //= _____;
-unsigned int PW = 0;
+unsigned int SERVO_PW_CENTER; //= _____;
+unsigned int SERVO_PW_RIGHT; //= _____;
+unsigned int SERVO_PW_LEFT; //= _____;
+unsigned int SERVO_PW = 0;
 
 //-----------------------------------------------------------------------------
 // Global Constants
@@ -49,7 +49,7 @@ void main(void)
     // set the PCA output to a neutral setting
     //__________________________________________
     //__________________________________________
-    PW = PW_CENTER;
+    SERVO_PW = SERVO_PW_CENTER;
     //__________________________________________
     //__________________________________________
     while(1)
@@ -88,7 +88,7 @@ void XBR0_Init()
 void PCA_Init(void)
 {
 	EA = 1; // Enable all interrupts
-	EIE1 |= 0x08 // Enable PCA0 interrupts
+	EIE1 |= 0x08; // Enable PCA0 interrupts
 	PCA0MD = 0x81;   // SYSCLK/12, enable CF interrupts, suspend when idle
     PCA0CPM1 = 0xC2; // 16 bit, enable compare, enable PWM
     PCA0CN |= 0x40;  // enable PCA
@@ -118,19 +118,19 @@ void Set_Pulsewidth()
     input = getchar();
     if(input == '+')  // single character input to increase the pulsewidth
     {
-    	PW += 10; // Increase pulse width 
-        //if(PW > PW_MAX)  // check if greater than pulsewidth maximum
-        //    PW = PW_MAX;    // set PW to the maximum value
+    	SERVO_PW += 10; // Increase pulse width 
+        //if(SERVO_PW > SERVO_PW_MAX)  // check if greater than pulsewidth maximum
+        //    SERVO_PW = SERVO_PW_MAX;    // set SERVO_PW to the maximum value
 
     }
     else if(input == '-')  // single character input to decrease the pulsewidth
     {
-        PW -= 10; // Decrease pulse width 
-        //if(PW < PW_MIN)  // check if less than pulsewidth minimum
-        //    PW = PW_MIN;     // set PW to the minimum value
+        SERVO_PW -= 10; // Decrease pulse width 
+        //if(SERVO_PW < SERVO_PW_MIN)  // check if less than pulsewidth minimum
+        //    SERVO_PW = SERVO_PW_MIN;     // set SERVO_PW to the minimum value
     }
-    printf("PW: %u\n", PW);
-    PCA0CP1 = 0xFFFF - PW;
+    printf("SERVO_PW: %u\n", SERVO_PW);
+    PCA0CP1 = 0xFFFF - SERVO_PW;
 
 }
 
@@ -141,12 +141,12 @@ void Steering_Servo()
 	input = getchar();
 	if(input == 'r') //if 'r' is pressed by the user
 	{
-		if(SERVO_PW < PW_RIGHT)
+		if(SERVO_PW < SERVO_PW_RIGHT)
 		SERVO_PW = SERVO_PW + 10; //increase the steering pulsewidth by 10
 	}
 	else if(input == 'l') //if 'l' is pressed by the user
 	{
-		if(SERVO_PW > PW_LEFT)
+		if(SERVO_PW > SERVO_PW_LEFT)
 		SERVO_PW = SERVO_PW - 10; //decrease the steering pulsewidth by 10
 	}
 	printf("SERVO_PW: %u\n", SERVO_PW);
