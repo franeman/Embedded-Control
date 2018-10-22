@@ -143,6 +143,7 @@ void CalibrateSteering(void)
 	Turn();
 
 	PW_CENTER = SERVO_PW; // Save center PW
+	printf("Center pulse width = %u",PW_CENTER); // Print center PW
 
 	////////////////////////////////////////////////
 	// Set Left
@@ -152,8 +153,10 @@ void CalibrateSteering(void)
 	Turn();
 
 	PW_LEFT = SERVO_PW; // Save left PW
+	printf("Left pulse width = %u",PW_LEFT); // Print left PW
 	
 	printf("\r\nPW_CENTER = %u \r\nPW_RIGHT = %u \r\nPW_LEFT = %u \r\n",PW_CENTER,PW_RIGHT,PW_LEFT); // Print all values
+
 
 	////////////////////////////////////////////////
 	// Set Right
@@ -163,6 +166,9 @@ void CalibrateSteering(void)
 	Turn();
 
 	PW_RIGHT = SERVO_PW; // Save right PW
+	printf("Right pulse width = %u",PW_RIGHT); // Print right PW
+
+	printf("\r\n\nPW_CENTER = %u \r\nPW_RIGHT = %u \r\nPW_LEFT = %u \r\n",PW_CENTER,PW_RIGHT,PW_LEFT); // Print all values
 }
 
 /*

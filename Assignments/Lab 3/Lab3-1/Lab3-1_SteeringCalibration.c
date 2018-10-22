@@ -33,11 +33,15 @@ putchar(' '); //the quotes in this line may not format correctly
 Port_Init();
 XBR0_Init();
 PCA_Init();
+
 //print beginning message
 printf("Embedded Control Steering Calibration\n");
+
 //set initial value for steering (set to center)
 SERVO_PW = PW_CENTER;
+
 CalibrateSteering(); // Calibrate boundries once
+
 while(1)
 	Steering_Servo();
 }
