@@ -12,7 +12,7 @@ void Steering_Servo(void);
 void Turn(void);
 void PCA_ISR ( void ) __interrupt 9;
 void CalibrateSteering(void);
-unsigned int PW_CENTER;
+unsigned int PW_CENTER = 2765;
 unsigned int PW_RIGHT;
 unsigned int PW_LEFT;
 unsigned int SERVO_PW = 0;

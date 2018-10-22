@@ -100,12 +100,12 @@ void Steering_Servo()
 	input = getchar();
 	if(input == 'r') //if 'r' is pressed by the user
 	{
-		if(SERVO_PW < PW_RIGHT)
+		if(SERVO_PW+10 < PW_RIGHT)
 		SERVO_PW = SERVO_PW + 10; //increase the steering pulsewidth by 10
 	}
 	else if(input == 'l') //if 'l' is pressed by the user
 	{
-		if(SERVO_PW > PW_LEFT)
+		if(SERVO_PW-10 > PW_LEFT)
 		SERVO_PW = SERVO_PW - 10; //decrease the steering pulsewidth by 10
 	}
 	PCA0CP0 = 0xFFFF - SERVO_PW; // Set CEX0 compare value (May need to break up into high and low to work)

@@ -979,6 +979,10 @@ __interrupt_vect:
 	.globl __mcs51_genXINIT
 	.globl __mcs51_genXRAMCLEAR
 	.globl __mcs51_genRAMCLEAR
+	C$Lab3_1_SteeringCalibration.c$15$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:15: unsigned int PW_CENTER = 2765;
+	mov	_PW_CENTER,#0xcd
+	mov	(_PW_CENTER + 1),#0x0a
 	C$Lab3_1_SteeringCalibration.c$18$1$71 ==.
 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:18: unsigned int SERVO_PW = 0;
 	clr	a
@@ -1558,7 +1562,7 @@ _CalibrateSteering:
 	mov	_PW_CENTER,_SERVO_PW
 	mov	(_PW_CENTER + 1),(_SERVO_PW + 1)
 	C$Lab3_1_SteeringCalibration.c$151$1$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:151: printf("\r\n Please turn the car all the way to the right without straining it. \r\nUse l and r to turn left and right. Press k when done.");
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:151: printf("\r\n Please turn the car all the way to the left without straining it. \r\nUse l and r to turn left and right. Press k when done.");
 	mov	a,#___str_3
 	push	acc
 	mov	a,#(___str_3 >> 8)
@@ -1573,11 +1577,17 @@ _CalibrateSteering:
 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:152: Turn();
 	lcall	_Turn
 	C$Lab3_1_SteeringCalibration.c$154$1$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:154: PW_RIGHT = SERVO_PW; // Save right PW
-	mov	_PW_RIGHT,_SERVO_PW
-	mov	(_PW_RIGHT + 1),(_SERVO_PW + 1)
-	C$Lab3_1_SteeringCalibration.c$160$1$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:160: printf("\r\n Please turn the car all the way to the left without straining it. \r\nUse l and r to turn left and right. Press k when done.");
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:154: PW_LEFT = SERVO_PW; // Save left PW
+	mov	_PW_LEFT,_SERVO_PW
+	mov	(_PW_LEFT + 1),(_SERVO_PW + 1)
+	C$Lab3_1_SteeringCalibration.c$156$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:156: printf("\r\nPW_CENTER = %u \r\nPW_RIGHT = %u \r\nPW_LEFT = %u \r\n",PW_CENTER,PW_RIGHT,PW_LEFT); // Print all values
+	push	_PW_LEFT
+	push	(_PW_LEFT + 1)
+	push	_PW_RIGHT
+	push	(_PW_RIGHT + 1)
+	push	_PW_CENTER
+	push	(_PW_CENTER + 1)
 	mov	a,#___str_4
 	push	acc
 	mov	a,#(___str_4 >> 8)
@@ -1585,24 +1595,11 @@ _CalibrateSteering:
 	mov	a,#0x80
 	push	acc
 	lcall	_printf
-	dec	sp
-	dec	sp
-	dec	sp
-	C$Lab3_1_SteeringCalibration.c$161$1$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:161: Turn();
-	lcall	_Turn
-	C$Lab3_1_SteeringCalibration.c$163$1$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:163: PW_LEFT = SERVO_PW; // Save left PW
-	mov	_PW_LEFT,_SERVO_PW
-	mov	(_PW_LEFT + 1),(_SERVO_PW + 1)
-	C$Lab3_1_SteeringCalibration.c$165$1$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:165: printf("\r\nPW_CENTER = %u \r\nPW_RIGHT = %u \r\nPW_LEFT = %u \r\n",PW_CENTER,PW_RIGHT,PW_LEFT); // Print all values
-	push	_PW_LEFT
-	push	(_PW_LEFT + 1)
-	push	_PW_RIGHT
-	push	(_PW_RIGHT + 1)
-	push	_PW_CENTER
-	push	(_PW_CENTER + 1)
+	mov	a,sp
+	add	a,#0xf7
+	mov	sp,a
+	C$Lab3_1_SteeringCalibration.c$162$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:162: printf("\r\n Please turn the car all the way to the right without straining it. \r\nUse l and r to turn left and right. Press k when done.");
 	mov	a,#___str_5
 	push	acc
 	mov	a,#(___str_5 >> 8)
@@ -1610,9 +1607,16 @@ _CalibrateSteering:
 	mov	a,#0x80
 	push	acc
 	lcall	_printf
-	mov	a,sp
-	add	a,#0xf7
-	mov	sp,a
+	dec	sp
+	dec	sp
+	dec	sp
+	C$Lab3_1_SteeringCalibration.c$163$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:163: Turn();
+	lcall	_Turn
+	C$Lab3_1_SteeringCalibration.c$165$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:165: PW_RIGHT = SERVO_PW; // Save right PW
+	mov	_PW_RIGHT,_SERVO_PW
+	mov	(_PW_RIGHT + 1),(_SERVO_PW + 1)
 	C$Lab3_1_SteeringCalibration.c$166$1$71 ==.
 	XG$CalibrateSteering$0$0 ==.
 	ret
@@ -1644,17 +1648,6 @@ FLab3_1_SteeringCalibration$__str_3$0$0 == .
 ___str_3:
 	.db 0x0d
 	.db 0x0a
-	.ascii " Please turn the car all the way to the right without stra"
-	.ascii "ining it. "
-	.db 0x0d
-	.db 0x0a
-	.ascii "Use l and r to turn left and right. Press k when"
-	.ascii " done."
-	.db 0x00
-FLab3_1_SteeringCalibration$__str_4$0$0 == .
-___str_4:
-	.db 0x0d
-	.db 0x0a
 	.ascii " Please turn the car all the way to the left without strai"
 	.ascii "ning it. "
 	.db 0x0d
@@ -1662,8 +1655,8 @@ ___str_4:
 	.ascii "Use l and r to turn left and right. Press k when "
 	.ascii "done."
 	.db 0x00
-FLab3_1_SteeringCalibration$__str_5$0$0 == .
-___str_5:
+FLab3_1_SteeringCalibration$__str_4$0$0 == .
+___str_4:
 	.db 0x0d
 	.db 0x0a
 	.ascii "PW_CENTER = %u "
@@ -1675,6 +1668,17 @@ ___str_5:
 	.ascii "PW_LEFT = %u "
 	.db 0x0d
 	.db 0x0a
+	.db 0x00
+FLab3_1_SteeringCalibration$__str_5$0$0 == .
+___str_5:
+	.db 0x0d
+	.db 0x0a
+	.ascii " Please turn the car all the way to the right without stra"
+	.ascii "ining it. "
+	.db 0x0d
+	.db 0x0a
+	.ascii "Use l and r to turn left and right. Press k when"
+	.ascii " done."
 	.db 0x00
 	.area XINIT   (CODE)
 	.area CABS    (ABS,CODE)
