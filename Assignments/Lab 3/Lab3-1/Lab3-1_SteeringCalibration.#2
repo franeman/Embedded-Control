@@ -145,15 +145,6 @@ void CalibrateSteering(void)
 	PW_CENTER = SERVO_PW; // Save center PW
 
 	////////////////////////////////////////////////
-	// Set Right
-	////////////////////////////////////////////////
-
-	printf("\r\n Please turn the car all the way to the right without straining it. \r\nUse l and r to turn left and right. Press k when done.");
-	Turn();
-
-	PW_RIGHT = SERVO_PW; // Save right PW
-
-	////////////////////////////////////////////////
 	// Set Left
 	////////////////////////////////////////////////
 
@@ -163,6 +154,15 @@ void CalibrateSteering(void)
 	PW_LEFT = SERVO_PW; // Save left PW
 	
 	printf("\r\nPW_CENTER = %u \r\nPW_RIGHT = %u \r\nPW_LEFT = %u \r\n",PW_CENTER,PW_RIGHT,PW_LEFT); // Print all values
+
+	////////////////////////////////////////////////
+	// Set Right
+	////////////////////////////////////////////////
+
+	printf("\r\n Please turn the car all the way to the right without straining it. \r\nUse l and r to turn left and right. Press k when done.");
+	Turn();
+
+	PW_RIGHT = SERVO_PW; // Save right PW
 }
 
 /*
