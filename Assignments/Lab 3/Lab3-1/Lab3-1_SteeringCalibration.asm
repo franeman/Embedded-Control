@@ -1242,8 +1242,8 @@ _main:
 	C$Lab3_1_SteeringCalibration.c$35$1$54 ==.
 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:35: PCA_Init();
 	lcall	_PCA_Init
-	C$Lab3_1_SteeringCalibration.c$37$1$54 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:37: printf("Embedded Control Steering Calibration\n");
+	C$Lab3_1_SteeringCalibration.c$38$1$54 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:38: printf("Embedded Control Steering Calibration\n");
 	mov	a,#___str_0
 	push	acc
 	mov	a,#(___str_0 >> 8)
@@ -1254,109 +1254,105 @@ _main:
 	dec	sp
 	dec	sp
 	dec	sp
-	C$Lab3_1_SteeringCalibration.c$39$1$54 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:39: SERVO_PW = PW_CENTER;
-	mov	_SERVO_PW,_PW_CENTER
-	mov	(_SERVO_PW + 1),(_PW_CENTER + 1)
 	C$Lab3_1_SteeringCalibration.c$40$1$54 ==.
 ;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:40: CalibrateSteering(); // Calibrate boundries once
 	lcall	_CalibrateSteering
-	C$Lab3_1_SteeringCalibration.c$41$1$54 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:41: while(1)
-00102$:
 	C$Lab3_1_SteeringCalibration.c$42$1$54 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:42: Steering_Servo();
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:42: while(1)
+00102$:
+	C$Lab3_1_SteeringCalibration.c$43$1$54 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:43: Steering_Servo();
 	lcall	_Steering_Servo
 	sjmp	00102$
-	C$Lab3_1_SteeringCalibration.c$43$1$54 ==.
+	C$Lab3_1_SteeringCalibration.c$44$1$54 ==.
 	XG$main$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'Port_Init'
 ;------------------------------------------------------------
 	G$Port_Init$0$0 ==.
-	C$Lab3_1_SteeringCalibration.c$50$1$54 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:50: void Port_Init()
+	C$Lab3_1_SteeringCalibration.c$51$1$54 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:51: void Port_Init()
 ;	-----------------------------------------
 ;	 function Port_Init
 ;	-----------------------------------------
 _Port_Init:
-	C$Lab3_1_SteeringCalibration.c$52$1$55 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:52: P1MDOUT = 0x0F ;//set output pin for CEX0 in push-pull mode
-	mov	_P1MDOUT,#0x0f
 	C$Lab3_1_SteeringCalibration.c$53$1$55 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:53: P1MDOUT = 0x0F ;//set output pin for CEX0 in push-pull mode
+	mov	_P1MDOUT,#0x0f
+	C$Lab3_1_SteeringCalibration.c$54$1$55 ==.
 	XG$Port_Init$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'XBR0_Init'
 ;------------------------------------------------------------
 	G$XBR0_Init$0$0 ==.
-	C$Lab3_1_SteeringCalibration.c$60$1$55 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:60: void XBR0_Init()
+	C$Lab3_1_SteeringCalibration.c$61$1$55 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:61: void XBR0_Init()
 ;	-----------------------------------------
 ;	 function XBR0_Init
 ;	-----------------------------------------
 _XBR0_Init:
-	C$Lab3_1_SteeringCalibration.c$62$1$56 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:62: XBR0 = 0x27;     // set up URART0, SPI, SMB, and CEX 0-3
+	C$Lab3_1_SteeringCalibration.c$63$1$56 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:63: XBR0 = 0x27;     // set up URART0, SPI, SMB, and CEX 0-3
 	mov	_XBR0,#0x27
-	C$Lab3_1_SteeringCalibration.c$64$1$56 ==.
+	C$Lab3_1_SteeringCalibration.c$65$1$56 ==.
 	XG$XBR0_Init$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'PCA_Init'
 ;------------------------------------------------------------
 	G$PCA_Init$0$0 ==.
-	C$Lab3_1_SteeringCalibration.c$71$1$56 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:71: void PCA_Init(void)
+	C$Lab3_1_SteeringCalibration.c$72$1$56 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:72: void PCA_Init(void)
 ;	-----------------------------------------
 ;	 function PCA_Init
 ;	-----------------------------------------
 _PCA_Init:
-	C$Lab3_1_SteeringCalibration.c$73$1$58 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:73: EA = 1; // Enable all interrupts
-	setb	_EA
 	C$Lab3_1_SteeringCalibration.c$74$1$58 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:74: EIE1 |= 0x08; // Enable PCA0 interrupts
-	orl	_EIE1,#0x08
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:74: EA = 1; // Enable all interrupts
+	setb	_EA
 	C$Lab3_1_SteeringCalibration.c$75$1$58 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:75: PCA0MD = 0x81;   // SYSCLK/12, enable CF interrupts, suspend when idle
-	mov	_PCA0MD,#0x81
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:75: EIE1 |= 0x08; // Enable PCA0 interrupts
+	orl	_EIE1,#0x08
 	C$Lab3_1_SteeringCalibration.c$76$1$58 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:76: PCA0CPM0 = 0xC2; // 16 bit, enable compare, enable PWM
-	mov	_PCA0CPM0,#0xc2
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:76: PCA0MD = 0x81;   // SYSCLK/12, enable CF interrupts, suspend when idle
+	mov	_PCA0MD,#0x81
 	C$Lab3_1_SteeringCalibration.c$77$1$58 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:77: PCA0CN |= 0x40;  // enable PCA
-	orl	_PCA0CN,#0x40
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:77: PCA0CPM0 = 0xC2; // 16 bit, enable compare, enable PWM
+	mov	_PCA0CPM0,#0xc2
 	C$Lab3_1_SteeringCalibration.c$78$1$58 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:78: PCA0CN |= 0x40;  // enable PCA
+	orl	_PCA0CN,#0x40
+	C$Lab3_1_SteeringCalibration.c$79$1$58 ==.
 	XG$PCA_Init$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'PCA_ISR'
 ;------------------------------------------------------------
 	G$PCA_ISR$0$0 ==.
-	C$Lab3_1_SteeringCalibration.c$85$1$58 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:85: void PCA_ISR ( void ) __interrupt 9
+	C$Lab3_1_SteeringCalibration.c$86$1$58 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:86: void PCA_ISR ( void ) __interrupt 9
 ;	-----------------------------------------
 ;	 function PCA_ISR
 ;	-----------------------------------------
 _PCA_ISR:
-	C$Lab3_1_SteeringCalibration.c$87$1$60 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:87: if (CF)
-	C$Lab3_1_SteeringCalibration.c$89$2$61 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:89: CF = 0; // Clear overflow flag
+	C$Lab3_1_SteeringCalibration.c$88$1$60 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:88: if (CF)
+	C$Lab3_1_SteeringCalibration.c$90$2$61 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:90: CF = 0; // Clear overflow flag
 	jbc	_CF,00108$
 	sjmp	00102$
 00108$:
-	C$Lab3_1_SteeringCalibration.c$90$2$61 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:90: PCA0 = PCA_START; // Set period for 20ms
+	C$Lab3_1_SteeringCalibration.c$91$2$61 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:91: PCA0 = PCA_START; // Set period for 20ms
 	mov	((_PCA0 >> 0) & 0xFF),#0x00
 	mov	((_PCA0 >> 8) & 0xFF),#0x70
 00102$:
-	C$Lab3_1_SteeringCalibration.c$93$1$60 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:93: PCA0CN &= 0x40; // Clear other PCI interrupt sources
-	anl	_PCA0CN,#0x40
 	C$Lab3_1_SteeringCalibration.c$94$1$60 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:94: PCA0CN &= 0x40; // Clear other PCI interrupt sources
+	anl	_PCA0CN,#0x40
+	C$Lab3_1_SteeringCalibration.c$95$1$60 ==.
 	XG$PCA_ISR$0$0 ==.
 	reti
 ;	eliminated unneeded mov psw,# (no regs used in bank)
@@ -1371,21 +1367,21 @@ _PCA_ISR:
 ;input                     Allocated to registers r7 
 ;------------------------------------------------------------
 	G$Steering_Servo$0$0 ==.
-	C$Lab3_1_SteeringCalibration.c$96$1$60 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:96: void Steering_Servo()
+	C$Lab3_1_SteeringCalibration.c$97$1$60 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:97: void Steering_Servo()
 ;	-----------------------------------------
 ;	 function Steering_Servo
 ;	-----------------------------------------
 _Steering_Servo:
-	C$Lab3_1_SteeringCalibration.c$100$1$62 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:100: input = getchar();
+	C$Lab3_1_SteeringCalibration.c$101$1$62 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:101: input = getchar();
 	lcall	_getchar
 	mov	r7,dpl
-	C$Lab3_1_SteeringCalibration.c$101$1$62 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:101: if(input == 'r') //if 'r' is pressed by the user
+	C$Lab3_1_SteeringCalibration.c$102$1$62 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:102: if(input == 'r') //if 'r' is pressed by the user
 	cjne	r7,#0x72,00108$
-	C$Lab3_1_SteeringCalibration.c$103$2$63 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:103: if(SERVO_PW+10 < PW_RIGHT)
+	C$Lab3_1_SteeringCalibration.c$104$2$63 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:104: if(SERVO_PW+10 <= PW_RIGHT)
 	mov	a,#0x0a
 	add	a,_SERVO_PW
 	mov	r5,a
@@ -1393,13 +1389,13 @@ _Steering_Servo:
 	addc	a,(_SERVO_PW + 1)
 	mov	r6,a
 	clr	c
-	mov	a,r5
-	subb	a,_PW_RIGHT
-	mov	a,r6
-	subb	a,(_PW_RIGHT + 1)
-	jnc	00109$
-	C$Lab3_1_SteeringCalibration.c$104$2$63 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:104: SERVO_PW = SERVO_PW + 10; //increase the steering pulsewidth by 10
+	mov	a,_PW_RIGHT
+	subb	a,r5
+	mov	a,(_PW_RIGHT + 1)
+	subb	a,r6
+	jc	00109$
+	C$Lab3_1_SteeringCalibration.c$105$2$63 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:105: SERVO_PW = SERVO_PW + 10; //increase the steering pulsewidth by 10
 	mov	a,#0x0a
 	add	a,_SERVO_PW
 	mov	_SERVO_PW,a
@@ -1408,11 +1404,11 @@ _Steering_Servo:
 	mov	(_SERVO_PW + 1),a
 	sjmp	00109$
 00108$:
-	C$Lab3_1_SteeringCalibration.c$106$1$62 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:106: else if(input == 'l') //if 'l' is pressed by the user
+	C$Lab3_1_SteeringCalibration.c$107$1$62 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:107: else if(input == 'l') //if 'l' is pressed by the user
 	cjne	r7,#0x6c,00109$
-	C$Lab3_1_SteeringCalibration.c$108$2$64 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:108: if(SERVO_PW-10 > PW_LEFT)
+	C$Lab3_1_SteeringCalibration.c$109$2$64 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:109: if(SERVO_PW-10 >= PW_LEFT)
 	mov	a,_SERVO_PW
 	add	a,#0xf6
 	mov	r6,a
@@ -1420,13 +1416,13 @@ _Steering_Servo:
 	addc	a,#0xff
 	mov	r7,a
 	clr	c
-	mov	a,_PW_LEFT
-	subb	a,r6
-	mov	a,(_PW_LEFT + 1)
-	subb	a,r7
-	jnc	00109$
-	C$Lab3_1_SteeringCalibration.c$109$2$64 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:109: SERVO_PW = SERVO_PW - 10; //decrease the steering pulsewidth by 10
+	mov	a,r6
+	subb	a,_PW_LEFT
+	mov	a,r7
+	subb	a,(_PW_LEFT + 1)
+	jc	00109$
+	C$Lab3_1_SteeringCalibration.c$110$2$64 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:110: SERVO_PW = SERVO_PW - 10; //decrease the steering pulsewidth by 10
 	mov	a,_SERVO_PW
 	add	a,#0xf6
 	mov	_SERVO_PW,a
@@ -1434,8 +1430,8 @@ _Steering_Servo:
 	addc	a,#0xff
 	mov	(_SERVO_PW + 1),a
 00109$:
-	C$Lab3_1_SteeringCalibration.c$111$1$62 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:111: PCA0CP0 = 0xFFFF - SERVO_PW; // Set CEX0 compare value (May need to break up into high and low to work)
+	C$Lab3_1_SteeringCalibration.c$112$1$62 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:112: PCA0CP0 = 0xFFFF - SERVO_PW; // Set CEX0 compare value (May need to break up into high and low to work)
 	mov	a,#0xff
 	clr	c
 	subb	a,_SERVO_PW
@@ -1443,8 +1439,8 @@ _Steering_Servo:
 	mov	a,#0xff
 	subb	a,(_SERVO_PW + 1)
 	mov	((_PCA0CP0 >> 8) & 0xFF),a
-	C$Lab3_1_SteeringCalibration.c$112$1$62 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:112: printf("\r\nSERVO_PW: %u\n", SERVO_PW);
+	C$Lab3_1_SteeringCalibration.c$113$1$62 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:113: printf("\r\nSERVO_PW: %u\n", SERVO_PW);
 	push	_SERVO_PW
 	push	(_SERVO_PW + 1)
 	mov	a,#___str_1
@@ -1457,7 +1453,7 @@ _Steering_Servo:
 	mov	a,sp
 	add	a,#0xfb
 	mov	sp,a
-	C$Lab3_1_SteeringCalibration.c$114$1$62 ==.
+	C$Lab3_1_SteeringCalibration.c$115$1$62 ==.
 	XG$Steering_Servo$0$0 ==.
 	ret
 ;------------------------------------------------------------
@@ -1466,52 +1462,51 @@ _Steering_Servo:
 ;input                     Allocated to registers r7 
 ;------------------------------------------------------------
 	G$Turn$0$0 ==.
-	C$Lab3_1_SteeringCalibration.c$116$1$62 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:116: void Turn(void) // Turns the car left and right, Press k to escape.
+	C$Lab3_1_SteeringCalibration.c$117$1$62 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:117: void Turn(void) // Turns the car left and right, Press k to escape.
 ;	-----------------------------------------
 ;	 function Turn
 ;	-----------------------------------------
 _Turn:
-	C$Lab3_1_SteeringCalibration.c$118$1$62 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:118: char input = 0;
+	C$Lab3_1_SteeringCalibration.c$119$1$62 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:119: char input = 0;
 	mov	r7,#0x00
-	C$Lab3_1_SteeringCalibration.c$119$1$66 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:119: while (input != 'k')
-00106$:
-	cjne	r7,#0x6b,00123$
-	sjmp	00109$
-00123$:
-	C$Lab3_1_SteeringCalibration.c$121$2$67 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:121: input = getchar();
+	C$Lab3_1_SteeringCalibration.c$120$1$66 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:120: while (input != 'k')
+00105$:
+	cjne	r7,#0x6b,00122$
+	sjmp	00108$
+00122$:
+	C$Lab3_1_SteeringCalibration.c$122$2$67 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:122: input = getchar();
 	lcall	_getchar
 	mov	r7,dpl
-	C$Lab3_1_SteeringCalibration.c$122$2$67 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:122: if(input == 'r') //if 'r' is pressed by the user
-	cjne	r7,#0x72,00104$
-	C$Lab3_1_SteeringCalibration.c$124$3$68 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:124: SERVO_PW = SERVO_PW + 10; //increase the steering pulsewidth by 10
+	C$Lab3_1_SteeringCalibration.c$123$2$67 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:123: if(input == 'r') //if 'r' is pressed by the user
+	cjne	r7,#0x72,00102$
+	C$Lab3_1_SteeringCalibration.c$125$3$68 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:125: SERVO_PW = SERVO_PW + 10; //increase the steering pulsewidth by 10
 	mov	a,#0x0a
 	add	a,_SERVO_PW
 	mov	_SERVO_PW,a
 	clr	a
 	addc	a,(_SERVO_PW + 1)
 	mov	(_SERVO_PW + 1),a
-	sjmp	00105$
-00104$:
-	C$Lab3_1_SteeringCalibration.c$126$2$67 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:126: else if(input == 'l') //if 'l' is pressed by the user
-	cjne	r7,#0x6c,00105$
-	C$Lab3_1_SteeringCalibration.c$128$3$69 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:128: SERVO_PW = SERVO_PW - 10; //decrease the steering pulsewidth by 10
+00102$:
+	C$Lab3_1_SteeringCalibration.c$127$2$67 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:127: if(input == 'l') //if 'l' is pressed by the user
+	cjne	r7,#0x6c,00104$
+	C$Lab3_1_SteeringCalibration.c$129$3$69 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:129: SERVO_PW = SERVO_PW - 10; //decrease the steering pulsewidth by 10
 	mov	a,_SERVO_PW
 	add	a,#0xf6
 	mov	_SERVO_PW,a
 	mov	a,(_SERVO_PW + 1)
 	addc	a,#0xff
 	mov	(_SERVO_PW + 1),a
-00105$:
-	C$Lab3_1_SteeringCalibration.c$130$2$67 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:130: PCA0CP0 = 0xFFFF - SERVO_PW; // Set CEX0 compare value (May need to break up into high and low to work)
+00104$:
+	C$Lab3_1_SteeringCalibration.c$131$2$67 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:131: PCA0CP0 = 0xFFFF - SERVO_PW; // Set CEX0 compare value (May need to break up into high and low to work)
 	mov	a,#0xff
 	clr	c
 	subb	a,_SERVO_PW
@@ -1519,31 +1514,31 @@ _Turn:
 	mov	a,#0xff
 	subb	a,(_SERVO_PW + 1)
 	mov	((_PCA0CP0 >> 8) & 0xFF),a
-	sjmp	00106$
-00109$:
-	C$Lab3_1_SteeringCalibration.c$132$1$66 ==.
+	sjmp	00105$
+00108$:
+	C$Lab3_1_SteeringCalibration.c$133$1$66 ==.
 	XG$Turn$0$0 ==.
 	ret
 ;------------------------------------------------------------
 ;Allocation info for local variables in function 'CalibrateSteering'
 ;------------------------------------------------------------
 	G$CalibrateSteering$0$0 ==.
-	C$Lab3_1_SteeringCalibration.c$134$1$66 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:134: void CalibrateSteering(void)
+	C$Lab3_1_SteeringCalibration.c$135$1$66 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:135: void CalibrateSteering(void)
 ;	-----------------------------------------
 ;	 function CalibrateSteering
 ;	-----------------------------------------
 _CalibrateSteering:
-	C$Lab3_1_SteeringCalibration.c$136$1$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:136: SERVO_PW = 2765; // Set initial pulse width to 1.5ms (approx center)
+	C$Lab3_1_SteeringCalibration.c$137$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:137: SERVO_PW = 2765; // Set initial pulse width to 1.5ms (approx center)
 	mov	_SERVO_PW,#0xcd
 	mov	(_SERVO_PW + 1),#0x0a
-	C$Lab3_1_SteeringCalibration.c$137$1$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:137: PCA0CP0 = 0xFFFF - SERVO_PW; // Set pulse width (May need to break up into high and low to work)
+	C$Lab3_1_SteeringCalibration.c$138$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:138: PCA0CP0 = 0xFFFF - SERVO_PW; // Set pulse width (May need to break up into high and low to work)
 	mov	((_PCA0CP0 >> 0) & 0xFF),#0x32
 	mov	((_PCA0CP0 >> 8) & 0xFF),#0xf5
-	C$Lab3_1_SteeringCalibration.c$142$1$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:142: printf("\r\n Please center the car. \r\nUse l and r to turn left and right. Press k when done.");
+	C$Lab3_1_SteeringCalibration.c$143$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:143: printf("\r\nPlease center the car. \r\nUse l and r to turn left and right. Press k when done.");
 	mov	a,#___str_2
 	push	acc
 	mov	a,#(___str_2 >> 8)
@@ -1554,15 +1549,17 @@ _CalibrateSteering:
 	dec	sp
 	dec	sp
 	dec	sp
-	C$Lab3_1_SteeringCalibration.c$143$1$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:143: Turn();
+	C$Lab3_1_SteeringCalibration.c$144$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:144: Turn();
 	lcall	_Turn
-	C$Lab3_1_SteeringCalibration.c$145$1$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:145: PW_CENTER = SERVO_PW; // Save center PW
+	C$Lab3_1_SteeringCalibration.c$146$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:146: PW_CENTER = SERVO_PW; // Save center PW
 	mov	_PW_CENTER,_SERVO_PW
 	mov	(_PW_CENTER + 1),(_SERVO_PW + 1)
-	C$Lab3_1_SteeringCalibration.c$151$1$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:151: printf("\r\n Please turn the car all the way to the left without straining it. \r\nUse l and r to turn left and right. Press k when done.");
+	C$Lab3_1_SteeringCalibration.c$147$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:147: printf("\r\nCenter pulse width = %u",PW_CENTER); // Print center PW
+	push	_PW_CENTER
+	push	(_PW_CENTER + 1)
 	mov	a,#___str_3
 	push	acc
 	mov	a,#(___str_3 >> 8)
@@ -1570,24 +1567,11 @@ _CalibrateSteering:
 	mov	a,#0x80
 	push	acc
 	lcall	_printf
-	dec	sp
-	dec	sp
-	dec	sp
-	C$Lab3_1_SteeringCalibration.c$152$1$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:152: Turn();
-	lcall	_Turn
-	C$Lab3_1_SteeringCalibration.c$154$1$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:154: PW_LEFT = SERVO_PW; // Save left PW
-	mov	_PW_LEFT,_SERVO_PW
-	mov	(_PW_LEFT + 1),(_SERVO_PW + 1)
-	C$Lab3_1_SteeringCalibration.c$156$1$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:156: printf("\r\nPW_CENTER = %u \r\nPW_RIGHT = %u \r\nPW_LEFT = %u \r\n",PW_CENTER,PW_RIGHT,PW_LEFT); // Print all values
-	push	_PW_LEFT
-	push	(_PW_LEFT + 1)
-	push	_PW_RIGHT
-	push	(_PW_RIGHT + 1)
-	push	_PW_CENTER
-	push	(_PW_CENTER + 1)
+	mov	a,sp
+	add	a,#0xfb
+	mov	sp,a
+	C$Lab3_1_SteeringCalibration.c$153$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:153: printf("\r\nPlease turn the car all the way to the left without straining it. \r\nUse l and r to turn left and right. Press k when done.");
 	mov	a,#___str_4
 	push	acc
 	mov	a,#(___str_4 >> 8)
@@ -1595,11 +1579,20 @@ _CalibrateSteering:
 	mov	a,#0x80
 	push	acc
 	lcall	_printf
-	mov	a,sp
-	add	a,#0xf7
-	mov	sp,a
-	C$Lab3_1_SteeringCalibration.c$162$1$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:162: printf("\r\n Please turn the car all the way to the right without straining it. \r\nUse l and r to turn left and right. Press k when done.");
+	dec	sp
+	dec	sp
+	dec	sp
+	C$Lab3_1_SteeringCalibration.c$154$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:154: Turn();
+	lcall	_Turn
+	C$Lab3_1_SteeringCalibration.c$156$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:156: PW_LEFT = SERVO_PW; // Save left PW
+	mov	_PW_LEFT,_SERVO_PW
+	mov	(_PW_LEFT + 1),(_SERVO_PW + 1)
+	C$Lab3_1_SteeringCalibration.c$157$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:157: printf("\r\nLeft pulse width = %u",PW_LEFT); // Print left PW
+	push	_PW_LEFT
+	push	(_PW_LEFT + 1)
 	mov	a,#___str_5
 	push	acc
 	mov	a,#(___str_5 >> 8)
@@ -1607,17 +1600,61 @@ _CalibrateSteering:
 	mov	a,#0x80
 	push	acc
 	lcall	_printf
+	mov	a,sp
+	add	a,#0xfb
+	mov	sp,a
+	C$Lab3_1_SteeringCalibration.c$164$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:164: printf("\r\nPlease turn the car all the way to the right without straining it. \r\nUse l and r to turn left and right. Press k when done.");
+	mov	a,#___str_6
+	push	acc
+	mov	a,#(___str_6 >> 8)
+	push	acc
+	mov	a,#0x80
+	push	acc
+	lcall	_printf
 	dec	sp
 	dec	sp
 	dec	sp
-	C$Lab3_1_SteeringCalibration.c$163$1$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:163: Turn();
-	lcall	_Turn
 	C$Lab3_1_SteeringCalibration.c$165$1$71 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:165: PW_RIGHT = SERVO_PW; // Save right PW
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:165: Turn();
+	lcall	_Turn
+	C$Lab3_1_SteeringCalibration.c$167$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:167: PW_RIGHT = SERVO_PW; // Save right PW
 	mov	_PW_RIGHT,_SERVO_PW
 	mov	(_PW_RIGHT + 1),(_SERVO_PW + 1)
-	C$Lab3_1_SteeringCalibration.c$166$1$71 ==.
+	C$Lab3_1_SteeringCalibration.c$168$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:168: printf("\r\nRight pulse width = %u",PW_RIGHT); // Print right PW
+	push	_PW_RIGHT
+	push	(_PW_RIGHT + 1)
+	mov	a,#___str_7
+	push	acc
+	mov	a,#(___str_7 >> 8)
+	push	acc
+	mov	a,#0x80
+	push	acc
+	lcall	_printf
+	mov	a,sp
+	add	a,#0xfb
+	mov	sp,a
+	C$Lab3_1_SteeringCalibration.c$170$1$71 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-1\Lab3-1_SteeringCalibration.c:170: printf("\r\n\nPW_CENTER = %u \r\nPW_RIGHT = %u \r\nPW_LEFT = %u \r\n",PW_CENTER,PW_RIGHT,PW_LEFT); // Print all values
+	push	_PW_LEFT
+	push	(_PW_LEFT + 1)
+	push	_PW_RIGHT
+	push	(_PW_RIGHT + 1)
+	push	_PW_CENTER
+	push	(_PW_CENTER + 1)
+	mov	a,#___str_8
+	push	acc
+	mov	a,#(___str_8 >> 8)
+	push	acc
+	mov	a,#0x80
+	push	acc
+	lcall	_printf
+	mov	a,sp
+	add	a,#0xf7
+	mov	sp,a
+	C$Lab3_1_SteeringCalibration.c$171$1$71 ==.
 	XG$CalibrateSteering$0$0 ==.
 	ret
 	.area CSEG    (CODE)
@@ -1638,26 +1675,56 @@ FLab3_1_SteeringCalibration$__str_2$0$0 == .
 ___str_2:
 	.db 0x0d
 	.db 0x0a
-	.ascii " Please center the car. "
+	.ascii "Please center the car. "
 	.db 0x0d
 	.db 0x0a
-	.ascii "Use l and r to turn left and rig"
-	.ascii "ht. Press k when done."
+	.ascii "Use l and r to turn left and righ"
+	.ascii "t. Press k when done."
 	.db 0x00
 FLab3_1_SteeringCalibration$__str_3$0$0 == .
 ___str_3:
 	.db 0x0d
 	.db 0x0a
-	.ascii " Please turn the car all the way to the left without strai"
+	.ascii "Center pulse width = %u"
+	.db 0x00
+FLab3_1_SteeringCalibration$__str_4$0$0 == .
+___str_4:
+	.db 0x0d
+	.db 0x0a
+	.ascii "Please turn the car all the way to the left without strain"
+	.ascii "ing it. "
+	.db 0x0d
+	.db 0x0a
+	.ascii "Use l and r to turn left and right. Press k when d"
+	.ascii "one."
+	.db 0x00
+FLab3_1_SteeringCalibration$__str_5$0$0 == .
+___str_5:
+	.db 0x0d
+	.db 0x0a
+	.ascii "Left pulse width = %u"
+	.db 0x00
+FLab3_1_SteeringCalibration$__str_6$0$0 == .
+___str_6:
+	.db 0x0d
+	.db 0x0a
+	.ascii "Please turn the car all the way to the right without strai"
 	.ascii "ning it. "
 	.db 0x0d
 	.db 0x0a
 	.ascii "Use l and r to turn left and right. Press k when "
 	.ascii "done."
 	.db 0x00
-FLab3_1_SteeringCalibration$__str_4$0$0 == .
-___str_4:
+FLab3_1_SteeringCalibration$__str_7$0$0 == .
+___str_7:
 	.db 0x0d
+	.db 0x0a
+	.ascii "Right pulse width = %u"
+	.db 0x00
+FLab3_1_SteeringCalibration$__str_8$0$0 == .
+___str_8:
+	.db 0x0d
+	.db 0x0a
 	.db 0x0a
 	.ascii "PW_CENTER = %u "
 	.db 0x0d
@@ -1668,17 +1735,6 @@ ___str_4:
 	.ascii "PW_LEFT = %u "
 	.db 0x0d
 	.db 0x0a
-	.db 0x00
-FLab3_1_SteeringCalibration$__str_5$0$0 == .
-___str_5:
-	.db 0x0d
-	.db 0x0a
-	.ascii " Please turn the car all the way to the right without stra"
-	.ascii "ining it. "
-	.db 0x0d
-	.db 0x0a
-	.ascii "Use l and r to turn left and right. Press k when"
-	.ascii " done."
 	.db 0x00
 	.area XINIT   (CODE)
 	.area CABS    (ABS,CODE)

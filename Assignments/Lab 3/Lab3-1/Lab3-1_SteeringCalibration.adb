@@ -337,7 +337,10 @@ S:G$wctomb$0$0({2}DF,SI:S),C,0,0
 S:G$main$0$0({2}DF,SV:S),C,0,0
 S:FLab3_1_SteeringCalibration$__str_0$0$0({39}DA39d,SC:S),D,0,0
 S:FLab3_1_SteeringCalibration$__str_1$0$0({16}DA16d,SC:S),D,0,0
-S:FLab3_1_SteeringCalibration$__str_2$0$0({83}DA83d,SC:S),D,0,0
-S:FLab3_1_SteeringCalibration$__str_3$0$0({126}DA126d,SC:S),D,0,0
-S:FLab3_1_SteeringCalibration$__str_4$0$0({51}DA51d,SC:S),D,0,0
-S:FLab3_1_SteeringCalibration$__str_5$0$0({127}DA127d,SC:S),D,0,0
+S:FLab3_1_SteeringCalibration$__str_2$0$0({82}DA82d,SC:S),D,0,0
+S:FLab3_1_SteeringCalibration$__str_3$0$0({26}DA26d,SC:S),D,0,0
+S:FLab3_1_SteeringCalibration$__str_4$0$0({125}DA125d,SC:S),D,0,0
+S:FLab3_1_SteeringCalibration$__str_5$0$0({24}DA24d,SC:S),D,0,0
+S:FLab3_1_SteeringCalibration$__str_6$0$0({126}DA126d,SC:S),D,0,0
+S:FLab3_1_SteeringCalibration$__str_7$0$0({25}DA25d,SC:S),D,0,0
+S:FLab3_1_SteeringCalibration$__str_8$0$0({52}DA52d,SC:S),D,0,0
