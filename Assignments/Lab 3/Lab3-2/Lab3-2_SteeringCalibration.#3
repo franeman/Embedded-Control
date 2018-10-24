@@ -1,17 +1,26 @@
-/* Sample code for Lab 3.1. This program can be used to test the steering servo */
+/* Sample code for Lab 3.2. This program can be used to test the steering servo */
 #include <c8051_SDCC.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <i2c.h>
 //-----------------------------------------------------------------------------
 // 8051 Initialization Functions
 //-----------------------------------------------------------------------------
 void Port_Init(void);
 void PCA_Init (void);
 void XBR0_Init();
+//-----------------------------------------------------------------------------
+// Functions Prototypes
+//-----------------------------------------------------------------------------
 void Steering_Servo(void);
 void Turn(void);
 void PCA_ISR ( void ) __interrupt 9;
 void CalibrateSteering(void);
+unsigned int ReadCompass();
+
+//-----------------------------------------------------------------------------
+// Global Varialbles
+//-----------------------------------------------------------------------------
 unsigned int PW_CENTER;
 unsigned int PW_RIGHT;
 unsigned int PW_LEFT;
