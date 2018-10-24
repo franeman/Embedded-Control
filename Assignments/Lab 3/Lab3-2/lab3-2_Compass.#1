@@ -1,61 +1,70 @@
-/*  Names: Ethan Grey, Eric Segerstrom, Justin Conroy
+/*  Names: Ethan Grey
     Section: 2
-    Date: 10.11.2108
-    File name: Lab3-1.c
-    Description: Lab 3-1
+    Date: 10.24.2108
+    File name: Lab3-2_Compass.c
+    Description: Lab 3-2 compass code
 */
 
 
-/* Sample code for Lab 3.1. This code provides a basic start. */
+/* Sample code for Lab 3.2. This program can be used to test the steering servo */
 #include <c8051_SDCC.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <i2c.h>
 //-----------------------------------------------------------------------------
-// Function Prototypes
+// 8051 Initialization Functions
 //-----------------------------------------------------------------------------
 void Port_Init(void);
 void PCA_Init (void);
 void XBR0_Init();
-void Set_Pulsewidth(void);
+//-----------------------------------------------------------------------------
+// Functions Prototypes
+//-----------------------------------------------------------------------------
+void Steering_Servo(void);
+void Turn(void);
 void PCA_ISR ( void ) __interrupt 9;
+unsigned int ReadCompass();
 
 //-----------------------------------------------------------------------------
-// Global Variables
+// Global Varialbles
 //-----------------------------------------------------------------------------
-unsigned int SERVO_PW_CENTER; //= _____;
-unsigned int SERVO_PW_RIGHT; //= _____;
-unsigned int SERVO_PW_LEFT; //= _____;
+unsigned int PW_CENTER;
+unsigned int PW_RIGHT;
+unsigned int PW_LEFT;
 unsigned int SERVO_PW = 0;
+unsigned int count = 0;
 
 //-----------------------------------------------------------------------------
 // Global Constants
 //-----------------------------------------------------------------------------
-#define PCA_START 28671 // Sets start of PCA for 20ms period
+#define PCA_START 28672 // Sets start of PCA for 20ms period
+#define COMP_ADDR 0xC0 // Adress for compas module
 
 //-----------------------------------------------------------------------------
 // Main Function
 //-----------------------------------------------------------------------------
 void main(void)
 {
-    // initialize board
-    Sys_Init();
-    putchar(' '); //the quotes in this line may not format correctly
-    Port_Init();
-    XBR0_Init();
-    PCA_Init();
+	// initialize board
+	Sys_Init();
+	putchar(' '); //the quotes in this line may not format correctly
+	Port_Init();
+	XBR0_Init();
+	PCA_Init();
+	//print beginning message
+	printf("Embedded Control Compass Test\n");
+	//set initial value for steering (set to center)
+	unsigned int bearing = 0: // used to hold compass bearing
+	while(1)
+	{
+		if (count % 2 == 0) // if 40ms has passed
+		{
+			bearing = ReadCompass();
+			printf("Bearing = %u");
+		}
+	}
 
-    //print beginning message
-    printf("Embedded Control Pulsewidth Calibration\n");
-    // set the PCA output to a neutral setting
-    //__________________________________________
-    //__________________________________________
-    SERVO_PW = SERVO_PW_CENTER;
-    //__________________________________________
-    //__________________________________________
-    while(1)
-        Set_Pulsewidth();
 }
-
 //-----------------------------------------------------------------------------
 // Port_Init
 //-----------------------------------------------------------------------------
@@ -64,9 +73,8 @@ void main(void)
 //
 void Port_Init()
 {
-    //P1MDOUT = ________;  //set output pin for CEX0 or CEX2 in push-pull mode
+	P1MDOUT = 0x0F ;//set output pin for CEX0 in push-pull mode
 }
-
 //-----------------------------------------------------------------------------
 // XBR0_Init
 //-----------------------------------------------------------------------------
@@ -78,7 +86,6 @@ void XBR0_Init()
     XBR0 = 0x27;     // set up URART0, SPI, SMB, and CEX 0-3
 
 }
-
 //-----------------------------------------------------------------------------
 // PCA_Init
 //-----------------------------------------------------------------------------
@@ -90,10 +97,10 @@ void PCA_Init(void)
 	EA = 1; // Enable all interrupts
 	EIE1 |= 0x08; // Enable PCA0 interrupts
 	PCA0MD = 0x81;   // SYSCLK/12, enable CF interrupts, suspend when idle
-    PCA0CPM1 = 0xC2; // 16 bit, enable compare, enable PWM
+    PCA0CPM0 = 0xC2; // 16 bit, enable compare, enable PWM
+	PCA0 = PCA_START; // Set period for 20ms
     PCA0CN |= 0x40;  // enable PCA
 }
-
 //-----------------------------------------------------------------------------
 // PCA_ISR
 //-----------------------------------------------------------------------------
@@ -106,53 +113,42 @@ void PCA_ISR ( void ) __interrupt 9
 	{
 		CF = 0; // Clear overflow flag
 		PCA0 = PCA_START; // Set period for 20ms
+		count++; // Increment overflow counter
 	}
 
 	PCA0CN &= 0x40; // Clear other PCI interrupt sources
 }
 
-void Set_Pulsewidth()
+
+unsigned int ReadCompass()
 {
-    char input;
-    //wait for a key to be pressed
-    input = getchar();
-    if(input == '+')  // single character input to increase the pulsewidth
-    {
-    	SERVO_PW += 10; // Increase pulse width 
-        //if(SERVO_PW > SERVO_PW_MAX)  // check if greater than pulsewidth maximum
-        //    SERVO_PW = SERVO_PW_MAX;    // set SERVO_PW to the maximum value
-
-    }
-    else if(input == '-')  // single character input to decrease the pulsewidth
-    {
-        SERVO_PW -= 10; // Decrease pulse width 
-        //if(SERVO_PW < SERVO_PW_MIN)  // check if less than pulsewidth minimum
-        //    SERVO_PW = SERVO_PW_MIN;     // set SERVO_PW to the minimum value
-    }
-    printf("SERVO_PW: %u\n", SERVO_PW);
-    PCA0CP1 = 0xFFFF - SERVO_PW;
-
+	unsigned char addr = 0xC0; // the address of the sensor, 0xC0 for the compass
+	unsigned char Data[2]; // Data is an array with a length of 2
+	unsigned int heading; // the heading returned in degrees between 0 and 3599
+	i2c_read_data(addr, 2, Data, 2); // read two byte, starting at reg 2
+	heading =(((unsigned int)Data[0] << 8) | Data[1]); //combine the two values
+	 //heading has units of 1/10 of a degree
+	return heading; // the heading returned in degrees between 0 and 3599
 }
 
-void Steering_Servo()
-{
-	char input;
-	//wait for a key to be pressed
-	input = getchar();
-	if(input == 'r') //if 'r' is pressed by the user
-	{
-		if(SERVO_PW < SERVO_PW_RIGHT)
-		SERVO_PW = SERVO_PW + 10; //increase the steering pulsewidth by 10
-	}
-	else if(input == 'l') //if 'l' is pressed by the user
-	{
-		if(SERVO_PW > SERVO_PW_LEFT)
-		SERVO_PW = SERVO_PW - 10; //decrease the steering pulsewidth by 10
-	}
-	printf("SERVO_PW: %u\n", SERVO_PW);
-	PCA0CPL0 = 0xFFFF - SERVO_PW;
-	PCA0CPH0 = (0xFFFF - SERVO_PW) >> 8;
-}
+/*
+
+20 ms Period:
+SYSCLK/12 = 22.1184MHz /12 = 1.8432 MHz
+
+1.8432 Mcycles   
+-------------- * 20 ms = 36864 cycles for a 20ms Period
+   1 second
+
+PCA_START = 65535 - 36864 = 28671
+
+1.5 ms Pulse Width:
+
+1.8432 Mcycles   
+-------------- * 1.5 ms = 2764.8 ~ 2765 cycles for a 1.5ms Pulse Width
+   1 second
+
+*/
 
 /*
 
