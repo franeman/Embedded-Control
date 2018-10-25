@@ -17,6 +17,7 @@
 void Port_Init(void);
 void PCA_Init (void);
 void XBR0_Init();
+void SMB_Init();
 //-----------------------------------------------------------------------------
 // Functions Prototypes
 //-----------------------------------------------------------------------------
@@ -33,6 +34,7 @@ unsigned int PW_RIGHT;
 unsigned int PW_LEFT;
 unsigned int SERVO_PW = 0;
 unsigned int count = 0;
+unsigned int bearing = 0; // used to hold compass bearing
 
 //-----------------------------------------------------------------------------
 // Global Constants
@@ -51,16 +53,17 @@ void main(void)
 	Port_Init();
 	XBR0_Init();
 	PCA_Init();
+	SMB_Init();
 	//print beginning message
 	printf("Embedded Control Compass Test\n");
 	//set initial value for steering (set to center)
-	unsigned int bearing = 0: // used to hold compass bearing
+	
 	while(1)
 	{
 		if (count % 2 == 0) // if 40ms has passed
 		{
 			bearing = ReadCompass(); // Read the compass
-			printf("Bearing = %u"); // Print the value
+			printf("\r\nBearing = %u",bearing); // Print the value
 		}
 	}
 
@@ -74,6 +77,8 @@ void main(void)
 void Port_Init()
 {
 	P1MDOUT = 0x0F ;//set output pin for CEX0 in push-pull mode
+	P0MDOUT = 0xC0;
+	P0 |= ~0xC0;
 }
 //-----------------------------------------------------------------------------
 // XBR0_Init
@@ -126,9 +131,15 @@ unsigned int ReadCompass()
 	unsigned char Data[2]; // Data is an array with a length of 2
 	unsigned int heading; // the heading returned in degrees between 0 and 3599
 	i2c_read_data(addr, 2, Data, 2); // read two byte, starting at reg 2
-	heading =(((unsigned int)Data[0] << 8) | Data[1]); //combine the two values
+	heading =(((unsigned int)Data[0] << 8) | (unsigned int)Data[1]); //combine the two values
 	 //heading has units of 1/10 of a degree
 	return heading; // the heading returned in degrees between 0 and 3599
+}
+
+void SMB_Init()
+{
+	SMB0CR = 0x93;
+	ENSMB = 1;
 }
 
 /*

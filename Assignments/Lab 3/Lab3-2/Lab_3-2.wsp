@@ -306,7 +306,7 @@ Docking=True
 MRUDockID=0
 MRUDockLeftPos=1
 MRUDockTopPos=5
-MRUDockRightPos=766
+MRUDockRightPos=1536
 MRUDockBottomPos=135
 MRUFloatStyle=4
 MRUFloatXPos=-2147483648
@@ -318,7 +318,7 @@ MDIChild=False
 PctWidth=1000000
 MRUFloatCX=300
 MRUFloatCY=180
-MRUHorzDockCX=765
+MRUHorzDockCX=1535
 MRUHorzDockCY=130
 MRUVertDockCX=300
 MRUVertDockCY=180
@@ -1112,7 +1112,7 @@ MRUDockID=0
 MRUDockLeftPos=0
 MRUDockTopPos=-2
 MRUDockRightPos=180
-MRUDockBottomPos=577
+MRUDockBottomPos=586
 MRUFloatStyle=4
 MRUFloatXPos=-2147483648
 MRUFloatYPos=0
@@ -1126,7 +1126,7 @@ MRUFloatCY=180
 MRUHorzDockCX=300
 MRUHorzDockCY=180
 MRUVertDockCX=180
-MRUVertDockCY=579
+MRUVertDockCY=588
 MRUDockingState=0
 DockingStyle=61440
 TypeID=0
@@ -1574,7 +1574,7 @@ Docking=True
 MRUDockID=59419
 MRUDockLeftPos=-1
 MRUDockTopPos=-1
-MRUDockRightPos=765
+MRUDockRightPos=1535
 MRUDockBottomPos=28
 MRUFloatStyle=8196
 MRUFloatXPos=-2147483648
@@ -1586,7 +1586,7 @@ MDIChild=False
 PctWidth=1000000
 MRUFloatCX=503
 MRUFloatCY=29
-MRUHorzDockCX=766
+MRUHorzDockCX=1536
 MRUHorzDockCY=29
 MRUVertDockCX=80
 MRUVertDockCY=577
@@ -1848,10 +1848,11 @@ LargeButtons=False
 ptn_Child1=MainFrame
 ptn_Child2=ChildFrames
 [WorkState_v1_1.Frames.MainFrame]
-WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPANNPPPPPIKAAAAAAAFCAAAAAJPCAAAAA
-Title=Silicon Laboratories IDE - [Lab3-2_SteeringCalibration.c]
+WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPANNPPPPPIKAAAAAAAFCAAAAAJPCAAAAA
+Title=Silicon Laboratories IDE - [lab3-2_Compass.c]
 [WorkState_v1_1.Frames.ChildFrames]
 ptn_Child1=Document-0
+ptn_Child2=Document-1
 [WorkState_v1_1.Frames.ChildFrames.Document-0]
 ptn_Child1=ViewFrame-0
 [WorkState_v1_1.Frames.ChildFrames.Document-0.ViewFrame-0]
@@ -1859,6 +1860,14 @@ DocPathName=Lab3-2_SteeringCalibration.c
 DocumentString=Source File
 DocTemplateIndex=0
 WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPKBAAAAAAKBAAAAAAGKEAAAAAGJBAAAAA
+IsActiveChildFrame=False
+[WorkState_v1_1.Frames.ChildFrames.Document-1]
+ptn_Child1=ViewFrame-0
+[WorkState_v1_1.Frames.ChildFrames.Document-1.ViewFrame-0]
+DocPathName=lab3-2_Compass.c
+DocumentString=Source File
+DocTemplateIndex=0
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPIPPPPPPPBOPPPPPPKBAAAAAAKBAAAAAAKKEAAAAAKJBAAAAA
 IsActiveChildFrame=True
 [WorkState_v1_1.SerialPort]
 SerialPort=1
@@ -1911,7 +1920,7 @@ AutoSave=1
 [WorkState_v1_1.UseMake]
 UseMake=0
 [WorkState_v1_1.ErrorFormat]
-ErrorFormat=CS:LN: CS CS CS CS
+ErrorFormat=CS:LN: CS CS CS CS 
 [WorkState_v1_1.ErrorString]
 ErrorString=
 [WorkState_v1_1.MultiDeviceJTAG]
@@ -1947,14 +1956,17 @@ USB Adapter Power=0
 ptn_Child1=FileName
 [WorkState_v1_1.PFiles.FileName]
 FileName=Lab3-2_SteeringCalibration.c
+ptn_Child1=FileName
+[WorkState_v1_1.PFiles.FileName.FileName]
+FileName=lab3-2_Compass.c
 [WorkState_v1_1.AFiles]
 [WorkState_v1_1.CFiles]
 ptn_Child1=FileName
 [WorkState_v1_1.CFiles.FileName]
-FileName=Lab3-2_SteeringCalibration.c
+FileName=lab3-2_Compass.c
 [WorkState_v1_1.LFiles]
 ptn_Child1=FileName
 [WorkState_v1_1.LFiles.FileName]
-FileName=Lab3-2_SteeringCalibration.rel
+FileName=lab3-2_Compass.rel
 [WorkState_v1_1.BankMap]
 [WorkState_v1_1.Folders]

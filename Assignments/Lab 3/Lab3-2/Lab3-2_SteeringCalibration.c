@@ -30,6 +30,7 @@ unsigned int SERVO_PW = 0;
 // Global Constants
 //-----------------------------------------------------------------------------
 #define PCA_START 28672 // Sets start of PCA for 20ms period
+#define COMP_ADDR 0xC0 // Adress for compas module
 
 //-----------------------------------------------------------------------------
 // Main Function

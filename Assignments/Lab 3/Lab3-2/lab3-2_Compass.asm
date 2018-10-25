@@ -2,7 +2,7 @@
 ; File Created by SDCC : free open source ANSI-C Compiler
 ; Version 3.6.0 #9615 (MINGW64)
 ;--------------------------------------------------------
-	.module Lab3_2_SteeringCalibration
+	.module lab3_2_Compass
 	.optsdcc -mmcs51 --model-small
 	
 ;--------------------------------------------------------
@@ -12,7 +12,6 @@
 	.globl _read_keypad
 	.globl _strlen
 	.globl _putchar
-	.globl _getchar
 	.globl _vsprintf
 	.globl _printf
 	.globl _getchar_nw
@@ -304,6 +303,8 @@
 	.globl _DPL
 	.globl _SP
 	.globl _P0
+	.globl _bearing
+	.globl _count
 	.globl _SERVO_PW
 	.globl _PW_LEFT
 	.globl _PW_RIGHT
@@ -333,9 +334,8 @@
 	.globl _XBR0_Init
 	.globl _PCA_Init
 	.globl _PCA_ISR
-	.globl _Steering_Servo
-	.globl _Turn
-	.globl _CalibrateSteering
+	.globl _ReadCompass
+	.globl _SMB_Init
 ;--------------------------------------------------------
 ; special function registers
 ;--------------------------------------------------------
@@ -928,34 +928,34 @@ _BUS_SCL	=	0x0083
 G$Data2$0$0==.
 _Data2::
 	.ds 3
-LLab3_2_SteeringCalibration.aligned_alloc$size$1$39==.
+Llab3_2_Compass.aligned_alloc$size$1$39==.
 _aligned_alloc_PARM_2:
 	.ds 2
-LLab3_2_SteeringCalibration.lcd_clear$NumBytes$1$85==.
+Llab3_2_Compass.lcd_clear$NumBytes$1$85==.
 _lcd_clear_NumBytes_1_85:
 	.ds 1
-LLab3_2_SteeringCalibration.lcd_clear$Cmd$1$85==.
+Llab3_2_Compass.lcd_clear$Cmd$1$85==.
 _lcd_clear_Cmd_1_85:
 	.ds 2
-LLab3_2_SteeringCalibration.read_keypad$Data$1$86==.
+Llab3_2_Compass.read_keypad$Data$1$86==.
 _read_keypad_Data_1_86:
 	.ds 2
-LLab3_2_SteeringCalibration.i2c_write_data$start_reg$1$105==.
+Llab3_2_Compass.i2c_write_data$start_reg$1$105==.
 _i2c_write_data_PARM_2:
 	.ds 1
-LLab3_2_SteeringCalibration.i2c_write_data$buffer$1$105==.
+Llab3_2_Compass.i2c_write_data$buffer$1$105==.
 _i2c_write_data_PARM_3:
 	.ds 3
-LLab3_2_SteeringCalibration.i2c_write_data$num_bytes$1$105==.
+Llab3_2_Compass.i2c_write_data$num_bytes$1$105==.
 _i2c_write_data_PARM_4:
 	.ds 1
-LLab3_2_SteeringCalibration.i2c_read_data$start_reg$1$107==.
+Llab3_2_Compass.i2c_read_data$start_reg$1$107==.
 _i2c_read_data_PARM_2:
 	.ds 1
-LLab3_2_SteeringCalibration.i2c_read_data$buffer$1$107==.
+Llab3_2_Compass.i2c_read_data$buffer$1$107==.
 _i2c_read_data_PARM_3:
 	.ds 3
-LLab3_2_SteeringCalibration.i2c_read_data$num_bytes$1$107==.
+Llab3_2_Compass.i2c_read_data$num_bytes$1$107==.
 _i2c_read_data_PARM_4:
 	.ds 1
 G$PW_CENTER$0$0==.
@@ -969,6 +969,15 @@ _PW_LEFT::
 	.ds 2
 G$SERVO_PW$0$0==.
 _SERVO_PW::
+	.ds 2
+G$count$0$0==.
+_count::
+	.ds 2
+G$bearing$0$0==.
+_bearing::
+	.ds 2
+Llab3_2_Compass.ReadCompass$Data$1$130==.
+_ReadCompass_Data_1_130:
 	.ds 2
 ;--------------------------------------------------------
 ; overlayable items in internal ram 
@@ -1008,7 +1017,7 @@ __start__stack:
 ; external ram data
 ;--------------------------------------------------------
 	.area XSEG    (XDATA)
-LLab3_2_SteeringCalibration.lcd_print$text$1$81==.
+Llab3_2_Compass.lcd_print$text$1$81==.
 _lcd_print_text_1_81:
 	.ds 80
 ;--------------------------------------------------------
@@ -1067,11 +1076,19 @@ __interrupt_vect:
 	.globl __mcs51_genXINIT
 	.globl __mcs51_genXRAMCLEAR
 	.globl __mcs51_genRAMCLEAR
-	C$Lab3_2_SteeringCalibration.c$19$1$138 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:19: unsigned int SERVO_PW = 0;
+	C$lab3_2_Compass.c$35$1$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:35: unsigned int SERVO_PW = 0;
 	clr	a
 	mov	_SERVO_PW,a
 	mov	(_SERVO_PW + 1),a
+	C$lab3_2_Compass.c$36$1$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:36: unsigned int count = 0;
+	mov	_count,a
+	mov	(_count + 1),a
+	C$lab3_2_Compass.c$37$1$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:37: unsigned int bearing = 0; // used to hold compass bearing
+	mov	_bearing,a
+	mov	(_bearing + 1),a
 	.area GSFINAL (CODE)
 	ljmp	__sdcc_program_startup
 ;--------------------------------------------------------
@@ -2319,30 +2336,33 @@ _Accel_Init_C:
 ;Allocation info for local variables in function 'main'
 ;------------------------------------------------------------
 	G$main$0$0 ==.
-	C$Lab3_2_SteeringCalibration.c$29$1$113 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:29: void main(void)
+	C$lab3_2_Compass.c$48$1$113 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:48: void main(void)
 ;	-----------------------------------------
 ;	 function main
 ;	-----------------------------------------
 _main:
-	C$Lab3_2_SteeringCalibration.c$32$1$121 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:32: Sys_Init();
+	C$lab3_2_Compass.c$51$1$120 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:51: Sys_Init();
 	lcall	_Sys_Init
-	C$Lab3_2_SteeringCalibration.c$33$1$121 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:33: putchar(' '); //the quotes in this line may not format correctly
+	C$lab3_2_Compass.c$52$1$120 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:52: putchar(' '); //the quotes in this line may not format correctly
 	mov	dpl,#0x20
 	lcall	_putchar
-	C$Lab3_2_SteeringCalibration.c$34$1$121 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:34: Port_Init();
+	C$lab3_2_Compass.c$53$1$120 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:53: Port_Init();
 	lcall	_Port_Init
-	C$Lab3_2_SteeringCalibration.c$35$1$121 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:35: XBR0_Init();
+	C$lab3_2_Compass.c$54$1$120 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:54: XBR0_Init();
 	lcall	_XBR0_Init
-	C$Lab3_2_SteeringCalibration.c$36$1$121 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:36: PCA_Init();
+	C$lab3_2_Compass.c$55$1$120 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:55: PCA_Init();
 	lcall	_PCA_Init
-	C$Lab3_2_SteeringCalibration.c$38$1$121 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:38: printf("Embedded Control Steering Calibration\n");
+	C$lab3_2_Compass.c$56$1$120 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:56: SMB_Init();
+	lcall	_SMB_Init
+	C$lab3_2_Compass.c$58$1$120 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:58: printf("Embedded Control Compass Test\n");
 	mov	a,#___str_3
 	push	acc
 	mov	a,#(___str_3 >> 8)
@@ -2353,199 +2373,22 @@ _main:
 	dec	sp
 	dec	sp
 	dec	sp
-	C$Lab3_2_SteeringCalibration.c$40$1$121 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:40: SERVO_PW = PW_CENTER;
-	mov	_SERVO_PW,_PW_CENTER
-	mov	(_SERVO_PW + 1),(_PW_CENTER + 1)
-	C$Lab3_2_SteeringCalibration.c$41$1$121 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:41: CalibrateSteering(); // Calibrate boundries once
-	lcall	_CalibrateSteering
-	C$Lab3_2_SteeringCalibration.c$42$1$121 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:42: while(1)
-00102$:
-	C$Lab3_2_SteeringCalibration.c$43$1$121 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:43: Steering_Servo();
-	lcall	_Steering_Servo
-	sjmp	00102$
-	C$Lab3_2_SteeringCalibration.c$44$1$121 ==.
-	XG$main$0$0 ==.
-	ret
-;------------------------------------------------------------
-;Allocation info for local variables in function 'Port_Init'
-;------------------------------------------------------------
-	G$Port_Init$0$0 ==.
-	C$Lab3_2_SteeringCalibration.c$51$1$121 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:51: void Port_Init()
-;	-----------------------------------------
-;	 function Port_Init
-;	-----------------------------------------
-_Port_Init:
-	C$Lab3_2_SteeringCalibration.c$53$1$122 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:53: P1MDOUT = 0x0F ;//set output pin for CEX0 in push-pull mode
-	mov	_P1MDOUT,#0x0f
-	C$Lab3_2_SteeringCalibration.c$54$1$122 ==.
-	XG$Port_Init$0$0 ==.
-	ret
-;------------------------------------------------------------
-;Allocation info for local variables in function 'XBR0_Init'
-;------------------------------------------------------------
-	G$XBR0_Init$0$0 ==.
-	C$Lab3_2_SteeringCalibration.c$61$1$122 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:61: void XBR0_Init()
-;	-----------------------------------------
-;	 function XBR0_Init
-;	-----------------------------------------
-_XBR0_Init:
-	C$Lab3_2_SteeringCalibration.c$63$1$123 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:63: XBR0 = 0x27;     // set up URART0, SPI, SMB, and CEX 0-3
-	mov	_XBR0,#0x27
-	C$Lab3_2_SteeringCalibration.c$65$1$123 ==.
-	XG$XBR0_Init$0$0 ==.
-	ret
-;------------------------------------------------------------
-;Allocation info for local variables in function 'PCA_Init'
-;------------------------------------------------------------
-	G$PCA_Init$0$0 ==.
-	C$Lab3_2_SteeringCalibration.c$72$1$123 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:72: void PCA_Init(void)
-;	-----------------------------------------
-;	 function PCA_Init
-;	-----------------------------------------
-_PCA_Init:
-	C$Lab3_2_SteeringCalibration.c$74$1$125 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:74: EA = 1; // Enable all interrupts
-	setb	_EA
-	C$Lab3_2_SteeringCalibration.c$75$1$125 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:75: EIE1 |= 0x08; // Enable PCA0 interrupts
-	orl	_EIE1,#0x08
-	C$Lab3_2_SteeringCalibration.c$76$1$125 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:76: PCA0MD = 0x81;   // SYSCLK/12, enable CF interrupts, suspend when idle
-	mov	_PCA0MD,#0x81
-	C$Lab3_2_SteeringCalibration.c$77$1$125 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:77: PCA0CPM0 = 0xC2; // 16 bit, enable compare, enable PWM
-	mov	_PCA0CPM0,#0xc2
-	C$Lab3_2_SteeringCalibration.c$78$1$125 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:78: PCA0CN |= 0x40;  // enable PCA
-	orl	_PCA0CN,#0x40
-	C$Lab3_2_SteeringCalibration.c$79$1$125 ==.
-	XG$PCA_Init$0$0 ==.
-	ret
-;------------------------------------------------------------
-;Allocation info for local variables in function 'PCA_ISR'
-;------------------------------------------------------------
-	G$PCA_ISR$0$0 ==.
-	C$Lab3_2_SteeringCalibration.c$86$1$125 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:86: void PCA_ISR ( void ) __interrupt 9
-;	-----------------------------------------
-;	 function PCA_ISR
-;	-----------------------------------------
-_PCA_ISR:
-	C$Lab3_2_SteeringCalibration.c$88$1$127 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:88: if (CF)
-	C$Lab3_2_SteeringCalibration.c$90$2$128 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:90: CF = 0; // Clear overflow flag
-	jbc	_CF,00108$
-	sjmp	00102$
-00108$:
-	C$Lab3_2_SteeringCalibration.c$91$2$128 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:91: PCA0 = PCA_START; // Set period for 20ms
-	mov	((_PCA0 >> 0) & 0xFF),#0x00
-	mov	((_PCA0 >> 8) & 0xFF),#0x70
-00102$:
-	C$Lab3_2_SteeringCalibration.c$94$1$127 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:94: PCA0CN &= 0x40; // Clear other PCI interrupt sources
-	anl	_PCA0CN,#0x40
-	C$Lab3_2_SteeringCalibration.c$95$1$127 ==.
-	XG$PCA_ISR$0$0 ==.
-	reti
-;	eliminated unneeded mov psw,# (no regs used in bank)
-;	eliminated unneeded push/pop psw
-;	eliminated unneeded push/pop dpl
-;	eliminated unneeded push/pop dph
-;	eliminated unneeded push/pop b
-;	eliminated unneeded push/pop acc
-;------------------------------------------------------------
-;Allocation info for local variables in function 'Steering_Servo'
-;------------------------------------------------------------
-;input                     Allocated to registers r7 
-;------------------------------------------------------------
-	G$Steering_Servo$0$0 ==.
-	C$Lab3_2_SteeringCalibration.c$97$1$127 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:97: void Steering_Servo()
-;	-----------------------------------------
-;	 function Steering_Servo
-;	-----------------------------------------
-_Steering_Servo:
-	C$Lab3_2_SteeringCalibration.c$101$1$129 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:101: input = getchar();
-	lcall	_getchar
-	mov	r7,dpl
-	C$Lab3_2_SteeringCalibration.c$102$1$129 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:102: if(input == 'r') //if 'r' is pressed by the user
-	cjne	r7,#0x72,00108$
-	C$Lab3_2_SteeringCalibration.c$104$2$130 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:104: if(SERVO_PW+10 < PW_RIGHT)
-	mov	a,#0x0a
-	add	a,_SERVO_PW
-	mov	r5,a
-	clr	a
-	addc	a,(_SERVO_PW + 1)
-	mov	r6,a
-	clr	c
-	mov	a,r5
-	subb	a,_PW_RIGHT
-	mov	a,r6
-	subb	a,(_PW_RIGHT + 1)
-	jnc	00109$
-	C$Lab3_2_SteeringCalibration.c$105$2$130 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:105: SERVO_PW = SERVO_PW + 10; //increase the steering pulsewidth by 10
-	mov	a,#0x0a
-	add	a,_SERVO_PW
-	mov	_SERVO_PW,a
-	clr	a
-	addc	a,(_SERVO_PW + 1)
-	mov	(_SERVO_PW + 1),a
-	sjmp	00109$
-00108$:
-	C$Lab3_2_SteeringCalibration.c$107$1$129 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:107: else if(input == 'l') //if 'l' is pressed by the user
-	cjne	r7,#0x6c,00109$
-	C$Lab3_2_SteeringCalibration.c$109$2$131 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:109: if(SERVO_PW-10 > PW_LEFT)
-	mov	a,_SERVO_PW
-	add	a,#0xf6
-	mov	r6,a
-	mov	a,(_SERVO_PW + 1)
-	addc	a,#0xff
-	mov	r7,a
-	clr	c
-	mov	a,_PW_LEFT
-	subb	a,r6
-	mov	a,(_PW_LEFT + 1)
-	subb	a,r7
-	jnc	00109$
-	C$Lab3_2_SteeringCalibration.c$110$2$131 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:110: SERVO_PW = SERVO_PW - 10; //decrease the steering pulsewidth by 10
-	mov	a,_SERVO_PW
-	add	a,#0xf6
-	mov	_SERVO_PW,a
-	mov	a,(_SERVO_PW + 1)
-	addc	a,#0xff
-	mov	(_SERVO_PW + 1),a
-00109$:
-	C$Lab3_2_SteeringCalibration.c$112$1$129 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:112: PCA0CP0 = 0xFFFF - SERVO_PW; // Set CEX0 compare value (May need to break up into high and low to work)
-	mov	a,#0xff
-	clr	c
-	subb	a,_SERVO_PW
-	mov	((_PCA0CP0 >> 0) & 0xFF),a
-	mov	a,#0xff
-	subb	a,(_SERVO_PW + 1)
-	mov	((_PCA0CP0 >> 8) & 0xFF),a
-	C$Lab3_2_SteeringCalibration.c$113$1$129 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:113: printf("\r\nSERVO_PW: %u\n", SERVO_PW);
-	push	_SERVO_PW
-	push	(_SERVO_PW + 1)
+	C$lab3_2_Compass.c$61$1$120 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:61: while(1)
+00104$:
+	C$lab3_2_Compass.c$63$2$121 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:63: if (count % 2 == 0) // if 40ms has passed
+	mov	a,_count
+	jb	acc.0,00104$
+	C$lab3_2_Compass.c$65$3$122 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:65: bearing = ReadCompass(); // Read the compass
+	lcall	_ReadCompass
+	mov	_bearing,dpl
+	mov	(_bearing + 1),dph
+	C$lab3_2_Compass.c$66$3$122 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:66: printf("\r\nBearing = %u",bearing); // Print the value
+	push	_bearing
+	push	(_bearing + 1)
 	mov	a,#___str_4
 	push	acc
 	mov	a,#(___str_4 >> 8)
@@ -2556,241 +2399,207 @@ _Steering_Servo:
 	mov	a,sp
 	add	a,#0xfb
 	mov	sp,a
-	C$Lab3_2_SteeringCalibration.c$115$1$129 ==.
-	XG$Steering_Servo$0$0 ==.
+	sjmp	00104$
+	C$lab3_2_Compass.c$70$1$120 ==.
+	XG$main$0$0 ==.
 	ret
 ;------------------------------------------------------------
-;Allocation info for local variables in function 'Turn'
+;Allocation info for local variables in function 'Port_Init'
 ;------------------------------------------------------------
-;input                     Allocated to registers r7 
+	G$Port_Init$0$0 ==.
+	C$lab3_2_Compass.c$77$1$120 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:77: void Port_Init()
+;	-----------------------------------------
+;	 function Port_Init
+;	-----------------------------------------
+_Port_Init:
+	C$lab3_2_Compass.c$79$1$123 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:79: P1MDOUT = 0x0F ;//set output pin for CEX0 in push-pull mode
+	mov	_P1MDOUT,#0x0f
+	C$lab3_2_Compass.c$80$1$123 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:80: P0MDOUT = 0xC0;
+	mov	_P0MDOUT,#0xc0
+	C$lab3_2_Compass.c$81$1$123 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:81: P0 |= ~0xC0;
+	orl	_P0,#0x3f
+	C$lab3_2_Compass.c$82$1$123 ==.
+	XG$Port_Init$0$0 ==.
+	ret
 ;------------------------------------------------------------
-	G$Turn$0$0 ==.
-	C$Lab3_2_SteeringCalibration.c$117$1$129 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:117: void Turn(void) // Turns the car left and right, Press k to escape.
+;Allocation info for local variables in function 'XBR0_Init'
+;------------------------------------------------------------
+	G$XBR0_Init$0$0 ==.
+	C$lab3_2_Compass.c$89$1$123 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:89: void XBR0_Init()
 ;	-----------------------------------------
-;	 function Turn
+;	 function XBR0_Init
 ;	-----------------------------------------
-_Turn:
-	C$Lab3_2_SteeringCalibration.c$119$1$129 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:119: char input = 0;
-	mov	r7,#0x00
-	C$Lab3_2_SteeringCalibration.c$120$1$133 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:120: while (input != 'k')
-00106$:
-	cjne	r7,#0x6b,00123$
-	sjmp	00109$
-00123$:
-	C$Lab3_2_SteeringCalibration.c$122$2$134 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:122: input = getchar();
-	lcall	_getchar
-	mov	r7,dpl
-	C$Lab3_2_SteeringCalibration.c$123$2$134 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:123: if(input == 'r') //if 'r' is pressed by the user
-	cjne	r7,#0x72,00104$
-	C$Lab3_2_SteeringCalibration.c$125$3$135 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:125: SERVO_PW = SERVO_PW + 10; //increase the steering pulsewidth by 10
-	mov	a,#0x0a
-	add	a,_SERVO_PW
-	mov	_SERVO_PW,a
+_XBR0_Init:
+	C$lab3_2_Compass.c$91$1$124 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:91: XBR0 = 0x27;     // set up URART0, SPI, SMB, and CEX 0-3
+	mov	_XBR0,#0x27
+	C$lab3_2_Compass.c$93$1$124 ==.
+	XG$XBR0_Init$0$0 ==.
+	ret
+;------------------------------------------------------------
+;Allocation info for local variables in function 'PCA_Init'
+;------------------------------------------------------------
+	G$PCA_Init$0$0 ==.
+	C$lab3_2_Compass.c$100$1$124 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:100: void PCA_Init(void)
+;	-----------------------------------------
+;	 function PCA_Init
+;	-----------------------------------------
+_PCA_Init:
+	C$lab3_2_Compass.c$102$1$126 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:102: EA = 1; // Enable all interrupts
+	setb	_EA
+	C$lab3_2_Compass.c$103$1$126 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:103: EIE1 |= 0x08; // Enable PCA0 interrupts
+	orl	_EIE1,#0x08
+	C$lab3_2_Compass.c$104$1$126 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:104: PCA0MD = 0x81;   // SYSCLK/12, enable CF interrupts, suspend when idle
+	mov	_PCA0MD,#0x81
+	C$lab3_2_Compass.c$105$1$126 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:105: PCA0CPM0 = 0xC2; // 16 bit, enable compare, enable PWM
+	mov	_PCA0CPM0,#0xc2
+	C$lab3_2_Compass.c$106$1$126 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:106: PCA0 = PCA_START; // Set period for 20ms
+	mov	((_PCA0 >> 0) & 0xFF),#0x00
+	mov	((_PCA0 >> 8) & 0xFF),#0x70
+	C$lab3_2_Compass.c$107$1$126 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:107: PCA0CN |= 0x40;  // enable PCA
+	orl	_PCA0CN,#0x40
+	C$lab3_2_Compass.c$108$1$126 ==.
+	XG$PCA_Init$0$0 ==.
+	ret
+;------------------------------------------------------------
+;Allocation info for local variables in function 'PCA_ISR'
+;------------------------------------------------------------
+	G$PCA_ISR$0$0 ==.
+	C$lab3_2_Compass.c$115$1$126 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:115: void PCA_ISR ( void ) __interrupt 9
+;	-----------------------------------------
+;	 function PCA_ISR
+;	-----------------------------------------
+_PCA_ISR:
+	push	acc
+	push	psw
+	C$lab3_2_Compass.c$117$1$128 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:117: if (CF)
+	C$lab3_2_Compass.c$119$2$129 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:119: CF = 0; // Clear overflow flag
+	jbc	_CF,00108$
+	sjmp	00102$
+00108$:
+	C$lab3_2_Compass.c$120$2$129 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:120: PCA0 = PCA_START; // Set period for 20ms
+	mov	((_PCA0 >> 0) & 0xFF),#0x00
+	mov	((_PCA0 >> 8) & 0xFF),#0x70
+	C$lab3_2_Compass.c$121$2$129 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:121: count++; // Increment overflow counter
+	inc	_count
 	clr	a
-	addc	a,(_SERVO_PW + 1)
-	mov	(_SERVO_PW + 1),a
-	sjmp	00105$
-00104$:
-	C$Lab3_2_SteeringCalibration.c$127$2$134 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:127: else if(input == 'l') //if 'l' is pressed by the user
-	cjne	r7,#0x6c,00105$
-	C$Lab3_2_SteeringCalibration.c$129$3$136 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:129: SERVO_PW = SERVO_PW - 10; //decrease the steering pulsewidth by 10
-	mov	a,_SERVO_PW
-	add	a,#0xf6
-	mov	_SERVO_PW,a
-	mov	a,(_SERVO_PW + 1)
-	addc	a,#0xff
-	mov	(_SERVO_PW + 1),a
-00105$:
-	C$Lab3_2_SteeringCalibration.c$131$2$134 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:131: PCA0CP0 = 0xFFFF - SERVO_PW; // Set CEX0 compare value (May need to break up into high and low to work)
-	mov	a,#0xff
-	clr	c
-	subb	a,_SERVO_PW
-	mov	((_PCA0CP0 >> 0) & 0xFF),a
-	mov	a,#0xff
-	subb	a,(_SERVO_PW + 1)
-	mov	((_PCA0CP0 >> 8) & 0xFF),a
-	sjmp	00106$
+	cjne	a,_count,00109$
+	inc	(_count + 1)
 00109$:
-	C$Lab3_2_SteeringCalibration.c$133$1$133 ==.
-	XG$Turn$0$0 ==.
+00102$:
+	C$lab3_2_Compass.c$124$1$128 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:124: PCA0CN &= 0x40; // Clear other PCI interrupt sources
+	anl	_PCA0CN,#0x40
+	pop	psw
+	pop	acc
+	C$lab3_2_Compass.c$125$1$128 ==.
+	XG$PCA_ISR$0$0 ==.
+	reti
+;	eliminated unneeded mov psw,# (no regs used in bank)
+;	eliminated unneeded push/pop dpl
+;	eliminated unneeded push/pop dph
+;	eliminated unneeded push/pop b
+;------------------------------------------------------------
+;Allocation info for local variables in function 'ReadCompass'
+;------------------------------------------------------------
+;addr                      Allocated to registers 
+;Data                      Allocated with name '_ReadCompass_Data_1_130'
+;heading                   Allocated to registers 
+;------------------------------------------------------------
+	G$ReadCompass$0$0 ==.
+	C$lab3_2_Compass.c$128$1$128 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:128: unsigned int ReadCompass()
+;	-----------------------------------------
+;	 function ReadCompass
+;	-----------------------------------------
+_ReadCompass:
+	C$lab3_2_Compass.c$133$1$130 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:133: i2c_read_data(addr, 2, Data, 2); // read two byte, starting at reg 2
+	mov	_i2c_read_data_PARM_3,#_ReadCompass_Data_1_130
+	mov	(_i2c_read_data_PARM_3 + 1),#0x00
+	mov	(_i2c_read_data_PARM_3 + 2),#0x40
+	mov	_i2c_read_data_PARM_2,#0x02
+	mov	_i2c_read_data_PARM_4,#0x02
+	mov	dpl,#0xc0
+	lcall	_i2c_read_data
+	C$lab3_2_Compass.c$134$1$130 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:134: heading =(((unsigned int)Data[0] << 8) | (unsigned int)Data[1]); //combine the two values
+	mov	r7,_ReadCompass_Data_1_130
+	mov	r6,#0x00
+	mov	r4,(_ReadCompass_Data_1_130 + 0x0001)
+	mov	r5,#0x00
+	mov	a,r4
+	orl	a,r6
+	mov	dpl,a
+	mov	a,r5
+	orl	a,r7
+	mov	dph,a
+	C$lab3_2_Compass.c$136$1$130 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:136: return heading; // the heading returned in degrees between 0 and 3599
+	C$lab3_2_Compass.c$137$1$130 ==.
+	XG$ReadCompass$0$0 ==.
 	ret
 ;------------------------------------------------------------
-;Allocation info for local variables in function 'CalibrateSteering'
+;Allocation info for local variables in function 'SMB_Init'
 ;------------------------------------------------------------
-	G$CalibrateSteering$0$0 ==.
-	C$Lab3_2_SteeringCalibration.c$135$1$133 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:135: void CalibrateSteering(void)
+	G$SMB_Init$0$0 ==.
+	C$lab3_2_Compass.c$139$1$130 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:139: void SMB_Init()
 ;	-----------------------------------------
-;	 function CalibrateSteering
+;	 function SMB_Init
 ;	-----------------------------------------
-_CalibrateSteering:
-	C$Lab3_2_SteeringCalibration.c$137$1$138 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:137: SERVO_PW = 2765; // Set initial pulse width to 1.5ms (approx center)
-	mov	_SERVO_PW,#0xcd
-	mov	(_SERVO_PW + 1),#0x0a
-	C$Lab3_2_SteeringCalibration.c$138$1$138 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:138: PCA0CP0 = 0xFFFF - SERVO_PW; // Set pulse width (May need to break up into high and low to work)
-	mov	((_PCA0CP0 >> 0) & 0xFF),#0x32
-	mov	((_PCA0CP0 >> 8) & 0xFF),#0xf5
-	C$Lab3_2_SteeringCalibration.c$143$1$138 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:143: printf("\r\n Please center the car. \r\nUse l and r to turn left and right. Press k when done.");
-	mov	a,#___str_5
-	push	acc
-	mov	a,#(___str_5 >> 8)
-	push	acc
-	mov	a,#0x80
-	push	acc
-	lcall	_printf
-	dec	sp
-	dec	sp
-	dec	sp
-	C$Lab3_2_SteeringCalibration.c$144$1$138 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:144: Turn();
-	lcall	_Turn
-	C$Lab3_2_SteeringCalibration.c$146$1$138 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:146: PW_CENTER = SERVO_PW; // Save center PW
-	mov	_PW_CENTER,_SERVO_PW
-	mov	(_PW_CENTER + 1),(_SERVO_PW + 1)
-	C$Lab3_2_SteeringCalibration.c$152$1$138 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:152: printf("\r\n Please turn the car all the way to the right without straining it. \r\nUse l and r to turn left and right. Press k when done.");
-	mov	a,#___str_6
-	push	acc
-	mov	a,#(___str_6 >> 8)
-	push	acc
-	mov	a,#0x80
-	push	acc
-	lcall	_printf
-	dec	sp
-	dec	sp
-	dec	sp
-	C$Lab3_2_SteeringCalibration.c$153$1$138 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:153: Turn();
-	lcall	_Turn
-	C$Lab3_2_SteeringCalibration.c$155$1$138 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:155: PW_RIGHT = SERVO_PW; // Save right PW
-	mov	_PW_RIGHT,_SERVO_PW
-	mov	(_PW_RIGHT + 1),(_SERVO_PW + 1)
-	C$Lab3_2_SteeringCalibration.c$161$1$138 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:161: printf("\r\n Please turn the car all the way to the left without straining it. \r\nUse l and r to turn left and right. Press k when done.");
-	mov	a,#___str_7
-	push	acc
-	mov	a,#(___str_7 >> 8)
-	push	acc
-	mov	a,#0x80
-	push	acc
-	lcall	_printf
-	dec	sp
-	dec	sp
-	dec	sp
-	C$Lab3_2_SteeringCalibration.c$162$1$138 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:162: Turn();
-	lcall	_Turn
-	C$Lab3_2_SteeringCalibration.c$164$1$138 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:164: PW_LEFT = SERVO_PW; // Save left PW
-	mov	_PW_LEFT,_SERVO_PW
-	mov	(_PW_LEFT + 1),(_SERVO_PW + 1)
-	C$Lab3_2_SteeringCalibration.c$166$1$138 ==.
-;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\Lab3-2_SteeringCalibration.c:166: printf("\r\nPW_CENTER = %u \r\nPW_RIGHT = %u \r\nPW_LEFT = %u \r\n",PW_CENTER,PW_RIGHT,PW_LEFT); // Print all values
-	push	_PW_LEFT
-	push	(_PW_LEFT + 1)
-	push	_PW_RIGHT
-	push	(_PW_RIGHT + 1)
-	push	_PW_CENTER
-	push	(_PW_CENTER + 1)
-	mov	a,#___str_8
-	push	acc
-	mov	a,#(___str_8 >> 8)
-	push	acc
-	mov	a,#0x80
-	push	acc
-	lcall	_printf
-	mov	a,sp
-	add	a,#0xf7
-	mov	sp,a
-	C$Lab3_2_SteeringCalibration.c$167$1$138 ==.
-	XG$CalibrateSteering$0$0 ==.
+_SMB_Init:
+	C$lab3_2_Compass.c$141$1$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:141: SMB0CR = 0x93;
+	mov	_SMB0CR,#0x93
+	C$lab3_2_Compass.c$142$1$131 ==.
+;	C:\Users\Ethan\Documents\RPI Classes\Fall 2018\Embeded Control\Assignments\Lab 3\Lab3-2\lab3-2_Compass.c:142: ENSMB = 1;
+	setb	_ENSMB
+	C$lab3_2_Compass.c$143$1$131 ==.
+	XG$SMB_Init$0$0 ==.
 	ret
 	.area CSEG    (CODE)
 	.area CONST   (CODE)
-FLab3_2_SteeringCalibration$__str_0$0$0 == .
+Flab3_2_Compass$__str_0$0$0 == .
 ___str_0:
 	.db 0x0a
 	.ascii "Type digits; end w/#"
 	.db 0x00
-FLab3_2_SteeringCalibration$__str_1$0$0 == .
+Flab3_2_Compass$__str_1$0$0 == .
 ___str_1:
 	.ascii "     %c%c%c%c%c"
 	.db 0x00
-FLab3_2_SteeringCalibration$__str_2$0$0 == .
+Flab3_2_Compass$__str_2$0$0 == .
 ___str_2:
 	.ascii "%c"
 	.db 0x00
-FLab3_2_SteeringCalibration$__str_3$0$0 == .
+Flab3_2_Compass$__str_3$0$0 == .
 ___str_3:
-	.ascii "Embedded Control Steering Calibration"
+	.ascii "Embedded Control Compass Test"
 	.db 0x0a
 	.db 0x00
-FLab3_2_SteeringCalibration$__str_4$0$0 == .
+Flab3_2_Compass$__str_4$0$0 == .
 ___str_4:
 	.db 0x0d
 	.db 0x0a
-	.ascii "SERVO_PW: %u"
-	.db 0x0a
-	.db 0x00
-FLab3_2_SteeringCalibration$__str_5$0$0 == .
-___str_5:
-	.db 0x0d
-	.db 0x0a
-	.ascii " Please center the car. "
-	.db 0x0d
-	.db 0x0a
-	.ascii "Use l and r to turn left and rig"
-	.ascii "ht. Press k when done."
-	.db 0x00
-FLab3_2_SteeringCalibration$__str_6$0$0 == .
-___str_6:
-	.db 0x0d
-	.db 0x0a
-	.ascii " Please turn the car all the way to the right without stra"
-	.ascii "ining it. "
-	.db 0x0d
-	.db 0x0a
-	.ascii "Use l and r to turn left and right. Press k when"
-	.ascii " done."
-	.db 0x00
-FLab3_2_SteeringCalibration$__str_7$0$0 == .
-___str_7:
-	.db 0x0d
-	.db 0x0a
-	.ascii " Please turn the car all the way to the left without strai"
-	.ascii "ning it. "
-	.db 0x0d
-	.db 0x0a
-	.ascii "Use l and r to turn left and right. Press k when "
-	.ascii "done."
-	.db 0x00
-FLab3_2_SteeringCalibration$__str_8$0$0 == .
-___str_8:
-	.db 0x0d
-	.db 0x0a
-	.ascii "PW_CENTER = %u "
-	.db 0x0d
-	.db 0x0a
-	.ascii "PW_RIGHT = %u "
-	.db 0x0d
-	.db 0x0a
-	.ascii "PW_LEFT = %u "
-	.db 0x0d
-	.db 0x0a
+	.ascii "Bearing = %u"
 	.db 0x00
 	.area XINIT   (CODE)
 	.area CABS    (ABS,CODE)

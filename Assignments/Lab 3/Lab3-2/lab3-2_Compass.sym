@@ -8,912 +8,803 @@ Symbol Table
     .__.CPU.                                                    =  000000 L
     .__.H$L.                                                    =  000001 L
     A                                                           =  0000E0 L
-  F A$Lab3-2_SteeringCalibration$1037                              000000 GR
-  F A$Lab3-2_SteeringCalibration$1038                              000003 GR
-  F A$Lab3-2_SteeringCalibration$1040                              00000B GR
-  F A$Lab3-2_SteeringCalibration$1042                              000013 GR
-  F A$Lab3-2_SteeringCalibration$1044                              00001B GR
-  F A$Lab3-2_SteeringCalibration$1046                              000023 GR
-  F A$Lab3-2_SteeringCalibration$1048                              00002B GR
-  F A$Lab3-2_SteeringCalibration$1050                              000033 GR
-  F A$Lab3-2_SteeringCalibration$1052                              00003B GR
-  F A$Lab3-2_SteeringCalibration$1054                              000043 GR
-  F A$Lab3-2_SteeringCalibration$1056                              00004B GR
- 16 A$Lab3-2_SteeringCalibration$1072                              000000 GR
- 16 A$Lab3-2_SteeringCalibration$1073                              000001 GR
- 16 A$Lab3-2_SteeringCalibration$1074                              000003 GR
- 17 A$Lab3-2_SteeringCalibration$1076                              000000 GR
-  F A$Lab3-2_SteeringCalibration$1083                              00004E GR
- 18 A$Lab3-2_SteeringCalibration$1111                              000000 GR
- 18 A$Lab3-2_SteeringCalibration$1114                              000003 GR
- 18 A$Lab3-2_SteeringCalibration$1115                              000005 GR
- 18 A$Lab3-2_SteeringCalibration$1117                              000007 GR
- 18 A$Lab3-2_SteeringCalibration$1118                              000008 GR
- 18 A$Lab3-2_SteeringCalibration$1119                              00000A GR
- 18 A$Lab3-2_SteeringCalibration$1120                              00000B GR
- 18 A$Lab3-2_SteeringCalibration$1121                              00000C GR
- 18 A$Lab3-2_SteeringCalibration$1122                              00000E GR
- 18 A$Lab3-2_SteeringCalibration$1123                              00000F GR
- 18 A$Lab3-2_SteeringCalibration$1124                              000011 GR
- 18 A$Lab3-2_SteeringCalibration$1125                              000013 GR
- 18 A$Lab3-2_SteeringCalibration$1126                              000014 GR
- 18 A$Lab3-2_SteeringCalibration$1127                              000015 GR
- 18 A$Lab3-2_SteeringCalibration$1131                              000017 GR
- 18 A$Lab3-2_SteeringCalibration$1132                              000019 GR
- 18 A$Lab3-2_SteeringCalibration$1135                              00001C GR
- 18 A$Lab3-2_SteeringCalibration$1138                              00001F GR
- 18 A$Lab3-2_SteeringCalibration$1151                              000020 GR
- 18 A$Lab3-2_SteeringCalibration$1154                              000023 GR
- 18 A$Lab3-2_SteeringCalibration$1157                              000026 GR
- 18 A$Lab3-2_SteeringCalibration$1160                              000029 GR
- 18 A$Lab3-2_SteeringCalibration$1163                              00002B GR
- 18 A$Lab3-2_SteeringCalibration$1166                              00002E GR
- 18 A$Lab3-2_SteeringCalibration$1169                              000031 GR
- 18 A$Lab3-2_SteeringCalibration$1172                              000033 GR
- 18 A$Lab3-2_SteeringCalibration$1175                              000036 GR
- 18 A$Lab3-2_SteeringCalibration$1188                              000037 GR
- 18 A$Lab3-2_SteeringCalibration$1191                              00003A GR
- 18 A$Lab3-2_SteeringCalibration$1194                              00003D GR
- 18 A$Lab3-2_SteeringCalibration$1197                              000040 GR
- 18 A$Lab3-2_SteeringCalibration$1200                              000043 GR
- 18 A$Lab3-2_SteeringCalibration$1203                              000046 GR
- 18 A$Lab3-2_SteeringCalibration$1206                              000049 GR
+  F A$lab3-2_Compass$1046                                          000000 GR
+  F A$lab3-2_Compass$1047                                          000003 GR
+  F A$lab3-2_Compass$1049                                          00000B GR
+  F A$lab3-2_Compass$1051                                          000013 GR
+  F A$lab3-2_Compass$1053                                          00001B GR
+  F A$lab3-2_Compass$1055                                          000023 GR
+  F A$lab3-2_Compass$1057                                          00002B GR
+  F A$lab3-2_Compass$1059                                          000033 GR
+  F A$lab3-2_Compass$1061                                          00003B GR
+  F A$lab3-2_Compass$1063                                          000043 GR
+  F A$lab3-2_Compass$1065                                          00004B GR
+ 16 A$lab3-2_Compass$1081                                          000000 GR
+ 16 A$lab3-2_Compass$1082                                          000001 GR
+ 16 A$lab3-2_Compass$1083                                          000003 GR
+ 16 A$lab3-2_Compass$1086                                          000005 GR
+ 16 A$lab3-2_Compass$1087                                          000007 GR
+ 16 A$lab3-2_Compass$1090                                          000009 GR
+ 16 A$lab3-2_Compass$1091                                          00000B GR
+ 17 A$lab3-2_Compass$1093                                          000000 GR
+  F A$lab3-2_Compass$1100                                          00004E GR
+ 18 A$lab3-2_Compass$1128                                          000000 GR
+ 18 A$lab3-2_Compass$1131                                          000003 GR
+ 18 A$lab3-2_Compass$1132                                          000005 GR
+ 18 A$lab3-2_Compass$1134                                          000007 GR
+ 18 A$lab3-2_Compass$1135                                          000008 GR
+ 18 A$lab3-2_Compass$1136                                          00000A GR
+ 18 A$lab3-2_Compass$1137                                          00000B GR
+ 18 A$lab3-2_Compass$1138                                          00000C GR
+ 18 A$lab3-2_Compass$1139                                          00000E GR
+ 18 A$lab3-2_Compass$1140                                          00000F GR
+ 18 A$lab3-2_Compass$1141                                          000011 GR
+ 18 A$lab3-2_Compass$1142                                          000013 GR
+ 18 A$lab3-2_Compass$1143                                          000014 GR
+ 18 A$lab3-2_Compass$1144                                          000015 GR
+ 18 A$lab3-2_Compass$1148                                          000017 GR
+ 18 A$lab3-2_Compass$1149                                          000019 GR
+ 18 A$lab3-2_Compass$1152                                          00001C GR
+ 18 A$lab3-2_Compass$1155                                          00001F GR
+ 18 A$lab3-2_Compass$1168                                          000020 GR
+ 18 A$lab3-2_Compass$1171                                          000023 GR
+ 18 A$lab3-2_Compass$1174                                          000026 GR
+ 18 A$lab3-2_Compass$1177                                          000029 GR
+ 18 A$lab3-2_Compass$1180                                          00002B GR
+ 18 A$lab3-2_Compass$1183                                          00002E GR
+ 18 A$lab3-2_Compass$1186                                          000031 GR
+ 18 A$lab3-2_Compass$1189                                          000033 GR
+ 18 A$lab3-2_Compass$1192                                          000036 GR
+ 18 A$lab3-2_Compass$1205                                          000037 GR
+ 18 A$lab3-2_Compass$1208                                          00003A GR
+ 18 A$lab3-2_Compass$1211                                          00003D GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 2.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 18 A$Lab3-2_SteeringCalibration$1219                              00004A GR
- 18 A$Lab3-2_SteeringCalibration$1225                              00004C GR
- 18 A$Lab3-2_SteeringCalibration$1226                              00004F GR
- 18 A$Lab3-2_SteeringCalibration$1230                              000051 GR
- 18 A$Lab3-2_SteeringCalibration$1233                              000053 GR
- 18 A$Lab3-2_SteeringCalibration$1251                              000054 GR
- 18 A$Lab3-2_SteeringCalibration$1252                              000057 GR
- 18 A$Lab3-2_SteeringCalibration$1256                              000059 GR
- 18 A$Lab3-2_SteeringCalibration$1259                              00005B GR
- 18 A$Lab3-2_SteeringCalibration$1260                              00005D GR
- 18 A$Lab3-2_SteeringCalibration$1261                              00005F GR
- 18 A$Lab3-2_SteeringCalibration$1262                              000062 GR
- 18 A$Lab3-2_SteeringCalibration$1265                              000064 GR
- 18 A$Lab3-2_SteeringCalibration$1268                              000066 GR
- 18 A$Lab3-2_SteeringCalibration$1283                              000067 GR
- 18 A$Lab3-2_SteeringCalibration$1284                              00006A GR
- 18 A$Lab3-2_SteeringCalibration$1285                              00006D GR
- 18 A$Lab3-2_SteeringCalibration$1289                              00006F GR
- 18 A$Lab3-2_SteeringCalibration$1292                              000071 GR
- 18 A$Lab3-2_SteeringCalibration$1295                              000074 GR
- 18 A$Lab3-2_SteeringCalibration$1298                              000077 GR
- 18 A$Lab3-2_SteeringCalibration$1302                              00007A GR
- 18 A$Lab3-2_SteeringCalibration$1319                              00007B GR
- 18 A$Lab3-2_SteeringCalibration$1320                              00007D GR
- 18 A$Lab3-2_SteeringCalibration$1323                              000080 GR
- 18 A$Lab3-2_SteeringCalibration$1324                              000082 GR
- 18 A$Lab3-2_SteeringCalibration$1325                              000084 GR
- 18 A$Lab3-2_SteeringCalibration$1326                              000085 GR
- 18 A$Lab3-2_SteeringCalibration$1327                              000087 GR
- 18 A$Lab3-2_SteeringCalibration$1328                              000088 GR
- 18 A$Lab3-2_SteeringCalibration$1329                              00008A GR
- 18 A$Lab3-2_SteeringCalibration$1330                              00008B GR
- 18 A$Lab3-2_SteeringCalibration$1331                              00008D GR
- 18 A$Lab3-2_SteeringCalibration$1332                              000090 GR
- 18 A$Lab3-2_SteeringCalibration$1333                              000092 GR
- 18 A$Lab3-2_SteeringCalibration$1334                              000095 GR
- 18 A$Lab3-2_SteeringCalibration$1335                              000097 GR
- 18 A$Lab3-2_SteeringCalibration$1336                              000099 GR
- 18 A$Lab3-2_SteeringCalibration$1340                              00009B GR
- 18 A$Lab3-2_SteeringCalibration$1341                              00009D GR
- 18 A$Lab3-2_SteeringCalibration$1342                              00009F GR
- 18 A$Lab3-2_SteeringCalibration$1343                              0000A0 GR
- 18 A$Lab3-2_SteeringCalibration$1346                              0000A2 GR
- 18 A$Lab3-2_SteeringCalibration$1347                              0000A4 GR
- 18 A$Lab3-2_SteeringCalibration$1348                              0000A6 GR
- 18 A$Lab3-2_SteeringCalibration$1349                              0000A7 GR
- 18 A$Lab3-2_SteeringCalibration$1350                              0000A9 GR
- 18 A$Lab3-2_SteeringCalibration$1351                              0000AA GR
- 18 A$Lab3-2_SteeringCalibration$1352                              0000AC GR
- 18 A$Lab3-2_SteeringCalibration$1353                              0000AD GR
- 18 A$Lab3-2_SteeringCalibration$1354                              0000AF GR
- 18 A$Lab3-2_SteeringCalibration$1355                              0000B2 GR
- 18 A$Lab3-2_SteeringCalibration$1356                              0000B5 GR
- 18 A$Lab3-2_SteeringCalibration$1359                              0000B8 GR
- 18 A$Lab3-2_SteeringCalibration$1360                              0000BB GR
+ 18 A$lab3-2_Compass$1214                                          000040 GR
+ 18 A$lab3-2_Compass$1217                                          000043 GR
+ 18 A$lab3-2_Compass$1220                                          000046 GR
+ 18 A$lab3-2_Compass$1223                                          000049 GR
+ 18 A$lab3-2_Compass$1236                                          00004A GR
+ 18 A$lab3-2_Compass$1242                                          00004C GR
+ 18 A$lab3-2_Compass$1243                                          00004F GR
+ 18 A$lab3-2_Compass$1247                                          000051 GR
+ 18 A$lab3-2_Compass$1250                                          000053 GR
+ 18 A$lab3-2_Compass$1268                                          000054 GR
+ 18 A$lab3-2_Compass$1269                                          000057 GR
+ 18 A$lab3-2_Compass$1273                                          000059 GR
+ 18 A$lab3-2_Compass$1276                                          00005B GR
+ 18 A$lab3-2_Compass$1277                                          00005D GR
+ 18 A$lab3-2_Compass$1278                                          00005F GR
+ 18 A$lab3-2_Compass$1279                                          000062 GR
+ 18 A$lab3-2_Compass$1282                                          000064 GR
+ 18 A$lab3-2_Compass$1285                                          000066 GR
+ 18 A$lab3-2_Compass$1300                                          000067 GR
+ 18 A$lab3-2_Compass$1301                                          00006A GR
+ 18 A$lab3-2_Compass$1302                                          00006D GR
+ 18 A$lab3-2_Compass$1306                                          00006F GR
+ 18 A$lab3-2_Compass$1309                                          000071 GR
+ 18 A$lab3-2_Compass$1312                                          000074 GR
+ 18 A$lab3-2_Compass$1315                                          000077 GR
+ 18 A$lab3-2_Compass$1319                                          00007A GR
+ 18 A$lab3-2_Compass$1336                                          00007B GR
+ 18 A$lab3-2_Compass$1337                                          00007D GR
+ 18 A$lab3-2_Compass$1340                                          000080 GR
+ 18 A$lab3-2_Compass$1341                                          000082 GR
+ 18 A$lab3-2_Compass$1342                                          000084 GR
+ 18 A$lab3-2_Compass$1343                                          000085 GR
+ 18 A$lab3-2_Compass$1344                                          000087 GR
+ 18 A$lab3-2_Compass$1345                                          000088 GR
+ 18 A$lab3-2_Compass$1346                                          00008A GR
+ 18 A$lab3-2_Compass$1347                                          00008B GR
+ 18 A$lab3-2_Compass$1348                                          00008D GR
+ 18 A$lab3-2_Compass$1349                                          000090 GR
+ 18 A$lab3-2_Compass$1350                                          000092 GR
+ 18 A$lab3-2_Compass$1351                                          000095 GR
+ 18 A$lab3-2_Compass$1352                                          000097 GR
+ 18 A$lab3-2_Compass$1353                                          000099 GR
+ 18 A$lab3-2_Compass$1357                                          00009B GR
+ 18 A$lab3-2_Compass$1358                                          00009D GR
+ 18 A$lab3-2_Compass$1359                                          00009F GR
+ 18 A$lab3-2_Compass$1360                                          0000A0 GR
+ 18 A$lab3-2_Compass$1363                                          0000A2 GR
+ 18 A$lab3-2_Compass$1364                                          0000A4 GR
+ 18 A$lab3-2_Compass$1365                                          0000A6 GR
+ 18 A$lab3-2_Compass$1366                                          0000A7 GR
+ 18 A$lab3-2_Compass$1367                                          0000A9 GR
+ 18 A$lab3-2_Compass$1368                                          0000AA GR
+ 18 A$lab3-2_Compass$1369                                          0000AC GR
+ 18 A$lab3-2_Compass$1370                                          0000AD GR
+ 18 A$lab3-2_Compass$1371                                          0000AF GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 3.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 18 A$Lab3-2_SteeringCalibration$1361                              0000BE GR
- 18 A$Lab3-2_SteeringCalibration$1362                              0000C1 GR
- 18 A$Lab3-2_SteeringCalibration$1365                              0000C3 GR
- 18 A$Lab3-2_SteeringCalibration$1367                              0000C5 GR
- 18 A$Lab3-2_SteeringCalibration$1368                              0000C6 GR
- 18 A$Lab3-2_SteeringCalibration$1369                              0000C7 GR
- 18 A$Lab3-2_SteeringCalibration$1370                              0000C8 GR
- 18 A$Lab3-2_SteeringCalibration$1373                              0000CA GR
- 18 A$Lab3-2_SteeringCalibration$1374                              0000CB GR
- 18 A$Lab3-2_SteeringCalibration$1375                              0000CD GR
- 18 A$Lab3-2_SteeringCalibration$1376                              0000CF GR
- 18 A$Lab3-2_SteeringCalibration$1377                              0000D0 GR
- 18 A$Lab3-2_SteeringCalibration$1378                              0000D2 GR
- 18 A$Lab3-2_SteeringCalibration$1379                              0000D4 GR
- 18 A$Lab3-2_SteeringCalibration$1380                              0000D5 GR
- 18 A$Lab3-2_SteeringCalibration$1381                              0000D6 GR
- 18 A$Lab3-2_SteeringCalibration$1382                              0000D9 GR
- 18 A$Lab3-2_SteeringCalibration$1383                              0000DA GR
- 18 A$Lab3-2_SteeringCalibration$1384                              0000DC GR
- 18 A$Lab3-2_SteeringCalibration$1385                              0000DE GR
- 18 A$Lab3-2_SteeringCalibration$1386                              0000DF GR
- 18 A$Lab3-2_SteeringCalibration$1387                              0000E1 GR
- 18 A$Lab3-2_SteeringCalibration$1388                              0000E3 GR
- 18 A$Lab3-2_SteeringCalibration$1389                              0000E5 GR
- 18 A$Lab3-2_SteeringCalibration$1393                              0000E6 GR
- 18 A$Lab3-2_SteeringCalibration$1394                              0000E7 GR
- 18 A$Lab3-2_SteeringCalibration$1398                              0000E9 GR
- 18 A$Lab3-2_SteeringCalibration$1399                              0000EC GR
- 18 A$Lab3-2_SteeringCalibration$1400                              0000EF GR
- 18 A$Lab3-2_SteeringCalibration$1401                              0000F2 GR
- 18 A$Lab3-2_SteeringCalibration$1402                              0000F5 GR
- 18 A$Lab3-2_SteeringCalibration$1403                              0000F7 GR
- 18 A$Lab3-2_SteeringCalibration$1404                              0000FA GR
- 18 A$Lab3-2_SteeringCalibration$1406                              0000FD GR
- 18 A$Lab3-2_SteeringCalibration$1409                              0000FF GR
- 18 A$Lab3-2_SteeringCalibration$1425                              000100 GR
- 18 A$Lab3-2_SteeringCalibration$1429                              000103 GR
- 18 A$Lab3-2_SteeringCalibration$1430                              000105 GR
- 18 A$Lab3-2_SteeringCalibration$1431                              000107 GR
- 18 A$Lab3-2_SteeringCalibration$1432                              000109 GR
- 18 A$Lab3-2_SteeringCalibration$1433                              00010C GR
- 18 A$Lab3-2_SteeringCalibration$1434                              00010F GR
- 18 A$Lab3-2_SteeringCalibration$1435                              000112 GR
- 18 A$Lab3-2_SteeringCalibration$1436                              000115 GR
- 18 A$Lab3-2_SteeringCalibration$1437                              000118 GR
- 18 A$Lab3-2_SteeringCalibration$1438                              00011B GR
- 18 A$Lab3-2_SteeringCalibration$1439                              00011E GR
- 18 A$Lab3-2_SteeringCalibration$1443                              000120 GR
- 18 A$Lab3-2_SteeringCalibration$1446                              000123 GR
- 18 A$Lab3-2_SteeringCalibration$1447                              000126 GR
- 18 A$Lab3-2_SteeringCalibration$1448                              000129 GR
- 18 A$Lab3-2_SteeringCalibration$1449                              00012C GR
- 18 A$Lab3-2_SteeringCalibration$1450                              00012F GR
- 18 A$Lab3-2_SteeringCalibration$1451                              000132 GR
- 18 A$Lab3-2_SteeringCalibration$1452                              000135 GR
+ 18 A$lab3-2_Compass$1372                                          0000B2 GR
+ 18 A$lab3-2_Compass$1373                                          0000B5 GR
+ 18 A$lab3-2_Compass$1376                                          0000B8 GR
+ 18 A$lab3-2_Compass$1377                                          0000BB GR
+ 18 A$lab3-2_Compass$1378                                          0000BE GR
+ 18 A$lab3-2_Compass$1379                                          0000C1 GR
+ 18 A$lab3-2_Compass$1382                                          0000C3 GR
+ 18 A$lab3-2_Compass$1384                                          0000C5 GR
+ 18 A$lab3-2_Compass$1385                                          0000C6 GR
+ 18 A$lab3-2_Compass$1386                                          0000C7 GR
+ 18 A$lab3-2_Compass$1387                                          0000C8 GR
+ 18 A$lab3-2_Compass$1390                                          0000CA GR
+ 18 A$lab3-2_Compass$1391                                          0000CB GR
+ 18 A$lab3-2_Compass$1392                                          0000CD GR
+ 18 A$lab3-2_Compass$1393                                          0000CF GR
+ 18 A$lab3-2_Compass$1394                                          0000D0 GR
+ 18 A$lab3-2_Compass$1395                                          0000D2 GR
+ 18 A$lab3-2_Compass$1396                                          0000D4 GR
+ 18 A$lab3-2_Compass$1397                                          0000D5 GR
+ 18 A$lab3-2_Compass$1398                                          0000D6 GR
+ 18 A$lab3-2_Compass$1399                                          0000D9 GR
+ 18 A$lab3-2_Compass$1400                                          0000DA GR
+ 18 A$lab3-2_Compass$1401                                          0000DC GR
+ 18 A$lab3-2_Compass$1402                                          0000DE GR
+ 18 A$lab3-2_Compass$1403                                          0000DF GR
+ 18 A$lab3-2_Compass$1404                                          0000E1 GR
+ 18 A$lab3-2_Compass$1405                                          0000E3 GR
+ 18 A$lab3-2_Compass$1406                                          0000E5 GR
+ 18 A$lab3-2_Compass$1410                                          0000E6 GR
+ 18 A$lab3-2_Compass$1411                                          0000E7 GR
+ 18 A$lab3-2_Compass$1415                                          0000E9 GR
+ 18 A$lab3-2_Compass$1416                                          0000EC GR
+ 18 A$lab3-2_Compass$1417                                          0000EF GR
+ 18 A$lab3-2_Compass$1418                                          0000F2 GR
+ 18 A$lab3-2_Compass$1419                                          0000F5 GR
+ 18 A$lab3-2_Compass$1420                                          0000F7 GR
+ 18 A$lab3-2_Compass$1421                                          0000FA GR
+ 18 A$lab3-2_Compass$1423                                          0000FD GR
+ 18 A$lab3-2_Compass$1426                                          0000FF GR
+ 18 A$lab3-2_Compass$1442                                          000100 GR
+ 18 A$lab3-2_Compass$1446                                          000103 GR
+ 18 A$lab3-2_Compass$1447                                          000105 GR
+ 18 A$lab3-2_Compass$1448                                          000107 GR
+ 18 A$lab3-2_Compass$1449                                          000109 GR
+ 18 A$lab3-2_Compass$1450                                          00010C GR
+ 18 A$lab3-2_Compass$1451                                          00010F GR
+ 18 A$lab3-2_Compass$1452                                          000112 GR
+ 18 A$lab3-2_Compass$1453                                          000115 GR
+ 18 A$lab3-2_Compass$1454                                          000118 GR
+ 18 A$lab3-2_Compass$1455                                          00011B GR
+ 18 A$lab3-2_Compass$1456                                          00011E GR
+ 18 A$lab3-2_Compass$1460                                          000120 GR
+ 18 A$lab3-2_Compass$1463                                          000123 GR
+ 18 A$lab3-2_Compass$1464                                          000126 GR
+ 18 A$lab3-2_Compass$1465                                          000129 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 4.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 18 A$Lab3-2_SteeringCalibration$1455                              000138 GR
- 18 A$Lab3-2_SteeringCalibration$1471                              000139 GR
- 18 A$Lab3-2_SteeringCalibration$1472                              00013C GR
- 18 A$Lab3-2_SteeringCalibration$1473                              00013F GR
- 18 A$Lab3-2_SteeringCalibration$1474                              000142 GR
- 18 A$Lab3-2_SteeringCalibration$1475                              000145 GR
- 18 A$Lab3-2_SteeringCalibration$1476                              000148 GR
- 18 A$Lab3-2_SteeringCalibration$1477                              00014B GR
- 18 A$Lab3-2_SteeringCalibration$1480                              00014E GR
- 18 A$Lab3-2_SteeringCalibration$1481                              000150 GR
- 18 A$Lab3-2_SteeringCalibration$1482                              000153 GR
- 18 A$Lab3-2_SteeringCalibration$1483                              000156 GR
- 18 A$Lab3-2_SteeringCalibration$1487                              000158 GR
- 18 A$Lab3-2_SteeringCalibration$1488                              00015A GR
- 18 A$Lab3-2_SteeringCalibration$1492                              00015C GR
- 18 A$Lab3-2_SteeringCalibration$1493                              00015E GR
- 18 A$Lab3-2_SteeringCalibration$1494                              000160 GR
- 18 A$Lab3-2_SteeringCalibration$1495                              000162 GR
- 18 A$Lab3-2_SteeringCalibration$1496                              000164 GR
- 18 A$Lab3-2_SteeringCalibration$1498                              000166 GR
- 18 A$Lab3-2_SteeringCalibration$1499                              000167 GR
- 18 A$Lab3-2_SteeringCalibration$1500                              000168 GR
- 18 A$Lab3-2_SteeringCalibration$1501                              000169 GR
- 18 A$Lab3-2_SteeringCalibration$1502                              00016A GR
- 18 A$Lab3-2_SteeringCalibration$1503                              00016B GR
- 18 A$Lab3-2_SteeringCalibration$1505                              00016C GR
- 18 A$Lab3-2_SteeringCalibration$1506                              00016F GR
- 18 A$Lab3-2_SteeringCalibration$1507                              000171 GR
- 18 A$Lab3-2_SteeringCalibration$1508                              000173 GR
- 18 A$Lab3-2_SteeringCalibration$1509                              000174 GR
- 18 A$Lab3-2_SteeringCalibration$1510                              000176 GR
- 18 A$Lab3-2_SteeringCalibration$1511                              000177 GR
- 18 A$Lab3-2_SteeringCalibration$1512                              000179 GR
- 18 A$Lab3-2_SteeringCalibration$1513                              00017A GR
- 18 A$Lab3-2_SteeringCalibration$1514                              00017B GR
- 18 A$Lab3-2_SteeringCalibration$1517                              00017D GR
- 18 A$Lab3-2_SteeringCalibration$1518                              00017F GR
- 18 A$Lab3-2_SteeringCalibration$1519                              000180 GR
- 18 A$Lab3-2_SteeringCalibration$1520                              000182 GR
- 18 A$Lab3-2_SteeringCalibration$1524                              000184 GR
- 18 A$Lab3-2_SteeringCalibration$1525                              000185 GR
- 18 A$Lab3-2_SteeringCalibration$1526                              000187 GR
- 18 A$Lab3-2_SteeringCalibration$1528                              00018A GR
- 18 A$Lab3-2_SteeringCalibration$1531                              00018C GR
- 18 A$Lab3-2_SteeringCalibration$1532                              00018E GR
- 18 A$Lab3-2_SteeringCalibration$1533                              000191 GR
- 18 A$Lab3-2_SteeringCalibration$1534                              000194 GR
- 18 A$Lab3-2_SteeringCalibration$1538                              000196 GR
- 18 A$Lab3-2_SteeringCalibration$1539                              000198 GR
- 18 A$Lab3-2_SteeringCalibration$1540                              00019B GR
- 18 A$Lab3-2_SteeringCalibration$1541                              00019E GR
- 18 A$Lab3-2_SteeringCalibration$1545                              0001A0 GR
- 18 A$Lab3-2_SteeringCalibration$1546                              0001A2 GR
- 18 A$Lab3-2_SteeringCalibration$1547                              0001A5 GR
- 18 A$Lab3-2_SteeringCalibration$1548                              0001A8 GR
+ 18 A$lab3-2_Compass$1466                                          00012C GR
+ 18 A$lab3-2_Compass$1467                                          00012F GR
+ 18 A$lab3-2_Compass$1468                                          000132 GR
+ 18 A$lab3-2_Compass$1469                                          000135 GR
+ 18 A$lab3-2_Compass$1472                                          000138 GR
+ 18 A$lab3-2_Compass$1488                                          000139 GR
+ 18 A$lab3-2_Compass$1489                                          00013C GR
+ 18 A$lab3-2_Compass$1490                                          00013F GR
+ 18 A$lab3-2_Compass$1491                                          000142 GR
+ 18 A$lab3-2_Compass$1492                                          000145 GR
+ 18 A$lab3-2_Compass$1493                                          000148 GR
+ 18 A$lab3-2_Compass$1494                                          00014B GR
+ 18 A$lab3-2_Compass$1497                                          00014E GR
+ 18 A$lab3-2_Compass$1498                                          000150 GR
+ 18 A$lab3-2_Compass$1499                                          000153 GR
+ 18 A$lab3-2_Compass$1500                                          000156 GR
+ 18 A$lab3-2_Compass$1504                                          000158 GR
+ 18 A$lab3-2_Compass$1505                                          00015A GR
+ 18 A$lab3-2_Compass$1509                                          00015C GR
+ 18 A$lab3-2_Compass$1510                                          00015E GR
+ 18 A$lab3-2_Compass$1511                                          000160 GR
+ 18 A$lab3-2_Compass$1512                                          000162 GR
+ 18 A$lab3-2_Compass$1513                                          000164 GR
+ 18 A$lab3-2_Compass$1515                                          000166 GR
+ 18 A$lab3-2_Compass$1516                                          000167 GR
+ 18 A$lab3-2_Compass$1517                                          000168 GR
+ 18 A$lab3-2_Compass$1518                                          000169 GR
+ 18 A$lab3-2_Compass$1519                                          00016A GR
+ 18 A$lab3-2_Compass$1520                                          00016B GR
+ 18 A$lab3-2_Compass$1522                                          00016C GR
+ 18 A$lab3-2_Compass$1523                                          00016F GR
+ 18 A$lab3-2_Compass$1524                                          000171 GR
+ 18 A$lab3-2_Compass$1525                                          000173 GR
+ 18 A$lab3-2_Compass$1526                                          000174 GR
+ 18 A$lab3-2_Compass$1527                                          000176 GR
+ 18 A$lab3-2_Compass$1528                                          000177 GR
+ 18 A$lab3-2_Compass$1529                                          000179 GR
+ 18 A$lab3-2_Compass$1530                                          00017A GR
+ 18 A$lab3-2_Compass$1531                                          00017B GR
+ 18 A$lab3-2_Compass$1534                                          00017D GR
+ 18 A$lab3-2_Compass$1535                                          00017F GR
+ 18 A$lab3-2_Compass$1536                                          000180 GR
+ 18 A$lab3-2_Compass$1537                                          000182 GR
+ 18 A$lab3-2_Compass$1541                                          000184 GR
+ 18 A$lab3-2_Compass$1542                                          000185 GR
+ 18 A$lab3-2_Compass$1543                                          000187 GR
+ 18 A$lab3-2_Compass$1545                                          00018A GR
+ 18 A$lab3-2_Compass$1548                                          00018C GR
+ 18 A$lab3-2_Compass$1549                                          00018E GR
+ 18 A$lab3-2_Compass$1550                                          000191 GR
+ 18 A$lab3-2_Compass$1551                                          000194 GR
+ 18 A$lab3-2_Compass$1555                                          000196 GR
+ 18 A$lab3-2_Compass$1556                                          000198 GR
+ 18 A$lab3-2_Compass$1557                                          00019B GR
+ 18 A$lab3-2_Compass$1558                                          00019E GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 5.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 18 A$Lab3-2_SteeringCalibration$1552                              0001AA GR
- 18 A$Lab3-2_SteeringCalibration$1553                              0001AC GR
- 18 A$Lab3-2_SteeringCalibration$1554                              0001AF GR
- 18 A$Lab3-2_SteeringCalibration$1555                              0001B2 GR
- 18 A$Lab3-2_SteeringCalibration$1559                              0001B4 GR
- 18 A$Lab3-2_SteeringCalibration$1563                              0001B7 GR
- 18 A$Lab3-2_SteeringCalibration$1579                              0001B8 GR
- 18 A$Lab3-2_SteeringCalibration$1584                              0001BA GR
- 18 A$Lab3-2_SteeringCalibration$1585                              0001BB GR
- 18 A$Lab3-2_SteeringCalibration$1586                              0001BC GR
- 18 A$Lab3-2_SteeringCalibration$1587                              0001BD GR
- 18 A$Lab3-2_SteeringCalibration$1588                              0001BE GR
- 18 A$Lab3-2_SteeringCalibration$1589                              0001C0 GR
- 18 A$Lab3-2_SteeringCalibration$1590                              0001C2 GR
- 18 A$Lab3-2_SteeringCalibration$1591                              0001C4 GR
- 18 A$Lab3-2_SteeringCalibration$1592                              0001C6 GR
- 18 A$Lab3-2_SteeringCalibration$1593                              0001C8 GR
- 18 A$Lab3-2_SteeringCalibration$1594                              0001CA GR
- 18 A$Lab3-2_SteeringCalibration$1595                              0001CC GR
- 18 A$Lab3-2_SteeringCalibration$1596                              0001CE GR
- 18 A$Lab3-2_SteeringCalibration$1597                              0001D0 GR
- 18 A$Lab3-2_SteeringCalibration$1598                              0001D3 GR
- 18 A$Lab3-2_SteeringCalibration$1599                              0001D5 GR
- 18 A$Lab3-2_SteeringCalibration$1600                              0001D7 GR
- 18 A$Lab3-2_SteeringCalibration$1601                              0001D9 GR
- 18 A$Lab3-2_SteeringCalibration$1602                              0001DB GR
- 18 A$Lab3-2_SteeringCalibration$1606                              0001DD GR
- 18 A$Lab3-2_SteeringCalibration$1607                              0001DF GR
- 18 A$Lab3-2_SteeringCalibration$1608                              0001E1 GR
- 18 A$Lab3-2_SteeringCalibration$1609                              0001E3 GR
- 18 A$Lab3-2_SteeringCalibration$1610                              0001E5 GR
- 18 A$Lab3-2_SteeringCalibration$1611                              0001E6 GR
- 18 A$Lab3-2_SteeringCalibration$1612                              0001E8 GR
- 18 A$Lab3-2_SteeringCalibration$1613                              0001EA GR
- 18 A$Lab3-2_SteeringCalibration$1614                              0001EC GR
- 18 A$Lab3-2_SteeringCalibration$1615                              0001ED GR
- 18 A$Lab3-2_SteeringCalibration$1616                              0001EF GR
- 18 A$Lab3-2_SteeringCalibration$1617                              0001F1 GR
- 18 A$Lab3-2_SteeringCalibration$1618                              0001F3 GR
- 18 A$Lab3-2_SteeringCalibration$1619                              0001F4 GR
- 18 A$Lab3-2_SteeringCalibration$1620                              0001F6 GR
- 18 A$Lab3-2_SteeringCalibration$1621                              0001F8 GR
- 18 A$Lab3-2_SteeringCalibration$1622                              0001FA GR
- 18 A$Lab3-2_SteeringCalibration$1623                              0001FB GR
- 18 A$Lab3-2_SteeringCalibration$1624                              0001FD GR
- 18 A$Lab3-2_SteeringCalibration$1625                              0001FF GR
- 18 A$Lab3-2_SteeringCalibration$1626                              000201 GR
- 18 A$Lab3-2_SteeringCalibration$1627                              000202 GR
- 18 A$Lab3-2_SteeringCalibration$1628                              000204 GR
- 18 A$Lab3-2_SteeringCalibration$1629                              000206 GR
- 18 A$Lab3-2_SteeringCalibration$1630                              000208 GR
- 18 A$Lab3-2_SteeringCalibration$1631                              00020A GR
- 18 A$Lab3-2_SteeringCalibration$1632                              00020C GR
- 18 A$Lab3-2_SteeringCalibration$1633                              00020E GR
- 18 A$Lab3-2_SteeringCalibration$1634                              000210 GR
+ 18 A$lab3-2_Compass$1562                                          0001A0 GR
+ 18 A$lab3-2_Compass$1563                                          0001A2 GR
+ 18 A$lab3-2_Compass$1564                                          0001A5 GR
+ 18 A$lab3-2_Compass$1565                                          0001A8 GR
+ 18 A$lab3-2_Compass$1569                                          0001AA GR
+ 18 A$lab3-2_Compass$1570                                          0001AC GR
+ 18 A$lab3-2_Compass$1571                                          0001AF GR
+ 18 A$lab3-2_Compass$1572                                          0001B2 GR
+ 18 A$lab3-2_Compass$1576                                          0001B4 GR
+ 18 A$lab3-2_Compass$1580                                          0001B7 GR
+ 18 A$lab3-2_Compass$1596                                          0001B8 GR
+ 18 A$lab3-2_Compass$1601                                          0001BA GR
+ 18 A$lab3-2_Compass$1602                                          0001BB GR
+ 18 A$lab3-2_Compass$1603                                          0001BC GR
+ 18 A$lab3-2_Compass$1604                                          0001BD GR
+ 18 A$lab3-2_Compass$1605                                          0001BE GR
+ 18 A$lab3-2_Compass$1606                                          0001C0 GR
+ 18 A$lab3-2_Compass$1607                                          0001C2 GR
+ 18 A$lab3-2_Compass$1608                                          0001C4 GR
+ 18 A$lab3-2_Compass$1609                                          0001C6 GR
+ 18 A$lab3-2_Compass$1610                                          0001C8 GR
+ 18 A$lab3-2_Compass$1611                                          0001CA GR
+ 18 A$lab3-2_Compass$1612                                          0001CC GR
+ 18 A$lab3-2_Compass$1613                                          0001CE GR
+ 18 A$lab3-2_Compass$1614                                          0001D0 GR
+ 18 A$lab3-2_Compass$1615                                          0001D3 GR
+ 18 A$lab3-2_Compass$1616                                          0001D5 GR
+ 18 A$lab3-2_Compass$1617                                          0001D7 GR
+ 18 A$lab3-2_Compass$1618                                          0001D9 GR
+ 18 A$lab3-2_Compass$1619                                          0001DB GR
+ 18 A$lab3-2_Compass$1623                                          0001DD GR
+ 18 A$lab3-2_Compass$1624                                          0001DF GR
+ 18 A$lab3-2_Compass$1625                                          0001E1 GR
+ 18 A$lab3-2_Compass$1626                                          0001E3 GR
+ 18 A$lab3-2_Compass$1627                                          0001E5 GR
+ 18 A$lab3-2_Compass$1628                                          0001E6 GR
+ 18 A$lab3-2_Compass$1629                                          0001E8 GR
+ 18 A$lab3-2_Compass$1630                                          0001EA GR
+ 18 A$lab3-2_Compass$1631                                          0001EC GR
+ 18 A$lab3-2_Compass$1632                                          0001ED GR
+ 18 A$lab3-2_Compass$1633                                          0001EF GR
+ 18 A$lab3-2_Compass$1634                                          0001F1 GR
+ 18 A$lab3-2_Compass$1635                                          0001F3 GR
+ 18 A$lab3-2_Compass$1636                                          0001F4 GR
+ 18 A$lab3-2_Compass$1637                                          0001F6 GR
+ 18 A$lab3-2_Compass$1638                                          0001F8 GR
+ 18 A$lab3-2_Compass$1639                                          0001FA GR
+ 18 A$lab3-2_Compass$1640                                          0001FB GR
+ 18 A$lab3-2_Compass$1641                                          0001FD GR
+ 18 A$lab3-2_Compass$1642                                          0001FF GR
+ 18 A$lab3-2_Compass$1643                                          000201 GR
+ 18 A$lab3-2_Compass$1644                                          000202 GR
+ 18 A$lab3-2_Compass$1645                                          000204 GR
+ 18 A$lab3-2_Compass$1646                                          000206 GR
+ 18 A$lab3-2_Compass$1647                                          000208 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 6.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 18 A$Lab3-2_SteeringCalibration$1635                              000213 GR
- 18 A$Lab3-2_SteeringCalibration$1636                              000215 GR
- 18 A$Lab3-2_SteeringCalibration$1637                              000217 GR
- 18 A$Lab3-2_SteeringCalibration$1640                              000219 GR
- 18 A$Lab3-2_SteeringCalibration$1641                              00021C GR
- 18 A$Lab3-2_SteeringCalibration$1642                              00021F GR
- 18 A$Lab3-2_SteeringCalibration$1643                              000220 GR
- 18 A$Lab3-2_SteeringCalibration$1644                              000223 GR
- 18 A$Lab3-2_SteeringCalibration$1645                              000225 GR
- 18 A$Lab3-2_SteeringCalibration$1648                              000227 GR
- 18 A$Lab3-2_SteeringCalibration$1652                              000229 GR
- 18 A$Lab3-2_SteeringCalibration$1653                              00022B GR
- 18 A$Lab3-2_SteeringCalibration$1654                              00022D GR
- 18 A$Lab3-2_SteeringCalibration$1655                              00022F GR
- 18 A$Lab3-2_SteeringCalibration$1656                              000232 GR
- 18 A$Lab3-2_SteeringCalibration$1657                              000234 GR
- 18 A$Lab3-2_SteeringCalibration$1658                              000236 GR
- 18 A$Lab3-2_SteeringCalibration$1659                              000238 GR
- 18 A$Lab3-2_SteeringCalibration$1660                              00023A GR
- 18 A$Lab3-2_SteeringCalibration$1661                              00023C GR
- 18 A$Lab3-2_SteeringCalibration$1662                              00023F GR
- 18 A$Lab3-2_SteeringCalibration$1664                              000241 GR
- 18 A$Lab3-2_SteeringCalibration$1666                              000244 GR
- 18 A$Lab3-2_SteeringCalibration$1667                              000247 GR
- 18 A$Lab3-2_SteeringCalibration$1668                              000248 GR
- 18 A$Lab3-2_SteeringCalibration$1669                              00024A GR
- 18 A$Lab3-2_SteeringCalibration$1670                              00024C GR
- 18 A$Lab3-2_SteeringCalibration$1671                              00024E GR
- 18 A$Lab3-2_SteeringCalibration$1672                              000250 GR
- 18 A$Lab3-2_SteeringCalibration$1673                              000253 GR
- 18 A$Lab3-2_SteeringCalibration$1674                              000255 GR
- 18 A$Lab3-2_SteeringCalibration$1675                              000257 GR
- 18 A$Lab3-2_SteeringCalibration$1676                              000259 GR
- 18 A$Lab3-2_SteeringCalibration$1680                              00025B GR
- 18 A$Lab3-2_SteeringCalibration$1684                              00025E GR
- 18 A$Lab3-2_SteeringCalibration$1685                              000260 GR
- 18 A$Lab3-2_SteeringCalibration$1686                              000262 GR
- 18 A$Lab3-2_SteeringCalibration$1687                              000265 GR
- 18 A$Lab3-2_SteeringCalibration$1688                              000267 GR
- 18 A$Lab3-2_SteeringCalibration$1689                              000269 GR
- 18 A$Lab3-2_SteeringCalibration$1690                              00026B GR
- 18 A$Lab3-2_SteeringCalibration$1691                              00026E GR
- 18 A$Lab3-2_SteeringCalibration$1692                              000271 GR
- 18 A$Lab3-2_SteeringCalibration$1693                              000272 GR
- 18 A$Lab3-2_SteeringCalibration$1694                              000274 GR
- 18 A$Lab3-2_SteeringCalibration$1695                              000276 GR
- 18 A$Lab3-2_SteeringCalibration$1696                              000278 GR
- 18 A$Lab3-2_SteeringCalibration$1697                              00027B GR
- 18 A$Lab3-2_SteeringCalibration$1698                              00027D GR
- 18 A$Lab3-2_SteeringCalibration$1699                              00027F GR
- 18 A$Lab3-2_SteeringCalibration$1703                              000281 GR
- 18 A$Lab3-2_SteeringCalibration$1704                              000283 GR
- 18 A$Lab3-2_SteeringCalibration$1705                              000285 GR
- 18 A$Lab3-2_SteeringCalibration$1709                              000288 GR
- 18 A$Lab3-2_SteeringCalibration$1710                              00028A GR
+ 18 A$lab3-2_Compass$1648                                          00020A GR
+ 18 A$lab3-2_Compass$1649                                          00020C GR
+ 18 A$lab3-2_Compass$1650                                          00020E GR
+ 18 A$lab3-2_Compass$1651                                          000210 GR
+ 18 A$lab3-2_Compass$1652                                          000213 GR
+ 18 A$lab3-2_Compass$1653                                          000215 GR
+ 18 A$lab3-2_Compass$1654                                          000217 GR
+ 18 A$lab3-2_Compass$1657                                          000219 GR
+ 18 A$lab3-2_Compass$1658                                          00021C GR
+ 18 A$lab3-2_Compass$1659                                          00021F GR
+ 18 A$lab3-2_Compass$1660                                          000220 GR
+ 18 A$lab3-2_Compass$1661                                          000223 GR
+ 18 A$lab3-2_Compass$1662                                          000225 GR
+ 18 A$lab3-2_Compass$1665                                          000227 GR
+ 18 A$lab3-2_Compass$1669                                          000229 GR
+ 18 A$lab3-2_Compass$1670                                          00022B GR
+ 18 A$lab3-2_Compass$1671                                          00022D GR
+ 18 A$lab3-2_Compass$1672                                          00022F GR
+ 18 A$lab3-2_Compass$1673                                          000232 GR
+ 18 A$lab3-2_Compass$1674                                          000234 GR
+ 18 A$lab3-2_Compass$1675                                          000236 GR
+ 18 A$lab3-2_Compass$1676                                          000238 GR
+ 18 A$lab3-2_Compass$1677                                          00023A GR
+ 18 A$lab3-2_Compass$1678                                          00023C GR
+ 18 A$lab3-2_Compass$1679                                          00023F GR
+ 18 A$lab3-2_Compass$1681                                          000241 GR
+ 18 A$lab3-2_Compass$1683                                          000244 GR
+ 18 A$lab3-2_Compass$1684                                          000247 GR
+ 18 A$lab3-2_Compass$1685                                          000248 GR
+ 18 A$lab3-2_Compass$1686                                          00024A GR
+ 18 A$lab3-2_Compass$1687                                          00024C GR
+ 18 A$lab3-2_Compass$1688                                          00024E GR
+ 18 A$lab3-2_Compass$1689                                          000250 GR
+ 18 A$lab3-2_Compass$1690                                          000253 GR
+ 18 A$lab3-2_Compass$1691                                          000255 GR
+ 18 A$lab3-2_Compass$1692                                          000257 GR
+ 18 A$lab3-2_Compass$1693                                          000259 GR
+ 18 A$lab3-2_Compass$1697                                          00025B GR
+ 18 A$lab3-2_Compass$1701                                          00025E GR
+ 18 A$lab3-2_Compass$1702                                          000260 GR
+ 18 A$lab3-2_Compass$1703                                          000262 GR
+ 18 A$lab3-2_Compass$1704                                          000265 GR
+ 18 A$lab3-2_Compass$1705                                          000267 GR
+ 18 A$lab3-2_Compass$1706                                          000269 GR
+ 18 A$lab3-2_Compass$1707                                          00026B GR
+ 18 A$lab3-2_Compass$1708                                          00026E GR
+ 18 A$lab3-2_Compass$1709                                          000271 GR
+ 18 A$lab3-2_Compass$1710                                          000272 GR
+ 18 A$lab3-2_Compass$1711                                          000274 GR
+ 18 A$lab3-2_Compass$1712                                          000276 GR
+ 18 A$lab3-2_Compass$1713                                          000278 GR
+ 18 A$lab3-2_Compass$1714                                          00027B GR
+ 18 A$lab3-2_Compass$1715                                          00027D GR
+ 18 A$lab3-2_Compass$1716                                          00027F GR
+ 18 A$lab3-2_Compass$1720                                          000281 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 7.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 18 A$Lab3-2_SteeringCalibration$1711                              00028C GR
- 18 A$Lab3-2_SteeringCalibration$1712                              00028E GR
- 18 A$Lab3-2_SteeringCalibration$1713                              000290 GR
- 18 A$Lab3-2_SteeringCalibration$1714                              000292 GR
- 18 A$Lab3-2_SteeringCalibration$1715                              000294 GR
- 18 A$Lab3-2_SteeringCalibration$1716                              000296 GR
- 18 A$Lab3-2_SteeringCalibration$1717                              000298 GR
- 18 A$Lab3-2_SteeringCalibration$1718                              00029A GR
- 18 A$Lab3-2_SteeringCalibration$1719                              00029C GR
- 18 A$Lab3-2_SteeringCalibration$1720                              00029E GR
- 18 A$Lab3-2_SteeringCalibration$1721                              0002A0 GR
- 18 A$Lab3-2_SteeringCalibration$1722                              0002A2 GR
- 18 A$Lab3-2_SteeringCalibration$1723                              0002A4 GR
- 18 A$Lab3-2_SteeringCalibration$1724                              0002A6 GR
- 18 A$Lab3-2_SteeringCalibration$1725                              0002A8 GR
- 18 A$Lab3-2_SteeringCalibration$1726                              0002AB GR
- 18 A$Lab3-2_SteeringCalibration$1727                              0002AD GR
- 18 A$Lab3-2_SteeringCalibration$1728                              0002AF GR
- 18 A$Lab3-2_SteeringCalibration$1729                              0002B1 GR
- 18 A$Lab3-2_SteeringCalibration$1730                              0002B3 GR
- 18 A$Lab3-2_SteeringCalibration$1731                              0002B5 GR
- 18 A$Lab3-2_SteeringCalibration$1732                              0002B7 GR
- 18 A$Lab3-2_SteeringCalibration$1733                              0002B9 GR
- 18 A$Lab3-2_SteeringCalibration$1736                              0002BB GR
- 18 A$Lab3-2_SteeringCalibration$1737                              0002BD GR
- 18 A$Lab3-2_SteeringCalibration$1738                              0002BF GR
- 18 A$Lab3-2_SteeringCalibration$1739                              0002C2 GR
- 18 A$Lab3-2_SteeringCalibration$1740                              0002C4 GR
- 18 A$Lab3-2_SteeringCalibration$1741                              0002C6 GR
- 18 A$Lab3-2_SteeringCalibration$1742                              0002C8 GR
- 18 A$Lab3-2_SteeringCalibration$1743                              0002CB GR
- 18 A$Lab3-2_SteeringCalibration$1744                              0002CD GR
- 18 A$Lab3-2_SteeringCalibration$1745                              0002CF GR
- 18 A$Lab3-2_SteeringCalibration$1746                              0002D1 GR
- 18 A$Lab3-2_SteeringCalibration$1747                              0002D3 GR
- 18 A$Lab3-2_SteeringCalibration$1748                              0002D5 GR
- 18 A$Lab3-2_SteeringCalibration$1749                              0002D7 GR
- 18 A$Lab3-2_SteeringCalibration$1750                              0002D8 GR
- 18 A$Lab3-2_SteeringCalibration$1751                              0002D9 GR
- 18 A$Lab3-2_SteeringCalibration$1752                              0002DA GR
- 18 A$Lab3-2_SteeringCalibration$1753                              0002DB GR
- 18 A$Lab3-2_SteeringCalibration$1754                              0002DC GR
- 18 A$Lab3-2_SteeringCalibration$1755                              0002DD GR
- 18 A$Lab3-2_SteeringCalibration$1756                              0002DE GR
- 18 A$Lab3-2_SteeringCalibration$1757                              0002E0 GR
- 18 A$Lab3-2_SteeringCalibration$1758                              0002E1 GR
- 18 A$Lab3-2_SteeringCalibration$1759                              0002E2 GR
- 18 A$Lab3-2_SteeringCalibration$1760                              0002E4 GR
- 18 A$Lab3-2_SteeringCalibration$1764                              0002E5 GR
- 18 A$Lab3-2_SteeringCalibration$1765                              0002E7 GR
- 18 A$Lab3-2_SteeringCalibration$1766                              0002E9 GR
- 18 A$Lab3-2_SteeringCalibration$1767                              0002EB GR
- 18 A$Lab3-2_SteeringCalibration$1768                              0002ED GR
- 18 A$Lab3-2_SteeringCalibration$1769                              0002F0 GR
- 18 A$Lab3-2_SteeringCalibration$1770                              0002F2 GR
+ 18 A$lab3-2_Compass$1721                                          000283 GR
+ 18 A$lab3-2_Compass$1722                                          000285 GR
+ 18 A$lab3-2_Compass$1726                                          000288 GR
+ 18 A$lab3-2_Compass$1727                                          00028A GR
+ 18 A$lab3-2_Compass$1728                                          00028C GR
+ 18 A$lab3-2_Compass$1729                                          00028E GR
+ 18 A$lab3-2_Compass$1730                                          000290 GR
+ 18 A$lab3-2_Compass$1731                                          000292 GR
+ 18 A$lab3-2_Compass$1732                                          000294 GR
+ 18 A$lab3-2_Compass$1733                                          000296 GR
+ 18 A$lab3-2_Compass$1734                                          000298 GR
+ 18 A$lab3-2_Compass$1735                                          00029A GR
+ 18 A$lab3-2_Compass$1736                                          00029C GR
+ 18 A$lab3-2_Compass$1737                                          00029E GR
+ 18 A$lab3-2_Compass$1738                                          0002A0 GR
+ 18 A$lab3-2_Compass$1739                                          0002A2 GR
+ 18 A$lab3-2_Compass$1740                                          0002A4 GR
+ 18 A$lab3-2_Compass$1741                                          0002A6 GR
+ 18 A$lab3-2_Compass$1742                                          0002A8 GR
+ 18 A$lab3-2_Compass$1743                                          0002AB GR
+ 18 A$lab3-2_Compass$1744                                          0002AD GR
+ 18 A$lab3-2_Compass$1745                                          0002AF GR
+ 18 A$lab3-2_Compass$1746                                          0002B1 GR
+ 18 A$lab3-2_Compass$1747                                          0002B3 GR
+ 18 A$lab3-2_Compass$1748                                          0002B5 GR
+ 18 A$lab3-2_Compass$1749                                          0002B7 GR
+ 18 A$lab3-2_Compass$1750                                          0002B9 GR
+ 18 A$lab3-2_Compass$1753                                          0002BB GR
+ 18 A$lab3-2_Compass$1754                                          0002BD GR
+ 18 A$lab3-2_Compass$1755                                          0002BF GR
+ 18 A$lab3-2_Compass$1756                                          0002C2 GR
+ 18 A$lab3-2_Compass$1757                                          0002C4 GR
+ 18 A$lab3-2_Compass$1758                                          0002C6 GR
+ 18 A$lab3-2_Compass$1759                                          0002C8 GR
+ 18 A$lab3-2_Compass$1760                                          0002CB GR
+ 18 A$lab3-2_Compass$1761                                          0002CD GR
+ 18 A$lab3-2_Compass$1762                                          0002CF GR
+ 18 A$lab3-2_Compass$1763                                          0002D1 GR
+ 18 A$lab3-2_Compass$1764                                          0002D3 GR
+ 18 A$lab3-2_Compass$1765                                          0002D5 GR
+ 18 A$lab3-2_Compass$1766                                          0002D7 GR
+ 18 A$lab3-2_Compass$1767                                          0002D8 GR
+ 18 A$lab3-2_Compass$1768                                          0002D9 GR
+ 18 A$lab3-2_Compass$1769                                          0002DA GR
+ 18 A$lab3-2_Compass$1770                                          0002DB GR
+ 18 A$lab3-2_Compass$1771                                          0002DC GR
+ 18 A$lab3-2_Compass$1772                                          0002DD GR
+ 18 A$lab3-2_Compass$1773                                          0002DE GR
+ 18 A$lab3-2_Compass$1774                                          0002E0 GR
+ 18 A$lab3-2_Compass$1775                                          0002E1 GR
+ 18 A$lab3-2_Compass$1776                                          0002E2 GR
+ 18 A$lab3-2_Compass$1777                                          0002E4 GR
+ 18 A$lab3-2_Compass$1781                                          0002E5 GR
+ 18 A$lab3-2_Compass$1782                                          0002E7 GR
+ 18 A$lab3-2_Compass$1783                                          0002E9 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 8.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 18 A$Lab3-2_SteeringCalibration$1771                              0002F4 GR
- 18 A$Lab3-2_SteeringCalibration$1772                              0002F6 GR
- 18 A$Lab3-2_SteeringCalibration$1773                              0002F8 GR
- 18 A$Lab3-2_SteeringCalibration$1774                              0002FA GR
- 18 A$Lab3-2_SteeringCalibration$1775                              0002FB GR
- 18 A$Lab3-2_SteeringCalibration$1776                              0002FE GR
- 18 A$Lab3-2_SteeringCalibration$1777                              000301 GR
- 18 A$Lab3-2_SteeringCalibration$1778                              000302 GR
- 18 A$Lab3-2_SteeringCalibration$1779                              000304 GR
- 18 A$Lab3-2_SteeringCalibration$1780                              000306 GR
- 18 A$Lab3-2_SteeringCalibration$1781                              000308 GR
- 18 A$Lab3-2_SteeringCalibration$1782                              00030A GR
- 18 A$Lab3-2_SteeringCalibration$1783                              00030C GR
- 18 A$Lab3-2_SteeringCalibration$1784                              00030F GR
- 18 A$Lab3-2_SteeringCalibration$1785                              000311 GR
- 18 A$Lab3-2_SteeringCalibration$1786                              000313 GR
- 18 A$Lab3-2_SteeringCalibration$1787                              000315 GR
- 18 A$Lab3-2_SteeringCalibration$1788                              000317 GR
- 18 A$Lab3-2_SteeringCalibration$1792                              000319 GR
- 18 A$Lab3-2_SteeringCalibration$1793                              00031A GR
- 18 A$Lab3-2_SteeringCalibration$1795                              00031D GR
- 18 A$Lab3-2_SteeringCalibration$1796                              00031F GR
- 18 A$Lab3-2_SteeringCalibration$1800                              000322 GR
- 18 A$Lab3-2_SteeringCalibration$1801                              000324 GR
- 18 A$Lab3-2_SteeringCalibration$1805                              000326 GR
- 18 A$Lab3-2_SteeringCalibration$1819                              000327 GR
- 18 A$Lab3-2_SteeringCalibration$1820                              000329 GR
- 18 A$Lab3-2_SteeringCalibration$1821                              00032B GR
- 18 A$Lab3-2_SteeringCalibration$1822                              00032D GR
- 18 A$Lab3-2_SteeringCalibration$1825                              00032E GR
- 18 A$Lab3-2_SteeringCalibration$1826                              000330 GR
- 18 A$Lab3-2_SteeringCalibration$1827                              000332 GR
- 18 A$Lab3-2_SteeringCalibration$1828                              000334 GR
- 18 A$Lab3-2_SteeringCalibration$1830                              000336 GR
- 18 A$Lab3-2_SteeringCalibration$1831                              000337 GR
- 18 A$Lab3-2_SteeringCalibration$1832                              000338 GR
- 18 A$Lab3-2_SteeringCalibration$1833                              000339 GR
- 18 A$Lab3-2_SteeringCalibration$1834                              00033A GR
- 18 A$Lab3-2_SteeringCalibration$1835                              00033B GR
- 18 A$Lab3-2_SteeringCalibration$1836                              00033C GR
- 18 A$Lab3-2_SteeringCalibration$1837                              00033D GR
- 18 A$Lab3-2_SteeringCalibration$1838                              00033E GR
- 18 A$Lab3-2_SteeringCalibration$1839                              00033F GR
- 18 A$Lab3-2_SteeringCalibration$1840                              000341 GR
- 18 A$Lab3-2_SteeringCalibration$1841                              000342 GR
- 18 A$Lab3-2_SteeringCalibration$1842                              000345 GR
- 18 A$Lab3-2_SteeringCalibration$1843                              000346 GR
- 18 A$Lab3-2_SteeringCalibration$1844                              000349 GR
- 18 A$Lab3-2_SteeringCalibration$1845                              00034A GR
- 18 A$Lab3-2_SteeringCalibration$1846                              00034D GR
- 18 A$Lab3-2_SteeringCalibration$1848                              00034E GR
- 18 A$Lab3-2_SteeringCalibration$1852                              000350 GR
- 18 A$Lab3-2_SteeringCalibration$1866                              000351 GR
- 18 A$Lab3-2_SteeringCalibration$1869                              000354 GR
- 18 A$Lab3-2_SteeringCalibration$1873                              000356 GR
+ 18 A$lab3-2_Compass$1784                                          0002EB GR
+ 18 A$lab3-2_Compass$1785                                          0002ED GR
+ 18 A$lab3-2_Compass$1786                                          0002F0 GR
+ 18 A$lab3-2_Compass$1787                                          0002F2 GR
+ 18 A$lab3-2_Compass$1788                                          0002F4 GR
+ 18 A$lab3-2_Compass$1789                                          0002F6 GR
+ 18 A$lab3-2_Compass$1790                                          0002F8 GR
+ 18 A$lab3-2_Compass$1791                                          0002FA GR
+ 18 A$lab3-2_Compass$1792                                          0002FB GR
+ 18 A$lab3-2_Compass$1793                                          0002FE GR
+ 18 A$lab3-2_Compass$1794                                          000301 GR
+ 18 A$lab3-2_Compass$1795                                          000302 GR
+ 18 A$lab3-2_Compass$1796                                          000304 GR
+ 18 A$lab3-2_Compass$1797                                          000306 GR
+ 18 A$lab3-2_Compass$1798                                          000308 GR
+ 18 A$lab3-2_Compass$1799                                          00030A GR
+ 18 A$lab3-2_Compass$1800                                          00030C GR
+ 18 A$lab3-2_Compass$1801                                          00030F GR
+ 18 A$lab3-2_Compass$1802                                          000311 GR
+ 18 A$lab3-2_Compass$1803                                          000313 GR
+ 18 A$lab3-2_Compass$1804                                          000315 GR
+ 18 A$lab3-2_Compass$1805                                          000317 GR
+ 18 A$lab3-2_Compass$1809                                          000319 GR
+ 18 A$lab3-2_Compass$1810                                          00031A GR
+ 18 A$lab3-2_Compass$1812                                          00031D GR
+ 18 A$lab3-2_Compass$1813                                          00031F GR
+ 18 A$lab3-2_Compass$1817                                          000322 GR
+ 18 A$lab3-2_Compass$1818                                          000324 GR
+ 18 A$lab3-2_Compass$1822                                          000326 GR
+ 18 A$lab3-2_Compass$1836                                          000327 GR
+ 18 A$lab3-2_Compass$1837                                          000329 GR
+ 18 A$lab3-2_Compass$1838                                          00032B GR
+ 18 A$lab3-2_Compass$1839                                          00032D GR
+ 18 A$lab3-2_Compass$1842                                          00032E GR
+ 18 A$lab3-2_Compass$1843                                          000330 GR
+ 18 A$lab3-2_Compass$1844                                          000332 GR
+ 18 A$lab3-2_Compass$1845                                          000334 GR
+ 18 A$lab3-2_Compass$1847                                          000336 GR
+ 18 A$lab3-2_Compass$1848                                          000337 GR
+ 18 A$lab3-2_Compass$1849                                          000338 GR
+ 18 A$lab3-2_Compass$1850                                          000339 GR
+ 18 A$lab3-2_Compass$1851                                          00033A GR
+ 18 A$lab3-2_Compass$1852                                          00033B GR
+ 18 A$lab3-2_Compass$1853                                          00033C GR
+ 18 A$lab3-2_Compass$1854                                          00033D GR
+ 18 A$lab3-2_Compass$1855                                          00033E GR
+ 18 A$lab3-2_Compass$1856                                          00033F GR
+ 18 A$lab3-2_Compass$1857                                          000341 GR
+ 18 A$lab3-2_Compass$1858                                          000342 GR
+ 18 A$lab3-2_Compass$1859                                          000345 GR
+ 18 A$lab3-2_Compass$1860                                          000346 GR
+ 18 A$lab3-2_Compass$1861                                          000349 GR
+ 18 A$lab3-2_Compass$1862                                          00034A GR
+ 18 A$lab3-2_Compass$1863                                          00034D GR
+ 18 A$lab3-2_Compass$1865                                          00034E GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 9.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 18 A$Lab3-2_SteeringCalibration$1876                              000359 GR
- 18 A$Lab3-2_SteeringCalibration$1879                              00035B GR
- 18 A$Lab3-2_SteeringCalibration$1882                              00035D GR
- 18 A$Lab3-2_SteeringCalibration$1895                              00035E GR
- 18 A$Lab3-2_SteeringCalibration$1901                              000361 GR
- 18 A$Lab3-2_SteeringCalibration$1902                              000364 GR
- 18 A$Lab3-2_SteeringCalibration$1906                              000366 GR
- 18 A$Lab3-2_SteeringCalibration$1919                              000367 GR
- 18 A$Lab3-2_SteeringCalibration$1922                              00036A GR
- 18 A$Lab3-2_SteeringCalibration$1928                              00036C GR
- 18 A$Lab3-2_SteeringCalibration$1929                              00036F GR
- 18 A$Lab3-2_SteeringCalibration$1933                              000371 GR
- 18 A$Lab3-2_SteeringCalibration$1949                              000372 GR
- 18 A$Lab3-2_SteeringCalibration$1952                              000375 GR
- 18 A$Lab3-2_SteeringCalibration$1955                              000378 GR
- 18 A$Lab3-2_SteeringCalibration$1960                              00037A GR
- 18 A$Lab3-2_SteeringCalibration$1976                              00037B GR
- 18 A$Lab3-2_SteeringCalibration$1979                              00037E GR
- 18 A$Lab3-2_SteeringCalibration$1982                              000380 GR
- 18 A$Lab3-2_SteeringCalibration$1985                              000382 GR
- 18 A$Lab3-2_SteeringCalibration$1991                              000384 GR
- 18 A$Lab3-2_SteeringCalibration$1992                              000387 GR
- 18 A$Lab3-2_SteeringCalibration$1996                              000389 GR
- 18 A$Lab3-2_SteeringCalibration$1999                              00038B GR
- 18 A$Lab3-2_SteeringCalibration$2016                              00038C GR
- 18 A$Lab3-2_SteeringCalibration$2019                              00038E GR
- 18 A$Lab3-2_SteeringCalibration$2022                              000390 GR
- 18 A$Lab3-2_SteeringCalibration$2023                              000392 GR
- 18 A$Lab3-2_SteeringCalibration$2024                              000395 GR
- 18 A$Lab3-2_SteeringCalibration$2027                              000397 GR
- 18 A$Lab3-2_SteeringCalibration$2028                              000399 GR
- 18 A$Lab3-2_SteeringCalibration$2029                              00039A GR
- 18 A$Lab3-2_SteeringCalibration$2030                              00039C GR
- 18 A$Lab3-2_SteeringCalibration$2033                              00039F GR
- 18 A$Lab3-2_SteeringCalibration$2034                              0003A2 GR
- 18 A$Lab3-2_SteeringCalibration$2037                              0003A5 GR
- 18 A$Lab3-2_SteeringCalibration$2039                              0003A7 GR
- 18 A$Lab3-2_SteeringCalibration$2040                              0003A9 GR
- 18 A$Lab3-2_SteeringCalibration$2041                              0003AB GR
- 18 A$Lab3-2_SteeringCalibration$2042                              0003AC GR
- 18 A$Lab3-2_SteeringCalibration$2043                              0003AF GR
- 18 A$Lab3-2_SteeringCalibration$2045                              0003B0 GR
- 18 A$Lab3-2_SteeringCalibration$2046                              0003B2 GR
- 18 A$Lab3-2_SteeringCalibration$2047                              0003B4 GR
- 18 A$Lab3-2_SteeringCalibration$2048                              0003B5 GR
- 18 A$Lab3-2_SteeringCalibration$2049                              0003B6 GR
- 18 A$Lab3-2_SteeringCalibration$2050                              0003B7 GR
- 18 A$Lab3-2_SteeringCalibration$2051                              0003B8 GR
- 18 A$Lab3-2_SteeringCalibration$2052                              0003BA GR
- 18 A$Lab3-2_SteeringCalibration$2053                              0003BC GR
- 18 A$Lab3-2_SteeringCalibration$2054                              0003BF GR
- 18 A$Lab3-2_SteeringCalibration$2055                              0003C1 GR
- 18 A$Lab3-2_SteeringCalibration$2058                              0003C3 GR
- 18 A$Lab3-2_SteeringCalibration$2059                              0003C4 GR
- 18 A$Lab3-2_SteeringCalibration$2060                              0003C6 GR
+ 18 A$lab3-2_Compass$1869                                          000350 GR
+ 18 A$lab3-2_Compass$1883                                          000351 GR
+ 18 A$lab3-2_Compass$1886                                          000354 GR
+ 18 A$lab3-2_Compass$1890                                          000356 GR
+ 18 A$lab3-2_Compass$1893                                          000359 GR
+ 18 A$lab3-2_Compass$1896                                          00035B GR
+ 18 A$lab3-2_Compass$1899                                          00035D GR
+ 18 A$lab3-2_Compass$1912                                          00035E GR
+ 18 A$lab3-2_Compass$1918                                          000361 GR
+ 18 A$lab3-2_Compass$1919                                          000364 GR
+ 18 A$lab3-2_Compass$1923                                          000366 GR
+ 18 A$lab3-2_Compass$1936                                          000367 GR
+ 18 A$lab3-2_Compass$1939                                          00036A GR
+ 18 A$lab3-2_Compass$1945                                          00036C GR
+ 18 A$lab3-2_Compass$1946                                          00036F GR
+ 18 A$lab3-2_Compass$1950                                          000371 GR
+ 18 A$lab3-2_Compass$1966                                          000372 GR
+ 18 A$lab3-2_Compass$1969                                          000375 GR
+ 18 A$lab3-2_Compass$1972                                          000378 GR
+ 18 A$lab3-2_Compass$1977                                          00037A GR
+ 18 A$lab3-2_Compass$1993                                          00037B GR
+ 18 A$lab3-2_Compass$1996                                          00037E GR
+ 18 A$lab3-2_Compass$1999                                          000380 GR
+ 18 A$lab3-2_Compass$2002                                          000382 GR
+ 18 A$lab3-2_Compass$2008                                          000384 GR
+ 18 A$lab3-2_Compass$2009                                          000387 GR
+ 18 A$lab3-2_Compass$2013                                          000389 GR
+ 18 A$lab3-2_Compass$2016                                          00038B GR
+ 18 A$lab3-2_Compass$2033                                          00038C GR
+ 18 A$lab3-2_Compass$2036                                          00038E GR
+ 18 A$lab3-2_Compass$2039                                          000390 GR
+ 18 A$lab3-2_Compass$2040                                          000392 GR
+ 18 A$lab3-2_Compass$2041                                          000395 GR
+ 18 A$lab3-2_Compass$2044                                          000397 GR
+ 18 A$lab3-2_Compass$2045                                          000399 GR
+ 18 A$lab3-2_Compass$2046                                          00039A GR
+ 18 A$lab3-2_Compass$2047                                          00039C GR
+ 18 A$lab3-2_Compass$2050                                          00039F GR
+ 18 A$lab3-2_Compass$2051                                          0003A2 GR
+ 18 A$lab3-2_Compass$2054                                          0003A5 GR
+ 18 A$lab3-2_Compass$2056                                          0003A7 GR
+ 18 A$lab3-2_Compass$2057                                          0003A9 GR
+ 18 A$lab3-2_Compass$2058                                          0003AB GR
+ 18 A$lab3-2_Compass$2059                                          0003AC GR
+ 18 A$lab3-2_Compass$2060                                          0003AF GR
+ 18 A$lab3-2_Compass$2062                                          0003B0 GR
+ 18 A$lab3-2_Compass$2063                                          0003B2 GR
+ 18 A$lab3-2_Compass$2064                                          0003B4 GR
+ 18 A$lab3-2_Compass$2065                                          0003B5 GR
+ 18 A$lab3-2_Compass$2066                                          0003B6 GR
+ 18 A$lab3-2_Compass$2067                                          0003B7 GR
+ 18 A$lab3-2_Compass$2068                                          0003B8 GR
+ 18 A$lab3-2_Compass$2069                                          0003BA GR
+ 18 A$lab3-2_Compass$2070                                          0003BC GR
+ 18 A$lab3-2_Compass$2071                                          0003BF GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 10.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 18 A$Lab3-2_SteeringCalibration$2061                              0003C7 GR
- 18 A$Lab3-2_SteeringCalibration$2062                              0003C8 GR
- 18 A$Lab3-2_SteeringCalibration$2063                              0003CA GR
- 18 A$Lab3-2_SteeringCalibration$2064                              0003CB GR
- 18 A$Lab3-2_SteeringCalibration$2065                              0003CD GR
- 18 A$Lab3-2_SteeringCalibration$2066                              0003CF GR
- 18 A$Lab3-2_SteeringCalibration$2067                              0003D1 GR
- 18 A$Lab3-2_SteeringCalibration$2068                              0003D3 GR
- 18 A$Lab3-2_SteeringCalibration$2069                              0003D6 GR
- 18 A$Lab3-2_SteeringCalibration$2070                              0003D8 GR
- 18 A$Lab3-2_SteeringCalibration$2071                              0003DA GR
- 18 A$Lab3-2_SteeringCalibration$2072                              0003DD GR
- 18 A$Lab3-2_SteeringCalibration$2075                              0003DF GR
- 18 A$Lab3-2_SteeringCalibration$2076                              0003E0 GR
- 18 A$Lab3-2_SteeringCalibration$2080                              0003E2 GR
- 18 A$Lab3-2_SteeringCalibration$2081                              0003E4 GR
- 18 A$Lab3-2_SteeringCalibration$2082                              0003E6 GR
- 18 A$Lab3-2_SteeringCalibration$2083                              0003E7 GR
- 18 A$Lab3-2_SteeringCalibration$2084                              0003EA GR
- 18 A$Lab3-2_SteeringCalibration$2086                              0003EB GR
- 18 A$Lab3-2_SteeringCalibration$2087                              0003EC GR
- 18 A$Lab3-2_SteeringCalibration$2088                              0003EE GR
- 18 A$Lab3-2_SteeringCalibration$2089                              0003EF GR
- 18 A$Lab3-2_SteeringCalibration$2090                              0003F0 GR
- 18 A$Lab3-2_SteeringCalibration$2091                              0003F2 GR
- 18 A$Lab3-2_SteeringCalibration$2092                              0003F3 GR
- 18 A$Lab3-2_SteeringCalibration$2093                              0003F5 GR
- 18 A$Lab3-2_SteeringCalibration$2094                              0003F7 GR
- 18 A$Lab3-2_SteeringCalibration$2095                              0003F9 GR
- 18 A$Lab3-2_SteeringCalibration$2096                              0003FB GR
- 18 A$Lab3-2_SteeringCalibration$2097                              0003FE GR
- 18 A$Lab3-2_SteeringCalibration$2098                              000400 GR
- 18 A$Lab3-2_SteeringCalibration$2101                              000403 GR
- 18 A$Lab3-2_SteeringCalibration$2104                              000405 GR
- 18 A$Lab3-2_SteeringCalibration$2121                              000406 GR
- 18 A$Lab3-2_SteeringCalibration$2124                              000408 GR
- 18 A$Lab3-2_SteeringCalibration$2127                              00040A GR
- 18 A$Lab3-2_SteeringCalibration$2128                              00040C GR
- 18 A$Lab3-2_SteeringCalibration$2129                              00040F GR
- 18 A$Lab3-2_SteeringCalibration$2132                              000411 GR
- 18 A$Lab3-2_SteeringCalibration$2133                              000413 GR
- 18 A$Lab3-2_SteeringCalibration$2134                              000414 GR
- 18 A$Lab3-2_SteeringCalibration$2135                              000416 GR
- 18 A$Lab3-2_SteeringCalibration$2136                              000418 GR
- 18 A$Lab3-2_SteeringCalibration$2139                              00041B GR
- 18 A$Lab3-2_SteeringCalibration$2140                              00041E GR
- 18 A$Lab3-2_SteeringCalibration$2143                              000421 GR
- 18 A$Lab3-2_SteeringCalibration$2144                              000424 GR
- 18 A$Lab3-2_SteeringCalibration$2147                              000426 GR
- 18 A$Lab3-2_SteeringCalibration$2148                              000428 GR
- 18 A$Lab3-2_SteeringCalibration$2149                              000429 GR
- 18 A$Lab3-2_SteeringCalibration$2150                              00042B GR
- 18 A$Lab3-2_SteeringCalibration$2153                              00042E GR
- 18 A$Lab3-2_SteeringCalibration$2155                              000430 GR
- 18 A$Lab3-2_SteeringCalibration$2156                              000432 GR
+ 18 A$lab3-2_Compass$2072                                          0003C1 GR
+ 18 A$lab3-2_Compass$2075                                          0003C3 GR
+ 18 A$lab3-2_Compass$2076                                          0003C4 GR
+ 18 A$lab3-2_Compass$2077                                          0003C6 GR
+ 18 A$lab3-2_Compass$2078                                          0003C7 GR
+ 18 A$lab3-2_Compass$2079                                          0003C8 GR
+ 18 A$lab3-2_Compass$2080                                          0003CA GR
+ 18 A$lab3-2_Compass$2081                                          0003CB GR
+ 18 A$lab3-2_Compass$2082                                          0003CD GR
+ 18 A$lab3-2_Compass$2083                                          0003CF GR
+ 18 A$lab3-2_Compass$2084                                          0003D1 GR
+ 18 A$lab3-2_Compass$2085                                          0003D3 GR
+ 18 A$lab3-2_Compass$2086                                          0003D6 GR
+ 18 A$lab3-2_Compass$2087                                          0003D8 GR
+ 18 A$lab3-2_Compass$2088                                          0003DA GR
+ 18 A$lab3-2_Compass$2089                                          0003DD GR
+ 18 A$lab3-2_Compass$2092                                          0003DF GR
+ 18 A$lab3-2_Compass$2093                                          0003E0 GR
+ 18 A$lab3-2_Compass$2097                                          0003E2 GR
+ 18 A$lab3-2_Compass$2098                                          0003E4 GR
+ 18 A$lab3-2_Compass$2099                                          0003E6 GR
+ 18 A$lab3-2_Compass$2100                                          0003E7 GR
+ 18 A$lab3-2_Compass$2101                                          0003EA GR
+ 18 A$lab3-2_Compass$2103                                          0003EB GR
+ 18 A$lab3-2_Compass$2104                                          0003EC GR
+ 18 A$lab3-2_Compass$2105                                          0003EE GR
+ 18 A$lab3-2_Compass$2106                                          0003EF GR
+ 18 A$lab3-2_Compass$2107                                          0003F0 GR
+ 18 A$lab3-2_Compass$2108                                          0003F2 GR
+ 18 A$lab3-2_Compass$2109                                          0003F3 GR
+ 18 A$lab3-2_Compass$2110                                          0003F5 GR
+ 18 A$lab3-2_Compass$2111                                          0003F7 GR
+ 18 A$lab3-2_Compass$2112                                          0003F9 GR
+ 18 A$lab3-2_Compass$2113                                          0003FB GR
+ 18 A$lab3-2_Compass$2114                                          0003FE GR
+ 18 A$lab3-2_Compass$2115                                          000400 GR
+ 18 A$lab3-2_Compass$2118                                          000403 GR
+ 18 A$lab3-2_Compass$2121                                          000405 GR
+ 18 A$lab3-2_Compass$2138                                          000406 GR
+ 18 A$lab3-2_Compass$2141                                          000408 GR
+ 18 A$lab3-2_Compass$2144                                          00040A GR
+ 18 A$lab3-2_Compass$2145                                          00040C GR
+ 18 A$lab3-2_Compass$2146                                          00040F GR
+ 18 A$lab3-2_Compass$2149                                          000411 GR
+ 18 A$lab3-2_Compass$2150                                          000413 GR
+ 18 A$lab3-2_Compass$2151                                          000414 GR
+ 18 A$lab3-2_Compass$2152                                          000416 GR
+ 18 A$lab3-2_Compass$2153                                          000418 GR
+ 18 A$lab3-2_Compass$2156                                          00041B GR
+ 18 A$lab3-2_Compass$2157                                          00041E GR
+ 18 A$lab3-2_Compass$2160                                          000421 GR
+ 18 A$lab3-2_Compass$2161                                          000424 GR
+ 18 A$lab3-2_Compass$2164                                          000426 GR
+ 18 A$lab3-2_Compass$2165                                          000428 GR
+ 18 A$lab3-2_Compass$2166                                          000429 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 11.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 18 A$Lab3-2_SteeringCalibration$2157                              000434 GR
- 18 A$Lab3-2_SteeringCalibration$2158                              000435 GR
- 18 A$Lab3-2_SteeringCalibration$2159                              000438 GR
- 18 A$Lab3-2_SteeringCalibration$2161                              000439 GR
- 18 A$Lab3-2_SteeringCalibration$2162                              00043B GR
- 18 A$Lab3-2_SteeringCalibration$2163                              00043D GR
- 18 A$Lab3-2_SteeringCalibration$2164                              00043E GR
- 18 A$Lab3-2_SteeringCalibration$2165                              00043F GR
- 18 A$Lab3-2_SteeringCalibration$2166                              000440 GR
- 18 A$Lab3-2_SteeringCalibration$2167                              000441 GR
- 18 A$Lab3-2_SteeringCalibration$2168                              000443 GR
- 18 A$Lab3-2_SteeringCalibration$2169                              000445 GR
- 18 A$Lab3-2_SteeringCalibration$2170                              000448 GR
- 18 A$Lab3-2_SteeringCalibration$2171                              00044A GR
- 18 A$Lab3-2_SteeringCalibration$2174                              00044C GR
- 18 A$Lab3-2_SteeringCalibration$2177                              00044E GR
- 18 A$Lab3-2_SteeringCalibration$2178                              00044F GR
- 18 A$Lab3-2_SteeringCalibration$2179                              000451 GR
- 18 A$Lab3-2_SteeringCalibration$2180                              000452 GR
- 18 A$Lab3-2_SteeringCalibration$2181                              000453 GR
- 18 A$Lab3-2_SteeringCalibration$2182                              000455 GR
- 18 A$Lab3-2_SteeringCalibration$2183                              000456 GR
- 18 A$Lab3-2_SteeringCalibration$2184                              000458 GR
- 18 A$Lab3-2_SteeringCalibration$2185                              00045A GR
- 18 A$Lab3-2_SteeringCalibration$2186                              00045C GR
- 18 A$Lab3-2_SteeringCalibration$2187                              00045E GR
- 18 A$Lab3-2_SteeringCalibration$2188                              000460 GR
- 18 A$Lab3-2_SteeringCalibration$2189                              000463 GR
- 18 A$Lab3-2_SteeringCalibration$2190                              000465 GR
- 18 A$Lab3-2_SteeringCalibration$2191                              000467 GR
- 18 A$Lab3-2_SteeringCalibration$2192                              000469 GR
- 18 A$Lab3-2_SteeringCalibration$2193                              00046B GR
- 18 A$Lab3-2_SteeringCalibration$2194                              00046D GR
- 18 A$Lab3-2_SteeringCalibration$2195                              00046F GR
- 18 A$Lab3-2_SteeringCalibration$2196                              000471 GR
- 18 A$Lab3-2_SteeringCalibration$2197                              000473 GR
- 18 A$Lab3-2_SteeringCalibration$2198                              000474 GR
- 18 A$Lab3-2_SteeringCalibration$2201                              000477 GR
- 18 A$Lab3-2_SteeringCalibration$2202                              000478 GR
- 18 A$Lab3-2_SteeringCalibration$2206                              00047A GR
- 18 A$Lab3-2_SteeringCalibration$2209                              00047C GR
- 18 A$Lab3-2_SteeringCalibration$2210                              00047E GR
- 18 A$Lab3-2_SteeringCalibration$2211                              000480 GR
- 18 A$Lab3-2_SteeringCalibration$2212                              000481 GR
- 18 A$Lab3-2_SteeringCalibration$2213                              000484 GR
- 18 A$Lab3-2_SteeringCalibration$2215                              000485 GR
- 18 A$Lab3-2_SteeringCalibration$2216                              000486 GR
- 18 A$Lab3-2_SteeringCalibration$2217                              000488 GR
- 18 A$Lab3-2_SteeringCalibration$2218                              000489 GR
- 18 A$Lab3-2_SteeringCalibration$2219                              00048A GR
- 18 A$Lab3-2_SteeringCalibration$2220                              00048C GR
- 18 A$Lab3-2_SteeringCalibration$2221                              00048D GR
- 18 A$Lab3-2_SteeringCalibration$2222                              00048F GR
- 18 A$Lab3-2_SteeringCalibration$2223                              000491 GR
- 18 A$Lab3-2_SteeringCalibration$2224                              000493 GR
+ 18 A$lab3-2_Compass$2167                                          00042B GR
+ 18 A$lab3-2_Compass$2170                                          00042E GR
+ 18 A$lab3-2_Compass$2172                                          000430 GR
+ 18 A$lab3-2_Compass$2173                                          000432 GR
+ 18 A$lab3-2_Compass$2174                                          000434 GR
+ 18 A$lab3-2_Compass$2175                                          000435 GR
+ 18 A$lab3-2_Compass$2176                                          000438 GR
+ 18 A$lab3-2_Compass$2178                                          000439 GR
+ 18 A$lab3-2_Compass$2179                                          00043B GR
+ 18 A$lab3-2_Compass$2180                                          00043D GR
+ 18 A$lab3-2_Compass$2181                                          00043E GR
+ 18 A$lab3-2_Compass$2182                                          00043F GR
+ 18 A$lab3-2_Compass$2183                                          000440 GR
+ 18 A$lab3-2_Compass$2184                                          000441 GR
+ 18 A$lab3-2_Compass$2185                                          000443 GR
+ 18 A$lab3-2_Compass$2186                                          000445 GR
+ 18 A$lab3-2_Compass$2187                                          000448 GR
+ 18 A$lab3-2_Compass$2188                                          00044A GR
+ 18 A$lab3-2_Compass$2191                                          00044C GR
+ 18 A$lab3-2_Compass$2194                                          00044E GR
+ 18 A$lab3-2_Compass$2195                                          00044F GR
+ 18 A$lab3-2_Compass$2196                                          000451 GR
+ 18 A$lab3-2_Compass$2197                                          000452 GR
+ 18 A$lab3-2_Compass$2198                                          000453 GR
+ 18 A$lab3-2_Compass$2199                                          000455 GR
+ 18 A$lab3-2_Compass$2200                                          000456 GR
+ 18 A$lab3-2_Compass$2201                                          000458 GR
+ 18 A$lab3-2_Compass$2202                                          00045A GR
+ 18 A$lab3-2_Compass$2203                                          00045C GR
+ 18 A$lab3-2_Compass$2204                                          00045E GR
+ 18 A$lab3-2_Compass$2205                                          000460 GR
+ 18 A$lab3-2_Compass$2206                                          000463 GR
+ 18 A$lab3-2_Compass$2207                                          000465 GR
+ 18 A$lab3-2_Compass$2208                                          000467 GR
+ 18 A$lab3-2_Compass$2209                                          000469 GR
+ 18 A$lab3-2_Compass$2210                                          00046B GR
+ 18 A$lab3-2_Compass$2211                                          00046D GR
+ 18 A$lab3-2_Compass$2212                                          00046F GR
+ 18 A$lab3-2_Compass$2213                                          000471 GR
+ 18 A$lab3-2_Compass$2214                                          000473 GR
+ 18 A$lab3-2_Compass$2215                                          000474 GR
+ 18 A$lab3-2_Compass$2218                                          000477 GR
+ 18 A$lab3-2_Compass$2219                                          000478 GR
+ 18 A$lab3-2_Compass$2223                                          00047A GR
+ 18 A$lab3-2_Compass$2226                                          00047C GR
+ 18 A$lab3-2_Compass$2227                                          00047E GR
+ 18 A$lab3-2_Compass$2228                                          000480 GR
+ 18 A$lab3-2_Compass$2229                                          000481 GR
+ 18 A$lab3-2_Compass$2230                                          000484 GR
+ 18 A$lab3-2_Compass$2232                                          000485 GR
+ 18 A$lab3-2_Compass$2233                                          000486 GR
+ 18 A$lab3-2_Compass$2234                                          000488 GR
+ 18 A$lab3-2_Compass$2235                                          000489 GR
+ 18 A$lab3-2_Compass$2236                                          00048A GR
+ 18 A$lab3-2_Compass$2237                                          00048C GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 12.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 18 A$Lab3-2_SteeringCalibration$2225                              000495 GR
- 18 A$Lab3-2_SteeringCalibration$2226                              000498 GR
- 18 A$Lab3-2_SteeringCalibration$2227                              00049A GR
- 18 A$Lab3-2_SteeringCalibration$2228                              00049C GR
- 18 A$Lab3-2_SteeringCalibration$2229                              00049E GR
- 18 A$Lab3-2_SteeringCalibration$2230                              0004A0 GR
- 18 A$Lab3-2_SteeringCalibration$2231                              0004A2 GR
- 18 A$Lab3-2_SteeringCalibration$2232                              0004A4 GR
- 18 A$Lab3-2_SteeringCalibration$2233                              0004A6 GR
- 18 A$Lab3-2_SteeringCalibration$2234                              0004A7 GR
- 18 A$Lab3-2_SteeringCalibration$2237                              0004AA GR
- 18 A$Lab3-2_SteeringCalibration$2240                              0004AC GR
- 18 A$Lab3-2_SteeringCalibration$2253                              0004AD GR
- 18 A$Lab3-2_SteeringCalibration$2256                              0004B0 GR
- 18 A$Lab3-2_SteeringCalibration$2259                              0004B3 GR
- 18 A$Lab3-2_SteeringCalibration$2262                              0004B6 GR
- 18 A$Lab3-2_SteeringCalibration$2265                              0004B9 GR
- 18 A$Lab3-2_SteeringCalibration$2266                              0004BC GR
- 18 A$Lab3-2_SteeringCalibration$2267                              0004BF GR
- 18 A$Lab3-2_SteeringCalibration$2268                              0004C2 GR
- 18 A$Lab3-2_SteeringCalibration$2269                              0004C5 GR
- 18 A$Lab3-2_SteeringCalibration$2270                              0004C8 GR
- 18 A$Lab3-2_SteeringCalibration$2271                              0004CB GR
- 18 A$Lab3-2_SteeringCalibration$2274                              0004CE GR
- 18 A$Lab3-2_SteeringCalibration$2287                              0004CF GR
- 18 A$Lab3-2_SteeringCalibration$2290                              0004D2 GR
- 18 A$Lab3-2_SteeringCalibration$2291                              0004D5 GR
- 18 A$Lab3-2_SteeringCalibration$2292                              0004D8 GR
- 18 A$Lab3-2_SteeringCalibration$2293                              0004DB GR
- 18 A$Lab3-2_SteeringCalibration$2294                              0004DE GR
- 18 A$Lab3-2_SteeringCalibration$2295                              0004E1 GR
- 18 A$Lab3-2_SteeringCalibration$2296                              0004E4 GR
- 18 A$Lab3-2_SteeringCalibration$2299                              0004E7 GR
- 18 A$Lab3-2_SteeringCalibration$2302                              0004EA GR
- 18 A$Lab3-2_SteeringCalibration$2305                              0004ED GR
- 18 A$Lab3-2_SteeringCalibration$2308                              0004F0 GR
- 18 A$Lab3-2_SteeringCalibration$2309                              0004F3 GR
- 18 A$Lab3-2_SteeringCalibration$2310                              0004F6 GR
- 18 A$Lab3-2_SteeringCalibration$2311                              0004F9 GR
- 18 A$Lab3-2_SteeringCalibration$2312                              0004FC GR
- 18 A$Lab3-2_SteeringCalibration$2313                              0004FF GR
- 18 A$Lab3-2_SteeringCalibration$2314                              000502 GR
- 18 A$Lab3-2_SteeringCalibration$2317                              000505 GR
- 18 A$Lab3-2_SteeringCalibration$2330                              000506 GR
- 18 A$Lab3-2_SteeringCalibration$2333                              000509 GR
- 18 A$Lab3-2_SteeringCalibration$2334                              00050C GR
- 18 A$Lab3-2_SteeringCalibration$2337                              00050F GR
- 18 A$Lab3-2_SteeringCalibration$2340                              000512 GR
- 18 A$Lab3-2_SteeringCalibration$2343                              000515 GR
- 18 A$Lab3-2_SteeringCalibration$2346                              000518 GR
- 18 A$Lab3-2_SteeringCalibration$2347                              00051A GR
- 18 A$Lab3-2_SteeringCalibration$2348                              00051C GR
- 18 A$Lab3-2_SteeringCalibration$2349                              00051E GR
- 18 A$Lab3-2_SteeringCalibration$2350                              000520 GR
- 18 A$Lab3-2_SteeringCalibration$2351                              000522 GR
+ 18 A$lab3-2_Compass$2238                                          00048D GR
+ 18 A$lab3-2_Compass$2239                                          00048F GR
+ 18 A$lab3-2_Compass$2240                                          000491 GR
+ 18 A$lab3-2_Compass$2241                                          000493 GR
+ 18 A$lab3-2_Compass$2242                                          000495 GR
+ 18 A$lab3-2_Compass$2243                                          000498 GR
+ 18 A$lab3-2_Compass$2244                                          00049A GR
+ 18 A$lab3-2_Compass$2245                                          00049C GR
+ 18 A$lab3-2_Compass$2246                                          00049E GR
+ 18 A$lab3-2_Compass$2247                                          0004A0 GR
+ 18 A$lab3-2_Compass$2248                                          0004A2 GR
+ 18 A$lab3-2_Compass$2249                                          0004A4 GR
+ 18 A$lab3-2_Compass$2250                                          0004A6 GR
+ 18 A$lab3-2_Compass$2251                                          0004A7 GR
+ 18 A$lab3-2_Compass$2254                                          0004AA GR
+ 18 A$lab3-2_Compass$2257                                          0004AC GR
+ 18 A$lab3-2_Compass$2270                                          0004AD GR
+ 18 A$lab3-2_Compass$2273                                          0004B0 GR
+ 18 A$lab3-2_Compass$2276                                          0004B3 GR
+ 18 A$lab3-2_Compass$2279                                          0004B6 GR
+ 18 A$lab3-2_Compass$2282                                          0004B9 GR
+ 18 A$lab3-2_Compass$2283                                          0004BC GR
+ 18 A$lab3-2_Compass$2284                                          0004BF GR
+ 18 A$lab3-2_Compass$2285                                          0004C2 GR
+ 18 A$lab3-2_Compass$2286                                          0004C5 GR
+ 18 A$lab3-2_Compass$2287                                          0004C8 GR
+ 18 A$lab3-2_Compass$2288                                          0004CB GR
+ 18 A$lab3-2_Compass$2291                                          0004CE GR
+ 18 A$lab3-2_Compass$2304                                          0004CF GR
+ 18 A$lab3-2_Compass$2307                                          0004D2 GR
+ 18 A$lab3-2_Compass$2308                                          0004D5 GR
+ 18 A$lab3-2_Compass$2309                                          0004D8 GR
+ 18 A$lab3-2_Compass$2310                                          0004DB GR
+ 18 A$lab3-2_Compass$2311                                          0004DE GR
+ 18 A$lab3-2_Compass$2312                                          0004E1 GR
+ 18 A$lab3-2_Compass$2313                                          0004E4 GR
+ 18 A$lab3-2_Compass$2316                                          0004E7 GR
+ 18 A$lab3-2_Compass$2319                                          0004EA GR
+ 18 A$lab3-2_Compass$2322                                          0004ED GR
+ 18 A$lab3-2_Compass$2325                                          0004F0 GR
+ 18 A$lab3-2_Compass$2326                                          0004F3 GR
+ 18 A$lab3-2_Compass$2327                                          0004F6 GR
+ 18 A$lab3-2_Compass$2328                                          0004F9 GR
+ 18 A$lab3-2_Compass$2329                                          0004FC GR
+ 18 A$lab3-2_Compass$2330                                          0004FF GR
+ 18 A$lab3-2_Compass$2331                                          000502 GR
+ 18 A$lab3-2_Compass$2334                                          000505 GR
+ 18 A$lab3-2_Compass$2347                                          000506 GR
+ 18 A$lab3-2_Compass$2350                                          000509 GR
+ 18 A$lab3-2_Compass$2351                                          00050C GR
+ 18 A$lab3-2_Compass$2354                                          00050F GR
+ 18 A$lab3-2_Compass$2357                                          000512 GR
+ 18 A$lab3-2_Compass$2360                                          000515 GR
+ 18 A$lab3-2_Compass$2363                                          000518 GR
+ 18 A$lab3-2_Compass$2366                                          00051B GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 13.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 18 A$Lab3-2_SteeringCalibration$2352                              000524 GR
- 18 A$Lab3-2_SteeringCalibration$2353                              000527 GR
- 18 A$Lab3-2_SteeringCalibration$2354                              000529 GR
- 18 A$Lab3-2_SteeringCalibration$2355                              00052B GR
- 18 A$Lab3-2_SteeringCalibration$2358                              00052D GR
- 18 A$Lab3-2_SteeringCalibration$2359                              000530 GR
- 18 A$Lab3-2_SteeringCalibration$2362                              000533 GR
- 18 A$Lab3-2_SteeringCalibration$2368                              000536 GR
- 18 A$Lab3-2_SteeringCalibration$2369                              000539 GR
- 18 A$Lab3-2_SteeringCalibration$2372                              00053B GR
- 18 A$Lab3-2_SteeringCalibration$2385                              00053C GR
- 18 A$Lab3-2_SteeringCalibration$2388                              00053F GR
- 18 A$Lab3-2_SteeringCalibration$2401                              000540 GR
- 18 A$Lab3-2_SteeringCalibration$2404                              000543 GR
- 18 A$Lab3-2_SteeringCalibration$2417                              000544 GR
- 18 A$Lab3-2_SteeringCalibration$2420                              000546 GR
- 18 A$Lab3-2_SteeringCalibration$2423                              000549 GR
- 18 A$Lab3-2_SteeringCalibration$2426                              00054C GR
- 18 A$Lab3-2_SteeringCalibration$2429                              00054F GR
- 18 A$Lab3-2_SteeringCalibration$2432                              000552 GR
- 18 A$Lab3-2_SteeringCalibration$2447                              000553 GR
- 18 A$Lab3-2_SteeringCalibration$2448                              000556 GR
- 18 A$Lab3-2_SteeringCalibration$2452                              000558 GR
- 18 A$Lab3-2_SteeringCalibration$2453                              00055B GR
- 18 A$Lab3-2_SteeringCalibration$2457                              00055E GR
- 18 A$Lab3-2_SteeringCalibration$2460                              000561 GR
- 18 A$Lab3-2_SteeringCalibration$2481                              000562 GR
- 18 A$Lab3-2_SteeringCalibration$2482                              000565 GR
- 18 A$Lab3-2_SteeringCalibration$2485                              000567 GR
- 18 A$Lab3-2_SteeringCalibration$2488                              00056A GR
- 18 A$Lab3-2_SteeringCalibration$2489                              00056C GR
- 18 A$Lab3-2_SteeringCalibration$2490                              00056E GR
- 18 A$Lab3-2_SteeringCalibration$2491                              00056F GR
- 18 A$Lab3-2_SteeringCalibration$2492                              000570 GR
- 18 A$Lab3-2_SteeringCalibration$2493                              000572 GR
- 18 A$Lab3-2_SteeringCalibration$2494                              000573 GR
- 18 A$Lab3-2_SteeringCalibration$2495                              000574 GR
- 18 A$Lab3-2_SteeringCalibration$2496                              000575 GR
- 18 A$Lab3-2_SteeringCalibration$2497                              000577 GR
- 18 A$Lab3-2_SteeringCalibration$2498                              000578 GR
- 18 A$Lab3-2_SteeringCalibration$2499                              00057A GR
- 18 A$Lab3-2_SteeringCalibration$2502                              00057C GR
- 18 A$Lab3-2_SteeringCalibration$2503                              00057E GR
- 18 A$Lab3-2_SteeringCalibration$2504                              000580 GR
- 18 A$Lab3-2_SteeringCalibration$2505                              000582 GR
- 18 A$Lab3-2_SteeringCalibration$2506                              000583 GR
- 18 A$Lab3-2_SteeringCalibration$2507                              000585 GR
- 18 A$Lab3-2_SteeringCalibration$2508                              000587 GR
- 18 A$Lab3-2_SteeringCalibration$2512                              000589 GR
- 18 A$Lab3-2_SteeringCalibration$2515                              00058C GR
- 18 A$Lab3-2_SteeringCalibration$2516                              00058E GR
- 18 A$Lab3-2_SteeringCalibration$2517                              000590 GR
- 18 A$Lab3-2_SteeringCalibration$2518                              000591 GR
- 18 A$Lab3-2_SteeringCalibration$2519                              000593 GR
- 18 A$Lab3-2_SteeringCalibration$2520                              000595 GR
+ 18 A$lab3-2_Compass$2367                                          00051D GR
+ 18 A$lab3-2_Compass$2368                                          00051F GR
+ 18 A$lab3-2_Compass$2369                                          000521 GR
+ 18 A$lab3-2_Compass$2370                                          000523 GR
+ 18 A$lab3-2_Compass$2371                                          000525 GR
+ 18 A$lab3-2_Compass$2372                                          000527 GR
+ 18 A$lab3-2_Compass$2373                                          00052A GR
+ 18 A$lab3-2_Compass$2374                                          00052C GR
+ 18 A$lab3-2_Compass$2375                                          00052E GR
+ 18 A$lab3-2_Compass$2381                                          000530 GR
+ 18 A$lab3-2_Compass$2382                                          000532 GR
+ 18 A$lab3-2_Compass$2385                                          000535 GR
+ 18 A$lab3-2_Compass$2386                                          000538 GR
+ 18 A$lab3-2_Compass$2387                                          00053B GR
+ 18 A$lab3-2_Compass$2390                                          00053E GR
+ 18 A$lab3-2_Compass$2391                                          000540 GR
+ 18 A$lab3-2_Compass$2392                                          000542 GR
+ 18 A$lab3-2_Compass$2393                                          000544 GR
+ 18 A$lab3-2_Compass$2394                                          000546 GR
+ 18 A$lab3-2_Compass$2395                                          000548 GR
+ 18 A$lab3-2_Compass$2396                                          00054A GR
+ 18 A$lab3-2_Compass$2397                                          00054C GR
+ 18 A$lab3-2_Compass$2398                                          00054E GR
+ 18 A$lab3-2_Compass$2399                                          000551 GR
+ 18 A$lab3-2_Compass$2400                                          000553 GR
+ 18 A$lab3-2_Compass$2401                                          000555 GR
+ 18 A$lab3-2_Compass$2402                                          000557 GR
+ 18 A$lab3-2_Compass$2405                                          000559 GR
+ 18 A$lab3-2_Compass$2418                                          00055A GR
+ 18 A$lab3-2_Compass$2421                                          00055D GR
+ 18 A$lab3-2_Compass$2424                                          000560 GR
+ 18 A$lab3-2_Compass$2427                                          000563 GR
+ 18 A$lab3-2_Compass$2440                                          000564 GR
+ 18 A$lab3-2_Compass$2443                                          000567 GR
+ 18 A$lab3-2_Compass$2456                                          000568 GR
+ 18 A$lab3-2_Compass$2459                                          00056A GR
+ 18 A$lab3-2_Compass$2462                                          00056D GR
+ 18 A$lab3-2_Compass$2465                                          000570 GR
+ 18 A$lab3-2_Compass$2468                                          000573 GR
+ 18 A$lab3-2_Compass$2469                                          000576 GR
+ 18 A$lab3-2_Compass$2472                                          000579 GR
+ 18 A$lab3-2_Compass$2475                                          00057C GR
+ 18 A$lab3-2_Compass$2486                                          00057D GR
+ 18 A$lab3-2_Compass$2487                                          00057F GR
+ 18 A$lab3-2_Compass$2492                                          000581 GR
+ 18 A$lab3-2_Compass$2493                                          000584 GR
+ 18 A$lab3-2_Compass$2497                                          000586 GR
+ 18 A$lab3-2_Compass$2498                                          000589 GR
+ 18 A$lab3-2_Compass$2501                                          00058C GR
+ 18 A$lab3-2_Compass$2502                                          00058E GR
+ 18 A$lab3-2_Compass$2503                                          00058F GR
+ 18 A$lab3-2_Compass$2504                                          000592 GR
+ 18 A$lab3-2_Compass$2509                                          000594 GR
+ 18 A$lab3-2_Compass$2510                                          000597 GR
+ 18 A$lab3-2_Compass$2511                                          000599 GR
 ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 14.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 18 A$Lab3-2_SteeringCalibration$2521                              000596 GR
- 18 A$Lab3-2_SteeringCalibration$2522                              000597 GR
- 18 A$Lab3-2_SteeringCalibration$2523                              000599 GR
- 18 A$Lab3-2_SteeringCalibration$2524                              00059A GR
- 18 A$Lab3-2_SteeringCalibration$2525                              00059C GR
- 18 A$Lab3-2_SteeringCalibration$2526                              00059D GR
- 18 A$Lab3-2_SteeringCalibration$2529                              00059F GR
- 18 A$Lab3-2_SteeringCalibration$2530                              0005A1 GR
- 18 A$Lab3-2_SteeringCalibration$2531                              0005A3 GR
- 18 A$Lab3-2_SteeringCalibration$2532                              0005A5 GR
- 18 A$Lab3-2_SteeringCalibration$2533                              0005A7 GR
- 18 A$Lab3-2_SteeringCalibration$2534                              0005A9 GR
- 18 A$Lab3-2_SteeringCalibration$2538                              0005AB GR
- 18 A$Lab3-2_SteeringCalibration$2539                              0005AD GR
- 18 A$Lab3-2_SteeringCalibration$2540                              0005AE GR
- 18 A$Lab3-2_SteeringCalibration$2541                              0005B0 GR
- 18 A$Lab3-2_SteeringCalibration$2542                              0005B2 GR
- 18 A$Lab3-2_SteeringCalibration$2543                              0005B4 GR
- 18 A$Lab3-2_SteeringCalibration$2544                              0005B6 GR
- 18 A$Lab3-2_SteeringCalibration$2547                              0005B8 GR
- 18 A$Lab3-2_SteeringCalibration$2548                              0005BA GR
- 18 A$Lab3-2_SteeringCalibration$2549                              0005BC GR
- 18 A$Lab3-2_SteeringCalibration$2550                              0005BE GR
- 18 A$Lab3-2_SteeringCalibration$2551                              0005C0 GR
- 18 A$Lab3-2_SteeringCalibration$2552                              0005C2 GR
- 18 A$Lab3-2_SteeringCalibration$2553                              0005C4 GR
- 18 A$Lab3-2_SteeringCalibration$2554                              0005C6 GR
- 18 A$Lab3-2_SteeringCalibration$2555                              0005C8 GR
- 18 A$Lab3-2_SteeringCalibration$2556                              0005CB GR
- 18 A$Lab3-2_SteeringCalibration$2557                              0005CD GR
- 18 A$Lab3-2_SteeringCalibration$2558                              0005CF GR
- 18 A$Lab3-2_SteeringCalibration$2561                              0005D1 GR
- 18 A$Lab3-2_SteeringCalibration$2576                              0005D2 GR
- 18 A$Lab3-2_SteeringCalibration$2580                              0005D4 GR
- 18 A$Lab3-2_SteeringCalibration$2581                              0005D7 GR
- 18 A$Lab3-2_SteeringCalibration$2585                              0005D9 GR
- 18 A$Lab3-2_SteeringCalibration$2586                              0005DC GR
- 18 A$Lab3-2_SteeringCalibration$2589                              0005DE GR
- 18 A$Lab3-2_SteeringCalibration$2592                              0005E1 GR
- 18 A$Lab3-2_SteeringCalibration$2593                              0005E3 GR
- 18 A$Lab3-2_SteeringCalibration$2594                              0005E5 GR
- 18 A$Lab3-2_SteeringCalibration$2595                              0005E7 GR
- 18 A$Lab3-2_SteeringCalibration$2596                              0005E8 GR
- 18 A$Lab3-2_SteeringCalibration$2597                              0005EA GR
- 18 A$Lab3-2_SteeringCalibration$2598                              0005EC GR
- 18 A$Lab3-2_SteeringCalibration$2602                              0005EE GR
- 18 A$Lab3-2_SteeringCalibration$2605                              0005F1 GR
- 18 A$Lab3-2_SteeringCalibration$2606                              0005F3 GR
- 18 A$Lab3-2_SteeringCalibration$2607                              0005F5 GR
- 18 A$Lab3-2_SteeringCalibration$2608                              0005F7 GR
- 18 A$Lab3-2_SteeringCalibration$2609                              0005F9 GR
- 18 A$Lab3-2_SteeringCalibration$2610                              0005FB GR
- 18 A$Lab3-2_SteeringCalibration$2614                              0005FD GR
- 18 A$Lab3-2_SteeringCalibration$2615                              0005FF GR
- 18 A$Lab3-2_SteeringCalibration$2616                              000600 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 15.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
- 18 A$Lab3-2_SteeringCalibration$2617                              000602 GR
- 18 A$Lab3-2_SteeringCalibration$2618                              000604 GR
- 18 A$Lab3-2_SteeringCalibration$2619                              000606 GR
- 18 A$Lab3-2_SteeringCalibration$2620                              000608 GR
- 18 A$Lab3-2_SteeringCalibration$2621                              00060A GR
- 18 A$Lab3-2_SteeringCalibration$2625                              00060C GR
- 18 A$Lab3-2_SteeringCalibration$2638                              00060D GR
- 18 A$Lab3-2_SteeringCalibration$2639                              000610 GR
- 18 A$Lab3-2_SteeringCalibration$2642                              000613 GR
- 18 A$Lab3-2_SteeringCalibration$2643                              000616 GR
- 18 A$Lab3-2_SteeringCalibration$2646                              000619 GR
- 18 A$Lab3-2_SteeringCalibration$2647                              00061B GR
- 18 A$Lab3-2_SteeringCalibration$2648                              00061D GR
- 18 A$Lab3-2_SteeringCalibration$2649                              00061F GR
- 18 A$Lab3-2_SteeringCalibration$2650                              000621 GR
- 18 A$Lab3-2_SteeringCalibration$2651                              000623 GR
- 18 A$Lab3-2_SteeringCalibration$2652                              000625 GR
- 18 A$Lab3-2_SteeringCalibration$2653                              000628 GR
- 18 A$Lab3-2_SteeringCalibration$2654                              00062A GR
- 18 A$Lab3-2_SteeringCalibration$2655                              00062C GR
- 18 A$Lab3-2_SteeringCalibration$2658                              00062E GR
- 18 A$Lab3-2_SteeringCalibration$2661                              000631 GR
- 18 A$Lab3-2_SteeringCalibration$2662                              000634 GR
- 18 A$Lab3-2_SteeringCalibration$2665                              000637 GR
- 18 A$Lab3-2_SteeringCalibration$2666                              000639 GR
- 18 A$Lab3-2_SteeringCalibration$2667                              00063B GR
- 18 A$Lab3-2_SteeringCalibration$2668                              00063D GR
- 18 A$Lab3-2_SteeringCalibration$2669                              00063F GR
- 18 A$Lab3-2_SteeringCalibration$2670                              000641 GR
- 18 A$Lab3-2_SteeringCalibration$2671                              000643 GR
- 18 A$Lab3-2_SteeringCalibration$2672                              000646 GR
- 18 A$Lab3-2_SteeringCalibration$2673                              000648 GR
- 18 A$Lab3-2_SteeringCalibration$2674                              00064A GR
- 18 A$Lab3-2_SteeringCalibration$2677                              00064C GR
- 18 A$Lab3-2_SteeringCalibration$2680                              00064F GR
- 18 A$Lab3-2_SteeringCalibration$2681                              000652 GR
- 18 A$Lab3-2_SteeringCalibration$2684                              000655 GR
- 18 A$Lab3-2_SteeringCalibration$2685                              000657 GR
- 18 A$Lab3-2_SteeringCalibration$2686                              000659 GR
- 18 A$Lab3-2_SteeringCalibration$2687                              00065B GR
- 18 A$Lab3-2_SteeringCalibration$2688                              00065D GR
- 18 A$Lab3-2_SteeringCalibration$2689                              00065F GR
- 18 A$Lab3-2_SteeringCalibration$2690                              000661 GR
- 18 A$Lab3-2_SteeringCalibration$2691                              000664 GR
- 18 A$Lab3-2_SteeringCalibration$2692                              000666 GR
- 18 A$Lab3-2_SteeringCalibration$2693                              000668 GR
- 18 A$Lab3-2_SteeringCalibration$2696                              00066A GR
- 18 A$Lab3-2_SteeringCalibration$2699                              00066D GR
- 18 A$Lab3-2_SteeringCalibration$2700                              000670 GR
- 18 A$Lab3-2_SteeringCalibration$2703                              000673 GR
- 18 A$Lab3-2_SteeringCalibration$2704                              000675 GR
- 18 A$Lab3-2_SteeringCalibration$2705                              000677 GR
- 18 A$Lab3-2_SteeringCalibration$2706                              000679 GR
- 18 A$Lab3-2_SteeringCalibration$2707                              00067B GR
- 18 A$Lab3-2_SteeringCalibration$2708                              00067D GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 16.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
- 18 A$Lab3-2_SteeringCalibration$2709                              00067F GR
- 18 A$Lab3-2_SteeringCalibration$2710                              000681 GR
- 18 A$Lab3-2_SteeringCalibration$2711                              000683 GR
- 18 A$Lab3-2_SteeringCalibration$2712                              000685 GR
- 18 A$Lab3-2_SteeringCalibration$2713                              000687 GR
- 18 A$Lab3-2_SteeringCalibration$2714                              000689 GR
- 18 A$Lab3-2_SteeringCalibration$2715                              00068B GR
- 18 A$Lab3-2_SteeringCalibration$2716                              00068E GR
- 18 A$Lab3-2_SteeringCalibration$2717                              000690 GR
- 18 A$Lab3-2_SteeringCalibration$2718                              000692 GR
- 18 A$Lab3-2_SteeringCalibration$2721                              000694 GR
+ 18 A$lab3-2_Compass$2514                                          00059B GR
+ 18 A$lab3-2_Compass$2535                                          00059C GR
+ 18 A$lab3-2_Compass$2536                                          00059F GR
+ 18 A$lab3-2_Compass$2537                                          0005A2 GR
+ 18 A$lab3-2_Compass$2538                                          0005A5 GR
+ 18 A$lab3-2_Compass$2539                                          0005A8 GR
+ 18 A$lab3-2_Compass$2540                                          0005AB GR
+ 18 A$lab3-2_Compass$2541                                          0005AE GR
+ 18 A$lab3-2_Compass$2544                                          0005B1 GR
+ 18 A$lab3-2_Compass$2545                                          0005B3 GR
+ 18 A$lab3-2_Compass$2546                                          0005B5 GR
+ 18 A$lab3-2_Compass$2547                                          0005B7 GR
+ 18 A$lab3-2_Compass$2548                                          0005B9 GR
+ 18 A$lab3-2_Compass$2549                                          0005BA GR
+ 18 A$lab3-2_Compass$2550                                          0005BB GR
+ 18 A$lab3-2_Compass$2551                                          0005BD GR
+ 18 A$lab3-2_Compass$2552                                          0005BE GR
+ 18 A$lab3-2_Compass$2553                                          0005BF GR
+ 18 A$lab3-2_Compass$2558                                          0005C1 GR
+ 18 A$lab3-2_Compass$2571                                          0005C2 GR
+ 18 A$lab3-2_Compass$2574                                          0005C5 GR
+ 18 A$lab3-2_Compass$2577                                          0005C7 GR
     A.0                                                         =  0000E0 L
     A.1                                                         =  0000E1 L
     A.2                                                         =  0000E2 L
@@ -941,89 +832,17 @@ Symbol Table
     B.5                                                         =  0000F5 L
     B.6                                                         =  0000F6 L
     B.7                                                         =  0000F7 L
- 18 C$Lab3_2_SteeringCalibration.c$101$1$129                    =  000562 GR
- 18 C$Lab3_2_SteeringCalibration.c$102$1$129                    =  000567 GR
- 18 C$Lab3_2_SteeringCalibration.c$104$2$130                    =  00056A GR
- 18 C$Lab3_2_SteeringCalibration.c$105$2$130                    =  00057C GR
- 18 C$Lab3_2_SteeringCalibration.c$107$1$129                    =  000589 GR
- 18 C$Lab3_2_SteeringCalibration.c$109$2$131                    =  00058C GR
- 18 C$Lab3_2_SteeringCalibration.c$110$2$131                    =  00059F GR
- 18 C$Lab3_2_SteeringCalibration.c$112$1$129                    =  0005AB GR
- 18 C$Lab3_2_SteeringCalibration.c$113$1$129                    =  0005B8 GR
- 18 C$Lab3_2_SteeringCalibration.c$115$1$129                    =  0005D1 GR
- 18 C$Lab3_2_SteeringCalibration.c$117$1$129                    =  0005D2 GR
- 18 C$Lab3_2_SteeringCalibration.c$119$1$129                    =  0005D2 GR
- 18 C$Lab3_2_SteeringCalibration.c$120$1$133                    =  0005D4 GR
- 18 C$Lab3_2_SteeringCalibration.c$122$2$134                    =  0005D9 GR
- 18 C$Lab3_2_SteeringCalibration.c$123$2$134                    =  0005DE GR
- 18 C$Lab3_2_SteeringCalibration.c$125$3$135                    =  0005E1 GR
- 18 C$Lab3_2_SteeringCalibration.c$127$2$134                    =  0005EE GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 17.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
- 18 C$Lab3_2_SteeringCalibration.c$129$3$136                    =  0005F1 GR
- 18 C$Lab3_2_SteeringCalibration.c$131$2$134                    =  0005FD GR
- 18 C$Lab3_2_SteeringCalibration.c$133$1$133                    =  00060C GR
- 18 C$Lab3_2_SteeringCalibration.c$135$1$133                    =  00060D GR
- 18 C$Lab3_2_SteeringCalibration.c$137$1$138                    =  00060D GR
- 18 C$Lab3_2_SteeringCalibration.c$138$1$138                    =  000613 GR
- 18 C$Lab3_2_SteeringCalibration.c$143$1$138                    =  000619 GR
- 18 C$Lab3_2_SteeringCalibration.c$144$1$138                    =  00062E GR
- 18 C$Lab3_2_SteeringCalibration.c$146$1$138                    =  000631 GR
- 18 C$Lab3_2_SteeringCalibration.c$152$1$138                    =  000637 GR
- 18 C$Lab3_2_SteeringCalibration.c$153$1$138                    =  00064C GR
- 18 C$Lab3_2_SteeringCalibration.c$155$1$138                    =  00064F GR
- 18 C$Lab3_2_SteeringCalibration.c$161$1$138                    =  000655 GR
- 18 C$Lab3_2_SteeringCalibration.c$162$1$138                    =  00066A GR
- 18 C$Lab3_2_SteeringCalibration.c$164$1$138                    =  00066D GR
- 18 C$Lab3_2_SteeringCalibration.c$166$1$138                    =  000673 GR
- 18 C$Lab3_2_SteeringCalibration.c$167$1$138                    =  000694 GR
- 16 C$Lab3_2_SteeringCalibration.c$19$1$138                     =  000000 GR
- 18 C$Lab3_2_SteeringCalibration.c$29$1$113                     =  000506 GR
- 18 C$Lab3_2_SteeringCalibration.c$32$1$121                     =  000506 GR
- 18 C$Lab3_2_SteeringCalibration.c$33$1$121                     =  000509 GR
- 18 C$Lab3_2_SteeringCalibration.c$34$1$121                     =  00050F GR
- 18 C$Lab3_2_SteeringCalibration.c$35$1$121                     =  000512 GR
- 18 C$Lab3_2_SteeringCalibration.c$36$1$121                     =  000515 GR
- 18 C$Lab3_2_SteeringCalibration.c$38$1$121                     =  000518 GR
- 18 C$Lab3_2_SteeringCalibration.c$40$1$121                     =  00052D GR
- 18 C$Lab3_2_SteeringCalibration.c$41$1$121                     =  000533 GR
- 18 C$Lab3_2_SteeringCalibration.c$42$1$121                     =  000536 GR
- 18 C$Lab3_2_SteeringCalibration.c$43$1$121                     =  000536 GR
- 18 C$Lab3_2_SteeringCalibration.c$44$1$121                     =  00053B GR
- 18 C$Lab3_2_SteeringCalibration.c$51$1$121                     =  00053C GR
- 18 C$Lab3_2_SteeringCalibration.c$53$1$122                     =  00053C GR
- 18 C$Lab3_2_SteeringCalibration.c$54$1$122                     =  00053F GR
- 18 C$Lab3_2_SteeringCalibration.c$61$1$122                     =  000540 GR
- 18 C$Lab3_2_SteeringCalibration.c$63$1$123                     =  000540 GR
- 18 C$Lab3_2_SteeringCalibration.c$65$1$123                     =  000543 GR
- 18 C$Lab3_2_SteeringCalibration.c$72$1$123                     =  000544 GR
- 18 C$Lab3_2_SteeringCalibration.c$74$1$125                     =  000544 GR
- 18 C$Lab3_2_SteeringCalibration.c$75$1$125                     =  000546 GR
- 18 C$Lab3_2_SteeringCalibration.c$76$1$125                     =  000549 GR
- 18 C$Lab3_2_SteeringCalibration.c$77$1$125                     =  00054C GR
- 18 C$Lab3_2_SteeringCalibration.c$78$1$125                     =  00054F GR
- 18 C$Lab3_2_SteeringCalibration.c$79$1$125                     =  000552 GR
- 18 C$Lab3_2_SteeringCalibration.c$86$1$125                     =  000553 GR
- 18 C$Lab3_2_SteeringCalibration.c$88$1$127                     =  000553 GR
- 18 C$Lab3_2_SteeringCalibration.c$90$2$128                     =  000553 GR
- 18 C$Lab3_2_SteeringCalibration.c$91$2$128                     =  000558 GR
- 18 C$Lab3_2_SteeringCalibration.c$94$1$127                     =  00055E GR
- 18 C$Lab3_2_SteeringCalibration.c$95$1$127                     =  000561 GR
- 18 C$Lab3_2_SteeringCalibration.c$97$1$127                     =  000562 GR
  18 C$c8051_SDCC.h$103$1$4                                      =  000037 GR
  18 C$c8051_SDCC.h$105$1$6                                      =  000037 GR
  18 C$c8051_SDCC.h$106$1$6                                      =  00003A GR
  18 C$c8051_SDCC.h$108$1$6                                      =  00003D GR
  18 C$c8051_SDCC.h$109$1$6                                      =  000040 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 18.
+ 18 C$c8051_SDCC.h$111$1$6                                      =  000043 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 15.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 18 C$c8051_SDCC.h$111$1$6                                      =  000043 GR
  18 C$c8051_SDCC.h$112$1$6                                      =  000046 GR
  18 C$c8051_SDCC.h$113$1$6                                      =  000049 GR
  18 C$c8051_SDCC.h$129$1$6                                      =  00004A GR
@@ -1078,12 +897,12 @@ Symbol Table
  18 C$i2c.h$130$1$86                                            =  00018C GR
  18 C$i2c.h$132$1$86                                            =  000196 GR
  18 C$i2c.h$134$1$86                                            =  0001A0 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 19.
+ 18 C$i2c.h$136$1$86                                            =  0001AA GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 16.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 18 C$i2c.h$136$1$86                                            =  0001AA GR
  18 C$i2c.h$138$1$86                                            =  0001B4 GR
  18 C$i2c.h$139$1$86                                            =  0001B7 GR
  18 C$i2c.h$151$1$86                                            =  0001B8 GR
@@ -1138,12 +957,12 @@ Symbol Table
  18 C$i2c.h$252$1$104                                           =  00038C GR
  18 C$i2c.h$256$1$106                                           =  00038E GR
  18 C$i2c.h$257$1$106                                           =  000390 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 20.
+ 18 C$i2c.h$258$1$106                                           =  000397 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 17.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
- 18 C$i2c.h$258$1$106                                           =  000397 GR
  18 C$i2c.h$259$1$106                                           =  00039F GR
  18 C$i2c.h$260$1$106                                           =  0003DF GR
  18 C$i2c.h$261$1$106                                           =  0003C3 GR
@@ -1186,6 +1005,59 @@ Symbol Table
  18 C$i2c.h$96$1$81                                             =  0000B8 GR
  18 C$i2c.h$97$1$81                                             =  0000E6 GR
  18 C$i2c.h$99$2$84                                             =  0000CA GR
+ 18 C$lab3_2_Compass.c$100$1$124                                =  000568 GR
+ 18 C$lab3_2_Compass.c$102$1$126                                =  000568 GR
+ 18 C$lab3_2_Compass.c$103$1$126                                =  00056A GR
+ 18 C$lab3_2_Compass.c$104$1$126                                =  00056D GR
+ 18 C$lab3_2_Compass.c$105$1$126                                =  000570 GR
+ 18 C$lab3_2_Compass.c$106$1$126                                =  000573 GR
+ 18 C$lab3_2_Compass.c$107$1$126                                =  000579 GR
+ 18 C$lab3_2_Compass.c$108$1$126                                =  00057C GR
+ 18 C$lab3_2_Compass.c$115$1$126                                =  00057D GR
+ 18 C$lab3_2_Compass.c$117$1$128                                =  000581 GR
+ 18 C$lab3_2_Compass.c$119$2$129                                =  000581 GR
+ 18 C$lab3_2_Compass.c$120$2$129                                =  000586 GR
+ 18 C$lab3_2_Compass.c$121$2$129                                =  00058C GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 18.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+ 18 C$lab3_2_Compass.c$124$1$128                                =  000594 GR
+ 18 C$lab3_2_Compass.c$125$1$128                                =  00059B GR
+ 18 C$lab3_2_Compass.c$128$1$128                                =  00059C GR
+ 18 C$lab3_2_Compass.c$133$1$130                                =  00059C GR
+ 18 C$lab3_2_Compass.c$134$1$130                                =  0005B1 GR
+ 18 C$lab3_2_Compass.c$136$1$130                                =  0005C1 GR
+ 18 C$lab3_2_Compass.c$137$1$130                                =  0005C1 GR
+ 18 C$lab3_2_Compass.c$139$1$130                                =  0005C2 GR
+ 18 C$lab3_2_Compass.c$141$1$131                                =  0005C2 GR
+ 18 C$lab3_2_Compass.c$142$1$131                                =  0005C5 GR
+ 18 C$lab3_2_Compass.c$143$1$131                                =  0005C7 GR
+ 16 C$lab3_2_Compass.c$35$1$131                                 =  000000 GR
+ 16 C$lab3_2_Compass.c$36$1$131                                 =  000005 GR
+ 16 C$lab3_2_Compass.c$37$1$131                                 =  000009 GR
+ 18 C$lab3_2_Compass.c$48$1$113                                 =  000506 GR
+ 18 C$lab3_2_Compass.c$51$1$120                                 =  000506 GR
+ 18 C$lab3_2_Compass.c$52$1$120                                 =  000509 GR
+ 18 C$lab3_2_Compass.c$53$1$120                                 =  00050F GR
+ 18 C$lab3_2_Compass.c$54$1$120                                 =  000512 GR
+ 18 C$lab3_2_Compass.c$55$1$120                                 =  000515 GR
+ 18 C$lab3_2_Compass.c$56$1$120                                 =  000518 GR
+ 18 C$lab3_2_Compass.c$58$1$120                                 =  00051B GR
+ 18 C$lab3_2_Compass.c$61$1$120                                 =  000530 GR
+ 18 C$lab3_2_Compass.c$63$2$121                                 =  000530 GR
+ 18 C$lab3_2_Compass.c$65$3$122                                 =  000535 GR
+ 18 C$lab3_2_Compass.c$66$3$122                                 =  00053E GR
+ 18 C$lab3_2_Compass.c$70$1$120                                 =  000559 GR
+ 18 C$lab3_2_Compass.c$77$1$120                                 =  00055A GR
+ 18 C$lab3_2_Compass.c$79$1$123                                 =  00055A GR
+ 18 C$lab3_2_Compass.c$80$1$123                                 =  00055D GR
+ 18 C$lab3_2_Compass.c$81$1$123                                 =  000560 GR
+ 18 C$lab3_2_Compass.c$82$1$123                                 =  000563 GR
+ 18 C$lab3_2_Compass.c$89$1$123                                 =  000564 GR
+ 18 C$lab3_2_Compass.c$91$1$124                                 =  000564 GR
+ 18 C$lab3_2_Compass.c$93$1$124                                 =  000567 GR
     CPRL2                                                       =  0000C8 L
     CT2                                                         =  0000C9 L
     CY                                                          =  0000D7 L
@@ -1198,23 +1070,19 @@ Symbol Table
     ET2                                                         =  0000AD L
     EX0                                                         =  0000A8 L
     EX1                                                         =  0000AA L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 21.
+    EXEN2                                                       =  0000CB L
+    EXF2                                                        =  0000CE L
+    F0                                                          =  0000D5 L
+ 19 Flab3_2_Compass$__str_0$0$0                                 =  000000 GR
+ 19 Flab3_2_Compass$__str_1$0$0                                 =  000016 GR
+ 19 Flab3_2_Compass$__str_2$0$0                                 =  000026 GR
+ 19 Flab3_2_Compass$__str_3$0$0                                 =  000029 GR
+ 19 Flab3_2_Compass$__str_4$0$0                                 =  000048 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 19.
 Hexadecimal [24-Bits]
 
 Symbol Table
 
-    EXEN2                                                       =  0000CB L
-    EXF2                                                        =  0000CE L
-    F0                                                          =  0000D5 L
- 19 FLab3_2_SteeringCalibration$__str_0$0$0                     =  000000 GR
- 19 FLab3_2_SteeringCalibration$__str_1$0$0                     =  000016 GR
- 19 FLab3_2_SteeringCalibration$__str_2$0$0                     =  000026 GR
- 19 FLab3_2_SteeringCalibration$__str_3$0$0                     =  000029 GR
- 19 FLab3_2_SteeringCalibration$__str_4$0$0                     =  000050 GR
- 19 FLab3_2_SteeringCalibration$__str_5$0$0                     =  000060 GR
- 19 FLab3_2_SteeringCalibration$__str_6$0$0                     =  0000B3 GR
- 19 FLab3_2_SteeringCalibration$__str_7$0$0                     =  000132 GR
- 19 FLab3_2_SteeringCalibration$__str_8$0$0                     =  0001B0 GR
     G$AA$0$0                                                    =  0000C2 G
     G$AC$0$0                                                    =  0000D6 G
     G$ACC$0$0                                                   =  0000E0 G
@@ -1258,11 +1126,6 @@ Symbol Table
     G$BUS_AA$0$0                                                =  0000C2 G
     G$BUS_BUSY$0$0                                              =  0000C7 G
     G$BUS_EN$0$0                                                =  0000C6 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 22.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     G$BUS_FTE$0$0                                               =  0000C1 G
     G$BUS_INT$0$0                                               =  0000C3 G
     G$BUS_SCL$0$0                                               =  000083 G
@@ -1275,6 +1138,11 @@ Symbol Table
     G$CCF3$0$0                                                  =  0000DB G
     G$CCF4$0$0                                                  =  0000DC G
     G$CF$0$0                                                    =  0000DF G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 20.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     G$CKCON$0$0                                                 =  00008E G
     G$CPRL2$0$0                                                 =  0000C8 G
     G$CPT0CN$0$0                                                =  00009E G
@@ -1282,7 +1150,6 @@ Symbol Table
     G$CR$0$0                                                    =  0000DE G
     G$CT2$0$0                                                   =  0000C9 G
     G$CY$0$0                                                    =  0000D7 G
- 18 G$CalibrateSteering$0$0                                     =  00060D GR
     G$DAC0$0$0                                                  =  00D3D2 G
     G$DAC0CN$0$0                                                =  0000D4 G
     G$DAC0H$0$0                                                 =  0000D3 G
@@ -1318,11 +1185,6 @@ Symbol Table
     G$FLSCL$0$0                                                 =  0000B6 G
     G$IE$0$0                                                    =  0000A8 G
     G$IE0$0$0                                                   =  000089 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 23.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     G$IE1$0$0                                                   =  00008B G
     G$IP$0$0                                                    =  0000B8 G
     G$IT0$0$0                                                   =  000088 G
@@ -1336,6 +1198,11 @@ Symbol Table
     G$P$0$0                                                     =  0000D0 G
     G$P0$0$0                                                    =  000080 G
     G$P0MDOUT$0$0                                               =  0000A4 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 21.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     G$P0_0$0$0                                                  =  000080 G
     G$P0_1$0$0                                                  =  000081 G
     G$P0_2$0$0                                                  =  000082 G
@@ -1378,11 +1245,6 @@ Symbol Table
     G$P3_7$0$0                                                  =  0000B7 G
     G$P4$0$0                                                    =  000084 G
     G$P5$0$0                                                    =  000085 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 24.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     G$P6$0$0                                                    =  000086 G
     G$P7$0$0                                                    =  000096 G
     G$P74OUT$0$0                                                =  0000B5 G
@@ -1396,6 +1258,11 @@ Symbol Table
     G$PCA0CPH0$0$0                                              =  0000FA G
     G$PCA0CPH1$0$0                                              =  0000FB G
     G$PCA0CPH2$0$0                                              =  0000FC G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 22.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     G$PCA0CPH3$0$0                                              =  0000FD G
     G$PCA0CPH4$0$0                                              =  0000FE G
     G$PCA0CPL0$0$0                                              =  0000EA G
@@ -1411,8 +1278,8 @@ Symbol Table
     G$PCA0H$0$0                                                 =  0000F9 G
     G$PCA0L$0$0                                                 =  0000E9 G
     G$PCA0MD$0$0                                                =  0000D9 G
- 18 G$PCA_ISR$0$0                                               =  000553 GR
- 18 G$PCA_Init$0$0                                              =  000544 GR
+ 18 G$PCA_ISR$0$0                                               =  00057D GR
+ 18 G$PCA_Init$0$0                                              =  000568 GR
     G$PCON$0$0                                                  =  000087 G
     G$PRT0CF$0$0                                                =  0000A4 G
     G$PRT1CF$0$0                                                =  0000A5 G
@@ -1430,7 +1297,7 @@ Symbol Table
   5 G$PW_RIGHT$0$0                                              =  000016 GR
     G$PX0$0$0                                                   =  0000B8 G
     G$PX1$0$0                                                   =  0000BA G
- 18 G$Port_Init$0$0                                             =  00053C GR
+ 18 G$Port_Init$0$0                                             =  00055A GR
     G$RB8$0$0                                                   =  00009A G
     G$RB80$0$0                                                  =  00009A G
     G$RCAP2$0$0                                                 =  00CBCA G
@@ -1438,11 +1305,6 @@ Symbol Table
     G$RCAP2L$0$0                                                =  0000CA G
     G$RCAP4$0$0                                                 =  00E5E4 G
     G$RCAP4H$0$0                                                =  0000E5 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 25.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     G$RCAP4L$0$0                                                =  0000E4 G
     G$RCLK$0$0                                                  =  0000CD G
     G$REF0CN$0$0                                                =  0000D1 G
@@ -1454,7 +1316,13 @@ Symbol Table
     G$RS1$0$0                                                   =  0000D4 G
     G$RSTSRC$0$0                                                =  0000EF G
     G$RXOVRN$0$0                                                =  0000FC G
+ 18 G$ReadCompass$0$0                                           =  00059C GR
     G$S0MODE$0$0                                                =  00009F G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 23.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     G$SADDR0$0$0                                                =  0000A9 G
     G$SADDR1$0$0                                                =  0000F3 G
     G$SADEN0$0$0                                                =  0000B9 G
@@ -1481,6 +1349,7 @@ Symbol Table
     G$SMB0STA$0$0                                               =  0000C1 G
     G$SMBFTE$0$0                                                =  0000C1 G
     G$SMBTOE$0$0                                                =  0000C0 G
+ 18 G$SMB_Init$0$0                                              =  0005C2 GR
     G$SP$0$0                                                    =  000081 G
     G$SPI0CFG$0$0                                               =  00009A G
     G$SPI0CKR$0$0                                               =  00009D G
@@ -1491,18 +1360,12 @@ Symbol Table
     G$STA$0$0                                                   =  0000C5 G
     G$STO$0$0                                                   =  0000C4 G
  18 G$SYSCLK_Init$0$0                                           =  000000 GR
- 18 G$Steering_Servo$0$0                                        =  000562 GR
  18 G$Sys_Init$0$0                                              =  000037 GR
     G$T2CON$0$0                                                 =  0000C8 G
     G$T4CON$0$0                                                 =  0000C9 G
     G$TB8$0$0                                                   =  00009B G
     G$TB80$0$0                                                  =  00009B G
     G$TCLK$0$0                                                  =  0000CC G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 26.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     G$TCON$0$0                                                  =  000088 G
     G$TF0$0$0                                                   =  00008D G
     G$TF1$0$0                                                   =  00008F G
@@ -1515,6 +1378,11 @@ Symbol Table
     G$TI0$0$0                                                   =  000099 G
     G$TL0$0$0                                                   =  00008A G
     G$TL1$0$0                                                   =  00008B G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 24.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     G$TL2$0$0                                                   =  0000CC G
     G$TL4$0$0                                                   =  0000F4 G
     G$TMOD$0$0                                                  =  000089 G
@@ -1533,15 +1401,16 @@ Symbol Table
     G$TR1$0$0                                                   =  00008E G
     G$TR2$0$0                                                   =  0000CA G
     G$TXBSY$0$0                                                 =  0000FB G
- 18 G$Turn$0$0                                                  =  0005D2 GR
  18 G$UART0_Init$0$0                                            =  000020 GR
     G$WCOL$0$0                                                  =  0000FE G
     G$WDTCN$0$0                                                 =  0000FF G
     G$XBR0$0$0                                                  =  0000E1 G
- 18 G$XBR0_Init$0$0                                             =  000540 GR
+ 18 G$XBR0_Init$0$0                                             =  000564 GR
     G$XBR1$0$0                                                  =  0000E2 G
     G$XBR2$0$0                                                  =  0000E3 G
     G$_XPAGE$0$0                                                =  0000AF G
+  5 G$bearing$0$0                                               =  00001E GR
+  5 G$count$0$0                                                 =  00001C GR
  18 G$delay_time$0$0                                            =  000327 GR
  18 G$getchar$0$0                                               =  000054 GR
  18 G$getchar_nw$0$0                                            =  000067 GR
@@ -1558,11 +1427,6 @@ Symbol Table
  18 G$main$0$0                                                  =  000506 GR
  18 G$putchar$0$0                                               =  00004A GR
  18 G$read_keypad$0$0                                           =  000139 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 27.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     IE                                                          =  0000A8 L
     IE.0                                                        =  0000A8 L
     IE.1                                                        =  0000A9 L
@@ -1574,6 +1438,11 @@ Symbol Table
     IE0                                                         =  000089 L
     IE1                                                         =  00008B L
     INT0                                                        =  0000B2 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 25.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     INT1                                                        =  0000B3 L
     IP                                                          =  0000B8 L
     IP.0                                                        =  0000B8 L
@@ -1584,17 +1453,18 @@ Symbol Table
     IP.5                                                        =  0000BD L
     IT0                                                         =  000088 L
     IT1                                                         =  00008A L
-  5 LLab3_2_SteeringCalibration.aligned_alloc$size$1$39         =  000003 GR
-  5 LLab3_2_SteeringCalibration.i2c_read_data$buffer$1$107      =  000010 GR
-  5 LLab3_2_SteeringCalibration.i2c_read_data$num_bytes$1$107   =  000013 GR
-  5 LLab3_2_SteeringCalibration.i2c_read_data$start_reg$1$107   =  00000F GR
-  5 LLab3_2_SteeringCalibration.i2c_write_data$buffer$1$105     =  00000B GR
-  5 LLab3_2_SteeringCalibration.i2c_write_data$num_bytes$1$105  =  00000E GR
-  5 LLab3_2_SteeringCalibration.i2c_write_data$start_reg$1$105  =  00000A GR
-  5 LLab3_2_SteeringCalibration.lcd_clear$Cmd$1$85              =  000006 GR
-  5 LLab3_2_SteeringCalibration.lcd_clear$NumBytes$1$85         =  000005 GR
-  C LLab3_2_SteeringCalibration.lcd_print$text$1$81             =  000000 GR
-  5 LLab3_2_SteeringCalibration.read_keypad$Data$1$86           =  000008 GR
+  5 Llab3_2_Compass.ReadCompass$Data$1$130                      =  000020 GR
+  5 Llab3_2_Compass.aligned_alloc$size$1$39                     =  000003 GR
+  5 Llab3_2_Compass.i2c_read_data$buffer$1$107                  =  000010 GR
+  5 Llab3_2_Compass.i2c_read_data$num_bytes$1$107               =  000013 GR
+  5 Llab3_2_Compass.i2c_read_data$start_reg$1$107               =  00000F GR
+  5 Llab3_2_Compass.i2c_write_data$buffer$1$105                 =  00000B GR
+  5 Llab3_2_Compass.i2c_write_data$num_bytes$1$105              =  00000E GR
+  5 Llab3_2_Compass.i2c_write_data$start_reg$1$105              =  00000A GR
+  5 Llab3_2_Compass.lcd_clear$Cmd$1$85                          =  000006 GR
+  5 Llab3_2_Compass.lcd_clear$NumBytes$1$85                     =  000005 GR
+  C Llab3_2_Compass.lcd_print$text$1$81                         =  000000 GR
+  5 Llab3_2_Compass.read_keypad$Data$1$86                       =  000008 GR
     OV                                                          =  0000D2 L
     P                                                           =  0000D0 L
     P0                                                          =  000080 L
@@ -1618,11 +1488,6 @@ Symbol Table
     P2                                                          =  0000A0 L
     P2.0                                                        =  0000A0 L
     P2.1                                                        =  0000A1 L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 28.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     P2.2                                                        =  0000A2 L
     P2.3                                                        =  0000A3 L
     P2.4                                                        =  0000A4 L
@@ -1633,6 +1498,11 @@ Symbol Table
     P3.0                                                        =  0000B0 L
     P3.1                                                        =  0000B1 L
     P3.2                                                        =  0000B2 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 26.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     P3.3                                                        =  0000B3 L
     P3.4                                                        =  0000B4 L
     P3.5                                                        =  0000B5 L
@@ -1678,11 +1548,6 @@ Symbol Table
     SM2                                                         =  00009D L
     SP                                                          =  000081 L
     T2CON                                                       =  0000C8 L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 29.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     T2CON.0                                                     =  0000C8 L
     T2CON.1                                                     =  0000C9 L
     T2CON.2                                                     =  0000CA L
@@ -1693,6 +1558,11 @@ Symbol Table
     T2CON.7                                                     =  0000CF L
     TB8                                                         =  00009B L
     TCLK                                                        =  0000CC L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 27.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     TCON                                                        =  000088 L
     TCON.0                                                      =  000088 L
     TCON.1                                                      =  000089 L
@@ -1719,16 +1589,15 @@ Symbol Table
     TXD                                                         =  0000B1 L
  18 XG$Accel_Init$0$0                                           =  0004CE GR
  18 XG$Accel_Init_C$0$0                                         =  000505 GR
- 18 XG$CalibrateSteering$0$0                                    =  000694 GR
- 18 XG$PCA_ISR$0$0                                              =  000561 GR
- 18 XG$PCA_Init$0$0                                             =  000552 GR
- 18 XG$Port_Init$0$0                                            =  00053F GR
+ 18 XG$PCA_ISR$0$0                                              =  00059B GR
+ 18 XG$PCA_Init$0$0                                             =  00057C GR
+ 18 XG$Port_Init$0$0                                            =  000563 GR
+ 18 XG$ReadCompass$0$0                                          =  0005C1 GR
+ 18 XG$SMB_Init$0$0                                             =  0005C7 GR
  18 XG$SYSCLK_Init$0$0                                          =  00001F GR
- 18 XG$Steering_Servo$0$0                                       =  0005D1 GR
  18 XG$Sys_Init$0$0                                             =  000049 GR
- 18 XG$Turn$0$0                                                 =  00060C GR
  18 XG$UART0_Init$0$0                                           =  000036 GR
- 18 XG$XBR0_Init$0$0                                            =  000543 GR
+ 18 XG$XBR0_Init$0$0                                            =  000567 GR
  18 XG$delay_time$0$0                                           =  000350 GR
  18 XG$getchar$0$0                                              =  000066 GR
  18 XG$getchar_nw$0$0                                           =  00007A GR
@@ -1738,22 +1607,22 @@ Symbol Table
  18 XG$i2c_start$0$0                                            =  00035D GR
  18 XG$i2c_write$0$0                                            =  000366 GR
  18 XG$i2c_write_and_stop$0$0                                   =  000371 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 30.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
  18 XG$i2c_write_data$0$0                                       =  000405 GR
  18 XG$kpd_input$0$0                                            =  000326 GR
  18 XG$lcd_clear$0$0                                            =  000138 GR
  18 XG$lcd_print$0$0                                            =  0000FF GR
- 18 XG$main$0$0                                                 =  00053B GR
+ 18 XG$main$0$0                                                 =  000559 GR
  18 XG$putchar$0$0                                              =  000053 GR
  18 XG$read_keypad$0$0                                          =  0001B7 GR
     _AA                                                         =  0000C2 G
     _AC                                                         =  0000D6 G
     _ACC                                                        =  0000E0 G
     _AD0BUSY                                                    =  0000EC G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 28.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     _AD0CM0                                                     =  0000EA G
     _AD0CM1                                                     =  0000EB G
     _AD0EN                                                      =  0000EF G
@@ -1798,11 +1667,6 @@ Symbol Table
     _BUS_SCL                                                    =  000083 G
     _BUS_START                                                  =  0000C5 G
     _BUS_STOP                                                   =  0000C4 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 31.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     _BUS_TOE                                                    =  0000C0 G
     _CCF0                                                       =  0000D8 G
     _CCF1                                                       =  0000D9 G
@@ -1814,10 +1678,14 @@ Symbol Table
     _CPRL2                                                      =  0000C8 G
     _CPT0CN                                                     =  00009E G
     _CPT1CN                                                     =  00009F G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 29.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     _CR                                                         =  0000DE G
     _CT2                                                        =  0000C9 G
     _CY                                                         =  0000D7 G
- 18 _CalibrateSteering                                             00060D GR
     _DAC0                                                       =  00D3D2 G
     _DAC0CN                                                     =  0000D4 G
     _DAC0H                                                      =  0000D3 G
@@ -1858,11 +1726,6 @@ Symbol Table
     _IT0                                                        =  000088 G
     _IT1                                                        =  00008A G
     _MCE0                                                       =  00009D G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 32.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     _MODF                                                       =  0000FD G
     _MSTEN                                                      =  0000F9 G
     _OSCICN                                                     =  0000B2 G
@@ -1875,6 +1738,11 @@ Symbol Table
     _P0_1                                                       =  000081 G
     _P0_2                                                       =  000082 G
     _P0_3                                                       =  000083 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 30.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     _P0_4                                                       =  000084 G
     _P0_5                                                       =  000085 G
     _P0_6                                                       =  000086 G
@@ -1918,11 +1786,6 @@ Symbol Table
     _P74OUT                                                     =  0000B5 G
     _PCA0                                                       =  00F9E9 G
     _PCA0CN                                                     =  0000D8 G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 33.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     _PCA0CP0                                                    =  00FAEA G
     _PCA0CP1                                                    =  00FBEB G
     _PCA0CP2                                                    =  00FCEC G
@@ -1935,6 +1798,11 @@ Symbol Table
     _PCA0CPH4                                                   =  0000FE G
     _PCA0CPL0                                                   =  0000EA G
     _PCA0CPL1                                                   =  0000EB G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 31.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     _PCA0CPL2                                                   =  0000EC G
     _PCA0CPL3                                                   =  0000ED G
     _PCA0CPL4                                                   =  0000EE G
@@ -1946,8 +1814,8 @@ Symbol Table
     _PCA0H                                                      =  0000F9 G
     _PCA0L                                                      =  0000E9 G
     _PCA0MD                                                     =  0000D9 G
- 18 _PCA_ISR                                                       000553 GR
- 18 _PCA_Init                                                      000544 GR
+ 18 _PCA_ISR                                                       00057D GR
+ 18 _PCA_Init                                                      000568 GR
     _PCON                                                       =  000087 G
     _PRT0CF                                                     =  0000A4 G
     _PRT1CF                                                     =  0000A5 G
@@ -1965,7 +1833,7 @@ Symbol Table
   5 _PW_RIGHT                                                      000016 GR
     _PX0                                                        =  0000B8 G
     _PX1                                                        =  0000BA G
- 18 _Port_Init                                                     00053C GR
+ 18 _Port_Init                                                     00055A GR
     _RB8                                                        =  00009A G
     _RB80                                                       =  00009A G
     _RCAP2                                                      =  00CBCA G
@@ -1978,21 +1846,23 @@ Symbol Table
     _REF0CN                                                     =  0000D1 G
     _REN                                                        =  00009C G
     _REN0                                                       =  00009C G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 34.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     _RI                                                         =  000098 G
     _RI0                                                        =  000098 G
     _RS0                                                        =  0000D3 G
     _RS1                                                        =  0000D4 G
     _RSTSRC                                                     =  0000EF G
     _RXOVRN                                                     =  0000FC G
+ 18 _ReadCompass                                                   00059C GR
+  5 _ReadCompass_Data_1_130                                        000020 R
     _S0MODE                                                     =  00009F G
     _SADDR0                                                     =  0000A9 G
     _SADDR1                                                     =  0000F3 G
     _SADEN0                                                     =  0000B9 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 32.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     _SADEN1                                                     =  0000AE G
     _SBUF                                                       =  000099 G
     _SBUF0                                                      =  000099 G
@@ -2016,6 +1886,7 @@ Symbol Table
     _SMB0STA                                                    =  0000C1 G
     _SMBFTE                                                     =  0000C1 G
     _SMBTOE                                                     =  0000C0 G
+ 18 _SMB_Init                                                      0005C2 GR
     _SP                                                         =  000081 G
     _SPI0CFG                                                    =  00009A G
     _SPI0CKR                                                    =  00009D G
@@ -2026,7 +1897,6 @@ Symbol Table
     _STA                                                        =  0000C5 G
     _STO                                                        =  0000C4 G
  18 _SYSCLK_Init                                                   000000 GR
- 18 _Steering_Servo                                                000562 GR
  18 _Sys_Init                                                      000037 GR
     _T2CON                                                      =  0000C8 G
     _T4CON                                                      =  0000C9 G
@@ -2038,11 +1908,6 @@ Symbol Table
     _TF1                                                        =  00008F G
     _TF2                                                        =  0000CF G
     _TH0                                                        =  00008C G
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 35.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     _TH1                                                        =  00008D G
     _TH2                                                        =  0000CD G
     _TH4                                                        =  0000F5 G
@@ -2053,6 +1918,11 @@ Symbol Table
     _TL2                                                        =  0000CC G
     _TL4                                                        =  0000F4 G
     _TMOD                                                       =  000089 G
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 33.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     _TMR0                                                       =  008C8A G
     _TMR1                                                       =  008D8B G
     _TMR2                                                       =  00CDCC G
@@ -2068,12 +1938,11 @@ Symbol Table
     _TR1                                                        =  00008E G
     _TR2                                                        =  0000CA G
     _TXBSY                                                      =  0000FB G
- 18 _Turn                                                          0005D2 GR
  18 _UART0_Init                                                    000020 GR
     _WCOL                                                       =  0000FE G
     _WDTCN                                                      =  0000FF G
     _XBR0                                                       =  0000E1 G
- 18 _XBR0_Init                                                     000540 GR
+ 18 _XBR0_Init                                                     000564 GR
     _XBR1                                                       =  0000E2 G
     _XBR2                                                       =  0000E3 G
     __XPAGE                                                     =  0000AF G
@@ -2081,11 +1950,7 @@ Symbol Table
  19 ___str_1                                                       000016 R
  19 ___str_2                                                       000026 R
  19 ___str_3                                                       000029 R
- 19 ___str_4                                                       000050 R
- 19 ___str_5                                                       000060 R
- 19 ___str_6                                                       0000B3 R
- 19 ___str_7                                                       000132 R
- 19 ___str_8                                                       0001B0 R
+ 19 ___str_4                                                       000048 R
     __gptrget                                                      ****** GX
     __gptrput                                                      ****** GX
   F __interrupt_vect                                               000000 R
@@ -2098,14 +1963,11 @@ Symbol Table
   F __sdcc_program_startup                                         00004E GR
   7 __start__stack                                                 000000 GR
   5 _aligned_alloc_PARM_2                                          000003 GR
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 36.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
+  5 _bearing                                                       00001E GR
     _bp                                                            ****** GX
+  5 _count                                                         00001C GR
  18 _delay_time                                                    000327 GR
- 18 _getchar                                                       000054 GR
+ 18 _getchar                                                       000054 R
  18 _getchar_nw                                                    000067 GR
  18 _i2c_read                                                      000372 GR
  18 _i2c_read_and_stop                                             00037B GR
@@ -2116,6 +1978,11 @@ Symbol Table
  18 _i2c_start                                                     000351 GR
  18 _i2c_write                                                     00035E GR
  18 _i2c_write_and_stop                                            000367 GR
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 34.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
  18 _i2c_write_data                                                00038C GR
   5 _i2c_write_data_PARM_2                                         00000A GR
   5 _i2c_write_data_PARM_3                                         00000B GR
@@ -2158,11 +2025,6 @@ Symbol Table
     ar1                                                         =  000001 
     ar2                                                         =  000002 
     ar3                                                         =  000003 
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 37.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     ar4                                                         =  000004 
     ar5                                                         =  000005 
     ar6                                                         =  000006 
@@ -2176,6 +2038,11 @@ Symbol Table
     b.5                                                         =  0000F5 L
     b.6                                                         =  0000F6 L
     b.7                                                         =  0000F7 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 35.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     cprl2                                                       =  0000C8 L
     ct2                                                         =  0000C9 L
     cy                                                          =  0000D7 L
@@ -2218,11 +2085,6 @@ Symbol Table
     p0.0                                                        =  000080 L
     p0.1                                                        =  000081 L
     p0.2                                                        =  000082 L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 38.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     p0.3                                                        =  000083 L
     p0.4                                                        =  000084 L
     p0.5                                                        =  000085 L
@@ -2236,6 +2098,11 @@ Symbol Table
     p1.4                                                        =  000094 L
     p1.5                                                        =  000095 L
     p1.6                                                        =  000096 L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 36.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     p1.7                                                        =  000097 L
     p2                                                          =  0000A0 L
     p2.0                                                        =  0000A0 L
@@ -2278,11 +2145,6 @@ Symbol Table
     ren                                                         =  00009C L
     ri                                                          =  000098 L
     rs0                                                         =  0000D3 L
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 39.
-Hexadecimal [24-Bits]
-
-Symbol Table
-
     rs1                                                         =  0000D4 L
     rxd                                                         =  0000B0 L
     sbuf                                                        =  000099 L
@@ -2296,6 +2158,11 @@ Symbol Table
     scon.6                                                      =  00009E L
     scon.7                                                      =  00009F L
     sm0                                                         =  00009F L
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 37.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
     sm1                                                         =  00009E L
     sm2                                                         =  00009D L
     sp                                                          =  000081 L
@@ -2336,7 +2203,7 @@ Symbol Table
     txd                                                         =  0000B1 L
 
 
-ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 40.
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Intel 8051), page 38.
 Hexadecimal [24-Bits]
 
 Area Table
@@ -2346,7 +2213,7 @@ Area Table
    2 RSEG0                                      size      0   flags    8
    3 RSEG1                                      size      0   flags    8
    4 REG_BANK_0                                 size      8   flags    4
-   5 DSEG                                       size     1C   flags    0
+   5 DSEG                                       size     22   flags    0
    6 OSEG                                       size      0   flags    4
    7 SSEG                                       size      1   flags    0
    8 ISEG                                       size      0   flags    0
@@ -2363,10 +2230,10 @@ Area Table
   13 GSINIT3                                    size      0   flags   20
   14 GSINIT4                                    size      0   flags   20
   15 GSINIT5                                    size      0   flags   20
-  16 GSINIT                                     size      5   flags   20
+  16 GSINIT                                     size      D   flags   20
   17 GSFINAL                                    size      3   flags   20
-  18 CSEG                                       size    695   flags   20
-  19 CONST                                      size    1E3   flags   20
+  18 CSEG                                       size    5C8   flags   20
+  19 CONST                                      size     57   flags   20
   1A XINIT                                      size      0   flags   20
   1B CABS                                       size      0   flags   28
 
