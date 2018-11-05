@@ -137,7 +137,6 @@ void Turn(void) // Turns the car left and right, Press k to escape.
 
 void CalibrateSteering(void)
 {
-	SERVO_PW = 2765; // Set initial pulse width to 1.5ms (approx center)
 	PCA0CP0 = 0xFFFF - SERVO_PW; // Set pulse width (May need to break up into high and low to work)
 
 	////////////////////////////////////////////////

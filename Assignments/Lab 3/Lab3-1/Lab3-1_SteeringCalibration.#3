@@ -20,7 +20,7 @@ unsigned int SERVO_PW = 0;
 //-----------------------------------------------------------------------------
 // Global Constants
 //-----------------------------------------------------------------------------
-#define PCA_START 2 // Sets start of PCA for 20ms period
+#define PCA_START 28672 // Sets start of PCA for 20ms period
 
 //-----------------------------------------------------------------------------
 // Main Function
@@ -164,7 +164,7 @@ void CalibrateSteering(void)
 	// Set Right
 	////////////////////////////////////////////////
 
-	printf("\r\n1Please turn the car all the way to the right without straining it. \r\nUse l and r to turn left and right. Press k when done.");
+	printf("\r\nPlease turn the car all the way to the right without straining it. \r\nUse l and r to turn left and right. Press k when done.");
 	Turn();
 
 	PW_RIGHT = SERVO_PW; // Save right PW
